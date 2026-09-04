@@ -72,34 +72,35 @@ def utc_now_iso() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def candidate_urls(d: datetime.date) -> list[str]:
-    """WordPress uploads path with the dated filename pattern we observed."""
-    fn = f"NER-PSP-REPORT-DATED-{d:%d-%m-%Y}.pdf"
-    return [
-        f"{BASE}/wp-content/uploads/{d:%Y/%m}/{fn}",
-        f"{BASE}/wp-content/uploads/{d:%Y}/{d:%m}/{fn}",
-    ]
+def candidate_url(d: datetime.date) -> str:
+    """Flat WordPress uploads path; filename date is the PUBLICATION date."""
+    return f"{BASE}/wp-content/uploads/NER-PSP-REPORT-DATED-{d:%d-%m-%Y}.pdf"
 
 
-def find_pdf_url(d: datetime.date) -> str | None:
-    # 1. try the known dated patterns directly
-    for u in candidate_urls(d):
-        try:
-            r = _session().head(u, timeout=30)
-            if r.status_code == 200 and "pdf" in r.headers.get("content-type", "").lower():
-                return u
-        except requests.RequestException:
-            pass
-    # 2. fall back to scraping the PSP page for a link to the dated file
+def find_pdf_url():
+    """Return (url, publication_date) for the latest PSP report, or (None, None)."""
+    sess = _session()
+    # 1. the report page always links the newest report - read it straight off
     try:
-        r = _session().get(f"{BASE}/power-supply-position-psp-report/", timeout=45)
-        m = re.search(r'https?://[^"\']+NER-PSP-REPORT-DATED-'
-                      + f"{d:%d-%m-%Y}" + r'\.pdf', r.text)
+        r = sess.get(f"{BASE}/power-supply-position-psp-report/", timeout=45)
+        m = re.search(r"https?://[^\"']+/NER-PSP-REPORT-DATED-(\d\d)-(\d\d)-(\d{4})\.pdf",
+                      r.text)
         if m:
-            return m.group(0)
+            dd, mm, yy = (int(x) for x in m.groups())
+            return m.group(0), datetime.date(yy, mm, dd)
     except requests.RequestException:
         pass
-    return None
+    # 2. fall back to the flat dated pattern for the last few days
+    for back in range(5):
+        d = datetime.date.today() - datetime.timedelta(days=back)
+        u = candidate_url(d)
+        try:
+            r = sess.head(u, timeout=30)
+            if r.status_code == 200 and "pdf" in r.headers.get("content-type", "").lower():
+                return u, d
+        except requests.RequestException:
+            pass
+    return None, None
 
 
 def parse_reservoirs(pdf_bytes: bytes) -> list[dict]:
@@ -130,13 +131,7 @@ def parse_reservoirs(pdf_bytes: bytes) -> list[dict]:
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True); RAW.mkdir(exist_ok=True)
     now = utc_now_iso()
-    # the report is published for the previous day
-    d = datetime.date.today() - datetime.timedelta(days=1)
-    url = find_pdf_url(d)
-    if not url:
-        # try the day before as well (weekend/holiday lag)
-        d = d - datetime.timedelta(days=1)
-        url = find_pdf_url(d)
+    url, d = find_pdf_url()
     if not url:
         print(f"DEGRADED: no NERLDC PSP report found for {d} "
               "(site reachable only from Indian IPs; runs on the keep-alive host)")
