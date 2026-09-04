@@ -85,10 +85,13 @@ def run(basin: str) -> dict:
     plain_cols = [c for c in base_cols if c not in dam_cols]
 
     y = feats["y_h1"]
+    monsoon_train = "--monsoon-train" in sys.argv
     rows = []
     wins_vs_pers = wins_vs_plain = 0
     for train_years, fy in FOLDS:
         tr = feats.index.year.isin(train_years) & y.notna()
+        if monsoon_train:
+            tr = tr & monsoon_mask(feats.index)   # train on monsoon days only
         te = (feats.index.year == fy) & monsoon_mask(feats.index) & y.notna()
         if te.sum() < 30 or feats.loc[te, dam_cols].notna().mean().mean() < 0.5:
             rows.append({"fold": fy, "skipped": "thin dam coverage"}); continue
@@ -116,7 +119,9 @@ def main() -> int:
     if not CLEAN.exists():
         print("run clean_reservoirs.py first (need reservoirs_clean.parquet)")
         return 0
-    which = sys.argv[1:] or list(DAMS)
+    which = [a for a in sys.argv[1:] if not a.startswith("--")] or list(DAMS)
+    if "--monsoon-train" in sys.argv:
+        print("(training on MONSOON days only - testing the user's variant)\n")
     results = []
     for basin in which:
         if basin not in DAMS:
