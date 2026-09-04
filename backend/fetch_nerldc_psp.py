@@ -28,6 +28,24 @@ from pathlib import Path
 
 import pandas as pd
 import requests
+import ssl
+from requests.adapters import HTTPAdapter
+from urllib3.util.ssl_ import create_urllib3_context
+
+class _LegacyTLSAdapter(HTTPAdapter):
+    """NERLDC's server needs legacy TLS renegotiation, which OpenSSL 3 blocks
+    by default. This adapter re-enables it for this host only."""
+    def init_poolmanager(self, *a, **k):
+        ctx = create_urllib3_context()
+        ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT
+        k["ssl_context"] = ctx
+        return super().init_poolmanager(*a, **k)
+
+def _session():
+    import requests
+    s = requests.Session()
+    s.mount("https://", _LegacyTLSAdapter())
+    return s
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUT = BASE_DIR / "data" / "history" / "nerldc"
@@ -63,14 +81,14 @@ def find_pdf_url(d: datetime.date) -> str | None:
     # 1. try the known dated patterns directly
     for u in candidate_urls(d):
         try:
-            r = requests.head(u, timeout=30)
+            r = _session().head(u, timeout=30)
             if r.status_code == 200 and "pdf" in r.headers.get("content-type", "").lower():
                 return u
         except requests.RequestException:
             pass
     # 2. fall back to scraping the PSP page for a link to the dated file
     try:
-        r = requests.get(f"{BASE}/power-supply-position-psp-report/", timeout=45)
+        r = _session().get(f"{BASE}/power-supply-position-psp-report/", timeout=45)
         m = re.search(r'https?://[^"\']+NER-PSP-REPORT-DATED-'
                       + f"{d:%d-%m-%Y}" + r'\.pdf', r.text)
         if m:
@@ -120,7 +138,7 @@ def main() -> int:
               "(site reachable only from Indian IPs; runs on the keep-alive host)")
         return 0
     try:
-        r = requests.get(url, timeout=120); r.raise_for_status()
+        r = _session().get(url, timeout=120); r.raise_for_status()
         (RAW / f"{d.isoformat()}.pdf").write_bytes(r.content)
         rows = parse_reservoirs(r.content)
     except Exception as err:  # noqa: BLE001
