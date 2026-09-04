@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T10:11:58Z",
+ "generated_at": "2026-09-04T11:21:19Z",
  "degraded": false,
  "basin": "subansiri",
  "model": "model-v0-subansiri",
@@ -12,57 +12,57 @@
    "value": 2963.83,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T10:11:58Z",
+   "retrieved_at": "2026-09-04T11:21:19Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
    "value": 12.9,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:58Z"
+   "retrieved_at": "2026-09-04T11:21:19Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 18.3,
+   "value": 18.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:58Z"
+   "retrieved_at": "2026-09-04T11:21:19Z"
   }
  },
  "threshold_m3s": {
   "value": 5700.6,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T10:11:58Z"
+  "retrieved_at": "2026-09-04T11:21:19Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 2803.7,
+    "value": 2821.9,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for subansiri - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-subansiri-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:58Z"
+    "retrieved_at": "2026-09-04T11:21:19Z"
    },
    "p_exceed_threshold": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for subansiri - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-subansiri-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:58Z"
+    "retrieved_at": "2026-09-04T11:21:19Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 2888.4,
+    "value": 2894.3,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for subansiri - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-subansiri-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:58Z"
+    "retrieved_at": "2026-09-04T11:21:19Z"
    },
    "p_exceed_threshold": {
     "value": 0.002,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for subansiri - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-subansiri-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:58Z"
+    "retrieved_at": "2026-09-04T11:21:19Z"
    }
   }
  },
@@ -70,7 +70,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T10:11:58Z",
+  "retrieved_at": "2026-09-04T11:21:19Z",
   "p_exceed_h1": 0.0
  },
  "forecast_horizon": "1 day",

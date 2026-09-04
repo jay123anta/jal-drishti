@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T10:11:16Z",
+ "generated_at": "2026-09-04T11:20:14Z",
  "degraded": false,
  "basin": "dhansiri",
  "model": "model-v0-dhansiri",
@@ -12,27 +12,27 @@
    "value": 923.7,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T10:11:16Z",
+   "retrieved_at": "2026-09-04T11:20:14Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
-   "value": 4.8,
+   "value": 4.9,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:16Z"
+   "retrieved_at": "2026-09-04T11:20:14Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 11.4,
+   "value": 11.3,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:16Z"
+   "retrieved_at": "2026-09-04T11:20:14Z"
   }
  },
  "threshold_m3s": {
   "value": 962.8,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T10:11:16Z"
+  "retrieved_at": "2026-09-04T11:20:14Z"
  },
  "predictions": {
   "h1": {
@@ -41,13 +41,13 @@
     "value": 923.7,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dhansiri - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dhansiri-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:16Z"
+    "retrieved_at": "2026-09-04T11:20:14Z"
    },
    "p_exceed_threshold": {
     "value": 0.16,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dhansiri - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dhansiri-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:16Z"
+    "retrieved_at": "2026-09-04T11:20:14Z"
    }
   },
   "h2": {
@@ -56,13 +56,13 @@
     "value": 923.7,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dhansiri - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dhansiri-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:16Z"
+    "retrieved_at": "2026-09-04T11:20:14Z"
    },
    "p_exceed_threshold": {
     "value": 0.227,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dhansiri - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dhansiri-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:16Z"
+    "retrieved_at": "2026-09-04T11:20:14Z"
    }
   }
  },
@@ -70,7 +70,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T10:11:16Z",
+  "retrieved_at": "2026-09-04T11:20:14Z",
   "p_exceed_h1": 0.16
  },
  "forecast_horizon": "1 day",

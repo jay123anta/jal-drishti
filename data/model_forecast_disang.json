@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T10:11:22Z",
+ "generated_at": "2026-09-04T11:20:24Z",
  "degraded": false,
  "basin": "disang",
  "model": "model-v0-disang",
@@ -12,57 +12,57 @@
    "value": 429.53,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T10:11:22Z",
+   "retrieved_at": "2026-09-04T11:20:24Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
-   "value": 36.7,
+   "value": 36.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:22Z"
+   "retrieved_at": "2026-09-04T11:20:24Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 42.9,
+   "value": 42.3,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:22Z"
+   "retrieved_at": "2026-09-04T11:20:24Z"
   }
  },
  "threshold_m3s": {
   "value": 426.6,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T10:11:22Z"
+  "retrieved_at": "2026-09-04T11:20:24Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 437.5,
+    "value": 435.2,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:22Z"
+    "retrieved_at": "2026-09-04T11:20:24Z"
    },
    "p_exceed_threshold": {
-    "value": 0.621,
+    "value": 0.58,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:22Z"
+    "retrieved_at": "2026-09-04T11:20:24Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 416.9,
+    "value": 420.7,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:22Z"
+    "retrieved_at": "2026-09-04T11:20:24Z"
    },
    "p_exceed_threshold": {
-    "value": 0.348,
+    "value": 0.373,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:22Z"
+    "retrieved_at": "2026-09-04T11:20:24Z"
    }
   }
  },
@@ -70,8 +70,8 @@
   "value": "RED",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T10:11:22Z",
-  "p_exceed_h1": 0.621
+  "retrieved_at": "2026-09-04T11:20:24Z",
+  "p_exceed_h1": 0.58
  },
  "forecast_horizon": "1 day",
  "basis_plain": "A tested river model expects unusually high water on the Disang near here by tomorrow."

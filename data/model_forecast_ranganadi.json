@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T10:16:22Z",
+ "generated_at": "2026-09-04T11:21:40Z",
  "degraded": false,
  "basin": "ranganadi",
  "model": "model-v0-ranganadi",
@@ -12,42 +12,42 @@
    "value": 418.76,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T10:16:22Z",
+   "retrieved_at": "2026-09-04T11:21:40Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
    "value": 9.4,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 ranganadi catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:16:22Z"
+   "retrieved_at": "2026-09-04T11:21:40Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 16.0,
+   "value": 15.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 ranganadi catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:16:22Z"
+   "retrieved_at": "2026-09-04T11:21:40Z"
   }
  },
  "threshold_m3s": {
   "value": 692.1,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T10:16:22Z"
+  "retrieved_at": "2026-09-04T11:21:40Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 436.1,
+    "value": 433.9,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:16:22Z"
+    "retrieved_at": "2026-09-04T11:21:40Z"
    },
    "p_exceed_threshold": {
-    "value": 0.01,
+    "value": 0.008,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:16:22Z"
+    "retrieved_at": "2026-09-04T11:21:40Z"
    }
   },
   "h2": {
@@ -56,13 +56,13 @@
     "value": 434.4,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:16:22Z"
+    "retrieved_at": "2026-09-04T11:21:40Z"
    },
    "p_exceed_threshold": {
     "value": 0.018,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:16:22Z"
+    "retrieved_at": "2026-09-04T11:21:40Z"
    }
   }
  },
@@ -70,8 +70,8 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T10:16:22Z",
-  "p_exceed_h1": 0.01
+  "retrieved_at": "2026-09-04T11:21:40Z",
+  "p_exceed_h1": 0.008
  },
  "forecast_horizon": "1 day",
  "basis_plain": "A tested river model expects the Ranganadi / Panyor near here to stay in its normal range through tomorrow (river currently steady)."

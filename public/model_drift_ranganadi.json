@@ -1,10 +1,40 @@
 {
- "generated_at": "2026-09-04T10:12:38Z",
+ "generated_at": "2026-09-04T11:22:25Z",
  "basin": "ranganadi",
  "model": "model-v0-ranganadi",
- "inputs": {},
- "overall": "degraded",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 418.76,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-04T11:22:25Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.663,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.443
+  },
+  "catchment_rain_24h_mm": {
+   "value": 9.4,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 ranganadi catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T11:22:25Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.501,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.423
+  },
+  "catchment_rain_48h_mm": {
+   "value": 15.5,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 ranganadi catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T11:22:25Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.372,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.291
+  }
+ },
+ "overall": "in-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
- "note": "drift never changes a colour; it flags extrapolation in the Technical view",
- "error": "model_forecast_ranganadi.json missing or degraded - no live inputs to compare"
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }

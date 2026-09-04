@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T10:10:50Z",
+ "generated_at": "2026-09-04T11:19:29Z",
  "degraded": false,
  "basin": "kopili",
  "model": "model-v0-kopili",
@@ -12,27 +12,27 @@
    "value": 742.02,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T10:10:50Z",
+   "retrieved_at": "2026-09-04T11:19:29Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
-   "value": 4.2,
+   "value": 4.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 kopili catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:10:50Z"
+   "retrieved_at": "2026-09-04T11:19:29Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 12.6,
+   "value": 12.9,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 kopili catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:10:50Z"
+   "retrieved_at": "2026-09-04T11:19:29Z"
   }
  },
  "threshold_m3s": {
   "value": 1092.7,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T10:10:50Z"
+  "retrieved_at": "2026-09-04T11:19:29Z"
  },
  "predictions": {
   "h1": {
@@ -41,13 +41,13 @@
     "value": 742.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for kopili - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-kopili-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:10:50Z"
+    "retrieved_at": "2026-09-04T11:19:29Z"
    },
    "p_exceed_threshold": {
     "value": 0.018,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for kopili - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-kopili-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:10:50Z"
+    "retrieved_at": "2026-09-04T11:19:29Z"
    }
   },
   "h2": {
@@ -56,13 +56,13 @@
     "value": 742.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for kopili - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-kopili-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:10:50Z"
+    "retrieved_at": "2026-09-04T11:19:29Z"
    },
    "p_exceed_threshold": {
     "value": 0.041,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for kopili - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-kopili-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:10:50Z"
+    "retrieved_at": "2026-09-04T11:19:29Z"
    }
   }
  },
@@ -70,7 +70,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T10:10:50Z",
+  "retrieved_at": "2026-09-04T11:19:29Z",
   "p_exceed_h1": 0.018
  },
  "forecast_horizon": "1 day",

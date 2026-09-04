@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T10:10:45Z",
+ "generated_at": "2026-09-04T11:19:20Z",
  "degraded": false,
  "basin": "dikhow",
  "model": "model-v0-dikhow",
@@ -12,42 +12,42 @@
    "value": 504.82,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T10:10:45Z",
+   "retrieved_at": "2026-09-04T11:19:20Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
-   "value": 18.4,
+   "value": 18.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 8 dikhow catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:10:45Z"
+   "retrieved_at": "2026-09-04T11:19:20Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 27.9,
+   "value": 27.8,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 8 dikhow catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:10:45Z"
+   "retrieved_at": "2026-09-04T11:19:20Z"
   }
  },
  "threshold_m3s": {
   "value": 509.5,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T10:10:45Z"
+  "retrieved_at": "2026-09-04T11:19:20Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 512.3,
+    "value": 512.2,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dikhow - shipped: B3_lag_rule, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dikhow-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:10:45Z"
+    "retrieved_at": "2026-09-04T11:19:20Z"
    },
    "p_exceed_threshold": {
     "value": 0.373,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dikhow - shipped: B3_lag_rule, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dikhow-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:10:45Z"
+    "retrieved_at": "2026-09-04T11:19:20Z"
    }
   },
   "h2": {
@@ -56,13 +56,13 @@
     "value": 504.7,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dikhow - shipped: B3_lag_rule, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dikhow-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:10:45Z"
+    "retrieved_at": "2026-09-04T11:19:20Z"
    },
    "p_exceed_threshold": {
     "value": 0.369,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for dikhow - shipped: B3_lag_rule, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-dikhow-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:10:45Z"
+    "retrieved_at": "2026-09-04T11:19:20Z"
    }
   }
  },
@@ -70,7 +70,7 @@
   "value": "YELLOW",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T10:10:45Z",
+  "retrieved_at": "2026-09-04T11:19:20Z",
   "p_exceed_h1": 0.373
  },
  "forecast_horizon": "1 day",

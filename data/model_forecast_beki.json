@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T10:11:10Z",
+ "generated_at": "2026-09-04T11:20:05Z",
  "degraded": false,
  "basin": "beki",
  "model": "model-v0-beki",
@@ -12,27 +12,27 @@
    "value": 1693.34,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T10:11:10Z",
+   "retrieved_at": "2026-09-04T11:20:05Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
-   "value": 5.4,
+   "value": 5.8,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 beki catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:10Z"
+   "retrieved_at": "2026-09-04T11:20:05Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 7.7,
+   "value": 8.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 beki catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T10:11:10Z"
+   "retrieved_at": "2026-09-04T11:20:05Z"
   }
  },
  "threshold_m3s": {
   "value": 5045.6,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T10:11:10Z"
+  "retrieved_at": "2026-09-04T11:20:05Z"
  },
  "predictions": {
   "h1": {
@@ -41,13 +41,13 @@
     "value": 1693.3,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for beki - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-beki-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:10Z"
+    "retrieved_at": "2026-09-04T11:20:05Z"
    },
    "p_exceed_threshold": {
     "value": 0.004,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for beki - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-beki-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:10Z"
+    "retrieved_at": "2026-09-04T11:20:05Z"
    }
   },
   "h2": {
@@ -56,13 +56,13 @@
     "value": 1693.3,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for beki - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-beki-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T10:11:10Z"
+    "retrieved_at": "2026-09-04T11:20:05Z"
    },
    "p_exceed_threshold": {
     "value": 0.008,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for beki - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-beki-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T10:11:10Z"
+    "retrieved_at": "2026-09-04T11:20:05Z"
    }
   }
  },
@@ -70,7 +70,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T10:11:10Z",
+  "retrieved_at": "2026-09-04T11:20:05Z",
   "p_exceed_h1": 0.004
  },
  "forecast_horizon": "1 day",
