@@ -94,6 +94,13 @@ def main() -> int:
         disch = load_json(DATA_DIR / "discharge.json")
         tp = next(p for p in disch["points"] if p["id"] == cfg["target"])
         obs = [r for r in tp["daily"] if r["class"] == OBSERVED]
+        if not obs:
+            reason = ("live GloFAS discharge was rate-limited this run and fell back to "
+                      "simulated data; the model needs OBSERVED discharge, so it will not run"
+                      if not tp.get("live", True)
+                      else "no OBSERVED discharge in the fetched window for this basin")
+            write_degraded(out_path, basin, reason, now)
+            return 0
         latest = obs[-1]
         q_now = latest["discharge_m3s"]
         trend_word = "steady"
