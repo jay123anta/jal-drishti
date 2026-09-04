@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JalDrishti - Assam flood test map</title>
+<meta name="description" content="Experimental flood-watch map for Assam: village risk estimates, river trends, official CWC gauge readings and government alerts. A research demonstration, not a warning system.">
+<meta name="theme-color" content="#0F6B84">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* ============ tokens ============ */
+  :root {
+    color-scheme: light;
+    /* colour */
+    --surface: #ffffff; --page: #EDF1EF;
+    --ink: #16262E; --ink-2: #41545C; --muted: #566A74;
+    --hairline: rgba(22,38,46,0.12);           /* decorative separators only */
+    --ctrl-border: rgba(22,38,46,0.55);        /* interactive boundaries, >=3:1 */
+    --river: #0F6B84; --river-deep: #0B5468; --river-tint: #E7F1F3;
+    --status-good: #1E8A4C; --status-warning: #DB9E1E; --status-critical: #C4402F;
+    --status-good-text: #17693A; --status-warning-text: #7A5800; --status-critical-text: #C4402F;
+    --amber-bg: #FBF3E2; --amber-line: #E9D4A4; --amber-ink: #6B4E12;
+    /* type: 6 sizes, 3 weights */
+    --fs-xs: 11px; --fs-sm: 12px; --fs-md: 13px; --fs-base: 14px; --fs-lg: 15px; --fs-xl: 20px;
+    --w-med: 500; --w-semi: 600; --w-black: 800;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+    /* spacing: 6 steps */
+    --s1: 2px; --s2: 4px; --s3: 8px; --s4: 12px; --s5: 16px; --s6: 24px;
+    /* radius: one value; pills and circles are the stated exceptions */
+    --r: 8px;
+    /* shadows: two elevations + the dot ring */
+    --shadow-1: 0 2px 8px rgba(22,38,46,0.18);
+    --shadow-2: 0 8px 28px rgba(22,38,46,0.30);
+    --on-accent: #ffffff; --critical-deep: #7B2418;
+    --ring: 0 0 0 1px rgba(22,38,46,0.35);
+    --drawer-w: 340px;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { font: var(--fs-base)/1.5 var(--sans); color: var(--ink);
+    background: var(--page); display: flex; flex-direction: column; }
+
+  .skip { position: absolute; left: -999px; top: 0; z-index: 4000;
+    background: var(--river); color: var(--on-accent); padding: var(--s3) var(--s5);
+    border-radius: 0 0 var(--r) 0; font-weight: var(--w-semi); }
+  .skip:focus { left: 0; }
+
+  header { display: flex; align-items: center; gap: var(--s4); padding: var(--s3) var(--s5);
+    background: var(--surface); border-bottom: 1px solid var(--hairline); flex-wrap: wrap; }
+  .mark { flex: 0 0 auto; width: 30px; height: 30px; border-radius: var(--r);
+    background: var(--river); display: inline-flex; align-items: center; justify-content: center; }
+  .mark svg { display: block; }
+  header h1 { font-family: var(--display); font-size: var(--fs-xl); font-weight: var(--w-black); }
+  header .sub { color: var(--muted); font-size: var(--fs-md); margin-top: var(--s1); }
+  .counts { display: inline-flex; gap: var(--s2); }
+  .chip { display: inline-flex; align-items: center; gap: var(--s2); padding: var(--s1) var(--s3);
+    border-radius: 999px; border: 1px solid var(--hairline); background: var(--page);
+    color: var(--ink-2); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; box-shadow: var(--ring); }
+  .hbtn { border: 1px solid var(--ctrl-border); background: var(--surface); border-radius: var(--r);
+    padding: var(--s2) var(--s4); font: inherit; font-size: var(--fs-md);
+    font-weight: var(--w-med); cursor: pointer; color: var(--ink-2); min-height: 32px; }
+  .hbtn:hover { background: var(--river-tint); border-color: var(--river); color: var(--river-deep); }
+  :focus-visible { outline: 2px solid var(--river); outline-offset: 2px; }
+  .hbtn.active { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .hbtn.primary { background: var(--river); color: var(--on-accent); border-color: var(--river); }
+  .hbtn.primary:hover { background: var(--river-deep); color: var(--on-accent); }
+  @media (prefers-reduced-motion: no-preference) {
+    .hbtn { transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+  }
+  @media (pointer: coarse) {
+    .hbtn { min-height: 44px; padding: var(--s3) var(--s5); }
+    #drawer label { min-height: 44px; align-items: center; }
+  }
+  .banner { padding: var(--s3) var(--s5); background: var(--amber-bg);
+    border-bottom: 1px solid var(--amber-line); color: var(--amber-ink);
+    font-size: var(--fs-md); display: flex; gap: var(--s5); flex-wrap: wrap; }
+  .banner b { font-weight: var(--w-semi); }
+
+  /* the one bold element: the official-alert strip */
+  #alertbar { display: none; padding: var(--s3) var(--s5); font-size: var(--fs-base);
+    font-weight: var(--w-semi); color: var(--ink); background: var(--status-warning);
+    border-left: 6px solid var(--amber-ink); }
+  #alertbar.severe { background: var(--status-critical); color: var(--on-accent); border-left-color: var(--critical-deep); }
+  #alerts { background: var(--amber-bg); border: 1px solid var(--amber-line);
+    border-radius: var(--r); padding: var(--s3) var(--s4); }
+  #alerts.quiet { background: var(--page); border-color: var(--hairline); }
+
+  #mapwrap { flex: 1; min-height: 0; position: relative; display: flex; }
+  #drawer { width: var(--drawer-w); flex: 0 0 var(--drawer-w); overflow-y: auto;
+    background: var(--surface); border-right: 1px solid var(--hairline);
+    padding: var(--s5) var(--s5) var(--s6); font-size: var(--fs-md); }
+  body.nodrawer #drawer { display: none; }
+  #drawer h2 { font-family: var(--mono); font-size: var(--fs-xs); font-weight: var(--w-med);
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--river-deep);
+    margin: var(--s5) 0 var(--s3); padding-top: var(--s4); border-top: 1px solid var(--hairline); }
+  #drawer h2:first-of-type { margin-top: var(--s3); padding-top: 0; border-top: 0; }
+  #drawer .row { display: flex; align-items: flex-start; gap: var(--s3); margin: var(--s2) 0; line-height: 1.4; }
+  #drawer .sw { flex: 0 0 13px; width: 13px; height: 13px; border-radius: 50%; margin-top: var(--s1);
+    border: 2px solid var(--surface); box-shadow: var(--ring); }
+  #drawer .ln { flex: 0 0 15px; height: 0; margin-top: var(--s3); border-top: 2px solid; }
+  #drawer .fill { flex: 0 0 13px; height: 13px; margin-top: var(--s1);
+    background: rgba(15,107,132,0.30); border: 1px solid var(--river); }
+  #drawer details { margin: var(--s3) 0; }
+  #drawer summary { cursor: pointer; color: var(--river); font-size: var(--fs-sm); }
+  #drawer .how { margin-top: var(--s2); color: var(--ink-2); line-height: 1.5;
+    background: var(--page); border-radius: var(--r); padding: var(--s3) var(--s4); }
+  #drawer label { display: flex; gap: var(--s3); align-items: center; margin: var(--s2) 0; cursor: pointer; }
+  #drawer input[type=radio], #drawer input[type=checkbox], #drawer input[type=range] { accent-color: var(--river); }
+  #drawer .muted { color: var(--muted); font-size: var(--fs-sm); }
+  #map { flex: 1; min-height: 0; }
+
+  #drawerbtn { position: absolute; top: var(--s4); left: var(--s4); z-index: 600;
+    display: none; box-shadow: var(--shadow-1); } /* below Leaflet popups (700) */
+  @media (pointer: coarse) { .leaflet-control-zoom { display: none; } } /* phones pinch-zoom */
+  body.nodrawer #drawerbtn { display: inline-block; }
+  .leaflet-left .leaflet-control { margin-left: var(--s4); }
+  body.nodrawer .leaflet-top.leaflet-left { top: 48px; }
+  .leaflet-popup-content-wrapper { border-radius: var(--r); box-shadow: var(--shadow-2); }
+  .leaflet-container { font-family: var(--sans); }
+
+  #watermark { display: none; position: absolute; top: var(--s4); left: 50%;
+    transform: translateX(-50%); z-index: 1000; max-width: min(560px, calc(100% - 100px));
+    padding: var(--s3) var(--s5); border-radius: 999px; background: var(--amber-bg);
+    border: 1px solid var(--amber-line); color: var(--amber-ink);
+    font-weight: var(--w-semi); font-size: var(--fs-md); box-shadow: var(--shadow-1); }
+
+  #replaybar { display: none; }
+  .sliderrow { display: flex; align-items: center; gap: var(--s3); margin-top: var(--s3); }
+  .sliderrow input[type=range] { flex: 1; min-width: 0; }
+  #slidertime { font-family: var(--mono); font-variant-numeric: tabular-nums;
+    font-size: var(--fs-sm); white-space: nowrap; color: var(--ink-2); }
+  .slidernote { color: var(--muted); font-size: var(--fs-sm); margin-top: var(--s2); }
+  #findings { margin-top: var(--s4); font-size: var(--fs-md); background: var(--page);
+    border-radius: var(--r); padding: var(--s3) var(--s4); }
+  #findings .fh { font-weight: var(--w-semi); cursor: pointer; color: var(--river-deep); }
+  #findings .fbody div { margin-top: var(--s2); line-height: 1.5; }
+  #findings details { margin-top: var(--s2); }
+  #findings summary { cursor: pointer; color: var(--river); font-size: var(--fs-sm); }
+  #findings a { color: var(--river); }
+
+  .leaflet-popup-content { font: var(--fs-md)/1.45 var(--sans); margin: var(--s4) var(--s5); color: var(--ink);
+    max-height: min(55vh, 420px); overflow-y: auto; overscroll-behavior: contain; }
+  .pp h3 { font-family: var(--display); font-size: var(--fs-lg); font-weight: var(--w-semi); margin-bottom: var(--s1); }
+  .pp .lead { margin: var(--s2) 0 var(--s1); }
+  .pp .risk { font-weight: var(--w-semi); }
+  .pp .lbl { color: var(--muted); font-family: var(--mono); font-size: var(--fs-xs);
+    text-transform: uppercase; letter-spacing: 0.1em; }
+  .pp .when { color: var(--muted); font-size: var(--fs-sm); margin-top: var(--s1); }
+  .pp table { border-collapse: collapse; margin-top: var(--s2); width: 100%; }
+  .pp td { padding: var(--s1) var(--s3) var(--s1) 0; vertical-align: top; }
+  .pp td.v { font-family: var(--mono); font-size: var(--fs-sm); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pp .prov { color: var(--muted); font-size: var(--fs-xs); }
+  .pp img { max-width: 240px; display: block; margin-top: var(--s2);
+    border: 1px solid var(--hairline); border-radius: var(--r); }
+  .pp details { margin-top: var(--s3); }
+  .pp summary { cursor: pointer; color: var(--river); font-size: var(--fs-sm); }
+  .pp .badge { display: inline-block; margin-top: var(--s2); padding: var(--s1) var(--s3);
+    border-radius: 999px; font-size: var(--fs-xs); border: 1px solid var(--ctrl-border);
+    color: var(--ink-2); background: var(--page); }
+  .pp .badge.model { border-color: var(--river); color: var(--river-deep); background: var(--river-tint); }
+  .pp .official { background: var(--river-tint); border-left: 3px solid var(--river);
+    border-radius: 0 var(--r) var(--r) 0; padding: var(--s2) var(--s4); margin-top: var(--s3); }
+
+  #techpanel { display: none; position: absolute; top: 0; right: 0; bottom: 0;
+    width: min(460px, 94%); z-index: 1100; overflow-y: auto; background: var(--surface);
+    border-left: 1px solid var(--hairline); box-shadow: var(--shadow-2);
+    padding: var(--s5) var(--s5) var(--s6); font-size: var(--fs-sm); line-height: 1.55; }
+  body.tech #techpanel { display: block; }
+  #techpanel h2 { font-family: var(--display); font-size: var(--fs-lg); font-weight: var(--w-semi); margin-bottom: var(--s3); }
+  #techpanel h3 { font-family: var(--mono); font-size: var(--fs-xs); font-weight: var(--w-med);
+    margin: var(--s5) 0 var(--s2); text-transform: uppercase; letter-spacing: 0.1em; color: var(--river-deep); }
+  #techpanel table { border-collapse: collapse; width: 100%; }
+  #techpanel td { padding: var(--s1) var(--s3) var(--s1) 0; vertical-align: top;
+    border-bottom: 1px solid rgba(22,38,46,0.05); }
+  #techpanel .mono { font-family: var(--mono); font-size: var(--fs-xs); }
+  #techpanel a { color: var(--river); }
+  #techclose { position: absolute; top: var(--s4); right: var(--s5); }
+
+  footer { padding: var(--s2) var(--s5); background: var(--surface); color: var(--muted);
+    border-top: 1px solid var(--hairline); font-family: var(--mono); font-size: var(--fs-xs); }
+  #loaderr { display: none; margin: var(--s6) auto; max-width: 620px; padding: var(--s5);
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r); }
+  #loaderr code { font-family: var(--mono); background: var(--page); padding: var(--s1) var(--s2); border-radius: var(--r); }
+  #overlay { display: none; position: fixed; inset: 0; z-index: 3000;
+    background: rgba(22,38,46,0.5); align-items: center; justify-content: center; }
+  /* pure-prose paragraphs read justified */
+  #overlay .card p, #drawer .how, .banner span, .pp .lead,
+  #alerts .row > span, #alerts .muted, #techpanel > div { text-align: justify; }
+  #overlay .card { background: var(--surface); border-radius: var(--r);
+    padding: var(--s6) var(--s6); max-width: 480px; margin: var(--s5); box-shadow: var(--shadow-2);
+    max-height: min(88vh, 760px); overflow-y: auto; overscroll-behavior: contain; }
+  #overlay h2 { font-family: var(--display); font-size: var(--fs-xl); font-weight: var(--w-semi); margin-bottom: var(--s3); }
+  #overlay ul { margin: 0 0 var(--s5) var(--s5); line-height: 1.6; }
+  #overlay .hbtn { font-size: var(--fs-base); padding: var(--s3) var(--s5); }
+
+  @media (max-width: 600px) {
+    header { padding: var(--s2) var(--s4); gap: var(--s3); }
+    header h1 { font-size: var(--fs-lg); }
+    .mark { width: 24px; height: 24px; }
+    .chip { padding: 0 var(--s3); font-size: var(--fs-xs); }
+    .hbtn { font-size: var(--fs-sm); padding: var(--s2) var(--s3); min-height: 36px; }
+    .banner { font-size: var(--fs-sm); padding: var(--s2) var(--s4); gap: var(--s2); }
+    #alertbar { font-size: var(--fs-sm); padding: var(--s2) var(--s4); }
+    footer { font-size: 10px; padding: var(--s1) var(--s4); }
+    .leaflet-popup-content { max-height: 45vh; }
+  }
+  @media (max-width: 900px) {
+    header .sub { display: none; }
+    #mapwrap { flex-direction: column; }
+    #drawer { position: absolute; left: 0; right: 0; bottom: 0; width: auto; flex: none;
+      max-height: 46vh; border-right: 0; border-top: 1px solid var(--hairline);
+      border-radius: var(--r) var(--r) 0 0; z-index: 1000; box-shadow: var(--shadow-2); }
+    #drawerbtn, body.nodrawer #drawerbtn { display: inline-block; }
+    body.nodrawer .leaflet-top.leaflet-left { top: 48px; }
+    #watermark { top: 56px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#map">Skip to the map</a>
+<header>
+  <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <path d="M1 6c2.5-2.6 5-2.6 7.5 0S14 8.6 17 6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M1 12c2.5-2.6 5-2.6 7.5 0s5.5 2.6 8.5 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+  </svg></span>
+  <h1>JalDrishti</h1>
+  <span class="sub">Assam flood test map</span>
+  <span class="counts" id="counts" title="This map's own estimates - not official alerts"></span>
+  <span style="flex:1"></span>
+  <button class="hbtn" id="helpbtn" title="How to read this map">How to read?</button>
+  <button class="hbtn" id="techbtn" title="The check-our-work panel: exact numbers and methods, for technical readers">Technical view</button>
+</header>
+<div class="banner">
+  <span><b>This is a TEST version.</b> The colours are rough estimates - they are NOT official flood warnings.</span>
+  <span>For real flood alerts, follow ASDMA and your District Administration.</span>
+</div>
+
+<div id="alertbar" role="status"></div>
+
+<main id="mapwrap">
+  <aside id="drawer" aria-label="Map key and controls">
+    <div style="display:flex;justify-content:flex-end"><button class="hbtn" id="drawerclose" title="Hide this panel">✕ Hide</button></div>
+    <h2>Official alerts</h2>
+    <div id="alerts" class="muted quiet" aria-live="polite">Checking for official alerts…</div>
+
+    <h2>Village dots - our estimate</h2>
+    <div class="muted">The coloured dots are this map's own estimate for the
+    day ahead. They are NOT official alerts - those appear in the box above.</div>
+    <div class="row"><span class="sw" style="background:#1E8A4C"></span><span>✓ <b>GREEN</b> - no unusual signs right now</span></div>
+    <div class="row"><span class="sw" style="background:#DB9E1E"></span><span>▲ <b>YELLOW</b> - heavy rain upstream - worth watching</span></div>
+    <div class="row"><span class="sw" style="background:#C4402F"></span><span>● <b>RED</b> - strong signs of high water - estimate only</span></div>
+    <details><summary>How these colours are decided (test formula)</summary>
+      <div class="how">A computer adds up two simple checks: how much rain fell in the
+      hills upstream in the last two days, and how the nearest river compares
+      with the same time of year over the past ten years. Lots of rain or a high river turns a village
+      yellow; both together turn it red. For a few basins a tested river model
+      gives the colour instead (the popup says which). The cut-off numbers are
+      trial values picked by the builders - they have not been checked against
+      real floods, which is why this map is only a test.</div>
+    </details>
+    <div class="muted">Dashed ring = village position is approximate.</div>
+
+    <h2>River points - official gauge status</h2>
+    <div class="row"><span class="sw" style="background:#0F6B84"></span><span>below the official warning mark (arrow = trend)</span></div>
+    <div class="row"><span class="sw" style="background:#DB9E1E"></span><span>above the official <b>warning</b> mark (CWC gauge)</span></div>
+    <div class="row"><span class="sw" style="background:#C4402F"></span><span>above the official <b>danger</b> mark (CWC gauge)</span></div>
+
+    <h2>Look back at past floods</h2>
+    <div id="evsel">
+      <label><input type="radio" name="ev" value="none" checked> Off - today's view</label>
+      <label><input type="radio" name="ev" value="2022-06 Silchar"> Silchar, June 2022</label>
+      <label><input type="radio" name="ev" value="2026-07 Upper Assam"> Upper Assam, July 2026</label>
+    </div>
+    <details><summary>What the past-flood layers show</summary>
+      <div class="row"><span class="ln" style="border-color:#D96233"></span><span>radar picture area - during the flood</span></div>
+      <div class="row"><span class="ln" style="border-color:#8A9AA0;border-top-style:dashed"></span><span>radar picture area - before the flood</span></div>
+      <div class="row"><span class="fill"></span><span>water seen by the radar satellite</span></div>
+    </details>
+    <div id="replaybar">
+      <div class="sliderrow">
+        <input type="range" id="slider" min="0" max="107" value="0" disabled aria-label="Look back through 10 July to 5 August 2026">
+        <span id="slidertime">–</span>
+      </div>
+      <div class="sliderrow"><button class="hbtn" id="backnow">Back to now</button></div>
+      <div class="slidernote">Drag through 10 July – 5 August 2026. The heavy rain in the hills struck on 19 July.</div>
+      <div id="findings"></div>
+    </div>
+
+    <h2>Show on the map</h2>
+    <label><input type="checkbox" id="chk-villages" checked> Villages</label>
+    <label><input type="checkbox" id="chk-rivers" checked> River points</label>
+  </aside>
+
+  <div id="map"></div>
+  <button class="hbtn primary" id="drawerbtn">☰ Key &amp; past floods</button>
+  <div id="watermark" role="status">Showing PAST data from the July 2026 floods - this is a look-back test, not the current situation.</div>
+
+  <!-- TECH-START -->
+  <aside id="techpanel" aria-label="Technical view"></aside>
+  <!-- TECH-END -->
+</main>
+
+<div id="loaderr">
+  <b>Couldn’t load the map data.</b>
+  <p>Two common causes, each with a fix:</p>
+  <p>1. You opened the file directly from disk. The page must be served.
+  From the repo root run <code>python -m http.server 8000 --directory public</code>
+  and open <code>http://localhost:8000/</code>.</p>
+  <p>2. You are online but a data file or the map library failed to load -
+  the network may be briefly down or blocked. Reload the page to try again.</p>
+</div>
+<footer id="foot">Loading…</footer>
+
+<div id="overlay" role="dialog" aria-modal="true" aria-labelledby="ovtitle">
+  <div class="card">
+    <h2 id="ovtitle">How to read this map</h2>
+    <p style="margin-bottom:8px">This map shows three kinds of information. They are not the same thing:</p>
+    <p><b>1. Official alerts</b> (coloured strip at the top, and the first box in the side
+    panel): the government's own warnings, word for word. <b>Always follow these first.</b>
+    Each shows when it was issued - a river can crest and start falling while its
+    alert is still active.</p>
+    <p style="margin-top:8px"><b>2. River points</b> (round icons on the rivers): the
+    <b>official gauge</b> at that spot. Blue = below the official warning mark,
+    yellow = above warning, red = above danger. The arrow shows whether the measured
+    water is rising, steady or falling right now.</p>
+    <p style="margin-top:8px"><b>3. Village dots</b>: <b>this map's own estimate</b> for
+    the day ahead - green (no unusual signs), yellow (worth watching), red (strong
+    signs - estimate only). A dashed ring means the village position is approximate.
+    Tap any dot: a tag says whether the colour came from a tested river model
+    ("our forecast") or a simple trial formula ("our estimate") - and these can be wrong.
+    Each village takes its colour from the <b>nearest covered river</b>, so villages on
+    the same river share the same outlook - the colour is about the river's behaviour,
+    not about that one village.</p>
+    <p style="margin-top:8px"><b>Now or later?</b> Alerts speak about now and the next
+    hours (as issued). Gauge readings and their arrows are the latest measurement.
+    Village colours are our estimate for the <b>day ahead</b>. Lines like
+    "CWC expects…" are the official outlook for the coming days.</p>
+    <p style="margin-top:8px"><b>Whose word is it?</b> Alerts, gauge readings and the
+    warning/danger marks are the <b>Government of India's</b> (CWC, ASDMA, IMD). The
+    river-flow history behind our estimates comes from the <b>EU's official global
+    flood system (Copernicus)</b> and its radar satellites. The models that combine
+    them are <b>this project's own</b> - built with standard methods and tested
+    openly, but approved by no authority. That is why their colours are estimates.</p>
+    <p style="margin-top:8px;margin-bottom:14px">This is a <b>test</b>, not a warning service. Real flood warnings
+    come from <b>ASDMA, CWC and your District Administration</b> - never from this map.</p>
+    <button class="hbtn primary" id="gotit">Got it</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.22/leaflet-maplibre-gl.js"></script>
+<script>
+"use strict";
+const RISK_COLOR = { GREEN: "#1E8A4C", YELLOW: "#DB9E1E", RED: "#C4402F" };   // fills
+const RISK_TEXT  = { GREEN: "#17693A", YELLOW: "#7A5800", RED: "#C4402F" };   // text on white, all >= 4.5:1
+const RISK_ICON  = { GREEN: "✓", YELLOW: "▲", RED: "●" };
+const RISK_WORD  = { GREEN: "no unusual signs", YELLOW: "worth watching", RED: "strong signs - estimate only" };
+const TREND_ARROW = { rising: "↑", steady: "→", falling: "↓" };
+
+const esc = s => String(s).replace(/[&<>"']/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function humanTime(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  const now = new Date();
+  const t = d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  const yest = new Date(now); yest.setDate(now.getDate() - 1);
+  if (d.toDateString() === now.toDateString()) return `today, ${t}`;
+  if (d.toDateString() === yest.toDateString()) return `yesterday, ${t}`;
+  return d.toLocaleDateString([], { day: "numeric", month: "short", year: "numeric" }) + `, ${t}`;
+}
+function humanDate(iso) {
+  const d = new Date(iso);
+  return isNaN(d) ? String(iso) : d.toLocaleDateString([], { day: "numeric", month: "long", year: "numeric" });
+}
+
+/* ---------- plain-language lead sentences (default view) ---------- */
+
+function villageLead(v) {
+  const a = v.scores.rain_score.value, b = v.scores.discharge_score.value;
+  if (a >= 1 && b >= 1) return "Heavy rain fell in the hills upstream, and the river near this village is high for this month.";
+  if (a >= 1) return "Heavy rain fell in the hills upstream of this village in the last two days.";
+  if (b >= 1) return "The river near this village is running high compared with the past month.";
+  return "Nothing unusual in the rain or river readings near this village.";
+}
+
+function gaugeTrend(c) {
+  if (!c || c.degraded) return null;
+  const nowT = c.observed_trend_now && c.observed_trend_now.value;
+  const dayT = c.observed_trend_24h && c.observed_trend_24h.value;
+  if (!nowT && !dayT) return null;
+  return { word: nowT || dayT,                       // what the river is doing NOW
+           delta: nowT ? c.observed_trend_now.delta_m : c.observed_trend_24h.delta_m,
+           span: nowT ? "the last few hours" : "about a day",
+           dayWord: dayT, dayDelta: dayT ? c.observed_trend_24h.delta_m : null };
+}
+
+function riverLead(r) {
+  const t = r.trend_48h && r.trend_48h.value;
+  const pct = r.trend_48h && r.trend_48h.pct_change_48h;
+  const pl = r.discharge_percentile_30d.value;
+  let flow;
+  if (t === "rising") flow = `RISING - up ${Math.abs(pct)}% in the last 2 days`;
+  else if (t === "falling") flow = `FALLING - down ${Math.abs(pct)}% in the last 2 days`;
+  else if (t === "steady") flow = "STEADY - little change in the last 2 days";
+  else flow = "not available";
+  const level = pl >= 0.7 ? "higher than most of the past month"
+    : pl <= 0.3 ? "lower than most of the past month"
+    : "around the middle of its range for the past month";
+  return `Water flow here is ${flow}, and ${level}.`;
+}
+
+function humanIst(s) {
+  const d = new Date(String(s).replace(" ", "T") + "+05:30");
+  return isNaN(d) ? String(s) : humanTime(d.toISOString());
+}
+
+function officialStatus(c) {
+  if (!c || c.degraded || c.observed_level_m.value == null) return null;
+  const lvl = c.observed_level_m.value, warn = c.warning_level_m.value, danger = c.danger_level_m.value;
+  if (danger != null && lvl >= danger) return "above_danger";
+  if (warn != null && lvl >= warn) return "above_warning";
+  return "below_warning";
+}
+const OFFICIAL_COLOR = { above_danger: "#C4402F", above_warning: "#DB9E1E", below_warning: "#0F6B84" };
+
+// Official CWC gauge sentence (plain). c = station entry from cwc_stations.json
+function cwcPlain(c, short) {
+  if (!c || c.degraded || c.observed_level_m.value == null) return "";
+  const lvl = c.observed_level_m.value, warn = c.warning_level_m.value, danger = c.danger_level_m.value;
+  let where;
+  if (danger != null && lvl >= danger) where = `above the DANGER mark (${danger} m)`;
+  else if (warn != null && lvl >= warn) where = `above the warning mark (${warn} m), below the danger mark (${danger} m)`;
+  else where = `below the warning mark (${warn} m)`;
+  let fc = "";
+  if (c.cwc_forecast_crosses_warning_at_ist)
+    fc = ` CWC expects it to reach the warning mark around ${esc(humanIst(c.cwc_forecast_crosses_warning_at_ist))}.`;
+  else if (c.cwc_forecast_peak_m && c.cwc_forecast_peak_m.value != null)
+    fc = ` CWC expects it to stay below the warning mark for the next 7 days (highest expected ${c.cwc_forecast_peak_m.value} m).`;
+  return `<div class="official"><b>Official river gauge</b> at ${esc(c.plain_name)}: ${lvl} m - ${where}.${short ? "" : fc}
+    <div class="when">Reading ${esc(humanTime(c.observed_level_m.observed_at_utc))} · Source: Central Water Commission</div></div>`;
+}
+
+/* ---------- popups ---------- */
+
+function villagePopup(v, c) {
+  const r = v.risk;
+  const isModel = String(r.method || "").startsWith("model-v0-");
+  const badge = isModel
+    ? `<span class="badge model">our forecast - tested model</span>`
+    : `<span class="badge">our estimate - test formula</span>`;
+  const lead = isModel && r.basis ? r.basis : villageLead(v);
+  return `<div class="pp">
+    <h3>${esc(v.name)} <span class="lbl">${esc(v.district)}</span></h3>
+    <div class="risk" style="color:${RISK_TEXT[r.value]}">${RISK_ICON[r.value]} ${esc(r.value)} - ${esc(RISK_WORD[r.value])}</div>
+    <div>${badge}</div>
+    <div class="lead">${esc(lead)}</div>
+    <div class="when">Updated ${esc(humanTime(r.retrieved_at))}</div>
+    ${cwcPlain(c, true)}
+    <details><summary>Technical details</summary>${techVillage(v)}</details>
+  </div>`;
+}
+
+function riverPopup(r, c) {
+  const t = r.trend_48h || {};
+  const arrow = TREND_ARROW[t.value] || "";
+  return `<div class="pp">
+    <h3>${esc(r.river)} <span class="lbl">${esc(r.site)}</span></h3>
+    ${(() => {
+      const g = gaugeTrend(c);
+      if (!g) return `<div class="lead">${arrow ? `<b style="font-size:15px">${arrow}</b> ` : ""}${esc(riverLead(r))}</div>`;
+      const gArrow = TREND_ARROW[g.word] || "";
+      const dTxt = g.delta != null ? ` (${g.delta > 0 ? "up" : g.delta < 0 ? "down" : "change"} ${Math.abs(g.delta)} m in ${g.span})` : "";
+      const dayTxt = (g.dayWord && g.dayWord !== g.word)
+        ? ` Over the whole day it has been ${g.dayWord}${g.dayDelta != null ? ` (${g.dayDelta > 0 ? "+" : ""}${g.dayDelta} m)` : ""}.` : "";
+      const ours = t.value || null;
+      const clash = ours && ours !== g.word;
+      return `<div class="lead"><b style="font-size:15px">${gArrow}</b> The official river gauge here shows the water <b>${esc(g.word.toUpperCase())}</b> right now${esc(dTxt)}.${esc(dayTxt)}</div>
+        <div class="when">Our own estimate from free river data says "${esc(ours || "not available")}"${clash ? " - when the two disagree, trust the official gauge" : ""}.</div>`;
+    })()}
+    <div class="when">Updated ${esc(humanTime(r.discharge_latest_m3s.retrieved_at))}</div>
+    ${cwcPlain(c, false)}
+    <details><summary>Technical details</summary>${techRiver(r, c)}</details>
+  </div>`;
+}
+
+function scenePopup(p) {
+  const img = p.local_thumbnail
+    ? `<img src="${esc(p.local_thumbnail)}" alt="radar picture ${esc(p.scene_id)}">` : "";
+  return `<div class="pp">
+    <h3>Radar satellite pass <span class="lbl">${esc(p.event)}</span></h3>
+    <div class="lead">A radar satellite looked at this area on ${esc(humanDate(p.acquired))}. Radar can see flood water through clouds.</div>
+    ${img}
+    <details><summary>Technical details</summary>${techScene(p)}</details>
+  </div>`;
+}
+
+function extentPopup(p) {
+  return `<div class="pp">
+    <h3>Water seen by radar <span class="lbl">${esc(p.event)}</span></h3>
+    <div class="lead">The blue area looked like water to the radar satellite on ${esc(humanDate(p.acquired))}. Rivers and ponds that are always there are included too.</div>
+    <details><summary>Technical details</summary>${techExtent(p)}</details>
+  </div>`;
+}
+
+// TECH-STRINGS-START - everything below this line renders ONLY inside
+// collapsed "Technical details" blocks or the Technical view panel.
+const prov = pv => `<div class="prov">${esc(pv.class)} · ${esc(pv.source)} · ${esc(pv.retrieved_at)}</div>`;
+const row = (label, pv, valueText) =>
+  `<tr><td>${esc(label)}</td><td class="v">${esc(valueText)}</td></tr>
+   <tr><td colspan="2">${prov(pv)}</td></tr>`;
+
+function techVillage(v) {
+  const s = v.signals, r = v.risk;
+  const methodRow = String(r.method || "").startsWith("model-v0-")
+    ? `<div class="prov">method: ${esc(r.method)} · horizon ${esc(r.forecast_horizon)} ·
+       P(exceed q90)=${esc(r.p_exceed_h1)} ·
+       model card ${esc(String(r.model_card || "").replace("docs/", ""))}</div>
+       <div class="prov">${esc(r.target_caveat || "")}</div>`
+    : `<div class="prov">method: heuristic v0${r.model_degraded
+        ? " (model DEGRADED: " + esc(r.model_degraded) + ")" : ""}</div>`;
+  return `<div class="prov">${esc(r.label)}<br>${esc(r.class)} · ${esc(r.source)}</div>
+    ${methodRow}
+    <table>
+      ${row("Rain, trailing 24 h", s.rain_trailing_24h_mm, s.rain_trailing_24h_mm.value + " mm")}
+      ${row("Rain, trailing 48 h", s.rain_trailing_48h_mm, s.rain_trailing_48h_mm.value + " mm")}
+      ${row("Rain, next 24 h (forecast)", s.rain_forecast_next24h_mm, s.rain_forecast_next24h_mm.value + " mm")}
+      ${row("Discharge (nearest river pt)", s.discharge_latest_m3s,
+            s.discharge_latest_m3s.value + " m³/s · " + s.discharge_latest_m3s.river_point)}
+      ${row("Discharge percentile (30 d)", s.discharge_percentile_30d,
+            (100 * s.discharge_percentile_30d.value).toFixed(0) + " %")}
+    </table>
+    <div class="prov">Scores: rain ${esc(v.scores.rain_score.value)} + discharge ${esc(v.scores.discharge_score.value)} = ${esc(v.scores.combined.value)} (0–1 GREEN, 2 YELLOW, 3–4 RED)</div>
+    <div class="prov">Village coordinates: ${esc(v.location.coordinate_precision)} ·
+      ${esc(v.location.class)} · ${esc(v.location.source)}</div>`;
+}
+
+function techCwc(c) {
+  if (!c) return "";
+  if (c.degraded) return `<div class="prov">CWC gauge: DEGRADED - ${esc(c.error || "")}${c.stale ? " (showing stale values)" : ""}</div>`;
+  const o = c.observed_level_m, f = c.cwc_forecast_peak_m;
+  return `<table>
+      ${row("CWC observed level (WIMS)", o, o.value + " m @ " + o.observed_at_ist + " IST")}
+      ${row("CWC warning / danger / HFL", c.warning_level_m,
+            c.warning_level_m.value + " / " + c.danger_level_m.value + " / " + c.hfl_m.value + " m")}
+      ${row("Margin to warning", c.margin_to_warning_m, c.margin_to_warning_m.value + " m · " + c.condition)}
+      ${row("CWC 7-day forecast peak (AFF)", f, f.value + " m @ " + f.peak_at_ist + " IST (issued " + f.issued_at_ist + ")")}
+      ${c.cwc_discharge_m3s && c.cwc_discharge_m3s.value != null ? row("CWC-derived discharge (reference)", c.cwc_discharge_m3s, c.cwc_discharge_m3s.value + " m³/s") : ""}
+    </table>
+    <div class="prov">archive: ${esc(c.archive.observed_rows)} observed hourly rows since ${esc(c.archive.observed_first_utc)} · station ${esc(c.aff_station)} (${esc(c.river)}, ${esc(c.district)})</div>`;
+}
+
+function techRiver(r, c) {
+  const t = r.trend_48h || {};
+  return `<table>
+      ${row("Latest discharge", r.discharge_latest_m3s,
+            r.discharge_latest_m3s.value + " m³/s (" + r.discharge_latest_m3s.date + ")")}
+      ${t.value ? row("Trend, trailing 48 h", t,
+            `${t.value} (${t.pct_change_48h > 0 ? "+" : ""}${t.pct_change_48h} % · ${t.from_m3s} → ${t.to_m3s} m³/s)`) : ""}
+      ${row("Percentile in own 30 d", r.discharge_percentile_30d,
+            (100 * r.discharge_percentile_30d.value).toFixed(0) + " %")}
+      ${row("Peak forecast (ensemble median)", r.discharge_peak_forecast_m3s,
+            r.discharge_peak_forecast_m3s.value + " m³/s")}
+    </table>
+    <div class="prov">${esc(r.snap_note || "")}</div>
+    ${techCwc(c)}`;
+}
+
+function techScene(p) {
+  return `<div class="prov">${esc(p.acquired)} · ${esc(p.platform || "")} · ${esc(p.instrument_mode || "")} ·
+      ${esc(p.orbit_state || "")} orbit · ${esc((p.polarizations || []).join("+"))}</div>
+    <div class="prov">${esc(p.window_label)} · scene ${esc(p.scene_id)}</div>
+    <div class="prov">${esc(p.class)} · ${esc(p.source)} · ${esc(p.retrieved_at)}</div>`;
+}
+
+function techExtent(p) {
+  return `<div class="prov">scene ${esc(p.scene_id)} · acquired ${esc(p.acquired)}</div>
+    <div class="prov">method: ${esc(p.method)}</div>
+    <div class="prov">coverage: ${esc(p.coverage || "")} · water fraction of processed area: ${esc(p.water_fraction_of_aoi)}</div>
+    <div class="prov">${esc(p.note)}</div>
+    <div class="prov">${esc(p.class)} · ${esc(p.source)} · ${esc(p.retrieved_at)}</div>`;
+}
+
+function techFindings(rf) {
+  if (!rf) return "";
+  const t = rf.technical;
+  const li = (k, txt) => t[k] ? `<tr><td>${esc(txt)}</td><td class="v">${esc(t[k].value)}${esc(t[k].unit ? " " + t[k].unit : "")}</td></tr>
+    <tr><td colspan="2"><div class="prov">${esc(t[k].class)} · ${esc(t[k].source)}</div></td></tr>` : "";
+  return `<div class="prov">${esc(rf.disclaimer)}</div><table>
+    ${li("mon_first_spike", "Mon first month-beating 24 h rain (" + (t.mon_first_spike.time_utc || "") + ")")}
+    ${li("dikhow_surge", "Dikhow day-over-day surge (" + (t.dikhow_surge.date || "") + ")")}
+    ${li("villages_already_elevated_at_start", "Sivasagar villages already elevated at window start")}
+    ${li("villages_red_before_event", "Sivasagar villages RED before 19 July")}
+    ${li("window_non_green_pct", "Village-steps non-GREEN across window")}
+    ${li("control_week", "Control week (" + t.control_week.start + ".." + t.control_week.end + ") non-GREEN")}
+  </table>`;
+}
+
+function svgChart(mt) {
+  // small inline line chart: actual vs 1-day-ahead prediction vs threshold
+  const W = 300, H = 130, PAD = 6;
+  const act = mt.actual_m3s.map(x => x.value);
+  const pred = mt.predicted_h1_m3s.map(x => x.value);
+  const thr = mt.threshold_m3s.value;
+  const all = act.concat(pred).filter(v => v !== null).concat([thr]);
+  const lo = Math.min(...all) * 0.95, hi = Math.max(...all) * 1.05;
+  const x = i => PAD + (W - 2 * PAD) * i / (mt.dates.length - 1);
+  const y = v => H - PAD - (H - 2 * PAD) * (v - lo) / (hi - lo);
+  const line = (vals) => vals.map((v, i) => v === null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`)
+    .filter(Boolean).join(" ");
+  const evIdx = mt.dates.indexOf("2026-07-19");
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;background:#EDF1EF;border:1px solid rgba(22,38,46,0.28)" role="img" aria-label="Chart: actual river flow against the model prediction and threshold">
+    <line x1="${PAD}" y1="${y(thr)}" x2="${W - PAD}" y2="${y(thr)}" stroke="#C4402F" stroke-dasharray="3 3" stroke-width="1"/>
+    ${evIdx >= 0 ? `<line x1="${x(evIdx)}" y1="${PAD}" x2="${x(evIdx)}" y2="${H - PAD}" stroke="#D96233" stroke-width="1"/>` : ""}
+    <polyline points="${line(act)}" fill="none" stroke="#16262E" stroke-width="1.6"/>
+    <polyline points="${line(pred)}" fill="none" stroke="#0F6B84" stroke-width="1.3" stroke-dasharray="5 3"/>
+  </svg>
+  <div class="prov">black = GloFAS reanalysis (actual, modelled product); blue dashed =
+    model v0 prediction 1 d ahead; red dotted = q90 threshold ${esc(thr)} m³/s;
+    orange = 19 July. Window ${esc(mt.dates[0])} .. ${esc(mt.dates[mt.dates.length - 1])}.</div>`;
+}
+
+function techDrift(dr) {
+  if (!dr) return "";
+  if (dr.overall === "degraded") return `<div class="prov">input drift: DEGRADED - ${esc(dr.error || "")}</div>`;
+  const col = dr.overall === "in-range" ? "#17693A" : dr.overall === "extreme" ? "#7A5800" : "#C4402F";
+  const parts = Object.entries(dr.inputs || {}).map(([k, i]) =>
+    `${esc(k)} ${esc(i.value)} (${esc(i.seasonal_status)}, p${Math.round(100 * (i.seasonal_percentile || 0))} seasonal)`);
+  return `<div class="prov">input drift vs 2015-2025 envelope: <b style="color:${col}">${esc(dr.overall)}</b> - ${parts.join("; ")}.
+    Drift never changes a colour; it flags extrapolation.</div>`;
+}
+
+function techModel(vs, mts, drs) {
+  const statuses = vs.model_status || {};
+  return Object.entries(statuses).map(([b, ms]) => {
+    const mt = mts[b], dr = drs[b];
+    let events = "";
+    if (mt) {
+      events = mt.event_onsets.length ? mt.event_onsets.map(e =>
+        `onset ${esc(e.onset)}: ${e.lead_days === null ? "NOT predicted"
+          : e.lead_days > 0 ? esc(e.lead_days) + " d lead" : "0 d lead (alarm on onset day)"}`).join("; ")
+        : "no threshold exceedance in the 2026 window";
+    }
+    return `<h3>Model v0 - ${esc(ms.basin_label || b)}</h3>
+    <div>${esc(ms.model || "")}${ms.degraded ? " - <b>DEGRADED:</b> " + esc(ms.error || "") : ""}</div>
+    <div>Covers ${esc(ms.villages_covered)} villages (nearest river point = this basin's target);
+      others keep heuristic v0.1. Colour = P(exceed q90 threshold, 1 d), cutoffs 0.5 RED / 0.2 YELLOW.</div>
+    <div class="prov">${esc(ms.target_caveat || "")}</div>
+    ${techDrift(dr)}
+    <div><span class="mono">${esc(ms.model_card)}</span>
+      - per-season walk-forward metrics vs 3 baselines, ship decision, failure modes.</div>
+    ${mt ? `<div style="margin-top:6px"><b>2026 out-of-sample test</b> (fitted through 2025): ${events}.</div>${svgChart(mt)}
+      <div><span class="mono">${esc(ms.test_file)}</span></div>` : ""}`;
+  }).join("") + `<div class="prov">v1 attempt (rain-forecast feature) on the Dikhow FAILED its
+      pre-registered gate - <span class="mono">MODEL-CARD-dikhow-v1.md</span>.</div>`;
+
+}
+
+function techCwcPanel(cwc) {
+  if (!cwc) return `<h3>CWC official gauges</h3><div>cwc_stations.json not loaded</div>`;
+  const rows = cwc.stations.map(s => s.degraded
+    ? `<tr><td class="mono">${esc(s.aff_station)}</td><td colspan="4">DEGRADED - ${esc(s.error || "")}</td></tr>`
+    : `<tr><td class="mono">${esc(s.aff_station)}</td><td class="v">${esc(s.observed_level_m.value)} m</td>
+       <td class="v">${esc(s.warning_level_m.value)} / ${esc(s.danger_level_m.value)}</td>
+       <td>${esc(s.condition)}</td><td class="v">${esc(s.cwc_forecast_peak_m.value)} m</td>
+       <td class="v">${esc(s.archive.observed_rows)}${s.archive.missing_hours > 0 ? ` <b style="color:#C4402F">(-${esc(s.archive.missing_hours)} h)</b>` : ""}</td></tr>`).join("");
+  const ah = cwc.archive_health || {};
+  const healthLine = ah.stations_with_gaps && ah.stations_with_gaps.length
+    ? `<div class="prov" style="color:#C4402F">ARCHIVE GAPS: ${esc(ah.stations_with_gaps.join(", "))} (worst ${esc(ah.worst_missing_hours)} h missing) - check the keep-alive task</div>`
+    : `<div class="prov">archive continuous (no missing hours) · keep-alive healthy as of last fetch</div>`;
+  return `<h3>CWC official gauges (Track T2)</h3>
+    <div>${esc(cwc.attribution)}</div>
+    <div class="prov">${esc(cwc.fetch_policy)} · last fetch ${esc(cwc.last_fetch_at)} · WIMS level OBSERVED, AFF forecast FORECAST, marks OBSERVED (station metadata)</div>
+    ${healthLine}
+    <table><tr><td>station</td><td>level</td><td>warn/danger</td><td>condition</td><td>7d peak</td><td>archived h</td></tr>${rows}</table>
+    <div class="prov mono">cwc_stations.json</div>`;
+}
+
+function techScoreboard(sb) {
+  if (!sb) return "";
+  const fmt = m => m && m.status === "ok" ? `${esc(m.n)} / ${esc(m.value)} / ${esc(m.skill_vs_persistence)}` : `${esc((m || {}).n || 0)} / – / –`;
+  const rows = Object.entries(sb.sources.cwc_aff || {}).map(([st, v]) =>
+    `<tr><td class="mono">${esc(v.station)}</td><td class="v">${fmt(v.leads["6h"])}</td><td class="v">${fmt(v.leads["24h"])}</td><td class="v">${fmt(v.leads["72h"])}</td></tr>`).join("");
+  return `<h3>Forecast scoreboard (ready-made forecasts vs observed)</h3>
+    <div class="prov">${esc(sb.note)}</div>
+    <div>CWC 7-day forecast vs CWC observed level - n / MAE (m) / skill vs persistence:</div>
+    <table><tr><td>station</td><td>6 h</td><td>24 h</td><td>72 h</td></tr>${rows}</table>
+    <div class="prov"><span class="mono">FORECAST-SCOREBOARD.md</span> (all leads, GloFAS, event stats)</div>`;
+}
+
+function techPanel(docs) {
+  const { vs, rs, s1, xst, rf, mt, cwc, dr, mts, drs, sb } = docs;
+  const payloads = ["villages_status.json", "rivers_status.json", "s1_footprints.geojson",
+    "replay_2026-07.json", "replay_findings.json", "flood_extents_status.json",
+    "flood_extent_2022.geojson", "flood_extent_2026.geojson",
+    "model_2026_test.json", "cwc_stations.json", "model_drift.json",
+    "forecast_scoreboard.json"];
+  const riverRows = rs.rivers.map(r => `<tr>
+      <td class="mono">${esc(r.id)}</td>
+      <td class="v">${esc(r.discharge_latest_m3s.value)} m³/s</td>
+      <td class="v">${esc((100 * r.discharge_percentile_30d.value).toFixed(0))}%</td>
+      <td>${esc(r.trend_48h && r.trend_48h.value || "n/a")}
+          (${esc(r.trend_48h && r.trend_48h.pct_change_48h)}%)</td>
+    </tr>`).join("");
+  const extRows = Object.entries(xst && xst.events || {}).map(([ev, s]) =>
+    `<div class="mono">${esc(ev)}: <b>${esc(s.status)}</b>${s.error ? " - " + esc(s.error) : ""}
+     ${s.scene_id ? " - scene " + esc(s.scene_id) : ""}</div>`).join("");
+  return `<h2>Technical view</h2>
+    <div style="margin-bottom:8px">This panel is for people who want to <b>check our
+    work</b> - students, engineers, officials. It shows the exact numbers, methods
+    and data trails behind the map, in technical language on purpose. Everything
+    needed for everyday use is on the map itself; nothing safety-important lives
+    only here.</div>
+    <div>${esc(vs.disclaimer)}</div>
+    <h3>Pipeline</h3>
+    <div>Generated ${esc(vs.generated_at)} · ${vs.villages.length} villages ·
+      ${rs.rivers.length} river points · ${s1.features.length} Sentinel-1 scenes.</div>
+    <div>Heuristic: ${esc(vs.heuristic)}</div>
+    ${techModel(vs, mts || {}, drs || {})}
+    ${techCwcPanel(cwc)}
+    ${techScoreboard(sb)}
+    <div>Provenance rule: every exported numeric value carries
+      <span class="mono">class</span> (OBSERVED | FORECAST | SIMULATED),
+      <span class="mono">source</span> and <span class="mono">retrieved_at</span>;
+      enforced by <span class="mono">backend/check_provenance.py</span>.
+      Risk values are SIMULATED by definition (placeholder heuristic, see HEURISTIC.md).</div>
+    <h3>Rainfall</h3>
+    <div>Open-Meteo forecast product: past hours are model analysis (class OBSERVED),
+      future hours model forecast (class FORECAST). 13 grid points, no gauge data.</div>
+    <h3>Discharge (GloFAS reanalysis, snapped river cells)</h3>
+    <table>${riverRows}</table>
+    <h3>July 2026 replay</h3>
+    <div>Archived ERA5-family rainfall (+ Mon town) and GloFAS reanalysis re-run
+      through the unchanged v0 heuristic at 6-hour steps, 10 Jul–5 Aug 2026.
+      Risk classes SIMULATED with replay:true; inputs OBSERVED.
+      Findings: <span class="mono">REPLAY-FINDINGS.md</span>.</div>
+    ${rf ? techFindings(rf) : ""}
+    <h3>Sentinel-1 water extents</h3>
+    ${extRows || "<div>status file not loaded</div>"}
+    <h3>Payloads</h3>
+    <div>${payloads.map(p => `<span class="mono">${p}</span>`).join("<br>")}</div>`;
+}
+// TECH-STRINGS-END
+
+/* ---------- boot ---------- */
+
+const getJson = u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); });
+const tryJson = u => getJson(u).catch(() => null);
+
+const state = {
+  overlayDismissed: false,   // page variable only, by design (no storage)
+  event: "none",
+  replay: null,              // loaded replay doc
+  replayIdx: null,           // null = LIVE
+  markers: new Map(),        // village key -> circleMarker
+  liveRisk: new Map(),       // village key -> live colour
+  extLayers: {},             // event -> Leaflet layer (when shipped)
+  s1Layers: {},              // event -> footprint layer
+};
+const vkey = v => `${v.name}|${v.district}`;
+
+async function boot() {
+  const [vs, rs, s1] = await Promise.all([
+    getJson("villages_status.json"), getJson("rivers_status.json"),
+    getJson("s1_footprints.geojson")]);
+  const [xst, rf, cwc, sb, sa] = await Promise.all([
+    tryJson("flood_extents_status.json"), tryJson("replay_findings.json"), tryJson("cwc_stations.json"),
+    tryJson("forecast_scoreboard.json"), tryJson("sachet_alerts.json")]);
+  const basins = Object.entries(vs.model_status || {});
+  const mts = {}, drs = {};
+  await Promise.all(basins.map(async ([b, ms]) => {
+    mts[b] = await tryJson(ms.test_file); drs[b] = await tryJson(ms.drift_file);
+  }));
+  const mt = mts.dikhow || null, dr = drs.dikhow || null;
+  const alertsBox = document.getElementById("alerts");
+  const alertBar = document.getElementById("alertbar");
+  const acts = (sa && sa.active_alerts) || [];
+  const isFlood = a => /flood|river|inundat/i.test(a.event.value + " " + a.headline.value);
+  const floods = acts.filter(isFlood), othersA = acts.filter(a => !isFlood(a));
+  const actsSorted = floods.concat(othersA);   // flood alerts listed first
+  if (acts.length && alertBar) {
+    const worst = acts.some(a => /severe|extreme/i.test(a.severity.value));
+    alertBar.className = worst ? "severe" : "";
+    alertBar.style.display = "block";
+    const parts = [];
+    if (floods.length) parts.push(floods.length + " flood alert" + (floods.length > 1 ? "s" : ""));
+    if (othersA.length) parts.push(othersA.length + " other weather alert" + (othersA.length > 1 ? "s" : ""));
+    alertBar.textContent = "\u26a0 Official: " + parts.join(" and ") +
+      " active for Assam right now \u2014 details in the side panel. Always follow official alerts first.";
+  }
+  if (!sa) {
+    alertsBox.textContent = "Official alert feed not loaded this time.";
+  } else if (!acts.length) {
+    alertsBox.textContent = "No official alerts for these rivers right now.";
+  } else {
+    alertsBox.className = "";
+    alertsBox.innerHTML = actsSorted.map(a =>
+      `<div class="row" style="align-items:baseline"><span class="sw" style="background:${
+         /severe|extreme/i.test(a.severity.value) ? "#C4402F" : "#DB9E1E"}"></span>` +
+      `<span><b>${esc(a.event.value)}</b> - ${esc(a.headline.value)}` +
+      `<span class="muted"> (issued by ${esc(a.sender.value)}, ${esc(humanTime(a.sent.value))})</span></span></div>`).join("") +
+      ((sa.uncovered_alert_rivers || []).length
+        ? `<div class="muted"><b>Note:</b> some alerts are for rivers not yet shown on this map: ${esc(sa.uncovered_alert_rivers.join(", "))}. We add rivers as data allows.</div>` : "") +
+      `<div class="muted">These come from the government's own alert system - always follow them first.
+       An alert describes the river at the time it was issued; the river points on the map
+       show the latest gauge reading, so a river may have crested and started falling
+       while its alert is still active.</div>`;
+  }
+  const cwcByRiver = {};
+  ((cwc && cwc.stations) || []).forEach(s => { if (s.poc_river) cwcByRiver[s.poc_river] = s; });
+
+  const map = L.map("map", { zoomSnap: 0.5 });
+  // Basemap: smooth vector tiles (OpenFreeMap - free, no key, no account),
+  // with the old raster tiles as an automatic fallback if GL cannot start.
+  let glOk = false;
+  if (typeof L.maplibreGL === "function") {
+    try {
+      L.maplibreGL({ style: "https://tiles.openfreemap.org/styles/liberty" }).addTo(map);
+      glOk = true;
+    } catch (e) { glOk = false; }
+  }
+  if (!glOk) {
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 17, attribution: "&copy; OpenStreetMap contributors" }).addTo(map);
+  } else if (map.attributionControl) {
+    map.attributionControl.addAttribution("&copy; OpenFreeMap &copy; OpenMapTiles &copy; OpenStreetMap contributors");
+  }
+
+  // villages
+  const villageMarkers = vs.villages.map(v => {
+    const approx = v.location.coordinate_precision !== "osm_node";
+    const m = L.circleMarker([v.location.lat, v.location.lon], {
+      radius: 7, weight: 2, color: "#fcfcfb", dashArray: approx ? "2 3" : null,
+      fillColor: RISK_COLOR[v.risk.value] || "#8A9AA0", fillOpacity: 0.95,
+    }).bindTooltip(`${v.name} - ${RISK_ICON[v.risk.value]} ${v.risk.value}`)
+      .bindPopup(villagePopup(v, cwcByRiver[((v.inputs_used && v.inputs_used.river_point) || {}).id]), { maxWidth: 340 });
+    state.markers.set(vkey(v), m);
+    state.liveRisk.set(vkey(v), v.risk.value);
+    return m;
+  });
+  const villages = L.layerGroup(villageMarkers);
+
+  // rivers with rate-of-rise arrows
+  const rivers = L.layerGroup(rs.rivers.map(r => {
+    const t = r.trend_48h && r.trend_48h.value;
+    const c = cwcByRiver[r.id];
+    const gT = gaugeTrend(c);
+    const arrow = TREND_ARROW[gT ? gT.word : t] || "";
+    const bg = OFFICIAL_COLOR[officialStatus(c)] || "#0F6B84";
+    const icon = L.divIcon({
+      className: "",
+      html: `<div style="width:22px;height:22px;border-radius:50%;background:${bg};
+        border:2px solid #fcfcfb;box-shadow:0 0 0 1px rgba(11,11,11,0.15);
+        color:#fff;font:600 13px/18px system-ui;text-align:center">${arrow}</div>`,
+      iconSize: [22, 22], iconAnchor: [11, 11],
+    });
+    const g = gaugeTrend(c);
+    const gauge = c && !c.degraded ? ` · gauge ${c.observed_level_m.value} m` : "";
+    const trendTxt = g ? `official gauge ${g.word}` : (t || "no trend");
+    return L.marker([r.lat, r.lon], { icon })
+      .bindTooltip(`${r.river} - ${trendTxt}${gauge}`)
+      .bindPopup(riverPopup(r, c), { maxWidth: 360 });
+  }));
+
+  // S1 footprints per event
+  const evs = ["2022-06 Silchar", "2026-07 Upper Assam"];
+  for (const ev of evs) {
+    state.s1Layers[ev] = L.geoJSON(
+      { type: "FeatureCollection",
+        features: s1.features.filter(f => f.properties.event === ev) }, {
+      style: f => f.properties.window === "peak_flood"
+        ? { color: "#D96233", weight: 2.5, fillOpacity: 0.10 }
+        : { color: "#8A9AA0", weight: 1.5, dashArray: "4 4", fillOpacity: 0.04 },
+      onEachFeature: (f, l) => l.bindPopup(scenePopup(f.properties), { maxWidth: 300 }),
+    });
+  }
+
+  // keep a popup fully in view when sections inside it expand or collapse
+  if (map.on) map.on("popupopen", e => {
+    const el = e.popup && e.popup.getElement && e.popup.getElement();
+    if (!el || !el.querySelectorAll) return;
+    el.querySelectorAll("details").forEach(d =>
+      d.addEventListener("toggle", () => { if (e.popup.update) e.popup.update(); }));
+  });
+
+  villages.addTo(map); rivers.addTo(map);
+  document.getElementById("chk-villages").addEventListener("change", e =>
+    e.target.checked ? villages.addTo(map) : map.removeLayer(villages));
+  document.getElementById("chk-rivers").addEventListener("change", e =>
+    e.target.checked ? rivers.addTo(map) : map.removeLayer(rivers));
+
+  map.fitBounds(L.latLngBounds(vs.villages.map(v => [v.location.lat, v.location.lon])).pad(0.15));
+
+  // look-back selector (in the drawer)
+  document.getElementById("evsel").addEventListener("change", e => {
+    if (e.target && e.target.name === "ev") {
+      openDrawer(true);
+      selectEvent(e.target.value, map, xst, rf);
+    }
+  });
+
+  // drawer: open on wide screens, closed (bottom-sheet button) on narrow ones
+  const openDrawer = open => {
+    document.body.classList.toggle("nodrawer", !open);
+    setTimeout(() => map.invalidateSize(), 60);
+  };
+  document.getElementById("drawerbtn").addEventListener("click", () => openDrawer(true));
+  document.getElementById("drawerclose").addEventListener("click", () => openDrawer(false));
+  if (typeof window.innerWidth === "number" && window.innerWidth < 900) openDrawer(false);
+
+  // header counts + footer
+  window._liveCounts = vs.counts;
+  setCounts(vs.counts);
+  document.getElementById("foot").textContent =
+    `Updated ${humanTime(vs.generated_at)} · ${vs.villages.length} villages · ` +
+    `${rs.rivers.length} river points · rain and river numbers come from free public sources · ` +
+    `this is a test map, not a warning service` +
+    (cwc ? ` · official river gauge readings: Central Water Commission` : ``);
+
+  // technical panel
+  document.getElementById("techpanel").innerHTML =
+    `<button class="hbtn" id="techclose">✕ Close</button>` + techPanel({ vs, rs, s1, xst, rf, mt, cwc, dr, mts, drs, sb });
+  const toggleTech = () => {
+    document.body.classList.toggle("tech");
+    document.getElementById("techbtn").classList.toggle("active");
+    setTimeout(() => map.invalidateSize(), 60);
+  };
+  document.getElementById("techbtn").addEventListener("click", toggleTech);
+  document.getElementById("techclose").addEventListener("click", toggleTech);
+
+  // findings card content (plain part + technical toggle)
+  if (rf && rf.plain) {
+    const p = rf.plain;
+    document.getElementById("findings").innerHTML = `
+      <details>
+        <summary class="fh">What we found when we replayed July 2026 - tap to read</summary>
+        <div class="fbody">
+          <div>${esc(p.signal)} ${esc(p.lead)}</div>
+          <div>${esc(p.control)} ${esc(p.caveat)}</div>
+          ${p.model ? `<div>${esc(p.model)}</div>` : ""}
+          <details><summary>Technical details</summary>${techFindings(rf)}</details>
+        </div>
+      </details>`;
+  }
+
+  // replay slider wiring
+  document.getElementById("slider").addEventListener("input", e =>
+    setReplay(parseInt(e.target.value, 10)));
+  document.getElementById("backnow").addEventListener("click", () => setReplay(null));
+
+  // first-visit overlay (page-variable memory only)
+  const ov = document.getElementById("overlay");
+  const gotit = document.getElementById("gotit");
+  const helpbtn = document.getElementById("helpbtn");
+  const showOv = () => { ov.style.display = "flex";
+    const card = ov.querySelector && ov.querySelector(".card");
+    if (card) card.scrollTop = 0;                       // always open at the top
+    if (gotit.focus) gotit.focus({ preventScroll: true }); };
+  const hideOv = () => { ov.style.display = "none"; state.overlayDismissed = true;
+    if (helpbtn.focus) helpbtn.focus(); };
+  gotit.addEventListener("click", hideOv);
+  helpbtn.addEventListener("click", showOv);
+  if (ov.addEventListener) {
+    ov.addEventListener("click", e => { if (e.target === ov) hideOv(); });
+    if (typeof document.addEventListener === "function")
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && ov.style.display === "flex") hideOv();
+      });
+  }
+  if (!state.overlayDismissed) showOv();
+}
+
+function setCounts(c) {
+  document.getElementById("counts").innerHTML =
+    Object.entries(RISK_COLOR).map(([k, col]) =>
+      `<span class="chip"><span class="dot" style="background:${col}"></span>${RISK_ICON[k]} ${k} ${c[k] || 0}</span>`).join("");
+}
+
+async function selectEvent(ev, map, xst, rf) {
+  // remove previous event layers
+  for (const key of Object.keys(state.s1Layers)) map.removeLayer(state.s1Layers[key]);
+  for (const key of Object.keys(state.extLayers)) map.removeLayer(state.extLayers[key]);
+  state.event = ev;
+  const bar = document.getElementById("replaybar");
+
+  if (ev === "none") {
+    bar.style.display = "none";
+    setReplay(null);
+    return;
+  }
+  state.s1Layers[ev].addTo(map);
+
+  // water extent, only if Step B shipped it for this event
+  const st = xst && xst.events && xst.events[ev];
+  if (st && st.status === "shipped" && st.file) {
+    if (!state.extLayers[ev]) {
+      const gj = await tryJson(st.file);
+      if (gj) {
+        state.extLayers[ev] = L.geoJSON(gj, {
+          style: { color: "#0F6B84", weight: 0, fillColor: "#0F6B84", fillOpacity: 0.35 },
+          onEachFeature: (f, l) => l.bindPopup(extentPopup(f.properties), { maxWidth: 320 }),
+        });
+      }
+    }
+    if (state.extLayers[ev]) state.extLayers[ev].addTo(map);
+  }
+
+  if (ev === "2026-07 Upper Assam") {
+    bar.style.display = "block";
+    if (!state.replay) {
+      document.getElementById("slidertime").textContent = "loading past data…";
+      state.replay = await tryJson("replay_2026-07.json");
+      if (state.replay) {
+        const s = document.getElementById("slider");
+        s.max = state.replay.times.length - 1;
+        s.disabled = false;
+        document.getElementById("slidertime").textContent = "drag to look back →";
+      } else {
+        document.getElementById("slidertime").textContent = "past data not available";
+      }
+    }
+  } else {
+    bar.style.display = "none";
+    setReplay(null);
+  }
+}
+
+function setReplay(idx) {
+  const wm = document.getElementById("watermark");
+  if (idx === null || !state.replay) {
+    state.replayIdx = null;
+    wm.style.display = "none";
+    for (const [k, m] of state.markers) {
+      const cls = state.liveRisk.get(k);
+      m.setStyle({ fillColor: RISK_COLOR[cls] || "#8A9AA0" });
+      m.setTooltipContent(`${k.split("|")[0]} - ${RISK_ICON[cls]} ${cls}`);
+    }
+    if (window._liveCounts) setCounts(window._liveCounts);
+    document.getElementById("slidertime").textContent =
+      state.replay ? "drag to look back →" : "–";
+    return;
+  }
+  state.replayIdx = idx;
+  wm.style.display = "block";
+  const t = state.replay.times[idx];
+  document.getElementById("slidertime").textContent =
+    new Date(t.replace("Z", ":00Z")).toLocaleString([], {
+      day: "numeric", month: "short", hour: "numeric", minute: "2-digit" });
+  for (const v of state.replay.villages) {
+    const m = state.markers.get(`${v.name}|${v.district}`);
+    if (!m) continue;
+    const cls = v.steps[idx] ? v.steps[idx].risk.value : null;
+    m.setStyle({ fillColor: RISK_COLOR[cls] || "#8A9AA0" });
+    m.setTooltipContent(`${v.name} - past: ${RISK_ICON[cls] || ""} ${cls || "?"}`);
+  }
+  setCounts(state.replay.step_counts[idx]);
+}
+
+boot().catch(err => {
+  console.error(err);
+  document.getElementById("map").style.display = "none";
+  document.getElementById("loaderr").style.display = "block";
+  document.getElementById("foot").textContent = "Data not loaded.";
+});
+</script>
+</body>
+</html>

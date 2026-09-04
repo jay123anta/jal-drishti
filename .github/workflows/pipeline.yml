@@ -1,0 +1,83 @@
+name: Scheduled pipeline (cloud)
+
+# Runs the full JalDrishti pipeline in GitHub's cloud every 3 hours:
+# fetch live data, run every basin model, run both honesty gates, commit
+# the refreshed data, and republish the Pages site. If any pipeline step
+# or gate fails, nothing is committed or published (broken data can
+# never reach the public map).
+#
+# Note: pushes made with the workflow token do not trigger other
+# workflows, so this workflow deploys Pages itself after pushing.
+
+# Cron disabled 2026-09-03: Indian government data sources respond too
+# slowly to GitHub's cloud IPs (two runs stalled ~45 min). The laptop
+# keep-alive is the engine again and pushes after every run; this
+# workflow stays available for manual diagnosis and a future hybrid.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline (all fetches, all models, both gates)
+        env:
+          CDSE_USERNAME: ${{ secrets.CDSE_USERNAME }}
+          CDSE_PASSWORD: ${{ secrets.CDSE_PASSWORD }}
+          PIPELINE_STEP_TIMEOUT: "600"
+        run: |
+          set -o pipefail
+          python -u backend/run_pipeline.py 2>&1 | tee pipeline_run.log
+
+      - name: Show pipeline log tail (runs even on cancel or failure)
+        if: always()
+        run: |
+          echo "=== last 60 lines of pipeline output ==="
+          tail -60 pipeline_run.log || echo "(no log)"
+          rm -f pipeline_run.log
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "data: scheduled refresh (cloud pipeline)"
+            git pull --rebase origin main || true
+            git push origin main
+          fi
+
+      - name: Keep developer documents out of the published site
+        run: rm -f public/*.md
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - id: deployment
+        uses: actions/deploy-pages@v4

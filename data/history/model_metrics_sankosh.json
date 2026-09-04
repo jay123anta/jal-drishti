@@ -1,0 +1,193 @@
+{
+ "generated_at": "2026-09-04T10:08:43Z",
+ "basin": "sankosh",
+ "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis — a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
+ "model": "sklearn HistGradientBoostingRegressor",
+ "params": {
+  "max_iter": 400,
+  "learning_rate": 0.05,
+  "early_stopping": false,
+  "random_state": 0
+ },
+ "features": [
+  "q",
+  "q_lag1",
+  "q_lag2",
+  "dq",
+  "dq_lag1",
+  "trend48_pct",
+  "rain_6h",
+  "rain_12h",
+  "rain_24h",
+  "rain_48h",
+  "rain_14d",
+  "rain_30d",
+  "rain_24h_lag1",
+  "doy_sin",
+  "doy_cos",
+  "qup_sankosh_border",
+  "dqup_sankosh_border"
+ ],
+ "best_baseline": {
+  "key": "B1_persistence",
+  "mean_mae_B1": 178.5,
+  "mean_mae_B3": 178.9
+ },
+ "folds": [
+  {
+   "train_years": "2015-2021",
+   "validation_season": "monsoon 2022",
+   "threshold_q90_train_m3s": 3807.0,
+   "horizons": {
+    "h1": {
+     "n_days": 122,
+     "mae": 223.2,
+     "rmse": 357.3,
+     "mae_persistence": 218.2,
+     "skill_vs_persistence": -0.023,
+     "threshold_m3s": 3807.0,
+     "n_exceed_days": 11,
+     "n_alarm_days": 8,
+     "n_events": 3,
+     "n_detected": 3,
+     "pod_days": 0.727,
+     "far_days": 0.0,
+     "mean_lead_days": 0.33
+    },
+    "h2": {
+     "n_days": 122,
+     "mae": 450.7,
+     "rmse": 646.5,
+     "mae_persistence": 362.2,
+     "skill_vs_persistence": -0.244,
+     "threshold_m3s": 3807.0,
+     "n_exceed_days": 11,
+     "n_alarm_days": 4,
+     "n_events": 3,
+     "n_detected": 2,
+     "pod_days": 0.182,
+     "far_days": 0.5,
+     "mean_lead_days": 0.0
+    }
+   }
+  },
+  {
+   "train_years": "2015-2022",
+   "validation_season": "monsoon 2023",
+   "threshold_q90_train_m3s": 3774.8,
+   "horizons": {
+    "h1": {
+     "n_days": 122,
+     "mae": 210.5,
+     "rmse": 353.0,
+     "mae_persistence": 227.2,
+     "skill_vs_persistence": 0.073,
+     "threshold_m3s": 3774.8,
+     "n_exceed_days": 10,
+     "n_alarm_days": 8,
+     "n_events": 3,
+     "n_detected": 3,
+     "pod_days": 0.7,
+     "far_days": 0.125,
+     "mean_lead_days": 0.33
+    },
+    "h2": {
+     "n_days": 122,
+     "mae": 356.3,
+     "rmse": 579.2,
+     "mae_persistence": 382.1,
+     "skill_vs_persistence": 0.067,
+     "threshold_m3s": 3774.8,
+     "n_exceed_days": 10,
+     "n_alarm_days": 8,
+     "n_events": 3,
+     "n_detected": 3,
+     "pod_days": 0.4,
+     "far_days": 0.5,
+     "mean_lead_days": 0.33
+    }
+   }
+  },
+  {
+   "train_years": "2015-2023",
+   "validation_season": "monsoon 2024",
+   "threshold_q90_train_m3s": 3740.1,
+   "horizons": {
+    "h1": {
+     "n_days": 122,
+     "mae": 143.9,
+     "rmse": 206.0,
+     "mae_persistence": 143.9,
+     "skill_vs_persistence": -0.0,
+     "threshold_m3s": 3740.1,
+     "n_exceed_days": 1,
+     "n_alarm_days": 2,
+     "n_events": 1,
+     "n_detected": 1,
+     "pod_days": 1.0,
+     "far_days": 0.5,
+     "mean_lead_days": 1.0
+    },
+    "h2": {
+     "n_days": 122,
+     "mae": 227.1,
+     "rmse": 301.9,
+     "mae_persistence": 233.2,
+     "skill_vs_persistence": 0.026,
+     "threshold_m3s": 3740.1,
+     "n_exceed_days": 1,
+     "n_alarm_days": 2,
+     "n_events": 1,
+     "n_detected": 1,
+     "pod_days": 1.0,
+     "far_days": 0.5,
+     "mean_lead_days": 2.0
+    }
+   }
+  },
+  {
+   "train_years": "2015-2024",
+   "validation_season": "monsoon 2025",
+   "threshold_q90_train_m3s": 3657.5,
+   "horizons": {
+    "h1": {
+     "n_days": 122,
+     "mae": 134.8,
+     "rmse": 219.9,
+     "mae_persistence": 124.8,
+     "skill_vs_persistence": -0.08,
+     "threshold_m3s": 3657.5,
+     "n_exceed_days": 0,
+     "n_alarm_days": 1,
+     "n_events": 0,
+     "n_detected": 0,
+     "pod_days": null,
+     "far_days": 1.0,
+     "mean_lead_days": null
+    },
+    "h2": {
+     "n_days": 122,
+     "mae": 280.7,
+     "rmse": 371.3,
+     "mae_persistence": 208.7,
+     "skill_vs_persistence": -0.345,
+     "threshold_m3s": 3657.5,
+     "n_exceed_days": 0,
+     "n_alarm_days": 0,
+     "n_events": 0,
+     "n_detected": 0,
+     "pod_days": null,
+     "far_days": null,
+     "mean_lead_days": null
+    }
+   }
+  }
+ ],
+ "ship_decision": {
+  "wins_h1_vs_best_baseline": 1,
+  "of_folds": 4,
+  "best_baseline": "B1_persistence",
+  "shipped": "B1_persistence",
+  "statement": "trained model beats the best baseline (B1_persistence, mean MAE 178.5) on monsoon MAE at h=1 in 1/4 held-out seasons -> SHIP B1_persistence as model v0 (an honest simple model beats a dressed-up failure)"
+ }
+}

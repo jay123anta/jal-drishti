@@ -1,0 +1,1202 @@
+{
+ "type": "FeatureCollection",
+ "note": "Real Sentinel-1 GRD acquisitions for two flood events: the June 2022 Barak flood over Cachar/Silchar, and the July 2026 Upper Assam floods that followed the 19 July 2026 cloudburst in Mon district, Nagaland (a real disaster with loss of life; treated factually). Footprints + metadata from the public CDSE STAC catalogue; each feature carries an 'event' tag. Quicklook thumbnails are public and cached locally under public/s1_thumbs/. Water-extent derivation from pixel data is backend/s1_water_extent.py (Step B2); nothing is fabricated here.",
+ "generated_at": "2026-09-04T10:13:29Z",
+ "events": [
+  {
+   "event": "2022-06 Silchar",
+   "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+   "bbox_searched": [
+    92.5,
+    24.6,
+    93.0,
+    25.0
+   ]
+  },
+  {
+   "event": "2026-07 Upper Assam",
+   "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+   "bbox_searched": [
+    94.0,
+    26.5,
+    95.2,
+    27.2
+   ]
+  }
+ ],
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       93.235802,
+       23.730183
+      ],
+      [
+       90.760925,
+       24.152542
+      ],
+      [
+       91.054398,
+       25.658411
+      ],
+      [
+       93.559944,
+       25.239084
+      ],
+      [
+       93.235802,
+       23.730183
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG",
+    "event": "2022-06 Silchar",
+    "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+    "window": "pre_flood",
+    "window_label": "pre-flood (mid-May 2022)",
+    "acquired": "2022-05-25T23:47:41.422584Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(0793bbb9-88c1-4c85-86db-851e70b3e90d)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       90.892876,
+       25.070839
+      ],
+      [
+       93.416771,
+       25.4942
+      ],
+      [
+       93.703957,
+       23.987463
+      ],
+      [
+       91.210709,
+       23.560917
+      ],
+      [
+       90.892876,
+       25.070839
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG",
+    "event": "2022-06 Silchar",
+    "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+    "window": "pre_flood",
+    "window_label": "pre-flood (mid-May 2022)",
+    "acquired": "2022-05-23T11:56:43.475501Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(547d5d6d-4128-47ce-af53-8f3bf6a2b8d1)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       95.23967,
+       23.439779
+      ],
+      [
+       92.771736,
+       23.862703
+      ],
+      [
+       93.058601,
+       25.369717
+      ],
+      [
+       95.556404,
+       24.950016
+      ],
+      [
+       95.23967,
+       23.439779
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG",
+    "event": "2022-06 Silchar",
+    "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+    "window": "pre_flood",
+    "window_label": "pre-flood (mid-May 2022)",
+    "acquired": "2022-05-20T23:39:32.366739Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(f763fa74-aa1a-4019-8fbd-435747e287f9)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       92.864296,
+       25.462982
+      ],
+      [
+       95.395325,
+       25.88538
+      ],
+      [
+       95.702881,
+       24.381956
+      ],
+      [
+       93.203354,
+       23.9568
+      ],
+      [
+       92.864296,
+       25.462982
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG",
+    "event": "2022-06 Silchar",
+    "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+    "window": "pre_flood",
+    "window_label": "pre-flood (mid-May 2022)",
+    "acquired": "2022-05-18T11:48:35.734813Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(8dc071d8-c150-4947-8736-a793c49ad121)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       93.233849,
+       23.73019
+      ],
+      [
+       90.759071,
+       24.152542
+      ],
+      [
+       91.052574,
+       25.658403
+      ],
+      [
+       93.558022,
+       25.239086
+      ],
+      [
+       93.233849,
+       23.73019
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG",
+    "event": "2022-06 Silchar",
+    "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+    "window": "pre_flood",
+    "window_label": "pre-flood (mid-May 2022)",
+    "acquired": "2022-05-13T23:47:40.991185Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(c47e53a4-9ebc-4037-bd2d-a3b6683d5b33)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       90.892303,
+       25.070837
+      ],
+      [
+       93.416298,
+       25.494196
+      ],
+      [
+       93.703522,
+       23.987373
+      ],
+      [
+       91.210175,
+       23.560829
+      ],
+      [
+       90.892303,
+       25.070837
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG",
+    "event": "2022-06 Silchar",
+    "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+    "window": "pre_flood",
+    "window_label": "pre-flood (mid-May 2022)",
+    "acquired": "2022-05-11T11:56:42.731045Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(ad75278b-172b-483e-8d54-d415c019201b)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       92.862144,
+       25.463015
+      ],
+      [
+       95.347267,
+       25.878172
+      ],
+      [
+       95.655411,
+       24.374687
+      ],
+      [
+       93.201202,
+       23.956848
+      ],
+      [
+       92.862144,
+       25.463015
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20220623T114838_20220623T114903_043790_053A4D_0BD7_COG",
+    "event": "2022-06 Silchar",
+    "event_label": "June 2022 Barak flood (Silchar / Cachar)",
+    "window": "peak_flood",
+    "window_label": "peak flood (20-25 June 2022)",
+    "acquired": "2022-06-23T11:48:38.585532Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(e8d67ec9-9ed7-4807-8b61-0a9e42fe0fa3)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20220623T114838_20220623T114903_043790_053A4D_0BD7_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(d303892b-3bb0-4b1e-99e9-82c49e9f7853)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       95.706543,
+       25.724131
+      ],
+      [
+       96.050842,
+       27.229572
+      ],
+      [
+       93.534111,
+       27.639891
+      ],
+      [
+       93.223541,
+       26.136932
+      ],
+      [
+       95.706543,
+       25.724131
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20260628T233841_20260628T233906_065176_083757_6C6C_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-28T23:38:41.965128Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(00d1883e-8be1-4ce0-9054-d450e69cd0bf)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20260628T233841_20260628T233906_065176_083757_6C6C_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(a884bdf5-3ea7-47b4-b2ac-e5ddbbcc3ae6)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.254616,
+       28.735849
+      ],
+      [
+       94.562668,
+       27.089596
+      ],
+      [
+       97.090927,
+       27.502844
+      ],
+      [
+       96.820107,
+       29.144796
+      ],
+      [
+       94.254616,
+       28.735849
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260628T114021_20260628T114048_003436_0060F6_F8C2_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-28T11:40:21.555744Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(d414ad15-3a78-4863-b7d9-780aa097dfd4)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260628T114021_20260628T114048_003436_0060F6_F8C2_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(ce82e254-1be9-49e4-9ed6-bf1df3fb42e1)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.562683,
+       27.089506
+      ],
+      [
+       94.906288,
+       25.583956
+      ],
+      [
+       97.399643,
+       25.999527
+      ],
+      [
+       97.090248,
+       27.502647
+      ],
+      [
+       94.562683,
+       27.089506
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260628T113956_20260628T114021_003436_0060F6_A5AE_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-28T11:39:56.554531Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(d9dd104f-ab17-40b4-9a4d-03ee8fc59a47)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260628T113956_20260628T114021_003436_0060F6_A5AE_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(3b7ec4fe-22f1-4372-9b1e-9f4d27726049)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       92.548546,
+       26.973333
+      ],
+      [
+       92.8647,
+       25.463114
+      ],
+      [
+       95.343674,
+       25.877096
+      ],
+      [
+       95.060524,
+       27.384256
+      ],
+      [
+       92.548546,
+       26.973333
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20260626T114848_20260626T114913_065140_083614_C349_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-26T11:48:48.530883Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(5141fd43-5dcf-4026-a739-4ae4474a1fbb)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20260626T114848_20260626T114913_065140_083614_C349_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(3d54857c-b3e8-435c-9d7f-3b8c7aaebc46)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       95.996872,
+       27.017218
+      ],
+      [
+       96.358162,
+       28.891399
+      ],
+      [
+       93.681007,
+       29.315737
+      ],
+      [
+       93.365746,
+       27.446289
+      ],
+      [
+       95.996872,
+       27.017218
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260623T233734_20260623T233805_003370_005EC7_0139_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-23T23:37:34.124551Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(63e769e4-6722-45bc-b667-24ddb0fc65f7)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260623T233734_20260623T233805_003370_005EC7_0139_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(83a15fc6-b33b-48c0-a9a8-871585297f5f)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.256577,
+       28.736422
+      ],
+      [
+       94.568115,
+       27.074282
+      ],
+      [
+       97.095871,
+       27.487383
+      ],
+      [
+       96.821991,
+       29.145203
+      ],
+      [
+       94.256577,
+       28.736422
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20260621T114102_20260621T114129_065067_083386_CE88_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-21T11:41:02.022399Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(f2a10ab8-3842-4616-92f4-0d29c1f51c9d)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20260621T114102_20260621T114129_065067_083386_CE88_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(e795d69b-b429-4d46-abad-203bac77fe51)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.568138,
+       27.074192
+      ],
+      [
+       94.909492,
+       25.568256
+      ],
+      [
+       97.403145,
+       25.983847
+      ],
+      [
+       97.095093,
+       27.487171
+      ],
+      [
+       94.568138,
+       27.074192
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20260621T114037_20260621T114102_065067_083386_24D3_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-21T11:40:37.021331Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(536e1953-53f3-46ce-a04a-cb0164d40130)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20260621T114037_20260621T114102_065067_083386_24D3_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(bf867470-dbbc-4362-b304-699d797a98d3)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       95.706169,
+       25.724201
+      ],
+      [
+       96.050446,
+       27.229645
+      ],
+      [
+       93.533813,
+       27.639938
+      ],
+      [
+       93.223259,
+       26.136978
+      ],
+      [
+       95.706169,
+       25.724201
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1A_IW_GRDH_1SDV_20260616T233842_20260616T233907_065001_08312E_8F59_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-16T23:38:42.773568Z",
+    "platform": "sentinel-1a",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(d7b38283-7cf9-4abd-9e6e-b4fb7276ad8e)/$value",
+    "local_thumbnail": "s1_thumbs/S1A_IW_GRDH_1SDV_20260616T233842_20260616T233907_065001_08312E_8F59_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(12252479-11fe-4dd1-b4ef-72e1efe83742)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.324371,
+       28.372669
+      ],
+      [
+       94.705078,
+       26.604805
+      ],
+      [
+       97.212524,
+       27.016821
+      ],
+      [
+       96.873047,
+       28.781301
+      ],
+      [
+       94.324371,
+       28.372669
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260616T114012_20260616T114041_003261_005B3B_34A2_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "pre_flood",
+    "window_label": "pre-event (late June 2026)",
+    "acquired": "2026-06-16T11:40:12.480409Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(4ee20e95-e334-46e8-8b8f-8815b55c27fc)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260616T114012_20260616T114041_003261_005B3B_34A2_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(9a6caf8d-e93c-44f2-932b-19ff048fbb67)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.426125,
+       27.730232
+      ],
+      [
+       94.906586,
+       25.584173
+      ],
+      [
+       97.399841,
+       25.999767
+      ],
+      [
+       96.968445,
+       28.142145
+      ],
+      [
+       94.426125,
+       27.730232
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260803T113958_20260803T114034_003961_0072FC_46B8_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "peak_flood",
+    "window_label": "event window (15 July - 5 August 2026)",
+    "acquired": "2026-08-03T11:39:58.577484Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(488dd7e7-f5d2-45dc-b0b3-5604640d10ee)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260803T113958_20260803T114034_003961_0072FC_46B8_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(fba2ea6c-ffa1-4330-8df9-c23f0a041b3c)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       95.79895,
+       26.133282
+      ],
+      [
+       96.147652,
+       27.637985
+      ],
+      [
+       93.600212,
+       28.05106
+      ],
+      [
+       93.286293,
+       26.548752
+      ],
+      [
+       95.79895,
+       26.133282
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260729T233756_20260729T233821_003895_0070A3_F0C2_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "peak_flood",
+    "window_label": "event window (15 July - 5 August 2026)",
+    "acquired": "2026-07-29T23:37:56.804843Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(c190d5e9-a16c-4dba-996f-117706d56b3f)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260729T233756_20260729T233821_003895_0070A3_F0C2_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(9c46f729-dfd0-4190-b42b-433372de3997)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       92.544083,
+       26.989117
+      ],
+      [
+       92.859207,
+       25.478712
+      ],
+      [
+       95.361366,
+       25.896439
+      ],
+      [
+       95.079071,
+       27.403645
+      ],
+      [
+       92.544083,
+       26.989117
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260727T114810_20260727T114835_003859_006F53_30A0_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "peak_flood",
+    "window_label": "event window (15 July - 5 August 2026)",
+    "acquired": "2026-07-27T11:48:10.330854Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(25000780-30b0-4b45-9e50-4bbfcac26718)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260727T114810_20260727T114835_003859_006F53_30A0_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(7f8062fb-69f6-41e1-9245-3f4fc1e841d8)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.266617,
+       28.603474
+      ],
+      [
+       94.562752,
+       27.089809
+      ],
+      [
+       97.104279,
+       27.505117
+      ],
+      [
+       96.843697,
+       29.015228
+      ],
+      [
+       94.266617,
+       28.603474
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260722T114023_20260722T114048_003786_006CD7_9336_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "peak_flood",
+    "window_label": "event window (15 July - 5 August 2026)",
+    "acquired": "2026-07-22T11:40:23.097704Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(e0e73c6a-c226-45dc-9ddb-6c4e602d30d3)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260722T114023_20260722T114048_003786_006CD7_9336_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(64fff52b-6271-4db9-bd21-0ef70fcdc4c3)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       94.562775,
+       27.08972
+      ],
+      [
+       94.906342,
+       25.584232
+      ],
+      [
+       97.412781,
+       26.001886
+      ],
+      [
+       97.1036,
+       27.504921
+      ],
+      [
+       94.562775,
+       27.08972
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260722T113958_20260722T114023_003786_006CD7_B706_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "peak_flood",
+    "window_label": "event window (15 July - 5 August 2026)",
+    "acquired": "2026-07-22T11:39:58.097740Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(b6f7a119-6e64-4eef-b33a-10c320e6f5a7)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260722T113958_20260722T114023_003786_006CD7_B706_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(4bdf352e-e0f9-4332-bf77-7e925a0424b6)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       95.79911,
+       26.133303
+      ],
+      [
+       96.147835,
+       27.638002
+      ],
+      [
+       93.60041,
+       28.051117
+      ],
+      [
+       93.286461,
+       26.548811
+      ],
+      [
+       95.79911,
+       26.133303
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260717T233756_20260717T233821_003720_006A9E_64F4_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "peak_flood",
+    "window_label": "event window (15 July - 5 August 2026)",
+    "acquired": "2026-07-17T23:37:56.284849Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "descending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(3d4e8ce9-d1e7-412a-b2f2-b2328b6e2a91)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260717T233756_20260717T233821_003720_006A9E_64F4_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(834e86d9-0816-490f-8c24-9e502662a511)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       92.544701,
+       26.989149
+      ],
+      [
+       92.859833,
+       25.478743
+      ],
+      [
+       95.339081,
+       25.892851
+      ],
+      [
+       95.05648,
+       27.400101
+      ],
+      [
+       92.544701,
+       26.989149
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "scene_id": "S1D_IW_GRDH_1SDV_20260715T114809_20260715T114834_003684_006956_CB38_COG",
+    "event": "2026-07 Upper Assam",
+    "event_label": "July 2026 Upper Assam floods (Sivasagar / Charaideo / Jorhat)",
+    "window": "peak_flood",
+    "window_label": "event window (15 July - 5 August 2026)",
+    "acquired": "2026-07-15T11:48:09.629047Z",
+    "platform": "sentinel-1d",
+    "instrument_mode": "IW",
+    "orbit_state": "ascending",
+    "polarizations": [
+     "VV",
+     "VH"
+    ],
+    "thumbnail_href": "https://datahub.creodias.eu/odata/v1/Assets(f45a4894-a578-4ea3-8b3e-57e50211f3fe)/$value",
+    "local_thumbnail": "s1_thumbs/S1D_IW_GRDH_1SDV_20260715T114809_20260715T114834_003684_006956_CB38_COG.png",
+    "product_download_href": "https://download.dataspace.copernicus.eu/odata/v1/Products(46ec63bb-5f89-4629-9242-80b099ec7878)/$value",
+    "class": "OBSERVED",
+    "source": "Copernicus Data Space Ecosystem STAC catalogue (sentinel-1-grd)",
+    "retrieved_at": "2026-09-04T10:13:29Z"
+   }
+  }
+ ]
+}

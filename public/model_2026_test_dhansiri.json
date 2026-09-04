@@ -1,0 +1,1186 @@
+{
+ "generated_at": "2026-09-04T10:12:54Z",
+ "basin": "dhansiri",
+ "test": "2026_out_of_sample",
+ "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis - a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
+ "shipped_model": "B1_persistence",
+ "decision_statement": "trained model beats the best baseline (B1_persistence, mean MAE 55.0) on monsoon MAE at h=1 in 1/4 held-out seasons -> SHIP B1_persistence as model v0 (an honest simple model beats a dressed-up failure)",
+ "threshold_m3s": {
+  "value": 962.8,
+  "class": "OBSERVED",
+  "retrieved_at": "2026-09-04T10:12:54Z",
+  "source": "90th percentile of 2015-2025 TRAINING monsoon GloFAS reanalysis (no 2026 leakage)"
+ },
+ "dates": [
+  "2026-06-15",
+  "2026-06-16",
+  "2026-06-17",
+  "2026-06-18",
+  "2026-06-19",
+  "2026-06-20",
+  "2026-06-21",
+  "2026-06-22",
+  "2026-06-23",
+  "2026-06-24",
+  "2026-06-25",
+  "2026-06-26",
+  "2026-06-27",
+  "2026-06-28",
+  "2026-06-29",
+  "2026-06-30",
+  "2026-07-01",
+  "2026-07-02",
+  "2026-07-03",
+  "2026-07-04",
+  "2026-07-05",
+  "2026-07-06",
+  "2026-07-07",
+  "2026-07-08",
+  "2026-07-09",
+  "2026-07-10",
+  "2026-07-11",
+  "2026-07-12",
+  "2026-07-13",
+  "2026-07-14",
+  "2026-07-15",
+  "2026-07-16",
+  "2026-07-17",
+  "2026-07-18",
+  "2026-07-19",
+  "2026-07-20",
+  "2026-07-21",
+  "2026-07-22",
+  "2026-07-23",
+  "2026-07-24",
+  "2026-07-25",
+  "2026-07-26",
+  "2026-07-27",
+  "2026-07-28",
+  "2026-07-29",
+  "2026-07-30",
+  "2026-07-31",
+  "2026-08-01",
+  "2026-08-02",
+  "2026-08-03",
+  "2026-08-04",
+  "2026-08-05"
+ ],
+ "actual_m3s": [
+  {
+   "value": 483.2,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 405.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 511.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 429.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 408.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 383.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 381.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 406.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 396.2,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 417.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 386.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 398.0,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 376.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 406.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 387.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 388.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 445.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 522.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 563.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 539.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 579.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 553.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 515.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 470.0,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 575.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 652.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 601.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 562.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 738.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 786.0,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 628.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 675.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 672.0,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 542.2,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 577.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 1917.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 1874.0,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 978.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 769.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 745.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 711.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 667.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 608.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 605.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 635.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 664.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 668.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 720.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 682.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 656.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 692.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  },
+  {
+   "value": 802.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z"
+  }
+ ],
+ "predicted_h1_m3s": [
+  {
+   "value": 374.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 483.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 405.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 511.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 429.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 408.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 383.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 381.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 406.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 396.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 417.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 386.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 398.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 376.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 406.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 387.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 388.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 445.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 522.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 563.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 539.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 579.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 553.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 515.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 470.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 575.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 652.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 601.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 562.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 738.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 786.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 628.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 675.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 672.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 542.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 577.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 1917.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 1874.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 978.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 769.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 745.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 711.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 667.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 608.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 605.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 635.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 664.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 668.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 720.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 682.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 656.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 692.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  }
+ ],
+ "predicted_h2_m3s": [
+  {
+   "value": 341.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 374.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 483.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 405.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 511.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 429.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 408.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 383.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 381.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 406.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 396.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 417.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 386.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 398.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 376.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 406.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 387.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 388.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 445.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 522.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 563.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 539.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 579.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 553.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 515.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 470.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 575.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 652.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 601.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 562.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 738.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 786.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 628.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 675.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 672.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 542.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 577.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 1917.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 1874.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 978.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 769.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 745.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 711.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 667.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 608.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 605.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 635.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 664.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 668.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 720.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 682.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  },
+  {
+   "value": 656.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dhansiri (shipped: B1_persistence, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:54Z",
+   "replay_test": true
+  }
+ ],
+ "p_exceed_h1": [
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.002,
+  0.01,
+  0.002,
+  0.002,
+  0.031,
+  0.035,
+  0.004,
+  0.016,
+  0.016,
+  0.002,
+  0.002,
+  1.0,
+  1.0,
+  0.566,
+  0.035,
+  0.031,
+  0.027,
+  0.014,
+  0.002,
+  0.002,
+  0.006,
+  0.014,
+  0.014,
+  0.027,
+  0.018,
+  0.01,
+  0.018
+ ],
+ "alarm_days_h1": [
+  "2026-07-21",
+  "2026-07-22",
+  "2026-07-23"
+ ],
+ "actual_exceed_days": [
+  "2026-07-20",
+  "2026-07-21",
+  "2026-07-22"
+ ],
+ "event_onsets": [
+  {
+   "onset": "2026-07-20",
+   "lead_days": 0
+  }
+ ],
+ "first_alarm_issued": "2026-07-20",
+ "event_day_reference": "2026-07-19 (Mon cloudburst, IST; regional reference)"
+}

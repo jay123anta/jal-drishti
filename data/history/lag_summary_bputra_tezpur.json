@@ -1,0 +1,59 @@
+{
+ "generated_at": "2026-09-02T11:09:46Z",
+ "basin": "bputra_tezpur",
+ "target": "brahmaputra_tezpur",
+ "class": "OBSERVED",
+ "source": "derived by backend/model/lag_analysis.py from ERA5-family rain + GloFAS reanalysis discharge (modelled products)",
+ "retrieved_at": "2026-09-02T11:09:46Z",
+ "plain_sentence": "Rain in the Brahmaputra reach hills typically shows up in the brahmaputra_tezpur river data 1 day later — roughly 12 to 108 hours (daily river data cannot resolve it more finely).",
+ "best_lags_monsoon": {
+  "rain_6h": {
+   "lag_vs_q_days": 2,
+   "lag_vs_dq_days": 1,
+   "loyo_spread_dq": [
+    0,
+    1
+   ],
+   "corr_dq_at_best": 0.3123608767754884
+  },
+  "rain_12h": {
+   "lag_vs_q_days": 2,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.36334548121237487
+  },
+  "rain_24h": {
+   "lag_vs_q_days": 2,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.46300643168490013
+  },
+  "rain_48h": {
+   "lag_vs_q_days": 2,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.4696163434564082
+  }
+ },
+ "event_lags_days": [
+  0,
+  4,
+  1,
+  0,
+  0,
+  2,
+  0,
+  3,
+  1,
+  2
+ ],
+ "median_event_lag_days": 1,
+ "out_of_period_2026_lag_days": 1,
+ "july_2026_out_of_period_lag_days": 1
+}

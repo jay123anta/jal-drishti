@@ -1,0 +1,14 @@
+{
+ "attempted_at": "2026-09-04T10:09:40Z",
+ "url": "https://flood-api.open-meteo.com/v1/flood",
+ "params": {
+  "daily": "river_discharge,river_discharge_mean,river_discharge_median,river_discharge_max,river_discharge_min",
+  "past_days": 30,
+  "forecast_days": 30,
+  "timezone": "UTC",
+  "latitude": 26.425003,
+  "longitude": 90.67502
+ },
+ "error": "GET https://flood-api.open-meteo.com/v1/flood failed after 3 attempts: 429 Client Error: Too Many Requests for url: https://flood-api.open-meteo.com/v1/flood?daily=river_discharge%2Criver_discharge_mean%2Criver_discharge_median%2Criver_discharge_max%2Criver_discharge_min&past_days=30&forecast_days=30&timezone=UTC&latitude=26.425003&longitude=90.67502",
+ "note": "Live API unreachable after retries. See RETRY-LIVE.md to swap real data back in."
+}

@@ -1,0 +1,3113 @@
+{
+ "event": "2022-06 Silchar",
+ "window": {
+  "key": "pre_flood",
+  "label": "pre-flood (mid-May 2022)",
+  "datetime": "2022-05-10T00:00:00Z/2022-05-25T23:59:59Z"
+ },
+ "count": 6,
+ "features": [
+  {
+   "id": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG",
+   "bbox": [
+    90.760925,
+    23.730183,
+    93.559944,
+    25.658411
+   ],
+   "type": "Feature",
+   "links": [
+    {
+     "rel": "collection",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "parent",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "root",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/"
+    },
+    {
+     "rel": "self",
+     "type": "application/geo+json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd/items/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG"
+    },
+    {
+     "rel": "version-history",
+     "href": "https://trace.dataspace.copernicus.eu/api/v1/traces/name/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE.zip",
+     "type": "application/json",
+     "title": "Product history record from the CDSE traceability service"
+    },
+    {
+     "rel": "enclosure",
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/",
+     "type": "application/x-directory",
+     "title": "S3 path to source directory",
+     "auth:refs": [
+      "s3"
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ]
+    }
+   ],
+   "assets": {
+    "vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/measurement/s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 579804374,
+     "proj:shape": [
+      25628,
+      16737
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16107b773ecc8722e626569e152a1f2558d3",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/measurement/s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VH: Vertical transmit, horizontal receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received horizontally.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/measurement/s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 664076476,
+     "proj:shape": [
+      25628,
+      16737
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16102718a1ba6b663182a2dd18f5e6c24953",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/measurement/s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VV: Vertical transmit, vertical receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received vertically.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "Product": {
+     "href": "https://download.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/$value",
+     "roles": [
+      "data",
+      "metadata",
+      "archive"
+     ],
+     "auth:refs": [
+      "oidc"
+     ],
+     "file:size": 1251093320,
+     "file:checksum": "d5011090194b6b50a3eb7cfc07ab51632f1f4f",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE.zip",
+     "type": "application/zip",
+     "title": "Zipped product"
+    },
+    "thumbnail": {
+     "href": "https://datahub.creodias.eu/odata/v1/Assets(0793bbb9-88c1-4c85-86db-851e70b3e90d)/$value",
+     "alternate": {
+      "s3": {
+       "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/preview/thumbnail.png",
+       "auth:refs": [
+        "s3"
+       ],
+       "storage:refs": [
+        "cdse-s3",
+        "creodias-s3"
+       ],
+       "alternate:name": "S3"
+      }
+     },
+     "file:size": 121066,
+     "proj:shape": [
+      343,
+      343
+     ],
+     "file:checksum": "d5011077445b874a0cafa13f72885de26703be",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/preview/thumbnail.png",
+     "type": "image/png",
+     "roles": [
+      "thumbnail"
+     ],
+     "title": "Thumbnail",
+     "alternate:name": "HTTPS"
+    },
+    "safe_manifest": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/manifest.safe",
+     "roles": [
+      "metadata"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(manifest.safe)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 24802,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "d50110c59eba232634de19ff74d0f7a4ae4da4",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/manifest.safe",
+     "type": "application/xml",
+     "title": "manifest.safe",
+     "alternate:name": "S3"
+    },
+    "schema-noise-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 423741,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16109394d78a6c9803d05c99ad8444ab2fdb",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-noise-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 423741,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610836a45ebed5b1db1c406a94f7ab7b80c",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-product-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1723526,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610b7a02f1c428df724dc04ee3cbad4066b",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-product-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1723550,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610235630edde19e0177478f5ff9e79996b",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-calibration-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1007005,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610fedcaa0d2e745979d4f185b51c224aaa",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220525t234741-20220525t234806-043374-052dfa-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-calibration-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/25/S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(78df09c1-2501-49c9-9a48-2e415e7a7ed6)/Nodes(S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1007005,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "161093721b3b43472f3794eeb157d0139ddd",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220525T234741_20220525T234806_043374_052DFA_F912_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220525t234741-20220525t234806-043374-052dfa-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       93.235802,
+       23.730183
+      ],
+      [
+       90.760925,
+       24.152542
+      ],
+      [
+       91.054398,
+       25.658411
+      ],
+      [
+       93.559944,
+       25.239084
+      ],
+      [
+       93.235802,
+       23.730183
+      ]
+     ]
+    ]
+   },
+   "collection": "sentinel-1-grd",
+   "properties": {
+    "created": "2023-05-20T18:20:54.859941Z",
+    "expires": "9999-01-01T00:00:00.000000Z",
+    "updated": "2025-11-22T02:43:36.291083Z",
+    "datetime": "2022-05-25T23:47:41.422584Z",
+    "platform": "sentinel-1a",
+    "published": "2023-05-20T20:29:17.391897Z",
+    "instruments": [
+     "sar"
+    ],
+    "auth:schemes": {
+     "s3": {
+      "type": "s3"
+     },
+     "oidc": {
+      "type": "openIdConnect",
+      "openIdConnectUrl": "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+     }
+    },
+    "end_datetime": "2022-05-25T23:48:06.421645Z",
+    "product:type": "IW_GRDH_1S",
+    "view:azimuth": 192.3964077811414,
+    "constellation": "sentinel-1",
+    "start_datetime": "2022-05-25T23:47:41.422584Z",
+    "sat:orbit_cycle": 262,
+    "sat:orbit_state": "descending",
+    "storage:schemes": {
+     "cdse-s3": {
+      "type": "custom-s3",
+      "title": "Copernicus Data Space Ecosystem S3",
+      "platform": "https://eodata.dataspace.copernicus.eu",
+      "description": "This endpoint provides access to EO data which is stored on the object storage of both CloudFerro Cloud and OpenTelekom Cloud (OTC). See the [documentation](https://documentation.dataspace.copernicus.eu/APIs/S3.html) for more information, including how to get credentials.",
+      "requester_pays": false
+     },
+     "creodias-s3": {
+      "type": "custom-s3",
+      "title": "CREODIAS S3",
+      "platform": "https://eodata.cloudferro.com",
+      "description": "Comprehensive Earth Observation Data (EODATA) archive offered by CREODIAS as a commercial part of CDSE, designed to provide users with access to a vast repository of satellite data without predefined quota limits.",
+      "requester_pays": true
+     }
+    },
+    "eopf:datatake_id": "339450",
+    "processing:level": "L1",
+    "sar:polarizations": [
+     "VV",
+     "VH"
+    ],
+    "processing:version": "01.00",
+    "product:timeliness": "PT24H",
+    "sar:frequency_band": "C",
+    "sat:absolute_orbit": 43374,
+    "sat:relative_orbit": 77,
+    "processing:datetime": "2023-05-20T20:24:22.608882Z",
+    "processing:facility": "Copernicus Data Space Ecosystem-CloudFerro",
+    "processing:software": {
+     "eometadatatool": "251021130925+dirty"
+    },
+    "sar:instrument_mode": "IW",
+    "eopf:origin_datetime": "2023-05-20T18:20:54.859941Z",
+    "sar:center_frequency": 5.405,
+    "view:incidence_angle": 39.25568920928379,
+    "sar:pixel_spacing_range": 10.0,
+    "sar:observation_direction": "right",
+    "sar:pixel_spacing_azimuth": 10.0,
+    "product:timeliness_category": "Fast-24h",
+    "eopf:instrument_configuration_id": 7,
+    "sat:platform_international_designator": "2014-016A"
+   },
+   "stac_extensions": [
+    "https://cs-si.github.io/eopf-stac-extension/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/authentication/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/product/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/sar/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/sat/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/view/v1.1.0/schema.json"
+   ],
+   "stac_version": "1.1.0"
+  },
+  {
+   "id": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG",
+   "bbox": [
+    90.892876,
+    23.560917,
+    93.703957,
+    25.4942
+   ],
+   "type": "Feature",
+   "links": [
+    {
+     "rel": "collection",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "parent",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "root",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/"
+    },
+    {
+     "rel": "self",
+     "type": "application/geo+json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd/items/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG"
+    },
+    {
+     "rel": "version-history",
+     "href": "https://trace.dataspace.copernicus.eu/api/v1/traces/name/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE.zip",
+     "type": "application/json",
+     "title": "Product history record from the CDSE traceability service"
+    },
+    {
+     "rel": "enclosure",
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/",
+     "type": "application/x-directory",
+     "title": "S3 path to source directory",
+     "auth:refs": [
+      "s3"
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ]
+    }
+   ],
+   "assets": {
+    "vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/measurement/s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 585319568,
+     "proj:shape": [
+      25850,
+      16734
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610c21940cd7119b993e674efc9fa631b6e",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/measurement/s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VH: Vertical transmit, horizontal receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received horizontally.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/measurement/s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 665765876,
+     "proj:shape": [
+      25850,
+      16734
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610afb6286d90ffe97ff7143fe35201e14d",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/measurement/s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VV: Vertical transmit, vertical receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received vertically.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "Product": {
+     "href": "https://download.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/$value",
+     "roles": [
+      "data",
+      "metadata",
+      "archive"
+     ],
+     "auth:refs": [
+      "oidc"
+     ],
+     "file:size": 1258513607,
+     "file:checksum": "d50110360565d46d739dc13807b83fbc0c232d",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE.zip",
+     "type": "application/zip",
+     "title": "Zipped product"
+    },
+    "thumbnail": {
+     "href": "https://datahub.creodias.eu/odata/v1/Assets(547d5d6d-4128-47ce-af53-8f3bf6a2b8d1)/$value",
+     "alternate": {
+      "s3": {
+       "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/preview/thumbnail.png",
+       "auth:refs": [
+        "s3"
+       ],
+       "storage:refs": [
+        "cdse-s3",
+        "creodias-s3"
+       ],
+       "alternate:name": "S3"
+      }
+     },
+     "file:size": 119475,
+     "proj:shape": [
+      343,
+      343
+     ],
+     "file:checksum": "d501109dee1882eceb40644a47551d225ed566",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/preview/thumbnail.png",
+     "type": "image/png",
+     "roles": [
+      "thumbnail"
+     ],
+     "title": "Thumbnail",
+     "alternate:name": "HTTPS"
+    },
+    "safe_manifest": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/manifest.safe",
+     "roles": [
+      "metadata"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(manifest.safe)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 24800,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "d501101a3b9a7d8a5fbfb389001c1f62950b33",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/manifest.safe",
+     "type": "application/xml",
+     "title": "manifest.safe",
+     "alternate:name": "S3"
+    },
+    "schema-noise-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 426819,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "161090e4f6ccb7d26bd020b830420c94eb21",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-noise-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 426819,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16108039d185b4a2af69a43ba2fa9c051ef1",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-product-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1796427,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610d9857b1edd6e45b7498b4f9581b9003e",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-product-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1796448,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610b60faef971468fdd329581d836b2941a",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-calibration-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1016401,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16104084c3538ff890c3837b6f35c30fde25",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220523t115643-20220523t115708-043338-052cdf-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-calibration-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/23/S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(f3f44dc8-80fb-4114-adce-9c305f2fa683)/Nodes(S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1016401,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610727baed8375f10c1773bc50b4dfa07ee",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220523T115643_20220523T115708_043338_052CDF_C06C_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220523t115643-20220523t115708-043338-052cdf-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       90.892876,
+       25.070839
+      ],
+      [
+       93.416771,
+       25.4942
+      ],
+      [
+       93.703957,
+       23.987463
+      ],
+      [
+       91.210709,
+       23.560917
+      ],
+      [
+       90.892876,
+       25.070839
+      ]
+     ]
+    ]
+   },
+   "collection": "sentinel-1-grd",
+   "properties": {
+    "created": "2023-05-20T18:07:07.541512Z",
+    "expires": "9999-01-01T00:00:00.000000Z",
+    "updated": "2025-11-22T02:53:25.407010Z",
+    "datetime": "2022-05-23T11:56:43.475501Z",
+    "platform": "sentinel-1a",
+    "published": "2023-05-20T20:13:46.299259Z",
+    "instruments": [
+     "sar"
+    ],
+    "auth:schemes": {
+     "s3": {
+      "type": "s3"
+     },
+     "oidc": {
+      "type": "openIdConnect",
+      "openIdConnectUrl": "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+     }
+    },
+    "end_datetime": "2022-05-23T11:57:08.473259Z",
+    "product:type": "IW_GRDH_1S",
+    "view:azimuth": 347.61450677638845,
+    "constellation": "sentinel-1",
+    "start_datetime": "2022-05-23T11:56:43.475501Z",
+    "sat:orbit_cycle": 262,
+    "sat:orbit_state": "ascending",
+    "storage:schemes": {
+     "cdse-s3": {
+      "type": "custom-s3",
+      "title": "Copernicus Data Space Ecosystem S3",
+      "platform": "https://eodata.dataspace.copernicus.eu",
+      "description": "This endpoint provides access to EO data which is stored on the object storage of both CloudFerro Cloud and OpenTelekom Cloud (OTC). See the [documentation](https://documentation.dataspace.copernicus.eu/APIs/S3.html) for more information, including how to get credentials.",
+      "requester_pays": false
+     },
+     "creodias-s3": {
+      "type": "custom-s3",
+      "title": "CREODIAS S3",
+      "platform": "https://eodata.cloudferro.com",
+      "description": "Comprehensive Earth Observation Data (EODATA) archive offered by CREODIAS as a commercial part of CDSE, designed to provide users with access to a vast repository of satellite data without predefined quota limits.",
+      "requester_pays": true
+     }
+    },
+    "eopf:datatake_id": "339167",
+    "processing:level": "L1",
+    "sar:polarizations": [
+     "VV",
+     "VH"
+    ],
+    "processing:version": "01.00",
+    "product:timeliness": "PT24H",
+    "sar:frequency_band": "C",
+    "sat:absolute_orbit": 43338,
+    "sat:relative_orbit": 41,
+    "processing:datetime": "2023-05-20T20:08:49.507289Z",
+    "processing:facility": "Copernicus Data Space Ecosystem-CloudFerro",
+    "processing:software": {
+     "eometadatatool": "251021130925+dirty"
+    },
+    "sar:instrument_mode": "IW",
+    "eopf:origin_datetime": "2023-05-20T18:07:07.541512Z",
+    "sar:center_frequency": 5.405,
+    "view:incidence_angle": 39.21626345322402,
+    "sar:pixel_spacing_range": 10.0,
+    "sar:observation_direction": "right",
+    "sar:pixel_spacing_azimuth": 10.0,
+    "product:timeliness_category": "Fast-24h",
+    "eopf:instrument_configuration_id": 7,
+    "sat:platform_international_designator": "2014-016A"
+   },
+   "stac_extensions": [
+    "https://cs-si.github.io/eopf-stac-extension/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/authentication/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/product/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/sar/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/sat/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/view/v1.1.0/schema.json"
+   ],
+   "stac_version": "1.1.0"
+  },
+  {
+   "id": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG",
+   "bbox": [
+    92.771736,
+    23.439779,
+    95.556404,
+    25.369717
+   ],
+   "type": "Feature",
+   "links": [
+    {
+     "rel": "collection",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "parent",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "root",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/"
+    },
+    {
+     "rel": "self",
+     "type": "application/geo+json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd/items/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG"
+    },
+    {
+     "rel": "version-history",
+     "href": "https://trace.dataspace.copernicus.eu/api/v1/traces/name/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE.zip",
+     "type": "application/json",
+     "title": "Product history record from the CDSE traceability service"
+    },
+    {
+     "rel": "enclosure",
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/",
+     "type": "application/x-directory",
+     "title": "S3 path to source directory",
+     "auth:refs": [
+      "s3"
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ]
+    }
+   ],
+   "assets": {
+    "vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/measurement/s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 602147221,
+     "proj:shape": [
+      25613,
+      16742
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610b739e42ac5ad1ea57fa7bd6e89e09860",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/measurement/s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VH: Vertical transmit, horizontal receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received horizontally.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/measurement/s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 684349227,
+     "proj:shape": [
+      25613,
+      16742
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "161053f486f0dfe56fab482e30f9da9f5aed",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/measurement/s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VV: Vertical transmit, vertical receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received vertically.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "Product": {
+     "href": "https://download.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/$value",
+     "roles": [
+      "data",
+      "metadata",
+      "archive"
+     ],
+     "auth:refs": [
+      "oidc"
+     ],
+     "file:size": 1293689758,
+     "file:checksum": "d50110f9a20380c3151766ca4cf8cacbf159ab",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE.zip",
+     "type": "application/zip",
+     "title": "Zipped product"
+    },
+    "thumbnail": {
+     "href": "https://datahub.creodias.eu/odata/v1/Assets(f763fa74-aa1a-4019-8fbd-435747e287f9)/$value",
+     "alternate": {
+      "s3": {
+       "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/preview/thumbnail.png",
+       "auth:refs": [
+        "s3"
+       ],
+       "storage:refs": [
+        "cdse-s3",
+        "creodias-s3"
+       ],
+       "alternate:name": "S3"
+      }
+     },
+     "file:size": 119317,
+     "proj:shape": [
+      343,
+      343
+     ],
+     "file:checksum": "d501104eec4d6a1cd00d08caa35824704acb26",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/preview/thumbnail.png",
+     "type": "image/png",
+     "roles": [
+      "thumbnail"
+     ],
+     "title": "Thumbnail",
+     "alternate:name": "HTTPS"
+    },
+    "safe_manifest": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/manifest.safe",
+     "roles": [
+      "metadata"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(manifest.safe)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 24800,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "d50110d880ed24e0012565e7643b81035eda18",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/manifest.safe",
+     "type": "application/xml",
+     "title": "manifest.safe",
+     "alternate:name": "S3"
+    },
+    "schema-noise-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 411636,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610ca5683037f8e6ead1c2577e195e90bb3",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-noise-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 411636,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610e6cad5a1281f5e0fad9e321e88edbe5a",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-product-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1727994,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610f7a82180b46a4eae5c36b79951d4ac53",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-product-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1728015,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16101124a13d731677985ce3a772567a0f8d",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-calibration-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1007005,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610edfb9497a8bbdd552a80f983a1069ee5",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220520t233932-20220520t233957-043301-052bc5-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-calibration-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/20/S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(8701b78f-57a3-4973-b2e3-c969a75680d6)/Nodes(S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1007005,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610ae493083fa527cd8e655403ec16812d4",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220520T233932_20220520T233957_043301_052BC5_3913_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220520t233932-20220520t233957-043301-052bc5-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       95.23967,
+       23.439779
+      ],
+      [
+       92.771736,
+       23.862703
+      ],
+      [
+       93.058601,
+       25.369717
+      ],
+      [
+       95.556404,
+       24.950016
+      ],
+      [
+       95.23967,
+       23.439779
+      ]
+     ]
+    ]
+   },
+   "collection": "sentinel-1-grd",
+   "properties": {
+    "created": "2023-05-20T17:47:13.323446Z",
+    "expires": "9999-01-01T00:00:00.000000Z",
+    "updated": "2025-11-22T03:11:23.745543Z",
+    "datetime": "2022-05-20T23:39:32.366739Z",
+    "platform": "sentinel-1a",
+    "published": "2023-05-20T19:55:12.412680Z",
+    "instruments": [
+     "sar"
+    ],
+    "auth:schemes": {
+     "s3": {
+      "type": "s3"
+     },
+     "oidc": {
+      "type": "openIdConnect",
+      "openIdConnectUrl": "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+     }
+    },
+    "end_datetime": "2022-05-20T23:39:57.365674Z",
+    "product:type": "IW_GRDH_1S",
+    "view:azimuth": 192.3853708787573,
+    "constellation": "sentinel-1",
+    "start_datetime": "2022-05-20T23:39:32.366739Z",
+    "sat:orbit_cycle": 262,
+    "sat:orbit_state": "descending",
+    "storage:schemes": {
+     "cdse-s3": {
+      "type": "custom-s3",
+      "title": "Copernicus Data Space Ecosystem S3",
+      "platform": "https://eodata.dataspace.copernicus.eu",
+      "description": "This endpoint provides access to EO data which is stored on the object storage of both CloudFerro Cloud and OpenTelekom Cloud (OTC). See the [documentation](https://documentation.dataspace.copernicus.eu/APIs/S3.html) for more information, including how to get credentials.",
+      "requester_pays": false
+     },
+     "creodias-s3": {
+      "type": "custom-s3",
+      "title": "CREODIAS S3",
+      "platform": "https://eodata.cloudferro.com",
+      "description": "Comprehensive Earth Observation Data (EODATA) archive offered by CREODIAS as a commercial part of CDSE, designed to provide users with access to a vast repository of satellite data without predefined quota limits.",
+      "requester_pays": true
+     }
+    },
+    "eopf:datatake_id": "338885",
+    "processing:level": "L1",
+    "sar:polarizations": [
+     "VV",
+     "VH"
+    ],
+    "processing:version": "01.00",
+    "product:timeliness": "PT24H",
+    "sar:frequency_band": "C",
+    "sat:absolute_orbit": 43301,
+    "sat:relative_orbit": 4,
+    "processing:datetime": "2023-05-20T19:50:43.758111Z",
+    "processing:facility": "Copernicus Data Space Ecosystem-CloudFerro",
+    "processing:software": {
+     "eometadatatool": "251021130925+dirty"
+    },
+    "sar:instrument_mode": "IW",
+    "eopf:origin_datetime": "2023-05-20T17:47:13.323446Z",
+    "sar:center_frequency": 5.405,
+    "view:incidence_angle": 39.18447273346374,
+    "sar:pixel_spacing_range": 10.0,
+    "sar:observation_direction": "right",
+    "sar:pixel_spacing_azimuth": 10.0,
+    "product:timeliness_category": "Fast-24h",
+    "eopf:instrument_configuration_id": 7,
+    "sat:platform_international_designator": "2014-016A"
+   },
+   "stac_extensions": [
+    "https://cs-si.github.io/eopf-stac-extension/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/authentication/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/product/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/sar/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/sat/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/view/v1.1.0/schema.json"
+   ],
+   "stac_version": "1.1.0"
+  },
+  {
+   "id": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG",
+   "bbox": [
+    92.864296,
+    23.9568,
+    95.702881,
+    25.88538
+   ],
+   "type": "Feature",
+   "links": [
+    {
+     "rel": "collection",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "parent",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "root",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/"
+    },
+    {
+     "rel": "self",
+     "type": "application/geo+json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd/items/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG"
+    },
+    {
+     "rel": "version-history",
+     "href": "https://trace.dataspace.copernicus.eu/api/v1/traces/name/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE.zip",
+     "type": "application/json",
+     "title": "Product history record from the CDSE traceability service"
+    },
+    {
+     "rel": "enclosure",
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/",
+     "type": "application/x-directory",
+     "title": "S3 path to source directory",
+     "auth:refs": [
+      "s3"
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ]
+    }
+   ],
+   "assets": {
+    "vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/measurement/s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 604916888,
+     "proj:shape": [
+      25839,
+      16734
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610c1f63970190838d683333fdb40c62cf6",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/measurement/s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VH: Vertical transmit, horizontal receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received horizontally.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/measurement/s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 682817672,
+     "proj:shape": [
+      25839,
+      16734
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "161002c1202049784e137f9b83138e9fe3f0",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/measurement/s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VV: Vertical transmit, vertical receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received vertically.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "Product": {
+     "href": "https://download.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/$value",
+     "roles": [
+      "data",
+      "metadata",
+      "archive"
+     ],
+     "auth:refs": [
+      "oidc"
+     ],
+     "file:size": 1295167900,
+     "file:checksum": "d50110b5f4f880832122c3871b545976e82efa",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE.zip",
+     "type": "application/zip",
+     "title": "Zipped product"
+    },
+    "thumbnail": {
+     "href": "https://datahub.creodias.eu/odata/v1/Assets(8dc071d8-c150-4947-8736-a793c49ad121)/$value",
+     "alternate": {
+      "s3": {
+       "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/preview/thumbnail.png",
+       "auth:refs": [
+        "s3"
+       ],
+       "storage:refs": [
+        "cdse-s3",
+        "creodias-s3"
+       ],
+       "alternate:name": "S3"
+      }
+     },
+     "file:size": 121047,
+     "proj:shape": [
+      343,
+      343
+     ],
+     "file:checksum": "d50110fcb50eab92a85cba8e2123ce60b4afd3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/preview/thumbnail.png",
+     "type": "image/png",
+     "roles": [
+      "thumbnail"
+     ],
+     "title": "Thumbnail",
+     "alternate:name": "HTTPS"
+    },
+    "safe_manifest": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/manifest.safe",
+     "roles": [
+      "metadata"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(manifest.safe)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 24802,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "d50110499f1a11fce1a475e1a1e8edf4d77bb9",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/manifest.safe",
+     "type": "application/xml",
+     "title": "manifest.safe",
+     "alternate:name": "S3"
+    },
+    "schema-noise-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 426327,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610b490435e5bdda842faffaff234278797",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-noise-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 426327,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "161023bada418967884455422270cceaf54d",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-product-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1795943,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610a55c8623724eb46b55f507ad5d63069a",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-product-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1795966,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16106fa02f0c176859a47fd0a5643853ce6a",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-calibration-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1014835,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "161048c36da15c3bf912e55cab87c7c49103",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220518t114835-20220518t114900-043265-052ab7-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-calibration-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/18/S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(72cf0000-a464-40ba-a080-a40e3bc11b77)/Nodes(S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1014835,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16100f5fd56b1d37b6d5760f3e3d96ea86d0",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220518T114835_20220518T114900_043265_052AB7_1780_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220518t114835-20220518t114900-043265-052ab7-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       92.864296,
+       25.462982
+      ],
+      [
+       95.395325,
+       25.88538
+      ],
+      [
+       95.702881,
+       24.381956
+      ],
+      [
+       93.203354,
+       23.9568
+      ],
+      [
+       92.864296,
+       25.462982
+      ]
+     ]
+    ]
+   },
+   "collection": "sentinel-1-grd",
+   "properties": {
+    "created": "2023-05-20T14:04:13.368297Z",
+    "expires": "9999-01-01T00:00:00.000000Z",
+    "updated": "2025-11-22T03:19:51.131090Z",
+    "datetime": "2022-05-18T11:48:35.734813Z",
+    "platform": "sentinel-1a",
+    "published": "2023-05-20T16:11:37.596317Z",
+    "instruments": [
+     "sar"
+    ],
+    "auth:schemes": {
+     "s3": {
+      "type": "s3"
+     },
+     "oidc": {
+      "type": "openIdConnect",
+      "openIdConnectUrl": "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+     }
+    },
+    "end_datetime": "2022-05-18T11:49:00.733126Z",
+    "product:type": "IW_GRDH_1S",
+    "view:azimuth": 347.5986087440356,
+    "constellation": "sentinel-1",
+    "start_datetime": "2022-05-18T11:48:35.734813Z",
+    "sat:orbit_cycle": 261,
+    "sat:orbit_state": "ascending",
+    "storage:schemes": {
+     "cdse-s3": {
+      "type": "custom-s3",
+      "title": "Copernicus Data Space Ecosystem S3",
+      "platform": "https://eodata.dataspace.copernicus.eu",
+      "description": "This endpoint provides access to EO data which is stored on the object storage of both CloudFerro Cloud and OpenTelekom Cloud (OTC). See the [documentation](https://documentation.dataspace.copernicus.eu/APIs/S3.html) for more information, including how to get credentials.",
+      "requester_pays": false
+     },
+     "creodias-s3": {
+      "type": "custom-s3",
+      "title": "CREODIAS S3",
+      "platform": "https://eodata.cloudferro.com",
+      "description": "Comprehensive Earth Observation Data (EODATA) archive offered by CREODIAS as a commercial part of CDSE, designed to provide users with access to a vast repository of satellite data without predefined quota limits.",
+      "requester_pays": true
+     }
+    },
+    "eopf:datatake_id": "338615",
+    "processing:level": "L1",
+    "sar:polarizations": [
+     "VV",
+     "VH"
+    ],
+    "processing:version": "01.00",
+    "product:timeliness": "PT24H",
+    "sar:frequency_band": "C",
+    "sat:absolute_orbit": 43265,
+    "sat:relative_orbit": 143,
+    "processing:datetime": "2023-05-20T16:05:21.098490Z",
+    "processing:facility": "Copernicus Data Space Ecosystem-CloudFerro",
+    "processing:software": {
+     "eometadatatool": "251021130925+dirty"
+    },
+    "sar:instrument_mode": "IW",
+    "eopf:origin_datetime": "2023-05-20T14:04:13.368297Z",
+    "sar:center_frequency": 5.405,
+    "view:incidence_angle": 39.18638573111865,
+    "sar:pixel_spacing_range": 10.0,
+    "sar:observation_direction": "right",
+    "sar:pixel_spacing_azimuth": 10.0,
+    "product:timeliness_category": "Fast-24h",
+    "eopf:instrument_configuration_id": 7,
+    "sat:platform_international_designator": "2014-016A"
+   },
+   "stac_extensions": [
+    "https://cs-si.github.io/eopf-stac-extension/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/authentication/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/product/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/sar/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/sat/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/view/v1.1.0/schema.json"
+   ],
+   "stac_version": "1.1.0"
+  },
+  {
+   "id": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG",
+   "bbox": [
+    90.759071,
+    23.73019,
+    93.558022,
+    25.658403
+   ],
+   "type": "Feature",
+   "links": [
+    {
+     "rel": "collection",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "parent",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "root",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/"
+    },
+    {
+     "rel": "self",
+     "type": "application/geo+json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd/items/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG"
+    },
+    {
+     "rel": "version-history",
+     "href": "https://trace.dataspace.copernicus.eu/api/v1/traces/name/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE.zip",
+     "type": "application/json",
+     "title": "Product history record from the CDSE traceability service"
+    },
+    {
+     "rel": "enclosure",
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/",
+     "type": "application/x-directory",
+     "title": "S3 path to source directory",
+     "auth:refs": [
+      "s3"
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ]
+    }
+   ],
+   "assets": {
+    "vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/measurement/s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 594445158,
+     "proj:shape": [
+      25627,
+      16737
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610ca656e42484277e8e0c17378d07553e2",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/measurement/s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VH: Vertical transmit, horizontal receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received horizontally.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/measurement/s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 677727533,
+     "proj:shape": [
+      25627,
+      16737
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610de19d667cd0e8ad147b26971fde0f5f1",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/measurement/s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VV: Vertical transmit, vertical receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received vertically.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "Product": {
+     "href": "https://download.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/$value",
+     "roles": [
+      "data",
+      "metadata",
+      "archive"
+     ],
+     "auth:refs": [
+      "oidc"
+     ],
+     "file:size": 1279412320,
+     "file:checksum": "d5011053f2bdde9603c25b9d04d148391a2a91",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE.zip",
+     "type": "application/zip",
+     "title": "Zipped product"
+    },
+    "thumbnail": {
+     "href": "https://datahub.creodias.eu/odata/v1/Assets(c47e53a4-9ebc-4037-bd2d-a3b6683d5b33)/$value",
+     "alternate": {
+      "s3": {
+       "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/preview/thumbnail.png",
+       "auth:refs": [
+        "s3"
+       ],
+       "storage:refs": [
+        "cdse-s3",
+        "creodias-s3"
+       ],
+       "alternate:name": "S3"
+      }
+     },
+     "file:size": 122674,
+     "proj:shape": [
+      343,
+      343
+     ],
+     "file:checksum": "d50110835f329464825dbd928b72c26a32c02a",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/preview/thumbnail.png",
+     "type": "image/png",
+     "roles": [
+      "thumbnail"
+     ],
+     "title": "Thumbnail",
+     "alternate:name": "HTTPS"
+    },
+    "safe_manifest": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/manifest.safe",
+     "roles": [
+      "metadata"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(manifest.safe)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 24802,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "d501106cd368fcde6e60b405f702f27cb95053",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/manifest.safe",
+     "type": "application/xml",
+     "title": "manifest.safe",
+     "alternate:name": "S3"
+    },
+    "schema-noise-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 423778,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16107294289e9ca128f50d35a7f3614e35ed",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-noise-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 423778,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16105c5ae6ef028b98f60f9764d096a63f61",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-product-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1719148,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610a083ce8609bd9de6f264fdd8c5b48bf8",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-product-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1719170,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610bf381508fac5d34bd798125469709361",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-calibration-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1007005,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16106d62f479f5c5df17caaf8f30e36bead1",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220513t234740-20220513t234805-043199-0528c6-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-calibration-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/13/S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(44826b27-8428-4437-86bd-6fe6b9f381fd)/Nodes(S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1007005,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610d530f70c0f09bfd095a995cb92279194",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220513T234740_20220513T234805_043199_0528C6_9997_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220513t234740-20220513t234805-043199-0528c6-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       93.233849,
+       23.73019
+      ],
+      [
+       90.759071,
+       24.152542
+      ],
+      [
+       91.052574,
+       25.658403
+      ],
+      [
+       93.558022,
+       25.239086
+      ],
+      [
+       93.233849,
+       23.73019
+      ]
+     ]
+    ]
+   },
+   "collection": "sentinel-1-grd",
+   "properties": {
+    "created": "2023-05-20T13:35:06.245193Z",
+    "expires": "9999-01-01T00:00:00.000000Z",
+    "updated": "2025-11-22T03:44:01.196904Z",
+    "datetime": "2022-05-13T23:47:40.991185Z",
+    "platform": "sentinel-1a",
+    "published": "2023-05-20T15:42:52.440978Z",
+    "instruments": [
+     "sar"
+    ],
+    "auth:schemes": {
+     "s3": {
+      "type": "s3"
+     },
+     "oidc": {
+      "type": "openIdConnect",
+      "openIdConnectUrl": "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+     }
+    },
+    "end_datetime": "2022-05-13T23:48:05.990192Z",
+    "product:type": "IW_GRDH_1S",
+    "view:azimuth": 192.3966955579362,
+    "constellation": "sentinel-1",
+    "start_datetime": "2022-05-13T23:47:40.991185Z",
+    "sat:orbit_cycle": 261,
+    "sat:orbit_state": "descending",
+    "storage:schemes": {
+     "cdse-s3": {
+      "type": "custom-s3",
+      "title": "Copernicus Data Space Ecosystem S3",
+      "platform": "https://eodata.dataspace.copernicus.eu",
+      "description": "This endpoint provides access to EO data which is stored on the object storage of both CloudFerro Cloud and OpenTelekom Cloud (OTC). See the [documentation](https://documentation.dataspace.copernicus.eu/APIs/S3.html) for more information, including how to get credentials.",
+      "requester_pays": false
+     },
+     "creodias-s3": {
+      "type": "custom-s3",
+      "title": "CREODIAS S3",
+      "platform": "https://eodata.cloudferro.com",
+      "description": "Comprehensive Earth Observation Data (EODATA) archive offered by CREODIAS as a commercial part of CDSE, designed to provide users with access to a vast repository of satellite data without predefined quota limits.",
+      "requester_pays": true
+     }
+    },
+    "eopf:datatake_id": "338118",
+    "processing:level": "L1",
+    "sar:polarizations": [
+     "VV",
+     "VH"
+    ],
+    "processing:version": "01.00",
+    "product:timeliness": "PT24H",
+    "sar:frequency_band": "C",
+    "sat:absolute_orbit": 43199,
+    "sat:relative_orbit": 77,
+    "processing:datetime": "2023-05-20T15:36:19.899292Z",
+    "processing:facility": "Copernicus Data Space Ecosystem-CloudFerro",
+    "processing:software": {
+     "eometadatatool": "251021130925+dirty"
+    },
+    "sar:instrument_mode": "IW",
+    "eopf:origin_datetime": "2023-05-20T13:35:06.245193Z",
+    "sar:center_frequency": 5.405,
+    "view:incidence_angle": 39.25772556778504,
+    "sar:pixel_spacing_range": 10.0,
+    "sar:observation_direction": "right",
+    "sar:pixel_spacing_azimuth": 10.0,
+    "product:timeliness_category": "Fast-24h",
+    "eopf:instrument_configuration_id": 7,
+    "sat:platform_international_designator": "2014-016A"
+   },
+   "stac_extensions": [
+    "https://cs-si.github.io/eopf-stac-extension/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/authentication/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/product/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/sar/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/sat/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/view/v1.1.0/schema.json"
+   ],
+   "stac_version": "1.1.0"
+  },
+  {
+   "id": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG",
+   "bbox": [
+    90.892303,
+    23.560829,
+    93.703522,
+    25.494196
+   ],
+   "type": "Feature",
+   "links": [
+    {
+     "rel": "collection",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "parent",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd"
+    },
+    {
+     "rel": "root",
+     "type": "application/json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/"
+    },
+    {
+     "rel": "self",
+     "type": "application/geo+json",
+     "href": "https://stac.dataspace.copernicus.eu/v1/collections/sentinel-1-grd/items/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG"
+    },
+    {
+     "rel": "version-history",
+     "href": "https://trace.dataspace.copernicus.eu/api/v1/traces/name/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE.zip",
+     "type": "application/json",
+     "title": "Product history record from the CDSE traceability service"
+    },
+    {
+     "rel": "enclosure",
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/",
+     "type": "application/x-directory",
+     "title": "S3 path to source directory",
+     "auth:refs": [
+      "s3"
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ]
+    }
+   ],
+   "assets": {
+    "vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/measurement/s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 603861853,
+     "proj:shape": [
+      25851,
+      16735
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16107b6966d5042c0fd14743c0bf16afe314",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/measurement/s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VH: Vertical transmit, horizontal receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received horizontally.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/measurement/s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.tiff",
+     "roles": [
+      "data"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(measurement)/Nodes(s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.tiff)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 682097984,
+     "proj:shape": [
+      25851,
+      16735
+     ],
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610ed4c9bde6e29f77ee45c36791a622c45",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/measurement/s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.tiff",
+     "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+     "title": "VV: Vertical transmit, vertical receive",
+     "nodata": 0,
+     "data_type": "uint16",
+     "proj:code": null,
+     "description": "Amplitude of vertically polarized signal received vertically.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "Product": {
+     "href": "https://download.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/$value",
+     "roles": [
+      "data",
+      "metadata",
+      "archive"
+     ],
+     "auth:refs": [
+      "oidc"
+     ],
+     "file:size": 1293367041,
+     "file:checksum": "d50110f3554a6c99f5ea8886d7284622245bfa",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE.zip",
+     "type": "application/zip",
+     "title": "Zipped product"
+    },
+    "thumbnail": {
+     "href": "https://datahub.creodias.eu/odata/v1/Assets(ad75278b-172b-483e-8d54-d415c019201b)/$value",
+     "alternate": {
+      "s3": {
+       "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/preview/thumbnail.png",
+       "auth:refs": [
+        "s3"
+       ],
+       "storage:refs": [
+        "cdse-s3",
+        "creodias-s3"
+       ],
+       "alternate:name": "S3"
+      }
+     },
+     "file:size": 117457,
+     "proj:shape": [
+      343,
+      343
+     ],
+     "file:checksum": "d50110b801c0fd762efc05744e7442c1364af1",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/preview/thumbnail.png",
+     "type": "image/png",
+     "roles": [
+      "thumbnail"
+     ],
+     "title": "Thumbnail",
+     "alternate:name": "HTTPS"
+    },
+    "safe_manifest": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/manifest.safe",
+     "roles": [
+      "metadata"
+     ],
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(manifest.safe)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 24800,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "d50110949ea8bf106481e5149c90ead1241c53",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/manifest.safe",
+     "type": "application/xml",
+     "title": "manifest.safe",
+     "alternate:name": "S3"
+    },
+    "schema-noise-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 426858,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16101552704c91b89f75cc9e4a7aa49d276f",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-noise-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(noise-s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 426858,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610cd9789dbd72286943e569aa8c8b0ea96",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/noise-s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV noise Schema",
+     "description": "Estimated thermal noise look-up tables.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-product-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1788445,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16109b7e665b3f8a17f5b7f1f557b72e50e7",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-product-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(annotation)/Nodes(s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1788466,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610d5d1e72155b3c733ec575189c5034092",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV product Schema",
+     "description": "Main source of band's metadata, including: state of the platform during acquisition, image properties, Doppler information, geographic location, etc.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    },
+    "schema-calibration-vh": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1016401,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "16109cbe8a21020536b6e57db3b262542e6b",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vh-20220511t115642-20220511t115707-043163-0527a8-002-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VH calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VH"
+     ]
+    },
+    "schema-calibration-vv": {
+     "href": "s3://eodata/Sentinel-1/SAR/IW_GRDH_1S-COG/2022/05/11/S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml",
+     "alternate": {
+      "https": {
+       "href": "https://zipper.dataspace.copernicus.eu/odata/v1/Products(3f59598b-9a09-4018-90d1-654abe6731a2)/Nodes(S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE)/Nodes(annotation)/Nodes(calibration)/Nodes(calibration-s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml)/$value",
+       "auth:refs": [
+        "oidc"
+       ],
+       "storage:refs": [],
+       "alternate:name": "HTTPS"
+      }
+     },
+     "auth:refs": [
+      "s3"
+     ],
+     "file:size": 1016401,
+     "storage:refs": [
+      "cdse-s3",
+      "creodias-s3"
+     ],
+     "file:checksum": "1610ab14b6cab13b6f0cc3d8822b66dcc8a1",
+     "alternate:name": "S3",
+     "file:local_path": "S1A_IW_GRDH_1SDV_20220511T115642_20220511T115707_043163_0527A8_F034_COG.SAFE/annotation/calibration/calibration-s1a-iw-grd-vv-20220511t115642-20220511t115707-043163-0527a8-001-cog.xml",
+     "type": "application/xml",
+     "roles": [
+      "metadata"
+     ],
+     "title": "VV calibration Schema",
+     "description": "Calibration metadata including calibration details and lookup tables for beta nought, sigma nought, gamma, and digital numbers used in absolute product calibration.",
+     "sar:polarizations": [
+      "VV"
+     ]
+    }
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       90.892303,
+       25.070837
+      ],
+      [
+       93.416298,
+       25.494196
+      ],
+      [
+       93.703522,
+       23.987373
+      ],
+      [
+       91.210175,
+       23.560829
+      ],
+      [
+       90.892303,
+       25.070837
+      ]
+     ]
+    ]
+   },
+   "collection": "sentinel-1-grd",
+   "properties": {
+    "created": "2023-05-20T15:00:43.507732Z",
+    "expires": "9999-01-01T00:00:00.000000Z",
+    "updated": "2025-11-22T03:58:42.937513Z",
+    "datetime": "2022-05-11T11:56:42.731045Z",
+    "platform": "sentinel-1a",
+    "published": "2023-05-20T17:06:43.917942Z",
+    "instruments": [
+     "sar"
+    ],
+    "auth:schemes": {
+     "s3": {
+      "type": "s3"
+     },
+     "oidc": {
+      "type": "openIdConnect",
+      "openIdConnectUrl": "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/.well-known/openid-configuration"
+     }
+    },
+    "end_datetime": "2022-05-11T11:57:07.730341Z",
+    "product:type": "IW_GRDH_1S",
+    "view:azimuth": 347.61503902214577,
+    "constellation": "sentinel-1",
+    "start_datetime": "2022-05-11T11:56:42.731045Z",
+    "sat:orbit_cycle": 261,
+    "sat:orbit_state": "ascending",
+    "storage:schemes": {
+     "cdse-s3": {
+      "type": "custom-s3",
+      "title": "Copernicus Data Space Ecosystem S3",
+      "platform": "https://eodata.dataspace.copernicus.eu",
+      "description": "This endpoint provides access to EO data which is stored on the object storage of both CloudFerro Cloud and OpenTelekom Cloud (OTC). See the [documentation](https://documentation.dataspace.copernicus.eu/APIs/S3.html) for more information, including how to get credentials.",
+      "requester_pays": false
+     },
+     "creodias-s3": {
+      "type": "custom-s3",
+      "title": "CREODIAS S3",
+      "platform": "https://eodata.cloudferro.com",
+      "description": "Comprehensive Earth Observation Data (EODATA) archive offered by CREODIAS as a commercial part of CDSE, designed to provide users with access to a vast repository of satellite data without predefined quota limits.",
+      "requester_pays": true
+     }
+    },
+    "eopf:datatake_id": "337832",
+    "processing:level": "L1",
+    "sar:polarizations": [
+     "VV",
+     "VH"
+    ],
+    "processing:version": "01.00",
+    "product:timeliness": "PT24H",
+    "sar:frequency_band": "C",
+    "sat:absolute_orbit": 43163,
+    "sat:relative_orbit": 41,
+    "processing:datetime": "2023-05-20T17:01:57.619652Z",
+    "processing:facility": "Copernicus Data Space Ecosystem-CloudFerro",
+    "processing:software": {
+     "eometadatatool": "251021130925+dirty"
+    },
+    "sar:instrument_mode": "IW",
+    "eopf:origin_datetime": "2023-05-20T15:00:43.507732Z",
+    "sar:center_frequency": 5.405,
+    "view:incidence_angle": 39.21541256195975,
+    "sar:pixel_spacing_range": 10.0,
+    "sar:observation_direction": "right",
+    "sar:pixel_spacing_azimuth": 10.0,
+    "product:timeliness_category": "Fast-24h",
+    "eopf:instrument_configuration_id": 7,
+    "sat:platform_international_designator": "2014-016A"
+   },
+   "stac_extensions": [
+    "https://cs-si.github.io/eopf-stac-extension/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/alternate-assets/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/authentication/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/product/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/sar/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/sat/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/storage/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/timestamps/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/view/v1.1.0/schema.json"
+   ],
+   "stac_version": "1.1.0"
+  }
+ ]
+}

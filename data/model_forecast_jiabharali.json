@@ -1,0 +1,78 @@
+{
+ "generated_at": "2026-09-04T10:10:56Z",
+ "degraded": false,
+ "basin": "jiabharali",
+ "model": "model-v0-jiabharali",
+ "shipped": "trained_hgb",
+ "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis - a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
+ "model_card": "docs/MODEL-CARD-jiabharali-v0.md",
+ "feature_day": "2026-09-04",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 1533.62,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-04T10:10:56Z",
+   "date": "2026-09-04"
+  },
+  "catchment_rain_24h_mm": {
+   "value": 8.4,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 jiabharali catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:10:56Z"
+  },
+  "catchment_rain_48h_mm": {
+   "value": 13.5,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 jiabharali catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:10:56Z"
+  }
+ },
+ "threshold_m3s": {
+  "value": 3705.8,
+  "class": "OBSERVED",
+  "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
+  "retrieved_at": "2026-09-04T10:10:56Z"
+ },
+ "predictions": {
+  "h1": {
+   "horizon": "1 day",
+   "q_m3s": {
+    "value": 1565.3,
+    "class": "FORECAST",
+    "source": "JalDrishti model v0 for jiabharali - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-jiabharali-v0.md); modelled discharge, NOT observed river levels",
+    "retrieved_at": "2026-09-04T10:10:56Z"
+   },
+   "p_exceed_threshold": {
+    "value": 0.0,
+    "class": "FORECAST",
+    "source": "JalDrishti model v0 for jiabharali - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-jiabharali-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
+    "retrieved_at": "2026-09-04T10:10:56Z"
+   }
+  },
+  "h2": {
+   "horizon": "2 days",
+   "q_m3s": {
+    "value": 1673.9,
+    "class": "FORECAST",
+    "source": "JalDrishti model v0 for jiabharali - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-jiabharali-v0.md); modelled discharge, NOT observed river levels",
+    "retrieved_at": "2026-09-04T10:10:56Z"
+   },
+   "p_exceed_threshold": {
+    "value": 0.002,
+    "class": "FORECAST",
+    "source": "JalDrishti model v0 for jiabharali - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-jiabharali-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
+    "retrieved_at": "2026-09-04T10:10:56Z"
+   }
+  }
+ },
+ "colour": {
+  "value": "GREEN",
+  "class": "SIMULATED",
+  "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
+  "retrieved_at": "2026-09-04T10:10:56Z",
+  "p_exceed_h1": 0.0
+ },
+ "forecast_horizon": "1 day",
+ "basis_plain": "A tested river model expects the Jia Bharali / Kameng near here to stay in its normal range through tomorrow (river currently falling)."
+}

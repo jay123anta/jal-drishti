@@ -1,0 +1,10 @@
+{
+ "generated_at": "2026-08-14T10:43:28Z",
+ "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis - a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
+ "version": "v0-retained",
+ "shipped": "keep_v0",
+ "decision_statement": "gated ML (xgb) won 1/2 and B4 beat B3 in 0/2 -> v1 NOT earned; model v0 (B3) stays shipped",
+ "design": "perfect-prog training / real-issued-forecast validation",
+ "threshold_q90_monsoon_2015_2025_m3s": 509.5,
+ "fc_coverage": "issued forecasts Jun 2024+ (Previous Runs API)"
+}

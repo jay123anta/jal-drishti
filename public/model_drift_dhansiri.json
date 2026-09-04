@@ -1,0 +1,40 @@
+{
+ "generated_at": "2026-09-04T10:12:30Z",
+ "basin": "dhansiri",
+ "model": "model-v0-dhansiri",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 923.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-04T10:12:30Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.915,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.879
+  },
+  "catchment_rain_24h_mm": {
+   "value": 4.8,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:12:30Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.352,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.333
+  },
+  "catchment_rain_48h_mm": {
+   "value": 11.4,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:12:30Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.32,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.324
+  }
+ },
+ "overall": "in-range",
+ "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
+}

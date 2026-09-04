@@ -1,0 +1,1789 @@
+{
+ "generated_at": "2026-09-03T10:51:14Z",
+ "source": "Open-Meteo archive rain (model) scored against IMD Pune 0.25-deg gridded daily rainfall (gauge-based analysis)",
+ "class": "OBSERVED",
+ "method": {
+  "heavy_mm": 25.0,
+  "lenient_mm": 10.0,
+  "day_alignment": "IMD day D = 03:00 UTC D-1 .. 03:00 UTC D"
+ },
+ "summary": {
+  "anchors_scored": 53,
+  "anchors_skipped": 3,
+  "monsoon_median_r": 0.351,
+  "monsoon_median_bias": 1.35,
+  "monsoon_median_mae": 10.68,
+  "monsoon_median_pod25": 0.37,
+  "monsoon_median_pod10": 0.73,
+  "heavy_days_total": 9090,
+  "fa_days_total": 4601
+ },
+ "anchors": [
+  {
+   "id": "zunheboto",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.0,
+    94.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.501,
+    "imd_mean": 4.59,
+    "om_mean": 6.37,
+    "bias": 1.39,
+    "mae": 4.95,
+    "heavy": 159,
+    "pod25": 0.33,
+    "pod10": 0.69,
+    "fa_days": 82
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.317,
+    "imd_mean": 8.91,
+    "om_mean": 12.37,
+    "bias": 1.39,
+    "mae": 9.54,
+    "heavy": 116,
+    "pod25": 0.29,
+    "pod10": 0.71,
+    "fa_days": 62
+   }
+  },
+  {
+   "id": "satakha",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.0,
+    94.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.482,
+    "imd_mean": 4.59,
+    "om_mean": 5.12,
+    "bias": 1.12,
+    "mae": 4.42,
+    "heavy": 159,
+    "pod25": 0.27,
+    "pod10": 0.6,
+    "fa_days": 65
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.308,
+    "imd_mean": 8.91,
+    "om_mean": 9.89,
+    "bias": 1.11,
+    "mae": 8.35,
+    "heavy": 116,
+    "pod25": 0.23,
+    "pod10": 0.59,
+    "fa_days": 44
+   }
+  },
+  {
+   "id": "aghunato",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.0,
+    94.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.419,
+    "imd_mean": 4.64,
+    "om_mean": 5.34,
+    "bias": 1.15,
+    "mae": 4.86,
+    "heavy": 163,
+    "pod25": 0.24,
+    "pod10": 0.56,
+    "fa_days": 83
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.223,
+    "imd_mean": 8.83,
+    "om_mean": 11.46,
+    "bias": 1.3,
+    "mae": 9.68,
+    "heavy": 109,
+    "pod25": 0.21,
+    "pod10": 0.57,
+    "fa_days": 69
+   }
+  },
+  {
+   "id": "mokokchung",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.25,
+    94.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.475,
+    "imd_mean": 4.9,
+    "om_mean": 7.11,
+    "bias": 1.45,
+    "mae": 5.73,
+    "heavy": 183,
+    "pod25": 0.29,
+    "pod10": 0.68,
+    "fa_days": 121
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.277,
+    "imd_mean": 9.24,
+    "om_mean": 12.53,
+    "bias": 1.35,
+    "mae": 10.06,
+    "heavy": 122,
+    "pod25": 0.25,
+    "pod10": 0.7,
+    "fa_days": 78
+   }
+  },
+  {
+   "id": "longkhim",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.5,
+    94.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.465,
+    "imd_mean": 5.24,
+    "om_mean": 6.84,
+    "bias": 1.31,
+    "mae": 5.65,
+    "heavy": 190,
+    "pod25": 0.34,
+    "pod10": 0.68,
+    "fa_days": 110
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.284,
+    "imd_mean": 9.81,
+    "om_mean": 12.52,
+    "bias": 1.28,
+    "mae": 10.14,
+    "heavy": 131,
+    "pod25": 0.34,
+    "pod10": 0.72,
+    "fa_days": 85
+   }
+  },
+  {
+   "id": "changtongya",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.5,
+    94.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.492,
+    "imd_mean": 5.1,
+    "om_mean": 7.45,
+    "bias": 1.46,
+    "mae": 5.78,
+    "heavy": 171,
+    "pod25": 0.36,
+    "pod10": 0.73,
+    "fa_days": 135
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.299,
+    "imd_mean": 9.55,
+    "om_mean": 13.73,
+    "bias": 1.44,
+    "mae": 10.49,
+    "heavy": 112,
+    "pod25": 0.37,
+    "pod10": 0.77,
+    "fa_days": 105
+   }
+  },
+  {
+   "id": "naginimora",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.75,
+    94.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.517,
+    "imd_mean": 5.72,
+    "om_mean": 9.42,
+    "bias": 1.65,
+    "mae": 7.02,
+    "heavy": 256,
+    "pod25": 0.47,
+    "pod10": 0.84,
+    "fa_days": 191
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.344,
+    "imd_mean": 10.51,
+    "om_mean": 15.91,
+    "bias": 1.51,
+    "mae": 11.7,
+    "heavy": 170,
+    "pod25": 0.44,
+    "pod10": 0.86,
+    "fa_days": 117
+   }
+  },
+  {
+   "id": "mon",
+   "basin": "dikhow",
+   "imd_cell": [
+    26.75,
+    95.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.522,
+    "imd_mean": 6.0,
+    "om_mean": 6.72,
+    "bias": 1.12,
+    "mae": 5.5,
+    "heavy": 263,
+    "pod25": 0.29,
+    "pod10": 0.68,
+    "fa_days": 71
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.351,
+    "imd_mean": 10.96,
+    "om_mean": 12.63,
+    "bias": 1.15,
+    "mae": 9.73,
+    "heavy": 170,
+    "pod25": 0.3,
+    "pod10": 0.72,
+    "fa_days": 56
+   }
+  },
+  {
+   "id": "jowai",
+   "basin": "kopili",
+   "imd_cell": [
+    25.5,
+    92.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.511,
+    "imd_mean": 4.27,
+    "om_mean": 5.68,
+    "bias": 1.33,
+    "mae": 5.06,
+    "heavy": 155,
+    "pod25": 0.37,
+    "pod10": 0.66,
+    "fa_days": 91
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.339,
+    "imd_mean": 7.45,
+    "om_mean": 10.71,
+    "bias": 1.44,
+    "mae": 9.32,
+    "heavy": 89,
+    "pod25": 0.38,
+    "pod10": 0.71,
+    "fa_days": 71
+   }
+  },
+  {
+   "id": "khliehriat",
+   "basin": "kopili",
+   "imd_cell": [
+    25.25,
+    92.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.577,
+    "imd_mean": 7.02,
+    "om_mean": 10.0,
+    "bias": 1.43,
+    "mae": 7.62,
+    "heavy": 305,
+    "pod25": 0.52,
+    "pod10": 0.76,
+    "fa_days": 127
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.468,
+    "imd_mean": 12.04,
+    "om_mean": 19.56,
+    "bias": 1.62,
+    "mae": 14.45,
+    "heavy": 183,
+    "pod25": 0.51,
+    "pod10": 0.74,
+    "fa_days": 100
+   }
+  },
+  {
+   "id": "umrongso",
+   "basin": "kopili",
+   "imd_cell": [
+    25.5,
+    92.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.471,
+    "imd_mean": 3.64,
+    "om_mean": 5.42,
+    "bias": 1.49,
+    "mae": 4.95,
+    "heavy": 127,
+    "pod25": 0.27,
+    "pod10": 0.6,
+    "fa_days": 102
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.295,
+    "imd_mean": 6.14,
+    "om_mean": 9.6,
+    "bias": 1.56,
+    "mae": 8.58,
+    "heavy": 75,
+    "pod25": 0.15,
+    "pod10": 0.6,
+    "fa_days": 66
+   }
+  },
+  {
+   "id": "hamren",
+   "basin": "kopili",
+   "imd_cell": [
+    25.75,
+    92.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.376,
+    "imd_mean": 3.02,
+    "om_mean": 5.64,
+    "bias": 1.87,
+    "mae": 5.44,
+    "heavy": 150,
+    "pod25": 0.27,
+    "pod10": 0.55,
+    "fa_days": 141
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.229,
+    "imd_mean": 5.47,
+    "om_mean": 11.08,
+    "bias": 2.03,
+    "mae": 10.68,
+    "heavy": 99,
+    "pod25": 0.22,
+    "pod10": 0.55,
+    "fa_days": 113
+   }
+  },
+  {
+   "id": "baithalangso",
+   "basin": "kopili",
+   "imd_cell": [
+    26.0,
+    92.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.456,
+    "imd_mean": 3.78,
+    "om_mean": 6.69,
+    "bias": 1.77,
+    "mae": 5.51,
+    "heavy": 124,
+    "pod25": 0.44,
+    "pod10": 0.73,
+    "fa_days": 135
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.29,
+    "imd_mean": 7.27,
+    "om_mean": 14.66,
+    "bias": 2.02,
+    "mae": 11.69,
+    "heavy": 91,
+    "pod25": 0.45,
+    "pod10": 0.73,
+    "fa_days": 122
+   }
+  },
+  {
+   "id": "kheroni",
+   "basin": "kopili",
+   "imd_cell": [
+    26.0,
+    92.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.439,
+    "imd_mean": 3.83,
+    "om_mean": 5.71,
+    "bias": 1.49,
+    "mae": 5.05,
+    "heavy": 147,
+    "pod25": 0.33,
+    "pod10": 0.65,
+    "fa_days": 120
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.268,
+    "imd_mean": 7.32,
+    "om_mean": 12.44,
+    "bias": 1.7,
+    "mae": 10.51,
+    "heavy": 104,
+    "pod25": 0.32,
+    "pod10": 0.65,
+    "fa_days": 105
+   }
+  },
+  {
+   "id": "bhalukpong",
+   "basin": "jiabharali",
+   "imd_cell": [
+    27.0,
+    92.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.621,
+    "imd_mean": 6.37,
+    "om_mean": 7.41,
+    "bias": 1.16,
+    "mae": 5.31,
+    "heavy": 315,
+    "pod25": 0.44,
+    "pod10": 0.83,
+    "fa_days": 54
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.504,
+    "imd_mean": 13.03,
+    "om_mean": 14.77,
+    "bias": 1.13,
+    "mae": 10.34,
+    "heavy": 242,
+    "pod25": 0.42,
+    "pod10": 0.82,
+    "fa_days": 37
+   }
+  },
+  {
+   "id": "tenga",
+   "basin": "jiabharali",
+   "imd_cell": [
+    27.25,
+    92.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.527,
+    "imd_mean": 4.28,
+    "om_mean": 11.88,
+    "bias": 2.78,
+    "mae": 9.0,
+    "heavy": 167,
+    "pod25": 0.68,
+    "pod10": 0.94,
+    "fa_days": 364
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.397,
+    "imd_mean": 8.91,
+    "om_mean": 21.51,
+    "bias": 2.41,
+    "mae": 15.49,
+    "heavy": 132,
+    "pod25": 0.69,
+    "pod10": 0.94,
+    "fa_days": 232
+   }
+  },
+  {
+   "id": "bomdila",
+   "basin": "jiabharali",
+   "imd_cell": [
+    27.25,
+    92.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.45,
+    "imd_mean": 4.28,
+    "om_mean": 8.14,
+    "bias": 1.9,
+    "mae": 6.86,
+    "heavy": 167,
+    "pod25": 0.36,
+    "pod10": 0.65,
+    "fa_days": 174
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.272,
+    "imd_mean": 8.91,
+    "om_mean": 16.54,
+    "bias": 1.86,
+    "mae": 13.3,
+    "heavy": 132,
+    "pod25": 0.39,
+    "pod10": 0.7,
+    "fa_days": 145
+   }
+  },
+  {
+   "id": "dirang",
+   "basin": "jiabharali",
+   "imd_cell": [
+    27.25,
+    92.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.419,
+    "imd_mean": 4.88,
+    "om_mean": 9.01,
+    "bias": 1.85,
+    "mae": 7.47,
+    "heavy": 202,
+    "pod25": 0.34,
+    "pod10": 0.68,
+    "fa_days": 176
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.265,
+    "imd_mean": 10.21,
+    "om_mean": 15.74,
+    "bias": 1.54,
+    "mae": 12.87,
+    "heavy": 157,
+    "pod25": 0.34,
+    "pod10": 0.68,
+    "fa_days": 112
+   }
+  },
+  {
+   "id": "seppa",
+   "basin": "jiabharali",
+   "imd_cell": [
+    27.25,
+    93.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.552,
+    "imd_mean": 7.07,
+    "om_mean": 8.4,
+    "bias": 1.19,
+    "mae": 6.59,
+    "heavy": 375,
+    "pod25": 0.41,
+    "pod10": 0.79,
+    "fa_days": 110
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.434,
+    "imd_mean": 14.04,
+    "om_mean": 15.27,
+    "bias": 1.09,
+    "mae": 11.91,
+    "heavy": 271,
+    "pod25": 0.43,
+    "pod10": 0.8,
+    "fa_days": 69
+   }
+  },
+  {
+   "id": "tawang",
+   "basin": "jiabharali",
+   "imd_cell": [
+    27.5,
+    91.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.473,
+    "imd_mean": 4.16,
+    "om_mean": 5.88,
+    "bias": 1.41,
+    "mae": 4.82,
+    "heavy": 123,
+    "pod25": 0.31,
+    "pod10": 0.72,
+    "fa_days": 52
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.344,
+    "imd_mean": 7.86,
+    "om_mean": 9.75,
+    "bias": 1.24,
+    "mae": 7.89,
+    "heavy": 84,
+    "pod25": 0.32,
+    "pod10": 0.7,
+    "fa_days": 43
+   }
+  },
+  {
+   "id": "tamenglong",
+   "basin": "barak",
+   "imd_cell": [
+    25.0,
+    93.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.504,
+    "imd_mean": 3.66,
+    "om_mean": 6.64,
+    "bias": 1.81,
+    "mae": 5.27,
+    "heavy": 135,
+    "pod25": 0.36,
+    "pod10": 0.67,
+    "fa_days": 116
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.309,
+    "imd_mean": 6.57,
+    "om_mean": 12.71,
+    "bias": 1.93,
+    "mae": 10.21,
+    "heavy": 81,
+    "pod25": 0.3,
+    "pod10": 0.67,
+    "fa_days": 84
+   }
+  },
+  {
+   "id": "senapati",
+   "basin": "barak",
+   "imd_cell": [
+    25.25,
+    94.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.58,
+    "imd_mean": 4.01,
+    "om_mean": 5.36,
+    "bias": 1.34,
+    "mae": 4.11,
+    "heavy": 125,
+    "pod25": 0.34,
+    "pod10": 0.7,
+    "fa_days": 52
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.395,
+    "imd_mean": 7.64,
+    "om_mean": 10.39,
+    "bias": 1.36,
+    "mae": 7.86,
+    "heavy": 86,
+    "pod25": 0.24,
+    "pod10": 0.65,
+    "fa_days": 39
+   }
+  },
+  {
+   "id": "jiribam",
+   "basin": "barak",
+   "imd_cell": [
+    24.75,
+    93.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.506,
+    "imd_mean": 6.7,
+    "om_mean": 7.91,
+    "bias": 1.18,
+    "mae": 6.49,
+    "heavy": 331,
+    "pod25": 0.34,
+    "pod10": 0.71,
+    "fa_days": 112
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.32,
+    "imd_mean": 12.75,
+    "om_mean": 16.05,
+    "bias": 1.26,
+    "mae": 12.27,
+    "heavy": 222,
+    "pod25": 0.36,
+    "pod10": 0.74,
+    "fa_days": 86
+   }
+  },
+  {
+   "id": "haflong",
+   "basin": "barak",
+   "imd_cell": [
+    25.25,
+    93.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.441,
+    "imd_mean": 5.03,
+    "om_mean": 5.43,
+    "bias": 1.08,
+    "mae": 5.49,
+    "heavy": 207,
+    "pod25": 0.27,
+    "pod10": 0.51,
+    "fa_days": 76
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.269,
+    "imd_mean": 8.79,
+    "om_mean": 9.39,
+    "bias": 1.07,
+    "mae": 9.48,
+    "heavy": 131,
+    "pod25": 0.21,
+    "pod10": 0.47,
+    "fa_days": 53
+   }
+  },
+  {
+   "id": "churachandpur",
+   "basin": "barak",
+   "imd_cell": [
+    24.25,
+    93.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.483,
+    "imd_mean": 3.29,
+    "om_mean": 4.02,
+    "bias": 1.22,
+    "mae": 3.72,
+    "heavy": 123,
+    "pod25": 0.23,
+    "pod10": 0.59,
+    "fa_days": 42
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.363,
+    "imd_mean": 5.87,
+    "om_mean": 8.15,
+    "bias": 1.39,
+    "mae": 7.04,
+    "heavy": 76,
+    "pod25": 0.17,
+    "pod10": 0.61,
+    "fa_days": 34
+   }
+  },
+  {
+   "id": "kolasib",
+   "basin": "barak",
+   "imd_cell": [
+    24.25,
+    92.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.423,
+    "imd_mean": 6.97,
+    "om_mean": 5.52,
+    "bias": 0.79,
+    "mae": 6.27,
+    "heavy": 352,
+    "pod25": 0.15,
+    "pod10": 0.48,
+    "fa_days": 62
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.226,
+    "imd_mean": 13.21,
+    "om_mean": 10.81,
+    "bias": 0.82,
+    "mae": 11.57,
+    "heavy": 230,
+    "pod25": 0.14,
+    "pod10": 0.48,
+    "fa_days": 51
+   }
+  },
+  {
+   "id": "gelephu",
+   "basin": "beki",
+   "imd_cell": [
+    26.75,
+    90.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.655,
+    "imd_mean": 10.15,
+    "om_mean": 9.97,
+    "bias": 0.98,
+    "mae": 8.37,
+    "heavy": 509,
+    "pod25": 0.55,
+    "pod10": 0.77,
+    "fa_days": 84
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.601,
+    "imd_mean": 22.28,
+    "om_mean": 23.82,
+    "bias": 1.07,
+    "mae": 17.9,
+    "heavy": 367,
+    "pod25": 0.66,
+    "pod10": 0.86,
+    "fa_days": 69
+   }
+  },
+  {
+   "id": "sarpang",
+   "basin": "beki",
+   "imd_cell": [
+    26.75,
+    90.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.568,
+    "imd_mean": 8.83,
+    "om_mean": 11.22,
+    "bias": 1.27,
+    "mae": 9.2,
+    "heavy": 446,
+    "pod25": 0.56,
+    "pod10": 0.84,
+    "fa_days": 155
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.504,
+    "imd_mean": 18.68,
+    "om_mean": 26.32,
+    "bias": 1.41,
+    "mae": 20.07,
+    "heavy": 319,
+    "pod25": 0.66,
+    "pod10": 0.92,
+    "fa_days": 125
+   }
+  },
+  {
+   "id": "tsirang",
+   "basin": "beki",
+   "imd_cell": [
+    27.0,
+    90.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.523,
+    "imd_mean": 9.27,
+    "om_mean": 10.16,
+    "bias": 1.1,
+    "mae": 9.29,
+    "heavy": 463,
+    "pod25": 0.46,
+    "pod10": 0.76,
+    "fa_days": 105
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.46,
+    "imd_mean": 19.72,
+    "om_mean": 21.58,
+    "bias": 1.09,
+    "mae": 18.45,
+    "heavy": 334,
+    "pod25": 0.55,
+    "pod10": 0.82,
+    "fa_days": 78
+   }
+  },
+  {
+   "id": "mathanguri_hills",
+   "basin": "beki",
+   "imd_cell": [
+    26.75,
+    91.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.629,
+    "imd_mean": 6.51,
+    "om_mean": 10.47,
+    "bias": 1.61,
+    "mae": 7.74,
+    "heavy": 323,
+    "pod25": 0.6,
+    "pod10": 0.83,
+    "fa_days": 139
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.583,
+    "imd_mean": 12.9,
+    "om_mean": 23.19,
+    "bias": 1.8,
+    "mae": 16.65,
+    "heavy": 219,
+    "pod25": 0.65,
+    "pod10": 0.88,
+    "fa_days": 112
+   }
+  },
+  {
+   "id": "dimapur",
+   "basin": "dhansiri",
+   "imd_cell": [
+    26.0,
+    93.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.493,
+    "imd_mean": 3.89,
+    "om_mean": 5.95,
+    "bias": 1.53,
+    "mae": 4.8,
+    "heavy": 105,
+    "pod25": 0.31,
+    "pod10": 0.7,
+    "fa_days": 102
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.338,
+    "imd_mean": 7.59,
+    "om_mean": 9.83,
+    "bias": 1.3,
+    "mae": 8.16,
+    "heavy": 77,
+    "pod25": 0.21,
+    "pod10": 0.64,
+    "fa_days": 53
+   }
+  },
+  {
+   "id": "diphu",
+   "basin": "dhansiri",
+   "imd_cell": [
+    25.75,
+    93.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.381,
+    "imd_mean": 3.89,
+    "om_mean": 5.75,
+    "bias": 1.48,
+    "mae": 5.38,
+    "heavy": 176,
+    "pod25": 0.24,
+    "pod10": 0.51,
+    "fa_days": 109
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.237,
+    "imd_mean": 7.75,
+    "om_mean": 10.19,
+    "bias": 1.32,
+    "mae": 10.04,
+    "heavy": 129,
+    "pod25": 0.19,
+    "pod10": 0.47,
+    "fa_days": 67
+   }
+  },
+  {
+   "id": "medziphema",
+   "basin": "dhansiri",
+   "imd_cell": [
+    25.75,
+    93.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.389,
+    "imd_mean": 4.24,
+    "om_mean": 5.21,
+    "bias": 1.23,
+    "mae": 5.06,
+    "heavy": 154,
+    "pod25": 0.23,
+    "pod10": 0.48,
+    "fa_days": 116
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.168,
+    "imd_mean": 8.47,
+    "om_mean": 10.39,
+    "bias": 1.23,
+    "mae": 10.16,
+    "heavy": 110,
+    "pod25": 0.16,
+    "pod10": 0.41,
+    "fa_days": 81
+   }
+  },
+  {
+   "id": "bokajan",
+   "basin": "dhansiri",
+   "imd_cell": [
+    26.0,
+    93.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.48,
+    "imd_mean": 3.89,
+    "om_mean": 5.4,
+    "bias": 1.39,
+    "mae": 4.53,
+    "heavy": 105,
+    "pod25": 0.3,
+    "pod10": 0.65,
+    "fa_days": 81
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.303,
+    "imd_mean": 7.59,
+    "om_mean": 9.3,
+    "bias": 1.23,
+    "mae": 8.09,
+    "heavy": 77,
+    "pod25": 0.18,
+    "pod10": 0.57,
+    "fa_days": 49
+   }
+  },
+  {
+   "id": "wokha",
+   "basin": "dhansiri",
+   "imd_cell": [
+    26.0,
+    94.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.519,
+    "imd_mean": 4.42,
+    "om_mean": 6.52,
+    "bias": 1.47,
+    "mae": 4.92,
+    "heavy": 149,
+    "pod25": 0.32,
+    "pod10": 0.7,
+    "fa_days": 102
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.331,
+    "imd_mean": 8.7,
+    "om_mean": 12.33,
+    "bias": 1.42,
+    "mae": 9.02,
+    "heavy": 106,
+    "pod25": 0.26,
+    "pod10": 0.71,
+    "fa_days": 68
+   }
+  },
+  {
+   "id": "longwa",
+   "basin": "disang",
+   "imd_cell": [
+    26.75,
+    95.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.461,
+    "imd_mean": 6.01,
+    "om_mean": 6.55,
+    "bias": 1.09,
+    "mae": 5.72,
+    "heavy": 267,
+    "pod25": 0.24,
+    "pod10": 0.6,
+    "fa_days": 77
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.289,
+    "imd_mean": 10.93,
+    "om_mean": 12.26,
+    "bias": 1.12,
+    "mae": 10.17,
+    "heavy": 167,
+    "pod25": 0.28,
+    "pod10": 0.63,
+    "fa_days": 67
+   }
+  },
+  {
+   "id": "borhat_hills",
+   "basin": "disang",
+   "imd_cell": [
+    26.75,
+    95.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.567,
+    "imd_mean": 6.01,
+    "om_mean": 7.62,
+    "bias": 1.27,
+    "mae": 5.63,
+    "heavy": 267,
+    "pod25": 0.36,
+    "pod10": 0.75,
+    "fa_days": 85
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.38,
+    "imd_mean": 10.93,
+    "om_mean": 14.04,
+    "bias": 1.28,
+    "mae": 10.02,
+    "heavy": 167,
+    "pod25": 0.35,
+    "pod10": 0.78,
+    "fa_days": 66
+   }
+  },
+  {
+   "id": "sapekhati",
+   "basin": "disang",
+   "imd_cell": [
+    27.0,
+    95.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.567,
+    "imd_mean": 5.97,
+    "om_mean": 6.72,
+    "bias": 1.12,
+    "mae": 5.38,
+    "heavy": 262,
+    "pod25": 0.37,
+    "pod10": 0.75,
+    "fa_days": 94
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.397,
+    "imd_mean": 10.88,
+    "om_mean": 12.2,
+    "bias": 1.12,
+    "mae": 9.78,
+    "heavy": 170,
+    "pod25": 0.38,
+    "pod10": 0.76,
+    "fa_days": 68
+   }
+  },
+  {
+   "id": "tizit",
+   "basin": "disang",
+   "imd_cell": [
+    27.0,
+    95.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.583,
+    "imd_mean": 6.04,
+    "om_mean": 6.79,
+    "bias": 1.12,
+    "mae": 5.25,
+    "heavy": 277,
+    "pod25": 0.36,
+    "pod10": 0.74,
+    "fa_days": 75
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.411,
+    "imd_mean": 10.95,
+    "om_mean": 11.78,
+    "bias": 1.08,
+    "mae": 9.45,
+    "heavy": 177,
+    "pod25": 0.34,
+    "pod10": 0.73,
+    "fa_days": 53
+   }
+  },
+  {
+   "id": "pasighat",
+   "basin": "bputra_dibrugarh",
+   "imd_cell": [
+    28.0,
+    95.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.699,
+    "imd_mean": 9.66,
+    "om_mean": 10.1,
+    "bias": 1.05,
+    "mae": 7.2,
+    "heavy": 516,
+    "pod25": 0.6,
+    "pod10": 0.86,
+    "fa_days": 82
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.659,
+    "imd_mean": 19.13,
+    "om_mean": 17.04,
+    "bias": 0.89,
+    "mae": 12.81,
+    "heavy": 367,
+    "pod25": 0.56,
+    "pod10": 0.84,
+    "fa_days": 43
+   }
+  },
+  {
+   "id": "along",
+   "basin": "bputra_dibrugarh",
+   "imd_cell": [
+    28.25,
+    94.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.396,
+    "imd_mean": 4.71,
+    "om_mean": 12.34,
+    "bias": 2.62,
+    "mae": 10.13,
+    "heavy": 181,
+    "pod25": 0.57,
+    "pod10": 0.82,
+    "fa_days": 386
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.307,
+    "imd_mean": 8.68,
+    "om_mean": 21.82,
+    "bias": 2.52,
+    "mae": 17.94,
+    "heavy": 134,
+    "pod25": 0.61,
+    "pod10": 0.83,
+    "fa_days": 222
+   }
+  },
+  {
+   "id": "roing",
+   "basin": "bputra_dibrugarh",
+   "imd_cell": [
+    28.25,
+    95.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.691,
+    "imd_mean": 8.5,
+    "om_mean": 10.78,
+    "bias": 1.27,
+    "mae": 7.24,
+    "heavy": 410,
+    "pod25": 0.65,
+    "pod10": 0.88,
+    "fa_days": 92
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.637,
+    "imd_mean": 15.83,
+    "om_mean": 19.51,
+    "bias": 1.23,
+    "mae": 12.98,
+    "heavy": 263,
+    "pod25": 0.65,
+    "pod10": 0.89,
+    "fa_days": 54
+   }
+  },
+  {
+   "id": "tezu",
+   "basin": "bputra_dibrugarh",
+   "imd_cell": [
+    28.0,
+    96.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.592,
+    "imd_mean": 5.84,
+    "om_mean": 9.83,
+    "bias": 1.68,
+    "mae": 7.55,
+    "heavy": 277,
+    "pod25": 0.6,
+    "pod10": 0.84,
+    "fa_days": 138
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.502,
+    "imd_mean": 8.81,
+    "om_mean": 18.48,
+    "bias": 2.1,
+    "mae": 14.64,
+    "heavy": 146,
+    "pod25": 0.62,
+    "pod10": 0.83,
+    "fa_days": 107
+   }
+  },
+  {
+   "id": "yingkiong",
+   "basin": "bputra_dibrugarh",
+   "imd_cell": [
+    28.75,
+    95.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.671,
+    "imd_mean": 7.94,
+    "om_mean": 11.6,
+    "bias": 1.46,
+    "mae": 7.35,
+    "heavy": 387,
+    "pod25": 0.71,
+    "pod10": 0.91,
+    "fa_days": 119
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.575,
+    "imd_mean": 13.06,
+    "om_mean": 18.94,
+    "bias": 1.45,
+    "mae": 12.68,
+    "heavy": 230,
+    "pod25": 0.67,
+    "pod10": 0.89,
+    "fa_days": 66
+   }
+  },
+  {
+   "id": "anini",
+   "basin": "bputra_dibrugarh",
+   "imd_cell": [
+    28.75,
+    96.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.547,
+    "imd_mean": 8.69,
+    "om_mean": 11.39,
+    "bias": 1.31,
+    "mae": 9.37,
+    "heavy": 410,
+    "pod25": 0.56,
+    "pod10": 0.84,
+    "fa_days": 191
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.518,
+    "imd_mean": 15.47,
+    "om_mean": 14.32,
+    "bias": 0.93,
+    "mae": 13.14,
+    "heavy": 241,
+    "pod25": 0.52,
+    "pod10": 0.8,
+    "fa_days": 54
+   }
+  },
+  {
+   "id": "sivasagar",
+   "basin": "bputra_tezpur",
+   "imd_cell": [
+    27.0,
+    94.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.58,
+    "imd_mean": 6.02,
+    "om_mean": 8.83,
+    "bias": 1.47,
+    "mae": 6.29,
+    "heavy": 258,
+    "pod25": 0.48,
+    "pod10": 0.83,
+    "fa_days": 145
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.392,
+    "imd_mean": 10.98,
+    "om_mean": 14.5,
+    "bias": 1.32,
+    "mae": 10.61,
+    "heavy": 156,
+    "pod25": 0.4,
+    "pod10": 0.83,
+    "fa_days": 88
+   }
+  },
+  {
+   "id": "daporijo",
+   "basin": "subansiri",
+   "imd_cell": [
+    28.0,
+    94.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.576,
+    "imd_mean": 6.27,
+    "om_mean": 11.63,
+    "bias": 1.85,
+    "mae": 8.17,
+    "heavy": 294,
+    "pod25": 0.69,
+    "pod10": 0.94,
+    "fa_days": 257
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.483,
+    "imd_mean": 12.13,
+    "om_mean": 23.0,
+    "bias": 1.9,
+    "mae": 15.97,
+    "heavy": 222,
+    "pod25": 0.74,
+    "pod10": 0.94,
+    "fa_days": 173
+   }
+  },
+  {
+   "id": "ziro",
+   "basin": "subansiri",
+   "imd_cell": [
+    27.5,
+    93.75
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.527,
+    "imd_mean": 9.14,
+    "om_mean": 10.6,
+    "bias": 1.16,
+    "mae": 8.96,
+    "heavy": 516,
+    "pod25": 0.41,
+    "pod10": 0.8,
+    "fa_days": 139
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.353,
+    "imd_mean": 19.39,
+    "om_mean": 19.67,
+    "bias": 1.01,
+    "mae": 16.86,
+    "heavy": 382,
+    "pod25": 0.43,
+    "pod10": 0.82,
+    "fa_days": 95
+   }
+  },
+  {
+   "id": "raga",
+   "basin": "subansiri",
+   "imd_cell": [
+    27.5,
+    94.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.504,
+    "imd_mean": 6.81,
+    "om_mean": 13.11,
+    "bias": 1.92,
+    "mae": 9.91,
+    "heavy": 331,
+    "pod25": 0.61,
+    "pod10": 0.89,
+    "fa_days": 353
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.36,
+    "imd_mean": 12.77,
+    "om_mean": 22.53,
+    "bias": 1.76,
+    "mae": 16.95,
+    "heavy": 217,
+    "pod25": 0.62,
+    "pod10": 0.87,
+    "fa_days": 204
+   }
+  },
+  {
+   "id": "gerukamukh",
+   "basin": "subansiri",
+   "imd_cell": [
+    27.5,
+    94.25
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.501,
+    "imd_mean": 6.81,
+    "om_mean": 7.03,
+    "bias": 1.03,
+    "mae": 6.18,
+    "heavy": 331,
+    "pod25": 0.35,
+    "pod10": 0.66,
+    "fa_days": 94
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.402,
+    "imd_mean": 12.77,
+    "om_mean": 13.07,
+    "bias": 1.02,
+    "mae": 11.0,
+    "heavy": 217,
+    "pod25": 0.37,
+    "pod10": 0.7,
+    "fa_days": 56
+   }
+  },
+  {
+   "id": "dumporijo",
+   "basin": "subansiri",
+   "imd_cell": [
+    28.0,
+    94.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.616,
+    "imd_mean": 6.37,
+    "om_mean": 10.54,
+    "bias": 1.66,
+    "mae": 7.04,
+    "heavy": 289,
+    "pod25": 0.62,
+    "pod10": 0.91,
+    "fa_days": 156
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.536,
+    "imd_mean": 12.45,
+    "om_mean": 19.15,
+    "bias": 1.54,
+    "mae": 12.58,
+    "heavy": 218,
+    "pod25": 0.64,
+    "pod10": 0.92,
+    "fa_days": 83
+   }
+  },
+  {
+   "id": "panbang",
+   "basin": "manas",
+   "imd_cell": [
+    26.75,
+    91.0
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.584,
+    "imd_mean": 6.51,
+    "om_mean": 10.32,
+    "bias": 1.59,
+    "mae": 7.95,
+    "heavy": 323,
+    "pod25": 0.56,
+    "pod10": 0.8,
+    "fa_days": 132
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.524,
+    "imd_mean": 12.9,
+    "om_mean": 23.21,
+    "bias": 1.8,
+    "mae": 17.25,
+    "heavy": 219,
+    "pod25": 0.66,
+    "pod10": 0.85,
+    "fa_days": 109
+   }
+  },
+  {
+   "id": "pemagatshel",
+   "basin": "manas",
+   "imd_cell": [
+    27.0,
+    91.5
+   ],
+   "n_days": 4018,
+   "all": {
+    "n": 4018,
+    "r": 0.546,
+    "imd_mean": 4.58,
+    "om_mean": 8.6,
+    "bias": 1.88,
+    "mae": 6.64,
+    "heavy": 185,
+    "pod25": 0.58,
+    "pod10": 0.8,
+    "fa_days": 129
+   },
+   "monsoon": {
+    "n": 1342,
+    "r": 0.479,
+    "imd_mean": 8.52,
+    "om_mean": 18.68,
+    "bias": 2.19,
+    "mae": 14.09,
+    "heavy": 128,
+    "pod25": 0.62,
+    "pod10": 0.83,
+    "fa_days": 113
+   }
+  }
+ ],
+ "skipped": [
+  {
+   "id": "trongsa",
+   "basin": "beki",
+   "skipped": "IMD cell (27.5,90.5) has 0 days (outside gauge coverage \u2014 common for border hills)"
+  },
+  {
+   "id": "zhemgang",
+   "basin": "beki",
+   "skipped": "IMD cell (27.25,90.75) has 0 days (outside gauge coverage \u2014 common for border hills)"
+  },
+  {
+   "id": "mongar",
+   "basin": "manas",
+   "skipped": "IMD cell (27.25,91.25) has 0 days (outside gauge coverage \u2014 common for border hills)"
+  }
+ ]
+}

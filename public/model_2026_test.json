@@ -1,0 +1,1190 @@
+{
+ "generated_at": "2026-09-04T10:12:45Z",
+ "basin": "dikhow",
+ "test": "2026_out_of_sample",
+ "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis - a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
+ "shipped_model": "B3_lag_rule",
+ "decision_statement": "trained model beats the best baseline (B3_lag_rule, mean MAE 28.9) on monsoon MAE at h=1 in 2/4 held-out seasons -> SHIP B3_lag_rule as model v0 (an honest simple model beats a dressed-up failure)",
+ "threshold_m3s": {
+  "value": 509.5,
+  "class": "OBSERVED",
+  "retrieved_at": "2026-09-04T10:12:45Z",
+  "source": "90th percentile of 2015-2025 TRAINING monsoon GloFAS reanalysis (no 2026 leakage)"
+ },
+ "dates": [
+  "2026-06-15",
+  "2026-06-16",
+  "2026-06-17",
+  "2026-06-18",
+  "2026-06-19",
+  "2026-06-20",
+  "2026-06-21",
+  "2026-06-22",
+  "2026-06-23",
+  "2026-06-24",
+  "2026-06-25",
+  "2026-06-26",
+  "2026-06-27",
+  "2026-06-28",
+  "2026-06-29",
+  "2026-06-30",
+  "2026-07-01",
+  "2026-07-02",
+  "2026-07-03",
+  "2026-07-04",
+  "2026-07-05",
+  "2026-07-06",
+  "2026-07-07",
+  "2026-07-08",
+  "2026-07-09",
+  "2026-07-10",
+  "2026-07-11",
+  "2026-07-12",
+  "2026-07-13",
+  "2026-07-14",
+  "2026-07-15",
+  "2026-07-16",
+  "2026-07-17",
+  "2026-07-18",
+  "2026-07-19",
+  "2026-07-20",
+  "2026-07-21",
+  "2026-07-22",
+  "2026-07-23",
+  "2026-07-24",
+  "2026-07-25",
+  "2026-07-26",
+  "2026-07-27",
+  "2026-07-28",
+  "2026-07-29",
+  "2026-07-30",
+  "2026-07-31",
+  "2026-08-01",
+  "2026-08-02",
+  "2026-08-03",
+  "2026-08-04",
+  "2026-08-05"
+ ],
+ "actual_m3s": [
+  {
+   "value": 198.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 179.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 231.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 205.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 209.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 215.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 215.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 205.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 208.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 223.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 227.0,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 232.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 228.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 320.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 301.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 330.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 341.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 367.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 365.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 327.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 371.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 364.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 344.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 336.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 368.0,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 380.9,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 368.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 363.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 459.3,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 447.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 446.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 517.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 492.2,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 420.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 418.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 766.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 665.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 440.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 445.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 448.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 442.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 433.5,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 387.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 385.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 422.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 473.2,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 479.8,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 445.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 423.6,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 405.4,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 388.1,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  },
+  {
+   "value": 446.7,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 reanalysis via Open-Meteo Flood API (MODELLED product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z"
+  }
+ ],
+ "predicted_h1_m3s": [
+  {
+   "value": 177.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 201.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 186.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 237.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 207.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 214.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 218.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 219.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 209.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 211.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 227.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 232.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 235.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 230.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 323.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 307.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 335.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 347.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 371.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 367.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 329.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 372.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 370.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 351.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 340.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 370.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 383.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 372.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 372.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 464.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 454.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 456.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 520.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 494.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 423.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 440.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 768.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 669.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 451.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 450.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 450.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 444.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 435.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 392.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 391.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 431.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 478.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 484.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 451.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 429.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 409.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 396.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  }
+ ],
+ "predicted_h2_m3s": [
+  {
+   "value": 179.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 173.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 198.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 179.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 231.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 205.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 209.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 215.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 215.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 205.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 208.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 223.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 227.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 232.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 228.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 320.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 301.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 330.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 341.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 367.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 365.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 327.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 371.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 364.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 344.0,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 336.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 367.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 380.9,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 368.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 363.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 459.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 447.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 446.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 517.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 492.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 420.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 418.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 766.2,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 665.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 440.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 445.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 448.7,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 442.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 433.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 387.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 385.3,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 422.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 473.1,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 479.8,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 445.6,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 423.5,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  },
+  {
+   "value": 405.4,
+   "class": "FORECAST",
+   "source": "JalDrishti model v0 for dikhow (shipped: B3_lag_rule, fitted 2015-2025) - retrospective OUT-OF-SAMPLE prediction for the 2026 test; target is GloFAS v4 reanalysis (modelled product, not observed river data)",
+   "retrieved_at": "2026-09-04T10:12:45Z",
+   "replay_test": true
+  }
+ ],
+ "p_exceed_h1": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.004,
+  0.004,
+  0.004,
+  0.004,
+  0.01,
+  0.008,
+  0.004,
+  0.01,
+  0.01,
+  0.004,
+  0.004,
+  0.01,
+  0.016,
+  0.01,
+  0.01,
+  0.096,
+  0.07,
+  0.072,
+  0.529,
+  0.195,
+  0.035,
+  0.051,
+  1.0,
+  0.994,
+  0.068,
+  0.064,
+  0.064,
+  0.064,
+  0.047,
+  0.018,
+  0.018,
+  0.045,
+  0.129,
+  0.154,
+  0.068,
+  0.043,
+  0.031,
+  0.018
+ ],
+ "alarm_days_h1": [
+  "2026-07-17",
+  "2026-07-21",
+  "2026-07-22"
+ ],
+ "actual_exceed_days": [
+  "2026-07-16",
+  "2026-07-20",
+  "2026-07-21"
+ ],
+ "event_onsets": [
+  {
+   "onset": "2026-07-16",
+   "lead_days": null
+  },
+  {
+   "onset": "2026-07-20",
+   "lead_days": 0
+  }
+ ],
+ "first_alarm_issued": "2026-07-16",
+ "event_day_reference": "2026-07-19 (Mon cloudburst, IST; regional reference)"
+}

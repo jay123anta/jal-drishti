@@ -1,0 +1,14 @@
+{
+ "attempted_at": "2026-09-03T05:05:20Z",
+ "url": "https://api.open-meteo.com/v1/forecast",
+ "params": {
+  "hourly": "precipitation",
+  "past_days": 3,
+  "forecast_days": 3,
+  "timezone": "UTC",
+  "latitude": 25.9,
+  "longitude": 91.88
+ },
+ "error": "GET https://api.open-meteo.com/v1/forecast failed after 3 attempts: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?hourly=precipitation&past_days=3&forecast_days=3&timezone=UTC&latitude=25.9&longitude=91.88 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001A2F37AFC20>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)\"))",
+ "note": "Live API unreachable after retries. See RETRY-LIVE.md to swap real data back in."
+}

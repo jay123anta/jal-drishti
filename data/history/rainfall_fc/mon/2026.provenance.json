@@ -1,0 +1,21 @@
+{
+ "point": "mon",
+ "year": 2026,
+ "rows": 5208,
+ "non_null_prev1": 5208,
+ "columns": [
+  "time",
+  "fc_prev1_mm",
+  "fc_prev2_mm"
+ ],
+ "class": "FORECAST",
+ "archived": true,
+ "source": "Open-Meteo Previous Runs API, archived model precipitation forecasts issued ~1/2 days ahead (best_match; retrieved historically — these are what the model actually predicted at the time, NOT observations)",
+ "retrieved_at": "2026-08-14T10:40:41Z",
+ "window": [
+  "2026-01-01",
+  "2026-08-05"
+ ],
+ "partial_test_only": true,
+ "note": "archived issued forecasts; class FORECAST because these are model predictions, retrieved after the fact; 2026 partial, test-only"
+}

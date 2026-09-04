@@ -1,0 +1,58 @@
+{
+ "generated_at": "2026-09-02T12:21:23Z",
+ "basin": "manas",
+ "target": "manas_nhcrossing",
+ "class": "OBSERVED",
+ "source": "derived by backend/model/lag_analysis.py from ERA5-family rain + GloFAS reanalysis discharge (modelled products)",
+ "retrieved_at": "2026-09-02T12:21:23Z",
+ "plain_sentence": "Rain in the Manas hills reaches the manas_nhcrossing river data fast — usually the same day, sometimes the next day: typically within about 36 hours. (7 of the 10 biggest rises registered same-day, 2 next-day; daily river data cannot resolve hours.)",
+ "best_lags_monsoon": {
+  "rain_6h": {
+   "lag_vs_q_days": 1,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.40590842172826375
+  },
+  "rain_12h": {
+   "lag_vs_q_days": 1,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.43125531557449676
+  },
+  "rain_24h": {
+   "lag_vs_q_days": 1,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.5182919653001512
+  },
+  "rain_48h": {
+   "lag_vs_q_days": 1,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.4077963236015327
+  }
+ },
+ "event_lags_days": [
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  5,
+  0
+ ],
+ "median_event_lag_days": 0,
+ "out_of_period_2026_lag_days": 0,
+ "july_2026_out_of_period_lag_days": 0
+}

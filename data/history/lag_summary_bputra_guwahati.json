@@ -1,0 +1,58 @@
+{
+ "generated_at": "2026-09-02T11:10:07Z",
+ "basin": "bputra_guwahati",
+ "target": "brahmaputra_guwahati",
+ "class": "OBSERVED",
+ "source": "derived by backend/model/lag_analysis.py from ERA5-family rain + GloFAS reanalysis discharge (modelled products)",
+ "retrieved_at": "2026-09-02T11:10:07Z",
+ "plain_sentence": "Rain in the Brahmaputra reach hills typically shows up in the brahmaputra_guwahati river data 1 day later — roughly 12 to 132 hours (daily river data cannot resolve it more finely).",
+ "best_lags_monsoon": {
+  "rain_6h": {
+   "lag_vs_q_days": 2,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.14549910186796033
+  },
+  "rain_12h": {
+   "lag_vs_q_days": 2,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.18903582439376235
+  },
+  "rain_24h": {
+   "lag_vs_q_days": 1,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.2779150866666512
+  },
+  "rain_48h": {
+   "lag_vs_q_days": 1,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0
+   ],
+   "corr_dq_at_best": 0.2517509129089814
+  }
+ },
+ "event_lags_days": [
+  0,
+  0,
+  1,
+  0,
+  0,
+  3,
+  5,
+  3,
+  1,
+  3
+ ],
+ "median_event_lag_days": 1,
+ "out_of_period_2026_lag_days": 2,
+ "july_2026_out_of_period_lag_days": 2
+}

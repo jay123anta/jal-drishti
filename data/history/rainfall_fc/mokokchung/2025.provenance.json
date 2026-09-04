@@ -1,0 +1,21 @@
+{
+ "point": "mokokchung",
+ "year": 2025,
+ "rows": 8760,
+ "non_null_prev1": 8760,
+ "columns": [
+  "time",
+  "fc_prev1_mm",
+  "fc_prev2_mm"
+ ],
+ "class": "FORECAST",
+ "archived": true,
+ "source": "Open-Meteo Previous Runs API, archived model precipitation forecasts issued ~1/2 days ahead (best_match; retrieved historically — these are what the model actually predicted at the time, NOT observations)",
+ "retrieved_at": "2026-08-14T10:39:29Z",
+ "window": [
+  "2025-01-01",
+  "2025-12-31"
+ ],
+ "partial_test_only": false,
+ "note": "archived issued forecasts; class FORECAST because these are model predictions, retrieved after the fact"
+}

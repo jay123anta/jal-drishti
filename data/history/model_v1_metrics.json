@@ -1,0 +1,229 @@
+{
+ "generated_at": "2026-08-14T10:43:28Z",
+ "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis — a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
+ "design": "perfect-prog training / real-issued-forecast validation",
+ "folds": [
+  {
+   "train_years": "2015-2023",
+   "validation_season": "monsoon 2024",
+   "threshold_q90_train_m3s": 502.8,
+   "b4_slope": 0.9779,
+   "inner_selection": {
+    "year": 2023,
+    "scores": {
+     "hgb": 24.5,
+     "xgb": 24.2
+    },
+    "chosen": "xgb"
+   },
+   "metrics_h1": {
+    "B3_no_fc": {
+     "n_days": 122,
+     "mae": 36.9,
+     "rmse": 55.7,
+     "mae_persistence": 37.5,
+     "skill_vs_persistence": 0.015,
+     "threshold_m3s": 502.8,
+     "n_exceed_days": 31,
+     "n_alarm_days": 34,
+     "n_events": 5,
+     "n_detected": 4,
+     "pod_days": 0.903,
+     "far_days": 0.176,
+     "mean_lead_days": 0.5
+    },
+    "B4_fc_rule": {
+     "n_days": 122,
+     "mae": 40.6,
+     "rmse": 57.9,
+     "mae_persistence": 37.5,
+     "skill_vs_persistence": -0.084,
+     "threshold_m3s": 502.8,
+     "n_exceed_days": 31,
+     "n_alarm_days": 36,
+     "n_events": 5,
+     "n_detected": 4,
+     "pod_days": 0.903,
+     "far_days": 0.222,
+     "mean_lead_days": 0.5
+    },
+    "hgb": {
+     "n_days": 122,
+     "mae": 38.4,
+     "rmse": 57.3,
+     "mae_persistence": 37.5,
+     "skill_vs_persistence": -0.025,
+     "threshold_m3s": 502.8,
+     "n_exceed_days": 31,
+     "n_alarm_days": 27,
+     "n_events": 5,
+     "n_detected": 4,
+     "pod_days": 0.677,
+     "far_days": 0.222,
+     "mean_lead_days": 0.0
+    },
+    "hgb_perfectprog": {
+     "n_days": 122,
+     "mae": 36.4,
+     "rmse": 54.9,
+     "mae_persistence": 37.5,
+     "skill_vs_persistence": 0.028,
+     "threshold_m3s": 502.8,
+     "n_exceed_days": 31,
+     "n_alarm_days": 26,
+     "n_events": 5,
+     "n_detected": 3,
+     "pod_days": 0.645,
+     "far_days": 0.231,
+     "mean_lead_days": 0.0
+    },
+    "xgb": {
+     "n_days": 122,
+     "mae": 36.8,
+     "rmse": 57.1,
+     "mae_persistence": 37.5,
+     "skill_vs_persistence": 0.018,
+     "threshold_m3s": 502.8,
+     "n_exceed_days": 31,
+     "n_alarm_days": 26,
+     "n_events": 5,
+     "n_detected": 4,
+     "pod_days": 0.677,
+     "far_days": 0.192,
+     "mean_lead_days": 0.0
+    },
+    "xgb_perfectprog": {
+     "n_days": 122,
+     "mae": 35.7,
+     "rmse": 56.9,
+     "mae_persistence": 37.5,
+     "skill_vs_persistence": 0.047,
+     "threshold_m3s": 502.8,
+     "n_exceed_days": 31,
+     "n_alarm_days": 26,
+     "n_events": 5,
+     "n_detected": 3,
+     "pod_days": 0.645,
+     "far_days": 0.231,
+     "mean_lead_days": 0.0
+    }
+   }
+  },
+  {
+   "train_years": "2015-2024",
+   "validation_season": "monsoon 2025",
+   "threshold_q90_train_m3s": 513.0,
+   "b4_slope": 0.9234,
+   "inner_selection": {
+    "year": 2024,
+    "scores": {
+     "hgb": 36.4,
+     "xgb": 35.7
+    },
+    "chosen": "xgb"
+   },
+   "metrics_h1": {
+    "B3_no_fc": {
+     "n_days": 122,
+     "mae": 31.1,
+     "rmse": 47.0,
+     "mae_persistence": 31.2,
+     "skill_vs_persistence": 0.002,
+     "threshold_m3s": 513.0,
+     "n_exceed_days": 6,
+     "n_alarm_days": 7,
+     "n_events": 3,
+     "n_detected": 2,
+     "pod_days": 0.667,
+     "far_days": 0.429,
+     "mean_lead_days": 0.5
+    },
+    "B4_fc_rule": {
+     "n_days": 122,
+     "mae": 33.9,
+     "rmse": 49.5,
+     "mae_persistence": 31.2,
+     "skill_vs_persistence": -0.088,
+     "threshold_m3s": 513.0,
+     "n_exceed_days": 6,
+     "n_alarm_days": 7,
+     "n_events": 3,
+     "n_detected": 2,
+     "pod_days": 0.667,
+     "far_days": 0.429,
+     "mean_lead_days": 0.5
+    },
+    "hgb": {
+     "n_days": 122,
+     "mae": 32.5,
+     "rmse": 44.9,
+     "mae_persistence": 31.2,
+     "skill_vs_persistence": -0.043,
+     "threshold_m3s": 513.0,
+     "n_exceed_days": 6,
+     "n_alarm_days": 3,
+     "n_events": 3,
+     "n_detected": 1,
+     "pod_days": 0.333,
+     "far_days": 0.333,
+     "mean_lead_days": 1.0
+    },
+    "hgb_perfectprog": {
+     "n_days": 122,
+     "mae": 27.9,
+     "rmse": 39.9,
+     "mae_persistence": 31.2,
+     "skill_vs_persistence": 0.105,
+     "threshold_m3s": 513.0,
+     "n_exceed_days": 6,
+     "n_alarm_days": 3,
+     "n_events": 3,
+     "n_detected": 1,
+     "pod_days": 0.333,
+     "far_days": 0.333,
+     "mean_lead_days": 1.0
+    },
+    "xgb": {
+     "n_days": 122,
+     "mae": 31.5,
+     "rmse": 43.6,
+     "mae_persistence": 31.2,
+     "skill_vs_persistence": -0.011,
+     "threshold_m3s": 513.0,
+     "n_exceed_days": 6,
+     "n_alarm_days": 3,
+     "n_events": 3,
+     "n_detected": 1,
+     "pod_days": 0.333,
+     "far_days": 0.333,
+     "mean_lead_days": 1.0
+    },
+    "xgb_perfectprog": {
+     "n_days": 122,
+     "mae": 28.5,
+     "rmse": 39.7,
+     "mae_persistence": 31.2,
+     "skill_vs_persistence": 0.086,
+     "threshold_m3s": 513.0,
+     "n_exceed_days": 6,
+     "n_alarm_days": 3,
+     "n_events": 3,
+     "n_detected": 1,
+     "pod_days": 0.333,
+     "far_days": 0.333,
+     "mean_lead_days": 1.0
+    }
+   }
+  }
+ ],
+ "ship_decision": {
+  "gated_candidate": "xgb",
+  "wins": {
+   "hgb": 0,
+   "xgb": 1,
+   "b4_vs_b3": 0
+  },
+  "shipped": "keep_v0",
+  "statement": "gated ML (xgb) won 1/2 and B4 beat B3 in 0/2 -> v1 NOT earned; model v0 (B3) stays shipped"
+ }
+}

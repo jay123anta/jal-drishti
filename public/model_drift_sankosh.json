@@ -1,0 +1,40 @@
+{
+ "generated_at": "2026-09-04T10:12:40Z",
+ "basin": "sankosh",
+ "model": "model-v0-sankosh",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 1229.27,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-04T10:12:40Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.073,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.104
+  },
+  "catchment_rain_24h_mm": {
+   "value": 3.9,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 sankosh catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:12:40Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.223,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.19
+  },
+  "catchment_rain_48h_mm": {
+   "value": 6.2,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 sankosh catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:12:40Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.12,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.095
+  }
+ },
+ "overall": "in-range",
+ "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
+}

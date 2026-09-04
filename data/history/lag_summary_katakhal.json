@@ -1,0 +1,60 @@
+{
+ "generated_at": "2026-09-04T06:38:26Z",
+ "basin": "katakhal",
+ "target": "katakhal_matijuri",
+ "class": "OBSERVED",
+ "source": "derived by backend/model/lag_analysis.py from ERA5-family rain + GloFAS reanalysis discharge (modelled products)",
+ "retrieved_at": "2026-09-04T06:38:26Z",
+ "plain_sentence": "Rain in the Katakhal / Dhaleswari hills typically shows up in the katakhal_matijuri river data 2 days later — roughly 36 to 132 hours (daily river data cannot resolve it more finely).",
+ "best_lags_monsoon": {
+  "rain_6h": {
+   "lag_vs_q_days": 4,
+   "lag_vs_dq_days": 1,
+   "loyo_spread_dq": [
+    1,
+    2
+   ],
+   "corr_dq_at_best": 0.47377753163179065
+  },
+  "rain_12h": {
+   "lag_vs_q_days": 4,
+   "lag_vs_dq_days": 1,
+   "loyo_spread_dq": [
+    1
+   ],
+   "corr_dq_at_best": 0.4632249529417524
+  },
+  "rain_24h": {
+   "lag_vs_q_days": 5,
+   "lag_vs_dq_days": 1,
+   "loyo_spread_dq": [
+    1
+   ],
+   "corr_dq_at_best": 0.5322601202640105
+  },
+  "rain_48h": {
+   "lag_vs_q_days": 5,
+   "lag_vs_dq_days": 0,
+   "loyo_spread_dq": [
+    0,
+    1
+   ],
+   "corr_dq_at_best": 0.5971004240961809
+  }
+ },
+ "event_lags_days": [
+  4,
+  2,
+  2,
+  1,
+  5,
+  1,
+  2,
+  5,
+  0,
+  5
+ ],
+ "median_event_lag_days": 2,
+ "out_of_period_2026_lag_days": 5,
+ "july_2026_out_of_period_lag_days": 5
+}

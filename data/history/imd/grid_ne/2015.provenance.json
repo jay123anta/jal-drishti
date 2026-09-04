@@ -1,0 +1,19 @@
+{
+ "source": "IMD Pune gridded daily rainfall 0.25x0.25 deg (gauge-based gridded analysis) \u2014 imdpune.gov.in Rainfall_25_NetCDF page; recipe: HTTP POST https://www.imdpune.gov.in/cmpg/Griddata/RF25.php with form field RF25=<year>",
+ "class": "OBSERVED",
+ "archived": true,
+ "retrieved_at": "2026-09-03T10:36:26Z",
+ "year": 2015,
+ "rows": 198925,
+ "ne_window": {
+  "lat": [
+   21.0,
+   30.5
+  ],
+  "lon": [
+   88.0,
+   98.5
+  ]
+ },
+ "note": "gridded ANALYSIS interpolated from IMD rain gauges \u2014 observed-derived, not a direct point measurement; raw all-India NetCDF kept locally in raw_nc/ (not committed, ~25 MB/yr) and reproducible via the recorded POST recipe"
+}

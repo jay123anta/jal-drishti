@@ -1,0 +1,433 @@
+{
+ "generated_at": "2026-09-02T11:09:50Z",
+ "basin": "bputra_tezpur",
+ "target_caveat": "evaluated against GloFAS v4 reanalysis — a modelled product, not observed river data; observed CWC gauge data will replace this when access is granted",
+ "lag_days_used_by_b3": 1,
+ "horizons_days": [
+  1,
+  2
+ ],
+ "horizon_note": "GloFAS is daily; 6/12 h horizons do not exist against this target",
+ "folds": [
+  {
+   "train_years": "2015-2021",
+   "validation_season": "monsoon 2022",
+   "threshold_q90_train_m3s": 37212.5,
+   "b3_slopes": {
+    "1": 20.9169,
+    "2": 4.5206
+   },
+   "baselines": {
+    "h1": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 1348.3,
+      "rmse": 2010.0,
+      "mae_persistence": 1348.3,
+      "skill_vs_persistence": -0.0,
+      "threshold_m3s": 37212.5,
+      "n_exceed_days": 6,
+      "n_alarm_days": 6,
+      "n_events": 2,
+      "n_detected": 2,
+      "pod_days": 0.667,
+      "far_days": 0.333,
+      "mean_lead_days": 0.0
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 7543.4,
+      "rmse": 8676.5,
+      "mae_persistence": 1348.3,
+      "skill_vs_persistence": -4.595,
+      "threshold_m3s": 37212.5,
+      "n_exceed_days": 6,
+      "n_alarm_days": 0,
+      "n_events": 2,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 1365.0,
+      "rmse": 1940.0,
+      "mae_persistence": 1348.3,
+      "skill_vs_persistence": -0.012,
+      "threshold_m3s": 37212.5,
+      "n_exceed_days": 6,
+      "n_alarm_days": 9,
+      "n_events": 2,
+      "n_detected": 2,
+      "pod_days": 1.0,
+      "far_days": 0.333,
+      "mean_lead_days": 1.0
+     }
+    },
+    "h2": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 2584.1,
+      "rmse": 3645.6,
+      "mae_persistence": 2584.1,
+      "skill_vs_persistence": -0.0,
+      "threshold_m3s": 37212.5,
+      "n_exceed_days": 6,
+      "n_alarm_days": 6,
+      "n_events": 2,
+      "n_detected": 1,
+      "pod_days": 0.333,
+      "far_days": 0.667,
+      "mean_lead_days": 0.0
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 7543.4,
+      "rmse": 8676.5,
+      "mae_persistence": 2584.1,
+      "skill_vs_persistence": -1.919,
+      "threshold_m3s": 37212.5,
+      "n_exceed_days": 6,
+      "n_alarm_days": 0,
+      "n_events": 2,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 2586.8,
+      "rmse": 3620.0,
+      "mae_persistence": 2584.1,
+      "skill_vs_persistence": -0.001,
+      "threshold_m3s": 37212.5,
+      "n_exceed_days": 6,
+      "n_alarm_days": 7,
+      "n_events": 2,
+      "n_detected": 1,
+      "pod_days": 0.333,
+      "far_days": 0.714,
+      "mean_lead_days": 0.0
+     }
+    }
+   }
+  },
+  {
+   "train_years": "2015-2022",
+   "validation_season": "monsoon 2023",
+   "threshold_q90_train_m3s": 36642.8,
+   "b3_slopes": {
+    "1": 21.2537,
+    "2": 5.6973
+   },
+   "baselines": {
+    "h1": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 1603.8,
+      "rmse": 2338.7,
+      "mae_persistence": 1603.8,
+      "skill_vs_persistence": 0.0,
+      "threshold_m3s": 36642.8,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 3,
+      "n_detected": 2,
+      "pod_days": 0.4,
+      "far_days": 0.6,
+      "mean_lead_days": 0.0
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 4615.7,
+      "rmse": 6004.0,
+      "mae_persistence": 1603.8,
+      "skill_vs_persistence": -1.878,
+      "threshold_m3s": 36642.8,
+      "n_exceed_days": 5,
+      "n_alarm_days": 0,
+      "n_events": 3,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 1562.1,
+      "rmse": 2250.5,
+      "mae_persistence": 1603.8,
+      "skill_vs_persistence": 0.026,
+      "threshold_m3s": 36642.8,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 3,
+      "n_detected": 2,
+      "pod_days": 0.4,
+      "far_days": 0.6,
+      "mean_lead_days": 0.0
+     }
+    },
+    "h2": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 2785.4,
+      "rmse": 4049.1,
+      "mae_persistence": 2785.4,
+      "skill_vs_persistence": -0.0,
+      "threshold_m3s": 36642.8,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 3,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": 1.0,
+      "mean_lead_days": null
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 4615.7,
+      "rmse": 6004.0,
+      "mae_persistence": 2785.4,
+      "skill_vs_persistence": -0.657,
+      "threshold_m3s": 36642.8,
+      "n_exceed_days": 5,
+      "n_alarm_days": 0,
+      "n_events": 3,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 2767.5,
+      "rmse": 4021.7,
+      "mae_persistence": 2785.4,
+      "skill_vs_persistence": 0.006,
+      "threshold_m3s": 36642.8,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 3,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": 1.0,
+      "mean_lead_days": null
+     }
+    }
+   }
+  },
+  {
+   "train_years": "2015-2023",
+   "validation_season": "monsoon 2024",
+   "threshold_q90_train_m3s": 35586.7,
+   "b3_slopes": {
+    "1": 22.1761,
+    "2": 6.4338
+   },
+   "baselines": {
+    "h1": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 1148.6,
+      "rmse": 1967.7,
+      "mae_persistence": 1148.6,
+      "skill_vs_persistence": 0.0,
+      "threshold_m3s": 35586.7,
+      "n_exceed_days": 15,
+      "n_alarm_days": 15,
+      "n_events": 2,
+      "n_detected": 2,
+      "pod_days": 0.867,
+      "far_days": 0.133,
+      "mean_lead_days": 0.0
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 5088.5,
+      "rmse": 6480.1,
+      "mae_persistence": 1148.6,
+      "skill_vs_persistence": -3.43,
+      "threshold_m3s": 35586.7,
+      "n_exceed_days": 15,
+      "n_alarm_days": 0,
+      "n_events": 2,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 1165.7,
+      "rmse": 1911.9,
+      "mae_persistence": 1148.6,
+      "skill_vs_persistence": -0.015,
+      "threshold_m3s": 35586.7,
+      "n_exceed_days": 15,
+      "n_alarm_days": 16,
+      "n_events": 2,
+      "n_detected": 2,
+      "pod_days": 0.933,
+      "far_days": 0.125,
+      "mean_lead_days": 0.5
+     }
+    },
+    "h2": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 2053.4,
+      "rmse": 3415.6,
+      "mae_persistence": 2053.4,
+      "skill_vs_persistence": 0.0,
+      "threshold_m3s": 35586.7,
+      "n_exceed_days": 15,
+      "n_alarm_days": 15,
+      "n_events": 2,
+      "n_detected": 2,
+      "pod_days": 0.8,
+      "far_days": 0.2,
+      "mean_lead_days": 1.0
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 5088.5,
+      "rmse": 6480.1,
+      "mae_persistence": 2053.4,
+      "skill_vs_persistence": -1.478,
+      "threshold_m3s": 35586.7,
+      "n_exceed_days": 15,
+      "n_alarm_days": 0,
+      "n_events": 2,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 2064.0,
+      "rmse": 3392.4,
+      "mae_persistence": 2053.4,
+      "skill_vs_persistence": -0.005,
+      "threshold_m3s": 35586.7,
+      "n_exceed_days": 15,
+      "n_alarm_days": 15,
+      "n_events": 2,
+      "n_detected": 2,
+      "pod_days": 0.8,
+      "far_days": 0.2,
+      "mean_lead_days": 1.0
+     }
+    }
+   }
+  },
+  {
+   "train_years": "2015-2024",
+   "validation_season": "monsoon 2025",
+   "threshold_q90_train_m3s": 35734.5,
+   "b3_slopes": {
+    "1": 22.6284,
+    "2": 7.0729
+   },
+   "baselines": {
+    "h1": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 1292.3,
+      "rmse": 2343.1,
+      "mae_persistence": 1292.3,
+      "skill_vs_persistence": -0.0,
+      "threshold_m3s": 35734.5,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 2,
+      "n_detected": 1,
+      "pod_days": 0.6,
+      "far_days": 0.4,
+      "mean_lead_days": 0.0
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 6443.8,
+      "rmse": 8269.1,
+      "mae_persistence": 1292.3,
+      "skill_vs_persistence": -3.986,
+      "threshold_m3s": 35734.5,
+      "n_exceed_days": 5,
+      "n_alarm_days": 0,
+      "n_events": 2,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 1273.7,
+      "rmse": 2315.1,
+      "mae_persistence": 1292.3,
+      "skill_vs_persistence": 0.014,
+      "threshold_m3s": 35734.5,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 2,
+      "n_detected": 1,
+      "pod_days": 0.6,
+      "far_days": 0.4,
+      "mean_lead_days": 0.0
+     }
+    },
+    "h2": {
+     "B1_persistence": {
+      "n_days": 122,
+      "mae": 2493.0,
+      "rmse": 4502.1,
+      "mae_persistence": 2493.0,
+      "skill_vs_persistence": 0.0,
+      "threshold_m3s": 35734.5,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 2,
+      "n_detected": 1,
+      "pod_days": 0.4,
+      "far_days": 0.6,
+      "mean_lead_days": 0.0
+     },
+     "B2_climatology": {
+      "n_days": 122,
+      "mae": 6443.8,
+      "rmse": 8269.1,
+      "mae_persistence": 2493.0,
+      "skill_vs_persistence": -1.585,
+      "threshold_m3s": 35734.5,
+      "n_exceed_days": 5,
+      "n_alarm_days": 0,
+      "n_events": 2,
+      "n_detected": 0,
+      "pod_days": 0.0,
+      "far_days": null,
+      "mean_lead_days": null
+     },
+     "B3_lag_rule": {
+      "n_days": 122,
+      "mae": 2441.4,
+      "rmse": 4397.2,
+      "mae_persistence": 2493.0,
+      "skill_vs_persistence": 0.021,
+      "threshold_m3s": 35734.5,
+      "n_exceed_days": 5,
+      "n_alarm_days": 5,
+      "n_events": 2,
+      "n_detected": 1,
+      "pod_days": 0.4,
+      "far_days": 0.6,
+      "mean_lead_days": 0.0
+     }
+    }
+   }
+  }
+ ]
+}

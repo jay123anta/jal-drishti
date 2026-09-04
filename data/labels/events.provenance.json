@@ -1,0 +1,32 @@
+{
+ "file": "events.csv",
+ "rows": 60,
+ "columns": [
+  "event_id",
+  "basin",
+  "site",
+  "onset_utc",
+  "end_utc",
+  "peak_value",
+  "unit",
+  "threshold",
+  "threshold_def",
+  "source",
+  "class",
+  "confidence",
+  "notes"
+ ],
+ "class": "OBSERVED",
+ "source": "see per-row source column",
+ "retrieved_at": "2026-09-04T10:10:04Z",
+ "confidence_levels": {
+  "high": "observed gauge crossing (CWC)",
+  "medium": "modelled-series crossing or reported date",
+  "low": "not used for training"
+ },
+ "by_source": {
+  "GloFAS v4 reanalysis via Open-Meteo Floo": 44,
+  "Central Water Commission Advisory Flood ": 15,
+  "Project context + REPLAY-FINDINGS.md: cl": 1
+ }
+}

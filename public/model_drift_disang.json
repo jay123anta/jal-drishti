@@ -1,0 +1,40 @@
+{
+ "generated_at": "2026-09-04T10:12:31Z",
+ "basin": "disang",
+ "model": "model-v0-disang",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 429.53,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-04T10:12:31Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.927,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.902
+  },
+  "catchment_rain_24h_mm": {
+   "value": 36.7,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:12:31Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.977,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.963
+  },
+  "catchment_rain_48h_mm": {
+   "value": 42.9,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T10:12:31Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.897,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.854
+  }
+ },
+ "overall": "in-range",
+ "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
+}
