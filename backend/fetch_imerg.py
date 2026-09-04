@@ -59,14 +59,36 @@ def anchors() -> list[dict]:
     return out
 
 
-def day_tif_url(auth: tuple, d: datetime.date) -> str | None:
+def _fetch_tif(auth: tuple, url: str) -> bytes | None:
+    try:
+        r = requests.get(url, auth=auth, timeout=120)
+        if r.status_code == 200 and r.content[:2] == b"II" or r.content[:2] == b"MM":
+            return r.content
+        if r.status_code == 200 and len(r.content) > 5000:  # tif magic varies; size guard
+            return r.content
+    except requests.RequestException:
+        pass
+    return None
+
+
+def day_tif(auth: tuple, d: datetime.date) -> bytes | None:
+    """Fetch the daily GIS GeoTIFF. The granule sequence number is
+    (day-of-year - 1) * 30, so the URL can be built directly; only if that
+    misses (e.g. an older product version) do we fall back to listing."""
+    doy = d.timetuple().tm_yday
+    seq = (doy - 1) * 30
+    direct = (f"{PPS}/{d:%Y/%m/%d}/gis/3B-DAY-GIS.MS.MRG.3IMERG."
+              f"{d:%Y%m%d}-S000000-E235959.{seq:04d}.V07B.tif")
+    b = _fetch_tif(auth, direct)
+    if b is not None:
+        return b
     base = f"{PPS}/{d:%Y/%m/%d}/gis/"
     try:
         r = requests.get(base, auth=auth, timeout=60)
         if r.status_code != 200:
             return None
         m = re.search(r'3B-DAY-GIS[^"]+\.tif', r.text)
-        return base + m.group(0) if m else None
+        return _fetch_tif(auth, base + m.group(0)) if m else None
     except requests.RequestException:
         return None
 
@@ -129,24 +151,22 @@ def main() -> int:
     rows_by_anchor: dict[str, list] = {}
     n_ok = n_skip = 0
     for d in todo:
-        url = day_tif_url(auth, d)
-        if not url:
+        content = day_tif(auth, d)
+        if content is None:
             n_skip += 1
             continue
         try:
-            r = requests.get(url, auth=auth, timeout=120)
-            r.raise_for_status()
-            vals = sample_ne(r.content, pts)
+            vals = sample_ne(content, pts)
         except Exception:  # noqa: BLE001 - skip and count, never fabricate
             n_skip += 1
             continue
         for aid, v in vals.items():
             rows_by_anchor.setdefault(aid, []).append({"date": d.isoformat(), "rain_mm": v})
         n_ok += 1
-        if n_ok % 100 == 0:
+        if n_ok % 50 == 0:
             flush(rows_by_anchor)          # checkpoint: nothing lost on interrupt
             rows_by_anchor = {}
-            print(f"  {n_ok} days fetched, checkpointed...")
+            print(f"  {n_ok} days fetched, checkpointed...", flush=True)
 
     flush(rows_by_anchor)                  # final partial batch
     print(f"OK imerg: {n_ok} days fetched, {n_skip} skipped -> data/history/imerg/")
