@@ -65,6 +65,7 @@ STEPS = [
     ("replay analysis -> REPLAY-FINDINGS.md (incl. model section)", "analyze_replay.py", []),
     ("Sentinel-1 footprints (CDSE STAC, 2022 + 2026 events)", "fetch_s1_footprints.py", []),
     ("Sentinel-1 water extent (openEO; degrades without CDSE creds)", "s1_water_extent.py", []),
+    ("popup-consistency gate (dot colour == its text)", "check_popup_consistency.py", []),
     ("provenance gate", "check_provenance.py", []),
     ("plain-language gate (default view)", "check_plain_language.py", []),
 ]
