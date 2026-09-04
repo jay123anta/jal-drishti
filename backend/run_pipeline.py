@@ -54,6 +54,7 @@ STEPS = [
     *[(f"model v0 inference ({b}; degrades to heuristic)", "model/predict.py", ["--basin", b])
       for b in basin_ids()],
     ("IMERG satellite rain (NASA GPM; degrades without IMERG_EMAIL)", "fetch_imerg.py", []),
+    ("dam reservoirs (NERLDC PSP; Indian-IP only, degrades abroad)", "fetch_nerldc_psp.py", []),
     ("model forecast ledger (prediction archive)", "archive_model_fc.py", []),
     *[(f"input drift monitor ({b})", "model/drift.py", ["--basin", b]) for b in basin_ids()],
     ("risk classification (model v0 for Dikhow, heuristic elsewhere)", "classify_risk.py", []),

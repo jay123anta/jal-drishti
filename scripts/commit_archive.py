@@ -15,7 +15,7 @@ import sys
 
 REPO = pathlib.Path(__file__).resolve().parent.parent
 PATHS = ["data/history/cwc_aff", "data/history/glofas", "data/history/sachet",
-         "data/history/nwdp", "data/history/model_fc", "data/history/imerg", "data/labels", "data/history/scoreboard.json",
+         "data/history/nwdp", "data/history/model_fc", "data/history/imerg", "data/history/nerldc", "data/labels", "data/history/scoreboard.json",
          "docs/FORECAST-SCOREBOARD.md",
          "public"]   # whole served site: the public GitHub Pages copy stays fresh
 MIN_AGE_H = 2   # push-per-run: the public Pages site stays 3-hourly fresh
