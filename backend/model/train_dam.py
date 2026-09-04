@@ -96,6 +96,8 @@ def run(basin: str) -> dict:
         if monsoon_train:
             tr = tr & monsoon_mask(feats.index)   # train on monsoon days only
         te = (feats.index.year == fy) & monsoon_mask(feats.index) & y.notna()
+        if tr.sum() < 60:
+            rows.append({"fold": fy, "skipped": f"only {int(tr.sum())} training rows"}); continue
         if te.sum() < 30 or feats.loc[te, dam_cols].notna().mean().mean() < 0.5:
             rows.append({"fold": fy, "skipped": "thin dam coverage"}); continue
         pers = mae(y[te], feats.loc[te, "q"])                       # persistence
