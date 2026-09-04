@@ -466,6 +466,7 @@ function villagePopup(v, c) {
     <div>${badge}</div>
     <div class="lead">${esc(lead)}</div>
     <div class="when">Updated ${esc(humanTime(r.retrieved_at))}</div>
+    ${v.exposure ? `<div class="prov">Ground: ${esc(v.exposure.plain)} (about ${esc(v.exposure.village_elevation_m)} m, ${esc(v.exposure.distance_to_river_km)} km from the river). Terrain only - not part of the colour.</div>` : ""}
     ${cwcPlain(c, true)}
     <details><summary>Technical details</summary>${techVillage(v)}</details>
   </div>`;

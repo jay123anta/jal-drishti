@@ -175,6 +175,34 @@ def main() -> int:
     villages = load_json(DATA_DIR / "villages.json")
     now = utc_now_iso()
 
+    # terrain exposure layer (optional): elevation per village + river point
+    elev = {}
+    try:
+        for p in load_json(DATA_DIR / "elevation.json")["points"]:
+            elev[p["key"]] = p["elevation_m"]
+    except (FileNotFoundError, ValueError):
+        pass
+
+    def exposure(v, rp, rp_km):
+        vk = f"v:{v['name']}|{v['district']}"
+        rk = f"r:{rp['id']}|"
+        ve, re_ = elev.get(vk), elev.get(rk)
+        if ve is None or re_ is None:
+            return None
+        drop = round(ve - re_, 1)   # village height above the nearest river cell
+        if drop <= 6 and rp_km <= 8:
+            tier, plain = "higher", ("low-lying and close to the river - more exposed "
+                                     "if that river floods")
+        elif drop >= 20 or rp_km >= 20:
+            tier, plain = "lower", "on higher ground or well back from the river"
+        else:
+            tier, plain = "moderate", "mid-level ground, moderate distance from the river"
+        return pv(tier, OBSERVED,
+                  "Open-Meteo elevation API (Copernicus GLO-90 DEM); terrain context, "
+                  "NOT part of the risk colour", now,
+                  village_elevation_m=ve, height_above_river_m=drop,
+                  distance_to_river_km=round(rp_km, 1), plain=plain)
+
     # Model v0 (Step M6): Dikhow-basin villages take their colour from the
     # shipped, walk-forward-validated model; everyone else keeps the
     # heuristic. Degraded model -> heuristic, marked.
@@ -334,6 +362,7 @@ def main() -> int:
                 "retrieved_at": v.get("retrieved_at", now),
             },
             "risk": risk_obj,
+            "exposure": exposure(v, rp, rp_km),
             "scores": {
                 "rain_score": pv(a, SIMULATED, HEURISTIC_SOURCE, now,
                                  note="0/1/2 from placeholder mm cutoffs"),
