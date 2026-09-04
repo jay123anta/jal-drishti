@@ -11,6 +11,8 @@ class _LegacyTLSAdapter(HTTPAdapter):
     def init_poolmanager(self, *a, **k):
         ctx = create_urllib3_context()
         ctx.options |= 0x4  # OP_LEGACY_SERVER_CONNECT
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
         k["ssl_context"] = ctx
         return super().init_poolmanager(*a, **k)
 
