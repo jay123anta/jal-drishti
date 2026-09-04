@@ -522,6 +522,12 @@ const row = (label, pv, valueText) =>
 
 function techVillage(v) {
   const s = v.signals, r = v.risk;
+  const isModel = String(r.method || "").startsWith("model-v0-");
+  const scoreLine = isModel
+    ? `<div class="prov">Rain/discharge scores below are the simple-formula reference
+       only. For this basin the <b>colour is set by the tested model above</b>
+       (P(exceed)=${esc(r.p_exceed_h1)}), not by these scores.</div>`
+    : `<div class="prov">Scores: rain ${esc(v.scores.rain_score.value)} + discharge ${esc(v.scores.discharge_score.value)} = ${esc(v.scores.combined.value)} (0-1 GREEN, 2 YELLOW, 3-4 RED)</div>`;
   const methodRow = String(r.method || "").startsWith("model-v0-")
     ? `<div class="prov">method: ${esc(r.method)} · horizon ${esc(r.forecast_horizon)} ·
        P(exceed q90)=${esc(r.p_exceed_h1)} ·
@@ -540,7 +546,7 @@ function techVillage(v) {
       ${row("Discharge percentile (30 d)", s.discharge_percentile_30d,
             (100 * s.discharge_percentile_30d.value).toFixed(0) + " %")}
     </table>
-    <div class="prov">Scores: rain ${esc(v.scores.rain_score.value)} + discharge ${esc(v.scores.discharge_score.value)} = ${esc(v.scores.combined.value)} (0–1 GREEN, 2 YELLOW, 3–4 RED)</div>
+    ${scoreLine}
     <div class="prov">Village coordinates: ${esc(v.location.coordinate_precision)} ·
       ${esc(v.location.class)} · ${esc(v.location.source)}</div>`;
 }
