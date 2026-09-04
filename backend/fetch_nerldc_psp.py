@@ -156,7 +156,7 @@ def save_rows(d: datetime.date, rows: list[dict], now: str) -> int:
         f'{{"source": "{SRC}", "class": "OBSERVED", "archived": true, '
         f'"retrieved_at": "{now}", "rows": {len(out)}, '
         f'"note": "present_level_m and fill_fraction reliable; present_storage_mu '
-        f'for storage dams; rows flagged needs_review parsed off-shape"}}',
+        f'for storage dams; rows flagged needs_review parsed off-shape; raw PDFs kept LOCAL only (reproducible via --backfill)"}}',
         encoding="utf-8")
     return len(out)
 
