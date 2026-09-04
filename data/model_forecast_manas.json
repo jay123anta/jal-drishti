@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T11:21:31Z",
+ "generated_at": "2026-09-04T12:01:56Z",
  "degraded": false,
  "basin": "manas",
  "model": "model-v0-manas",
@@ -12,27 +12,27 @@
    "value": 239.99,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T11:21:31Z",
+   "retrieved_at": "2026-09-04T12:01:56Z",
    "date": "2026-09-04"
   },
   "catchment_rain_24h_mm": {
    "value": 5.8,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T11:21:31Z"
+   "retrieved_at": "2026-09-04T12:01:56Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 8.1,
+   "value": 8.2,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T11:21:31Z"
+   "retrieved_at": "2026-09-04T12:01:56Z"
   }
  },
  "threshold_m3s": {
   "value": 964.4,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (NOT an official danger level)",
-  "retrieved_at": "2026-09-04T11:21:31Z"
+  "retrieved_at": "2026-09-04T12:01:56Z"
  },
  "predictions": {
   "h1": {
@@ -41,13 +41,13 @@
     "value": 240.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for manas - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-manas-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T11:21:31Z"
+    "retrieved_at": "2026-09-04T12:01:56Z"
    },
    "p_exceed_threshold": {
     "value": 0.004,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for manas - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-manas-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T11:21:31Z"
+    "retrieved_at": "2026-09-04T12:01:56Z"
    }
   },
   "h2": {
@@ -56,13 +56,13 @@
     "value": 240.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for manas - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-manas-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-04T11:21:31Z"
+    "retrieved_at": "2026-09-04T12:01:56Z"
    },
    "p_exceed_threshold": {
     "value": 0.006,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for manas - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-manas-v0.md); modelled discharge, NOT observed river levels - probability from held-out validation residuals",
-    "retrieved_at": "2026-09-04T11:21:31Z"
+    "retrieved_at": "2026-09-04T12:01:56Z"
    }
   }
  },
@@ -70,7 +70,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed) >= 0.5 RED, >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-04T11:21:31Z",
+  "retrieved_at": "2026-09-04T12:01:56Z",
   "p_exceed_h1": 0.004
  },
  "forecast_horizon": "1 day",

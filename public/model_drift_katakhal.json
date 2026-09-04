@@ -1,10 +1,40 @@
 {
- "generated_at": "2026-09-04T11:22:27Z",
+ "generated_at": "2026-09-04T12:02:59Z",
  "basin": "katakhal",
  "model": "model-v0-katakhal",
- "inputs": {},
- "overall": "degraded",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 376.57,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-04T12:02:59Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.806,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.912
+  },
+  "catchment_rain_24h_mm": {
+   "value": 5.4,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 katakhal catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T12:02:59Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.331,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.323
+  },
+  "catchment_rain_48h_mm": {
+   "value": 20.6,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 katakhal catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-04T12:02:59Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.601,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.59
+  }
+ },
+ "overall": "in-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
- "note": "drift never changes a colour; it flags extrapolation in the Technical view",
- "error": "model_forecast_katakhal.json missing or degraded - no live inputs to compare"
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
