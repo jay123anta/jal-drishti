@@ -31,6 +31,26 @@ def main() -> int:
     d = pd.read_parquet(src)
     d = d.dropna(subset=["present_level_m"])
     d["date"] = pd.to_datetime(d["date"])
+
+    # per-year data-quality view, so the cutoff year is chosen on evidence
+    d["year"] = d["date"].dt.year
+    d["impossible_fill"] = d["fill_fraction"].fillna(0) > 1.05
+    print("year-by-year quality (higher needs_review / impossible = worse layout):")
+    q = d.groupby("year").agg(rows=("date", "size"),
+                              needs_review=("needs_review", "mean"),
+                              impossible=("impossible_fill", "mean"))
+    for y, r in q.iterrows():
+        print(f"  {y}: {int(r['rows']):5} rows | needs_review {r['needs_review']*100:4.0f}% "
+              f"| impossible-fill {r['impossible']*100:4.0f}%")
+
+    since = None
+    for a in sys.argv:
+        if a.startswith("--since="):
+            since = int(a.split("=")[1])
+    if since:
+        d = d[d["year"] >= since]
+        print(f"\n(restricting to {since} onward: {len(d)} rows)\n")
+
     clean = []
     print(f"{'reservoir':16} {'raw':>5} {'kept':>5} {'monsoon-days/yr':>16} {'norm range':>12}")
     for name, g in d.groupby("reservoir"):
