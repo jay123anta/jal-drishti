@@ -132,7 +132,7 @@ def label(nums: list[float]) -> dict:
     # report column order (left-to-right): MDDL, FRL, Designed-energy,
     # PRESENT-level, PRESENT-energy, last-year..., last-day...
     mddl, frl, designed, present_level = nums[0], nums[1], nums[2], nums[3]
-    present_mu = nums[4] if (designed > 0 and len(nums) >= 9) else None
+    present_mu = nums[4] if (designed > 0 and len(nums) >= 9) else float('nan')
     fill = (round((present_level - mddl) / (frl - mddl), 3)
             if frl > mddl and mddl <= present_level <= frl + 1 else None)
     return {"mddl_m": mddl, "frl_m": frl, "designed_mu": designed,
@@ -149,7 +149,8 @@ def save_rows(d: datetime.date, rows: list[dict], now: str) -> int:
     } for r in rows])
     p = OUT / "reservoirs.parquet"
     if p.exists():
-        out = pd.concat([pd.read_parquet(p), out], ignore_index=True)
+        prev = pd.read_parquet(p)
+        out = out if prev.empty else prev if out.empty else pd.concat([prev, out], ignore_index=True)
     out = out.drop_duplicates(subset=["date", "reservoir"], keep="last").sort_values(["date", "reservoir"])
     out.to_parquet(p, index=False)
     (OUT / "reservoirs.provenance.json").write_text(
