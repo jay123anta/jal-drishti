@@ -110,6 +110,22 @@ def main() -> int:
     todo = [d for d in days if d.isoformat() not in have]
     print(f"IMERG: {len(pts)} anchors, {len(have)} days already archived, {len(todo)} to fetch")
 
+    def flush(rows_by_anchor: dict) -> None:
+        """Write accumulated rows to disk - safe to call repeatedly (checkpoint)."""
+        for aid, rows in rows_by_anchor.items():
+            if not rows:
+                continue
+            new = pd.DataFrame(rows)
+            p = OUT / f"{aid}.parquet"
+            if p.exists():
+                new = pd.concat([pd.read_parquet(p), new], ignore_index=True)
+            new = new.drop_duplicates(subset="date", keep="first").sort_values("date")
+            new.to_parquet(p, index=False)
+            (OUT / f"{aid}.provenance.json").write_text(
+                f'{{"source": "{SRC}", "class": "OBSERVED", "archived": true, '
+                f'"retrieved_at": "{now}", "anchor": "{aid}", "rows": {len(new)}}}',
+                encoding="utf-8")
+
     rows_by_anchor: dict[str, list] = {}
     n_ok = n_skip = 0
     for d in todo:
@@ -127,23 +143,13 @@ def main() -> int:
         for aid, v in vals.items():
             rows_by_anchor.setdefault(aid, []).append({"date": d.isoformat(), "rain_mm": v})
         n_ok += 1
-        if n_ok % 200 == 0:
-            print(f"  {n_ok} days fetched...")
+        if n_ok % 100 == 0:
+            flush(rows_by_anchor)          # checkpoint: nothing lost on interrupt
+            rows_by_anchor = {}
+            print(f"  {n_ok} days fetched, checkpointed...")
 
-    n_written = 0
-    for aid, rows in rows_by_anchor.items():
-        new = pd.DataFrame(rows)
-        if aid in existing:
-            new = pd.concat([existing[aid], new], ignore_index=True)
-        new = new.drop_duplicates(subset="date", keep="first").sort_values("date")
-        new.to_parquet(OUT / f"{aid}.parquet", index=False)
-        (OUT / f"{aid}.provenance.json").write_text(
-            f'{{"source": "{SRC}", "class": "OBSERVED", "archived": true, '
-            f'"retrieved_at": "{now}", "anchor": "{aid}", "rows": {len(new)}}}',
-            encoding="utf-8")
-        n_written += 1
-    print(f"OK imerg: {n_ok} days fetched, {n_skip} skipped, {n_written} anchor files "
-          f"-> data/history/imerg/")
+    flush(rows_by_anchor)                  # final partial batch
+    print(f"OK imerg: {n_ok} days fetched, {n_skip} skipped -> data/history/imerg/")
     return 0
 
 
