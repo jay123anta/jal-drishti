@@ -147,9 +147,24 @@ def main() -> int:
         print(f"DEGRADED: NERLDC report {d} fetched but no reservoir rows parsed "
               "(layout may have changed - raw PDF kept for inspection)")
         return 0
+    def label(nums: list[float]) -> dict:
+        # report column order (left-to-right): MDDL, FRL, Designed-energy,
+        # PRESENT-level, PRESENT-energy, last-year..., last-day...
+        mddl, frl, designed, present_level = nums[0], nums[1], nums[2], nums[3]
+        # present stored energy only trusted when the full 9-column row is present
+        # (run-of-river dams report designed=0 and carry no energy column)
+        present_mu = nums[4] if (designed > 0 and len(nums) >= 9) else None
+        fill = (round((present_level - mddl) / (frl - mddl), 3)
+                if frl > mddl and mddl <= present_level <= frl + 1 else None)
+        return {"mddl_m": mddl, "frl_m": frl, "designed_mu": designed,
+                "present_level_m": present_level, "present_storage_mu": present_mu,
+                "fill_fraction": fill, "n_raw": len(nums),
+                "needs_review": len(nums) not in (6, 9)}
+
     out = pd.DataFrame([{
         "date": d.isoformat(), "reservoir": r["reservoir"], "basin": r["basin"],
-        "raw_numbers": ";".join(str(n) for n in r["numbers"]), "raw_row": r["raw"],
+        **label(r["numbers"]),
+        "raw_numbers": ";".join(str(n) for n in r["numbers"]),
     } for r in rows])
     p = OUT / "reservoirs.parquet"
     if p.exists():
