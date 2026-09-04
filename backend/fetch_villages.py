@@ -276,6 +276,24 @@ def main() -> int:
                 "retrieved_at": retrieved_at,
             })
 
+    # coordinate-collision guard: if OSM matched two different villages to the
+    # same node (e.g. Barpeta vs Barpeta Road), keep the first and revert the
+    # others to their own config coordinate so every village is a distinct dot.
+    seen_xy: dict = {}
+    cfg = {(n, d): (flat, flon) for n, d, flat, flon in VILLAGES}
+    for v in out:
+        key = (round(v["lat"], 5), round(v["lon"], 5))
+        if key in seen_xy:
+            flat, flon = cfg[(v["name"], v["district"])]
+            v["lat"], v["lon"] = flat, flon
+            v["source"] = "estimated (OSM node collided with another village)"
+            v["coordinate_precision"] = "approximate"
+            v.pop("osm_id", None)
+            print(f"  collision: {v['name']} shared a node with "
+                  f"{seen_xy[key]}; reverted to config coordinate")
+        else:
+            seen_xy[key] = v["name"]
+
     doc = {
         "generated_at": retrieved_at,
         "note": ("DEMO SUBSET (~80 of thousands). Village/settlement NAMES are real places in "
