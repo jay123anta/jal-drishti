@@ -53,6 +53,7 @@ STEPS = [
     ("archived 2026-07 window (Open-Meteo archive + Flood API)", "fetch_archive.py", []),
     *[(f"model v0 inference ({b}; degrades to heuristic)", "model/predict.py", ["--basin", b])
       for b in basin_ids()],
+    ("model forecast ledger (prediction archive)", "archive_model_fc.py", []),
     *[(f"input drift monitor ({b})", "model/drift.py", ["--basin", b]) for b in basin_ids()],
     ("risk classification (model v0 for Dikhow, heuristic elsewhere)", "classify_risk.py", []),
     ("replay of July 2026 event (same heuristic, archived inputs)",
