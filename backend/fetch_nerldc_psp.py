@@ -128,39 +128,20 @@ def parse_reservoirs(pdf_bytes: bytes) -> list[dict]:
     return rows
 
 
-def main() -> int:
-    OUT.mkdir(parents=True, exist_ok=True); RAW.mkdir(exist_ok=True)
-    now = utc_now_iso()
-    url, d = find_pdf_url()
-    if not url:
-        print(f"DEGRADED: no NERLDC PSP report found for {d} "
-              "(site reachable only from Indian IPs; runs on the keep-alive host)")
-        return 0
-    try:
-        r = _session().get(url, timeout=120); r.raise_for_status()
-        (RAW / f"{d.isoformat()}.pdf").write_bytes(r.content)
-        rows = parse_reservoirs(r.content)
-    except Exception as err:  # noqa: BLE001
-        print(f"DEGRADED: NERLDC fetch/parse failed for {d}: {err}")
-        return 0
-    if not rows:
-        print(f"DEGRADED: NERLDC report {d} fetched but no reservoir rows parsed "
-              "(layout may have changed - raw PDF kept for inspection)")
-        return 0
-    def label(nums: list[float]) -> dict:
-        # report column order (left-to-right): MDDL, FRL, Designed-energy,
-        # PRESENT-level, PRESENT-energy, last-year..., last-day...
-        mddl, frl, designed, present_level = nums[0], nums[1], nums[2], nums[3]
-        # present stored energy only trusted when the full 9-column row is present
-        # (run-of-river dams report designed=0 and carry no energy column)
-        present_mu = nums[4] if (designed > 0 and len(nums) >= 9) else None
-        fill = (round((present_level - mddl) / (frl - mddl), 3)
-                if frl > mddl and mddl <= present_level <= frl + 1 else None)
-        return {"mddl_m": mddl, "frl_m": frl, "designed_mu": designed,
-                "present_level_m": present_level, "present_storage_mu": present_mu,
-                "fill_fraction": fill, "n_raw": len(nums),
-                "needs_review": len(nums) not in (6, 9)}
+def label(nums: list[float]) -> dict:
+    # report column order (left-to-right): MDDL, FRL, Designed-energy,
+    # PRESENT-level, PRESENT-energy, last-year..., last-day...
+    mddl, frl, designed, present_level = nums[0], nums[1], nums[2], nums[3]
+    present_mu = nums[4] if (designed > 0 and len(nums) >= 9) else None
+    fill = (round((present_level - mddl) / (frl - mddl), 3)
+            if frl > mddl and mddl <= present_level <= frl + 1 else None)
+    return {"mddl_m": mddl, "frl_m": frl, "designed_mu": designed,
+            "present_level_m": present_level, "present_storage_mu": present_mu,
+            "fill_fraction": fill, "n_raw": len(nums),
+            "needs_review": len(nums) not in (6, 9)}
 
+
+def save_rows(d: datetime.date, rows: list[dict], now: str) -> int:
     out = pd.DataFrame([{
         "date": d.isoformat(), "reservoir": r["reservoir"], "basin": r["basin"],
         **label(r["numbers"]),
@@ -174,10 +155,72 @@ def main() -> int:
     (OUT / "reservoirs.provenance.json").write_text(
         f'{{"source": "{SRC}", "class": "OBSERVED", "archived": true, '
         f'"retrieved_at": "{now}", "rows": {len(out)}, '
-        f'"note": "raw_numbers are the report row values pending column mapping '
-        f'confirmed against a real run; raw PDFs kept in raw/"}}', encoding="utf-8")
-    print(f"OK nerldc: {d} parsed, {len(rows)} reservoirs -> data/history/nerldc/ "
-          f"(ledger now {len(out)} rows)")
+        f'"note": "present_level_m and fill_fraction reliable; present_storage_mu '
+        f'for storage dams; rows flagged needs_review parsed off-shape"}}',
+        encoding="utf-8")
+    return len(out)
+
+
+def process(url: str, d: datetime.date, now: str) -> int:
+    """Fetch one report at a known URL, parse and archive it. Returns row count."""
+    try:
+        r = _session().get(url, timeout=120); r.raise_for_status()
+        (RAW / f"{d.isoformat()}.pdf").write_bytes(r.content)
+        rows = parse_reservoirs(r.content)
+    except Exception:  # noqa: BLE001
+        return 0
+    if not rows:
+        return 0
+    save_rows(d, rows, now)
+    return len(rows)
+
+
+def backfill(now: str) -> int:
+    """Walk the dated flat URLs backwards until the archive runs out."""
+    sess = _session()
+    have = set()
+    p = OUT / "reservoirs.parquet"
+    if p.exists():
+        have = set(pd.read_parquet(p)["date"].astype(str))
+    d = datetime.date.today()
+    misses = n_ok = 0
+    while misses < 45:            # stop after ~1.5 months of consecutive gaps = archive start
+        if d.isoformat() in have:
+            d -= datetime.timedelta(days=1); continue
+        url = candidate_url(d)
+        try:
+            h = sess.head(url, timeout=30)
+            ok = h.status_code == 200 and "pdf" in h.headers.get("content-type", "").lower()
+        except requests.RequestException:
+            ok = False
+        if ok and process(url, d, now):
+            n_ok += 1; misses = 0
+            if n_ok % 20 == 0:
+                print(f"  backfilled {n_ok} reports (through {d})...", flush=True)
+        else:
+            misses += 1
+        d -= datetime.timedelta(days=1)
+    print(f"OK nerldc backfill: {n_ok} historical reports archived "
+          f"(stopped after {misses} consecutive gaps at {d})")
+    return 0
+
+
+def main() -> int:
+    OUT.mkdir(parents=True, exist_ok=True); RAW.mkdir(exist_ok=True)
+    now = utc_now_iso()
+    if "--backfill" in sys.argv:
+        return backfill(now)
+    url, d = find_pdf_url()
+    if not url:
+        print("DEGRADED: no NERLDC PSP report found "
+              "(site reachable only from Indian IPs; runs on the keep-alive host)")
+        return 0
+    n = process(url, d, now)
+    if not n:
+        print(f"DEGRADED: NERLDC report {d} not fetched/parsed (raw kept if downloaded)")
+        return 0
+    total = len(pd.read_parquet(OUT / "reservoirs.parquet"))
+    print(f"OK nerldc: {d} parsed, {n} reservoirs -> data/history/nerldc/ (ledger now {total} rows)")
     return 0
 
 
