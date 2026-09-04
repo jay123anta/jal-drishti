@@ -42,9 +42,11 @@ class _LegacyTLSAdapter(HTTPAdapter):
         return super().init_poolmanager(*a, **k)
 
 def _session():
-    import requests
+    import requests, urllib3
+    urllib3.disable_warnings()          # nerldc ships an incomplete cert chain
     s = requests.Session()
     s.mount("https://", _LegacyTLSAdapter())
+    s.verify = False                    # public report; content validated (must be a PDF)
     return s
 
 BASE_DIR = Path(__file__).resolve().parent.parent
