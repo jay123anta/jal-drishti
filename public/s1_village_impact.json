@@ -1,0 +1,50 @@
+{
+ "generated_at": "2026-09-04T18:29:46Z",
+ "note": "Which mapped villages fell inside the Sentinel-1 observed water footprint of each flood event. OBSERVED fact, not a model score; surface water includes permanent rivers (see per-event caveat).",
+ "village_count_total": 141,
+ "events": {
+  "2022-06 Silchar": {
+   "status": "assessed",
+   "scene_id": "S1A_IW_GRDH_1SDV_20220623T114838_20220623T114903_043790_053A4D_0BD7_COG",
+   "acquired": "2022-06-23T11:48:38.585532Z",
+   "processed_bbox": [
+    93.048,
+    24.71,
+    93.29,
+    24.94
+   ],
+   "villages_in_processed_area": 1,
+   "villages_in_observed_water": 0,
+   "villages_observed_dry": 1,
+   "in_water": [],
+   "class": "OBSERVED",
+   "caveat": "S1 extent is surface water at acquisition time and includes permanent rivers/wetlands (no pre-event differencing): a village 'in observed water' sat within observed surface water on that date and is not by itself proof of new flooding. Villages outside the processed box were not observed by this scene, not necessarily dry.",
+   "source": "intersection of OSM village points with Sentinel-1 water extent (this repo)"
+  },
+  "2026-07 Upper Assam": {
+   "status": "assessed",
+   "scene_id": "S1D_IW_GRDH_1SDV_20260727T114810_20260727T114835_003859_006F53_30A0_COG",
+   "acquired": "2026-07-27T11:48:10.330854Z",
+   "processed_bbox": [
+    94.45,
+    26.85,
+    94.95,
+    27.15
+   ],
+   "villages_in_processed_area": 17,
+   "villages_in_observed_water": 1,
+   "villages_observed_dry": 16,
+   "in_water": [
+    {
+     "name": "Dikhowmukh",
+     "district": "Sivasagar",
+     "lat": 27.05,
+     "lon": 94.5
+    }
+   ],
+   "class": "OBSERVED",
+   "caveat": "S1 extent is surface water at acquisition time and includes permanent rivers/wetlands (no pre-event differencing): a village 'in observed water' sat within observed surface water on that date and is not by itself proof of new flooding. Villages outside the processed box were not observed by this scene, not necessarily dry.",
+   "source": "intersection of OSM village points with Sentinel-1 water extent (this repo)"
+  }
+ }
+}

@@ -13,6 +13,7 @@ Order:
   9. fetch_s1_footprints.py    (CDSE STAC: 2022 Silchar + 2026 Upper Assam)
  10. s1_water_extent.py        (openEO water extent; degrades honestly
                                 without CDSE credentials, never fabricates)
+ 10b. s1_village_impact.py     (which mapped villages fell in observed water)
  11. check_provenance.py       (gate: every value has source/retrieved_at/class)
  12. check_plain_language.py   (gate: no technical jargon in the viewer's
                                 default view - Step E acceptance)
@@ -66,6 +67,7 @@ STEPS = [
     ("replay analysis -> REPLAY-FINDINGS.md (incl. model section)", "analyze_replay.py", []),
     ("Sentinel-1 footprints (CDSE STAC, 2022 + 2026 events)", "fetch_s1_footprints.py", []),
     ("Sentinel-1 water extent (openEO; degrades without CDSE creds)", "s1_water_extent.py", []),
+    ("Sentinel-1 observed impact on mapped villages", "s1_village_impact.py", []),
     ("popup-consistency gate (dot colour == its text)", "check_popup_consistency.py", []),
     ("provenance gate", "check_provenance.py", []),
     ("plain-language gate (default view)", "check_plain_language.py", []),
