@@ -86,16 +86,20 @@ def run(basin: str) -> dict:
 
     y = feats["y_h1"]
     monsoon_train = "--monsoon-train" in sys.argv
+    since = next((int(a.split("=")[1]) for a in sys.argv if a.startswith("--since=")), None)
     rows = []
     wins_vs_pers = wins_vs_plain = 0
     for train_years, fy in FOLDS:
         tr = feats.index.year.isin(train_years) & y.notna()
+        if since:
+            tr = tr & (feats.index.year >= since)   # only train on recent years
         if monsoon_train:
             tr = tr & monsoon_mask(feats.index)   # train on monsoon days only
         te = (feats.index.year == fy) & monsoon_mask(feats.index) & y.notna()
         if te.sum() < 30 or feats.loc[te, dam_cols].notna().mean().mean() < 0.5:
             rows.append({"fold": fy, "skipped": "thin dam coverage"}); continue
         pers = mae(y[te], feats.loc[te, "q"])                       # persistence
+        n_tr_years = feats.loc[tr].index.year.nunique()
         m_plain = HistGradientBoostingRegressor(**HGB).fit(feats.loc[tr, plain_cols], y[tr])
         m_dam = HistGradientBoostingRegressor(**HGB).fit(feats.loc[tr, base_cols], y[tr])
         e_plain = mae(y[te], m_plain.predict(feats.loc[te, plain_cols]))
@@ -103,7 +107,8 @@ def run(basin: str) -> dict:
         wins_vs_pers += e_dam < pers
         wins_vs_plain += e_dam < e_plain
         rows.append({"fold": fy, "persistence": round(pers, 1),
-                     "plain_ml": round(e_plain, 1), "dam_ml": round(e_dam, 1)})
+                     "plain_ml": round(e_plain, 1), "dam_ml": round(e_dam, 1),
+                     "train_years": int(n_tr_years)})
     judged = [r for r in rows if "dam_ml" in r]
     ship = len(judged) >= 3 and wins_vs_pers >= 3
     verdict = (f"dam model beats persistence in {wins_vs_pers}/{len(judged)} monsoons "
