@@ -181,7 +181,7 @@ def main() -> int:
         cells = []
         for lb in CWC_LEADS_H:
             m = v["leads"][lb]
-            cells.append(f"{m['n']} / {m['mae']} / {m['skill_vs_persistence']}" if m["status"] == "ok" else f"{m['n']} / – / –")
+            cells.append(f"{m['n']} / {m['mae']} / {m['skill_vs_persistence']}" if m["status"] == "ok" else f"{m['n']} / - / -")
         ev = v["warning_events_24h"]
         evs = (f"POD {ev['pod']} FAR {ev['far']} ({ev['observed_above']} h above {ev['threshold']} m)"
                if ev.get("status") == "ok" else ev.get("status"))
@@ -195,7 +195,7 @@ def main() -> int:
         cells = []
         for Ld in GLOFAS_LEADS_D:
             m = v["leads"][f"{Ld}d"]
-            cells.append(f"{m['n']} / {m['mae']} / {m['skill_vs_persistence']}" if m["status"] == "ok" else f"{m['n']} / – / –")
+            cells.append(f"{m['n']} / {m['mae']} / {m['skill_vs_persistence']}" if m["status"] == "ok" else f"{m['n']} / - / -")
         ev = v["q90_events_1d"]
         evs = (f"POD {ev['pod']} FAR {ev['far']}" if ev.get("status") == "ok" else ev.get("status"))
         A(f"| {cell} | {v['issue_dates']} | {v['observed_days']} | " + " | ".join(cells) + f" | {evs} |")
