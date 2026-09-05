@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-09-04T12:02:47Z",
+ "generated_at": "2026-09-05T00:17:40Z",
  "basin": "disang",
  "model": "model-v0-disang",
  "inputs": {
   "q_today_m3s": {
-   "value": 429.53,
+   "value": 395.28,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-04T12:02:47Z",
+   "retrieved_at": "2026-09-05T00:17:40Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.909,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.866
+  },
+  "catchment_rain_24h_mm": {
+   "value": 15.1,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-05T00:17:40Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.748,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.689
+  },
+  "catchment_rain_48h_mm": {
+   "value": 47.9,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-05T00:17:40Z",
    "seasonal_status": "in-range",
    "seasonal_percentile": 0.927,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.902
-  },
-  "catchment_rain_24h_mm": {
-   "value": 36.6,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T12:02:47Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.977,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.963
-  },
-  "catchment_rain_48h_mm": {
-   "value": 42.3,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-04T12:02:47Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.889,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.846
+   "monsoon_percentile": 0.889
   }
  },
  "overall": "in-range",
