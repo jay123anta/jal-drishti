@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T06:49:08Z",
+ "generated_at": "2026-09-05T07:25:24Z",
  "replay": true,
  "disclaimer": "DEMO - UNVALIDATED CLASSIFICATION - NOT A WARNING SYSTEM",
  "event": "19 July 2026 cloudburst, Mon district, Nagaland; flooding in Sivasagar, Charaideo, Jorhat and Golaghat districts",
@@ -7,7 +7,7 @@
   "headline": "We re-ran this map over the July 2026 floods using saved weather and river data.",
   "signal": "The rain burst at Mon on 19 July and the river jump the next day (+83% in one day) both show up clearly in the free data.",
   "lead": "But the colours gave no useful head start: the heavy-rain signal appears on the morning of 19 July itself, and the river jump on 20 July, the day after. Many villages were already amber or red for days before, because the whole fortnight was wet.",
-  "control": "In the calmest week of the period (21–27 July), the test formula flagged 9% of village readings amber or red - a few false alarms, not many.",
+  "control": "In the calmest week of the period (21-27 July), the test formula flagged 9% of village readings amber or red - a few false alarms, not many.",
   "caveat": "This is a look-back test of a rough formula on saved data. It does not show that real warnings would have been given, or been right.",
   "model": "We also built a simple river model from ten years of past data and tested it on this flood. It only raised its alarm once the water was already high - no head start. Details are in the notes. We then tried adding tomorrow's rain forecast as an input. The forecast did see the 19 July rain coming - but with only daily river data to learn from, it still could not raise the alarm any earlier, so the simpler version stayed."
  },
@@ -19,7 +19,7 @@
    "prev_month_max_mm": 33.4,
    "class": "OBSERVED",
    "source": "derived by backend/analyze_replay.py from the archived inputs",
-   "retrieved_at": "2026-09-05T06:49:08Z"
+   "retrieved_at": "2026-09-05T07:25:24Z"
   },
   "dikhow_surge": {
    "value": 83.0,
@@ -29,28 +29,28 @@
    "to_m3s": 766.36,
    "class": "OBSERVED",
    "source": "derived by backend/analyze_replay.py from the archived inputs",
-   "retrieved_at": "2026-09-05T06:49:08Z"
+   "retrieved_at": "2026-09-05T07:25:24Z"
   },
   "villages_already_elevated_at_start": {
    "value": 0,
    "of": 17,
    "class": "SIMULATED",
    "source": "derived by backend/analyze_replay.py from the replay of the demo heuristic (version in public/replay_2026-07.json: heuristic field)",
-   "retrieved_at": "2026-09-05T06:49:08Z"
+   "retrieved_at": "2026-09-05T07:25:24Z"
   },
   "villages_red_before_event": {
    "value": 8,
    "of": 17,
    "class": "SIMULATED",
    "source": "derived by backend/analyze_replay.py from the replay of the demo heuristic (version in public/replay_2026-07.json: heuristic field)",
-   "retrieved_at": "2026-09-05T06:49:08Z"
+   "retrieved_at": "2026-09-05T07:25:24Z"
   },
   "window_non_green_pct": {
    "value": 8.4,
    "unit": "% of village-steps",
    "class": "SIMULATED",
    "source": "derived by backend/analyze_replay.py from the replay of the demo heuristic (version in public/replay_2026-07.json: heuristic field)",
-   "retrieved_at": "2026-09-05T06:49:08Z"
+   "retrieved_at": "2026-09-05T07:25:24Z"
   },
   "control_week": {
    "value": 8.6,
@@ -61,7 +61,7 @@
    "red": 52,
    "class": "SIMULATED",
    "source": "derived by backend/analyze_replay.py from the replay of the demo heuristic (version in public/replay_2026-07.json: heuristic field)",
-   "retrieved_at": "2026-09-05T06:49:08Z"
+   "retrieved_at": "2026-09-05T07:25:24Z"
   }
  },
  "full_findings": "REPLAY-FINDINGS.md"

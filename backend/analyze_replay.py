@@ -291,7 +291,7 @@ def main() -> int:
     A("")
     A(f"All {len(trans['rows'])} Sivasagar-district villages: ")
     A("")
-    A("| Village | First non-GREEN | First RED | GREEN→elevated again 18–21 Jul | RED during 19–21 Jul |")
+    A("| Village | First non-GREEN | First RED | GREEN→elevated again 18-21 Jul | RED during 19-21 Jul |")
     A("|---|---|---|---|---|")
     for r in sorted(trans["rows"], key=lambda r: (r["first_red"] or "9", r["name"])):
         A(f"| {r['name']} | {r['first_yellow'] or '-'}"
@@ -304,11 +304,11 @@ def main() -> int:
           f"very first replay step ({trans['t0']}), and {n_red_before} of them hit RED "
           f"**before** 19 July - driven by ordinary monsoon rain plus a discharge "
           f"percentile that saturates in a wet spell (documented failure mode "
-          f"#3 in HEURISTIC.md). {n_red_during} villages showed RED during 19–21 July.")
+          f"#3 in HEURISTIC.md). {n_red_during} villages showed RED during 19-21 July.")
     else:
         A(f"None of the {len(trans['rows'])} villages were elevated at the window "
           f"start, and none were RED before 19 July. {n_red_during} showed RED during "
-          f"19–21 July - the colours moved WITH the event, not ahead of it.")
+          f"19-21 July - the colours moved WITH the event, not ahead of it.")
     A("")
     A("## 4. Lead time, stated plainly")
     A("")
@@ -327,7 +327,7 @@ def main() -> int:
           f"heuristic's routine monsoon state.")
     else:
         A(f"- **The replayed rules give no lead time - but they now discriminate.** "
-          f"The colours changed on 19–20 July itself, not before ({sat['pct']:.0f}% of "
+          f"The colours changed on 19-20 July itself, not before ({sat['pct']:.0f}% of "
           f"village-steps in the whole window are non-GREEN, concentrated around the "
           f"event). Same-day at best: a heads-up, not a warning.")
     A(f"- What IS demonstrated: the cloudburst and the downstream surge are both "
@@ -444,7 +444,7 @@ def main() -> int:
                     if (n_already or n_red_before) else
                     "The villages changed colour on those same days - with the "
                     "flood, not ahead of it.")),
-        "control": (f"In the calmest week of the period ({ctrl['start'][8:]}–{ctrl['end'][8:]} "
+        "control": (f"In the calmest week of the period ({ctrl['start'][8:]}-{ctrl['end'][8:]} "
                     f"{datetime.date.fromisoformat(ctrl['end']).strftime('%B')}), the test "
                     f"formula flagged {ctrl['pct_non_green']:.0f}% of village readings "
                     f"amber or red"

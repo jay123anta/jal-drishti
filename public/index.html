@@ -286,10 +286,10 @@
     <div id="replaybar">
       <div class="sliderrow">
         <input type="range" id="slider" min="0" max="107" value="0" disabled aria-label="Look back through 10 July to 5 August 2026">
-        <span id="slidertime">–</span>
+        <span id="slidertime">-</span>
       </div>
       <div class="sliderrow"><button class="hbtn" id="backnow">Back to now</button></div>
-      <div class="slidernote">Drag through 10 July – 5 August 2026. The heavy rain in the hills struck on 19 July.</div>
+      <div class="slidernote">Drag through 10 July - 5 August 2026. The heavy rain in the hills struck on 19 July.</div>
       <div id="findings"></div>
     </div>
 
@@ -348,6 +348,14 @@
     flood system (Copernicus)</b> and its radar satellites. The models that combine
     them are <b>this project's own</b> - built with standard methods and tested
     openly, but approved by no authority. That is why their colours are estimates.</p>
+    <p style="margin-top:8px"><b>Data sources.</b> Official river gauges, warning/danger
+    marks and alerts: <b>CWC, ASDMA and IMD</b> (via India-WRIS and NDMA SACHET).
+    River-flow history and forecasts: the <b>EU Copernicus</b> global flood system
+    (GloFAS, relayed by Open-Meteo); rainfall from <b>Open-Meteo</b>. Satellite flood
+    extent: <b>Copernicus Sentinel-1</b>. Dam reservoir levels: <b>NERLDC</b>. Villages
+    and basemap: <b>OpenStreetMap</b>. NASA GPM IMERG and IMD gridded rainfall are used
+    to cross-check the rain, not to colour the map. Every figure in a popup names its
+    own source.</p>
     <p style="margin-top:8px;margin-bottom:14px">This is a <b>test</b>, not a warning service. Real flood warnings
     come from <b>ASDMA, CWC and your District Administration</b> - never from this map.</p>
     <button class="hbtn primary" id="gotit">Got it</button>
@@ -695,7 +703,7 @@ function techCwcPanel(cwc) {
 
 function techScoreboard(sb) {
   if (!sb) return "";
-  const fmt = m => m && m.status === "ok" ? `${esc(m.n)} / ${esc(m.value)} / ${esc(m.skill_vs_persistence)}` : `${esc((m || {}).n || 0)} / – / –`;
+  const fmt = m => m && m.status === "ok" ? `${esc(m.n)} / ${esc(m.value)} / ${esc(m.skill_vs_persistence)}` : `${esc((m || {}).n || 0)} / - / -`;
   const rows = Object.entries(sb.sources.cwc_aff || {}).map(([st, v]) =>
     `<tr><td class="mono">${esc(v.station)}</td><td class="v">${fmt(v.leads["6h"])}</td><td class="v">${fmt(v.leads["24h"])}</td><td class="v">${fmt(v.leads["72h"])}</td></tr>`).join("");
   return `<h3>Forecast scoreboard (ready-made forecasts vs observed)</h3>
@@ -748,7 +756,7 @@ function techPanel(docs) {
     <table>${riverRows}</table>
     <h3>July 2026 replay</h3>
     <div>Archived ERA5-family rainfall (+ Mon town) and GloFAS reanalysis re-run
-      through the unchanged v0 heuristic at 6-hour steps, 10 Jul–5 Aug 2026.
+      through the unchanged v0 heuristic at 6-hour steps, 10 Jul-5 Aug 2026.
       Risk classes SIMULATED with replay:true; inputs OBSERVED.
       Findings: <span class="mono">REPLAY-FINDINGS.md</span>.</div>
     ${rf ? techFindings(rf) : ""}
@@ -1054,7 +1062,7 @@ function setReplay(idx) {
     }
     if (window._liveCounts) setCounts(window._liveCounts);
     document.getElementById("slidertime").textContent =
-      state.replay ? "drag to look back →" : "–";
+      state.replay ? "drag to look back →" : "-";
     return;
   }
   state.replayIdx = idx;
