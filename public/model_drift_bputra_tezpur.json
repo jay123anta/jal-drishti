@@ -1,10 +1,40 @@
 {
- "generated_at": "2026-09-05T00:17:49Z",
+ "generated_at": "2026-09-05T06:03:07Z",
  "basin": "bputra_tezpur",
  "model": "model-v0-bputra_tezpur",
- "inputs": {},
- "overall": "degraded",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 18196.02,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-05T06:03:07Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.399,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.256
+  },
+  "catchment_rain_24h_mm": {
+   "value": 15.3,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_tezpur catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-05T06:03:07Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.622,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.537
+  },
+  "catchment_rain_48h_mm": {
+   "value": 33.5,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_tezpur catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-05T06:03:07Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.654,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.575
+  }
+ },
+ "overall": "in-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
- "note": "drift never changes a colour; it flags extrapolation in the Technical view",
- "error": "model_forecast_bputra_tezpur.json missing or degraded - no live inputs to compare"
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }

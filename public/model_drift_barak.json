@@ -1,10 +1,40 @@
 {
- "generated_at": "2026-09-05T00:17:26Z",
+ "generated_at": "2026-09-05T06:02:57Z",
  "basin": "barak",
  "model": "model-v0-barak",
- "inputs": {},
- "overall": "degraded",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 1865.38,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-05T06:02:57Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.786,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.908
+  },
+  "catchment_rain_24h_mm": {
+   "value": 9.5,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 barak catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-05T06:02:57Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.651,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.529
+  },
+  "catchment_rain_48h_mm": {
+   "value": 17.8,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 barak catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-05T06:02:57Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.601,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.466
+  }
+ },
+ "overall": "in-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
- "note": "drift never changes a colour; it flags extrapolation in the Technical view",
- "error": "model_forecast_barak.json missing or degraded - no live inputs to compare"
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
