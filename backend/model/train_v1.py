@@ -30,7 +30,6 @@ import pathlib
 import sys
 
 import joblib
-import numpy as np
 import pandas as pd
 from sklearn.ensemble import HistGradientBoostingRegressor
 from xgboost import XGBRegressor
@@ -152,7 +151,6 @@ def main() -> int:
     feats_pp = feature_frame(daily_pp)
     feats_pp["rain_next24"] = daily_pp["rain_next24"]
     lag = load_json(HIST_DIR / "lag_summary.json")
-    b0_meta = load_json(MODELS_DIR / "dikhow_v0_meta.json")
 
     results = {"generated_at": now, "target_caveat": CAVEAT,
                "design": "perfect-prog training / real-issued-forecast validation",

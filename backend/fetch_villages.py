@@ -13,7 +13,6 @@ Points only, no polygons. No LGD-code claims. Demo subset, not a roster.
 import json
 import time
 import sys
-import time
 import unicodedata
 
 import requests

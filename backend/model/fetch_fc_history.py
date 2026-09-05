@@ -31,7 +31,7 @@ import pandas as pd
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from common import fetch_json, save_failed_request, save_json, utc_now_iso  # noqa: E402
 
-from fetch_history import (HIST_DIR, RAIN_POINTS, RAW_DIR, STATE_PATH,  # noqa: E402
+from fetch_history import (HIST_DIR, RAIN_POINTS, RAW_DIR,  # noqa: E402
                            load_state, save_state)
 
 FC_API = "https://previous-runs-api.open-meteo.com/v1/forecast"

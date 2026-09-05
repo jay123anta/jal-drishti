@@ -32,7 +32,6 @@ degraded_points. Archived history is NEVER simulated - a degraded point is
 simply absent, and downstream steps work with what exists.
 """
 
-import datetime
 import sys
 
 from common import (DATA_DIR, OBSERVED, fetch_json, load_json,

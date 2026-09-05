@@ -25,8 +25,6 @@ import pathlib
 import subprocess
 import sys
 
-import pandas as pd
-
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from common import REPO_ROOT, load_json, save_json, utc_now_iso  # noqa: E402
 

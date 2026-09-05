@@ -65,7 +65,6 @@ def _seasonal_series(river_id: str):
     if not files:
         _SEASONAL[river_id] = None
         return None
-    import numpy as np
     import pandas as pd
     df = pd.concat(pd.read_parquet(p) for p in files)
     doy = pd.to_datetime(df["date"]).dt.dayofyear.to_numpy()

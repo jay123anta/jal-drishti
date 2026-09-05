@@ -21,10 +21,8 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from common import DATA_DIR  # noqa: E402
-
 from basins import BASINS, rain_point_ids  # noqa: E402
-from lag_analysis import (HIST_DIR, RAIN_POINT_IDS, TARGET,  # noqa: E402
+from lag_analysis import (HIST_DIR,  # noqa: E402
                           daily_rain_sums, load_daily_q, load_hourly_rain)
 
 YEARS_ALL = list(range(2015, 2026))

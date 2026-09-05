@@ -30,7 +30,6 @@ docs/LAG-ANALYSIS-<basin>.md + data/history/lag_summary_<basin>.json
 otherwise.
 """
 
-import datetime
 import pathlib
 import sys
 

@@ -24,7 +24,7 @@ import numpy as np
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from common import DATA_DIR, PUBLIC_DIR, load_json, save_json, utc_now_iso  # noqa: E402
 
-from basins import BASINS, model_names  # noqa: E402
+from basins import model_names  # noqa: E402
 from mdata import build_daily_frame, monsoon_mask  # noqa: E402
 
 YEARS = list(range(2015, 2026))

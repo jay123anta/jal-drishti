@@ -25,7 +25,7 @@ import pandas as pd
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from common import load_json, utc_now_iso  # noqa: E402
 
-from mdata import build_daily_frame, feature_frame, feature_cols  # noqa: E402
+from mdata import build_daily_frame, feature_frame  # noqa: E402
 from train_v1 import (H, YEARS, actual_next24, add_rainnext_feature,  # noqa: E402
                       fit_ml, load_fc_daily, pred_for_days)
 from fetch_history import HIST_DIR  # noqa: E402

@@ -28,7 +28,6 @@ redo). Always exits 0 unless the footprints file itself is missing.
 """
 
 import datetime
-import math
 import os
 import shutil
 import sys
@@ -264,7 +263,6 @@ def openeo_sigma0_tiff(token: str, aoi: list, day: str, out_path) -> None:
 def read_geotiff(path) -> tuple:
     """(array, x0, y0, sx, sy, epsg) via tifffile - Pillow mis-decodes these
     tiled float32 GeoTIFFs (verified 2026-08-28); no rasterio needed."""
-    import numpy as np
     import tifffile
     with tifffile.TiffFile(path) as tf:
         page = tf.pages[0]
