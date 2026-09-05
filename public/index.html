@@ -273,24 +273,19 @@
     <div class="row"><span class="sw" style="background:#DB9E1E"></span><span>above the official <b>warning</b> mark (CWC gauge)</span></div>
     <div class="row"><span class="sw" style="background:#C4402F"></span><span>above the official <b>danger</b> mark (CWC gauge)</span></div>
 
-    <h2>Look back at past floods</h2>
+    <h2>Testing our map on past floods</h2>
+    <p class="muted" style="margin:2px 0 8px">We replay real floods to check our own method - including where it failed. A village can show green here even though it flooded: that is a miss, and we show it honestly rather than hide it.</p>
     <div id="evsel">
       <label><input type="radio" name="ev" value="none" checked> Off - today's view</label>
-      <label><input type="radio" name="ev" value="2022-06 Silchar"> Silchar, June 2022</label>
       <label><input type="radio" name="ev" value="2026-07 Upper Assam"> Upper Assam, July 2026</label>
     </div>
-    <details><summary>What the past-flood layers show</summary>
-      <div class="row"><span class="ln" style="border-color:#D96233"></span><span>radar picture area - during the flood</span></div>
-      <div class="row"><span class="ln" style="border-color:#8A9AA0;border-top-style:dashed"></span><span>radar picture area - before the flood</span></div>
-      <div class="row"><span class="fill"></span><span>water seen by the radar satellite</span></div>
-    </details>
     <div id="replaybar">
       <div class="sliderrow">
         <input type="range" id="slider" min="0" max="107" value="0" disabled aria-label="Look back through 10 July to 5 August 2026">
         <span id="slidertime">-</span>
       </div>
       <div class="sliderrow"><button class="hbtn" id="backnow">Back to now</button></div>
-      <div class="slidernote">Drag through 10 July - 5 August 2026. The heavy rain in the hills struck on 19 July.</div>
+      <div class="slidernote">Drag through 10 July - 5 August 2026. The heavy rain in the hills struck on 19 July. Watch where our colours matched the flood - and where they missed.</div>
       <div id="findings"></div>
     </div>
 
@@ -301,7 +296,7 @@
 
   <div id="map"></div>
   <button class="hbtn primary" id="drawerbtn">☰ Key &amp; past floods</button>
-  <div id="watermark" role="status">Showing PAST data from the July 2026 floods - this is a look-back test, not the current situation.</div>
+  <div id="watermark" role="status">This is us testing our own method on the past July 2026 flood - not the current situation, and not an official record. Some flooded villages may show green: those are our misses, shown honestly.</div>
 
   <!-- TECH-START -->
   <aside id="techpanel" aria-label="Technical view"></aside>
@@ -506,25 +501,6 @@ function riverPopup(r, c) {
   </div>`;
 }
 
-function scenePopup(p) {
-  const img = p.local_thumbnail
-    ? `<img src="${esc(p.local_thumbnail)}" alt="radar picture ${esc(p.scene_id)}">` : "";
-  return `<div class="pp">
-    <h3>Radar satellite pass <span class="lbl">${esc(p.event)}</span></h3>
-    <div class="lead">A radar satellite looked at this area on ${esc(humanDate(p.acquired))}. Radar can see flood water through clouds.</div>
-    ${img}
-    <details><summary>Technical details</summary>${techScene(p)}</details>
-  </div>`;
-}
-
-function extentPopup(p) {
-  return `<div class="pp">
-    <h3>Water seen by radar <span class="lbl">${esc(p.event)}</span></h3>
-    <div class="lead">The blue area looked like water to the radar satellite on ${esc(humanDate(p.acquired))}. Rivers and ponds that are always there are included too.</div>
-    <details><summary>Technical details</summary>${techExtent(p)}</details>
-  </div>`;
-}
-
 // TECH-STRINGS-START - everything below this line renders ONLY inside
 // collapsed "Technical details" blocks or the Technical view panel.
 const prov = pv => `<div class="prov">${esc(pv.class)} · ${esc(pv.source)} · ${esc(pv.retrieved_at)}</div>`;
@@ -592,21 +568,6 @@ function techRiver(r, c) {
     </table>
     <div class="prov">${esc(r.snap_note || "")}</div>
     ${techCwc(c)}`;
-}
-
-function techScene(p) {
-  return `<div class="prov">${esc(p.acquired)} · ${esc(p.platform || "")} · ${esc(p.instrument_mode || "")} ·
-      ${esc(p.orbit_state || "")} orbit · ${esc((p.polarizations || []).join("+"))}</div>
-    <div class="prov">${esc(p.window_label)} · scene ${esc(p.scene_id)}</div>
-    <div class="prov">${esc(p.class)} · ${esc(p.source)} · ${esc(p.retrieved_at)}</div>`;
-}
-
-function techExtent(p) {
-  return `<div class="prov">scene ${esc(p.scene_id)} · acquired ${esc(p.acquired)}</div>
-    <div class="prov">method: ${esc(p.method)}</div>
-    <div class="prov">coverage: ${esc(p.coverage || "")} · water fraction of processed area: ${esc(p.water_fraction_of_aoi)}</div>
-    <div class="prov">${esc(p.note)}</div>
-    <div class="prov">${esc(p.class)} · ${esc(p.source)} · ${esc(p.retrieved_at)}</div>`;
 }
 
 function techFindings(rf) {
@@ -782,10 +743,6 @@ const state = {
   replayIdx: null,           // null = LIVE
   markers: new Map(),        // village key -> circleMarker
   liveRisk: new Map(),       // village key -> live colour
-  extLayers: {},             // event -> Leaflet layer (when shipped)
-  extAcquired: {},           // event -> radar acquisition ISO date (for slider sync)
-  s1Layers: {},              // event -> footprint layer
-  map: null,                 // Leaflet map handle (for layer sync outside init)
 };
 const vkey = v => `${v.name}|${v.district}`;
 
@@ -840,7 +797,6 @@ async function boot() {
   ((cwc && cwc.stations) || []).forEach(s => { if (s.poc_river) cwcByRiver[s.poc_river] = s; });
 
   const map = L.map("map", { zoomSnap: 0.5 });
-  state.map = map;
   // Basemap: smooth vector tiles (OpenFreeMap - free, no key, no account),
   // with the old raster tiles as an automatic fallback if GL cannot start.
   let glOk = false;
@@ -893,19 +849,6 @@ async function boot() {
       .bindPopup(riverPopup(r, c), { maxWidth: 360 });
   }));
 
-  // S1 footprints per event
-  const evs = ["2022-06 Silchar", "2026-07 Upper Assam"];
-  for (const ev of evs) {
-    state.s1Layers[ev] = L.geoJSON(
-      { type: "FeatureCollection",
-        features: s1.features.filter(f => f.properties.event === ev) }, {
-      style: f => f.properties.window === "peak_flood"
-        ? { color: "#D96233", weight: 2.5, fillOpacity: 0.10 }
-        : { color: "#8A9AA0", weight: 1.5, dashArray: "4 4", fillOpacity: 0.04 },
-      onEachFeature: (f, l) => l.bindPopup(scenePopup(f.properties), { maxWidth: 300 }),
-    });
-  }
-
   // keep a popup fully in view when sections inside it expand or collapse
   if (map.on) map.on("popupopen", e => {
     const el = e.popup && e.popup.getElement && e.popup.getElement();
@@ -926,7 +869,7 @@ async function boot() {
   document.getElementById("evsel").addEventListener("change", e => {
     if (e.target && e.target.name === "ev") {
       openDrawer(true);
-      selectEvent(e.target.value, map, xst, rf);
+      selectEvent(e.target.value);
     }
   });
 
@@ -964,7 +907,7 @@ async function boot() {
     const p = rf.plain;
     document.getElementById("findings").innerHTML = `
       <details>
-        <summary class="fh">What we found when we replayed July 2026 - tap to read</summary>
+        <summary class="fh">What we got right - and wrong - replaying July 2026 (tap to read)</summary>
         <div class="fbody">
           <div>${esc(p.signal)} ${esc(p.lead)}</div>
           <div>${esc(p.control)} ${esc(p.caveat)}</div>
@@ -1007,38 +950,9 @@ function setCounts(c) {
       `<span class="chip"><span class="dot" style="background:${col}"></span>${RISK_ICON[k]} ${k} ${c[k] || 0}</span>`).join("");
 }
 
-async function selectEvent(ev, map, xst, rf) {
-  // remove previous event layers
-  for (const key of Object.keys(state.s1Layers)) map.removeLayer(state.s1Layers[key]);
-  for (const key of Object.keys(state.extLayers)) map.removeLayer(state.extLayers[key]);
+async function selectEvent(ev) {
   state.event = ev;
   const bar = document.getElementById("replaybar");
-
-  if (ev === "none") {
-    bar.style.display = "none";
-    setReplay(null);
-    return;
-  }
-  // radar footprints + water extent are added by syncS1(), which keeps them
-  // in step with the replay slider (see below) - they never show ahead of the
-  // date the satellite actually imaged the area.
-
-  // water extent, only if Step B shipped it for this event
-  const st = xst && xst.events && xst.events[ev];
-  if (st && st.status === "shipped" && st.file) {
-    if (!state.extLayers[ev]) {
-      const gj = await tryJson(st.file);
-      if (gj) {
-        const f0 = gj.features && gj.features[0];
-        state.extAcquired[ev] = f0 && f0.properties ? f0.properties.acquired : null;
-        state.extLayers[ev] = L.geoJSON(gj, {
-          style: { color: "#0F6B84", weight: 0, fillColor: "#0F6B84", fillOpacity: 0.35 },
-          onEachFeature: (f, l) => l.bindPopup(extentPopup(f.properties), { maxWidth: 320 }),
-        });
-      }
-    }
-  }
-
   if (ev === "2026-07 Upper Assam") {
     bar.style.display = "block";
     if (!state.replay) {
@@ -1057,34 +971,6 @@ async function selectEvent(ev, map, xst, rf) {
     bar.style.display = "none";
     setReplay(null);
   }
-  syncS1();
-}
-
-// Show the radar overlay (footprints + water) only when the replay slider has
-// reached the date the satellite imaged the area. Events without a slider
-// (Silchar) show their single look-back as before. Prevents a peak-flood radar
-// picture sitting over pre-flood village colours.
-function syncS1() {
-  const ev = state.event, map = state.map;
-  if (!map || !ev || ev === "none") return;
-  const layers = [state.s1Layers[ev], state.extLayers[ev]];
-  const timeline = ev === "2026-07 Upper Assam" && state.replay;
-  let show;
-  if (!timeline) {
-    show = true;
-  } else if (state.replayIdx === null) {
-    show = false;
-  } else {
-    const acq = state.extAcquired[ev];
-    const tS = new Date(state.replay.times[state.replayIdx].replace("Z", ":00Z"));
-    show = !acq || new Date(acq) <= tS;
-  }
-  for (const lyr of layers) {
-    if (!lyr) continue;
-    const on = map.hasLayer(lyr);
-    if (show && !on) lyr.addTo(map);
-    else if (!show && on) map.removeLayer(lyr);
-  }
 }
 
 function setReplay(idx) {
@@ -1100,7 +986,6 @@ function setReplay(idx) {
     if (window._liveCounts) setCounts(window._liveCounts);
     document.getElementById("slidertime").textContent =
       state.replay ? "drag to look back →" : "-";
-    syncS1();
     return;
   }
   state.replayIdx = idx;
@@ -1117,7 +1002,6 @@ function setReplay(idx) {
     m.setTooltipContent(`${v.name} - past: ${RISK_ICON[cls] || ""} ${cls || "?"}`);
   }
   setCounts(state.replay.step_counts[idx]);
-  syncS1();
 }
 
 boot().catch(err => {
