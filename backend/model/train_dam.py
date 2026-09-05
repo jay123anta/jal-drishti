@@ -127,8 +127,17 @@ def main() -> int:
         print("run clean_reservoirs.py first (need reservoirs_clean.parquet)")
         return 0
     which = [a for a in sys.argv[1:] if not a.startswith("--")] or list(DAMS)
+    # Exploratory variants (--since / --monsoon-train) must NEVER overwrite the
+    # canonical full-history record: they write to a separate experiment file,
+    # so a quick "what if we trained on fewer years" run cannot corrupt the
+    # committed ship decision. Only a plain no-flag run writes dam_retrain.json.
+    variant = [a for a in sys.argv if a.startswith("--since=") or a == "--monsoon-train"]
+    out_path = OUT if not variant else OUT.with_name("dam_retrain_experiment.json")
     if "--monsoon-train" in sys.argv:
         print("(training on MONSOON days only - testing the user's variant)\n")
+    if variant:
+        print(f"(exploratory run {variant} -> writing {out_path.name}, "
+              f"NOT the canonical {OUT.name})\n")
     results = []
     for basin in which:
         if basin not in DAMS:
@@ -139,10 +148,11 @@ def main() -> int:
         for f in r.get("folds", []):
             print("  ", f)
         print("  DECISION:", r.get("verdict", r.get("skipped")))
-    OUT.write_text(json.dumps({"results": results,
-                               "rule": "dam ML ships only if it beats persistence in >=3/4 held-out monsoons"},
-                              indent=1), encoding="utf-8")
-    print(f"\nwritten -> {OUT.name}")
+    out_path.write_text(json.dumps({"results": results,
+                                    "variant": variant or None,
+                                    "rule": "dam ML ships only if it beats persistence in >=3/4 held-out monsoons"},
+                                   indent=1), encoding="utf-8")
+    print(f"\nwritten -> {out_path.name}")
     return 0
 
 
