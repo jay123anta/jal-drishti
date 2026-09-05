@@ -55,7 +55,9 @@ STEPS = [
     ("village terrain elevation (exposure layer; cached, static)", "fetch_elevation.py", []),
     *[(f"model v0 inference ({b}; degrades to heuristic)", "model/predict.py", ["--basin", b])
       for b in basin_ids()],
-    ("IMERG satellite rain (NASA GPM; degrades without IMERG_EMAIL)", "fetch_imerg.py", []),
+    # IMERG is NOT here: it is a months-latency validation/coverage reference,
+    # not a live model input, so it runs monthly (scripts/imerg_monthly.ps1),
+    # not every 3 hours. See docs/RAIN-VALIDATION-THREEWAY.md for why.
     ("dam reservoirs (NERLDC PSP; Indian-IP only, degrades abroad)", "fetch_nerldc_psp.py", []),
     ("model forecast ledger (prediction archive)", "archive_model_fc.py", []),
     *[(f"input drift monitor ({b})", "model/drift.py", ["--basin", b]) for b in basin_ids()],
