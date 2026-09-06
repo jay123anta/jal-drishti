@@ -16,8 +16,9 @@ from pathlib import Path
 PUBLIC = Path(__file__).resolve().parent.parent / "public"
 
 
-def colour_from_p(p: float) -> str:
-    return "RED" if p >= 0.5 else "YELLOW" if p >= 0.2 else "GREEN"
+def colour_from_p(p90: float, p98: float) -> str:
+    # two-tier: RED needs likely exceedance of the q98 extreme level; YELLOW of q90
+    return "RED" if p98 >= 0.5 else "YELLOW" if p90 >= 0.2 else "GREEN"
 
 
 def colour_from_score(c: int) -> str:
@@ -33,10 +34,11 @@ def main() -> int:
         name, colour, method = v["name"], r["value"], str(r.get("method", ""))
         if method.startswith("model-v0-"):
             p = r.get("p_exceed_h1")
-            if p is None:
-                errors.append(f"village {name}: model dot with no P(exceed)")
-            elif colour_from_p(p) != colour:
-                errors.append(f"village {name}: dot {colour} but P(exceed)={p} implies {colour_from_p(p)}")
+            p_hi = r.get("p_exceed_extreme_h1")
+            if p is None or p_hi is None:
+                errors.append(f"village {name}: model dot with no P(exceed) pair")
+            elif colour_from_p(p, p_hi) != colour:
+                errors.append(f"village {name}: dot {colour} but P90={p}/P98={p_hi} implies {colour_from_p(p, p_hi)}")
         elif method == "heuristic":
             c = v["scores"]["combined"]["value"]
             if colour_from_score(c) != colour:

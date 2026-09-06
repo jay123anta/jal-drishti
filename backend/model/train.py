@@ -43,7 +43,7 @@ from baselines import b3_lag_rule, fit_b3_slopes  # noqa: E402
 from basins import BASINS, model_names  # noqa: E402
 from mdata import (FOLDS, HIST_DIR, HORIZONS, PRIMARY_HORIZON,  # noqa: E402
                    build_daily_frame, feature_cols, feature_frame,
-                   leakage_test, monsoon_mask, season_metrics, train_q90)
+                   leakage_test, monsoon_mask, season_metrics, train_q90, train_quantile)
 
 MODELS_DIR = REPO_ROOT / "models"
 DOCS_DIR = REPO_ROOT / "docs"
@@ -150,6 +150,7 @@ def main() -> int:
     # ---- final shipped artifact (fitted on ALL 2015-2025) ----
     MODELS_DIR.mkdir(exist_ok=True)
     thr_final = train_q90(daily, YEARS)
+    thr98_final = train_quantile(daily, YEARS, 98)
     slopes_final = fit_b3_slopes(daily, YEARS, lag["median_event_lag_days"])
     res_key = "trained" if ship_trained else best_key
     meta = {
@@ -160,6 +161,7 @@ def main() -> int:
         "horizons_days": HORIZONS, "primary_horizon_days": PRIMARY_HORIZON,
         "features": feature_cols(feats),
         "threshold_q90_monsoon_2015_2025_m3s": round(thr_final, 1),
+        "threshold_q98_monsoon_2015_2025_m3s": round(thr98_final, 1),
         "b3_slopes_full_period": {str(h): round(s, 4) for h, s in slopes_final.items()},
         "b3_lag_days": lag["median_event_lag_days"],
         "validation_residuals_m3s": {str(h): residuals[res_key][h] for h in HORIZONS},

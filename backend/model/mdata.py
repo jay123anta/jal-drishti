@@ -120,8 +120,13 @@ def monsoon_mask(index) -> np.ndarray:
 
 def train_q90(daily: pd.DataFrame, train_years) -> float:
     """90th percentile of TRAINING-years monsoon discharge (no leakage)."""
+    return train_quantile(daily, train_years, 90)
+
+
+def train_quantile(daily: pd.DataFrame, train_years, p: float) -> float:
+    """p-th percentile of TRAINING-years monsoon discharge (no leakage)."""
     q = daily["q"][daily.index.year.isin(train_years) & monsoon_mask(daily.index)]
-    return float(np.nanpercentile(q.dropna(), 90))
+    return float(np.nanpercentile(q.dropna(), p))
 
 
 def mae(a, b) -> float:

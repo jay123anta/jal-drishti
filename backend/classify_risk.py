@@ -341,6 +341,7 @@ def main() -> int:
                           forecast_horizon=model_fc["forecast_horizon"],
                           basis=model_fc["basis_plain"],
                           p_exceed_h1=model_fc["colour"]["p_exceed_h1"],
+                          p_exceed_extreme_h1=model_fc["colour"].get("p_exceed_extreme_h1"),
                           model_card=model_fc["model_card"],
                           target_caveat=model_fc["target_caveat"])
         else:

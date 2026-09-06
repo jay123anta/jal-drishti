@@ -82,6 +82,7 @@ def main() -> int:
     try:
         meta = load_json(MODELS_DIR / nm["meta"])
         thr = meta["threshold_q90_monsoon_2015_2025_m3s"]
+        thr_red = meta.get("threshold_q98_monsoon_2015_2025_m3s", thr)  # RED tier; q90 fallback
         residuals = meta["validation_residuals_m3s"]
         shipped = meta["shipped"]
     except (FileNotFoundError, ValueError, KeyError) as err:
@@ -192,9 +193,13 @@ def main() -> int:
     for h in (1, 2):
         r = np.asarray(residuals[str(h)])
         out_preds[h] = {"qhat": round(preds[h], 1),
-                        "p_exceed": round(float(np.mean(preds[h] + r >= thr)), 3)}
-    p1 = out_preds[1]["p_exceed"]
-    colour = "RED" if p1 >= CUTOFF_RED else ("YELLOW" if p1 >= CUTOFF_YELLOW else "GREEN")
+                        "p_exceed": round(float(np.mean(preds[h] + r >= thr)), 3),
+                        "p_exceed_high": round(float(np.mean(preds[h] + r >= thr_red)), 3)}
+    p1 = out_preds[1]["p_exceed"]           # P(exceed q90 elevated) -> YELLOW tier
+    p1_hi = out_preds[1]["p_exceed_high"]   # P(exceed q98 extreme)  -> RED tier
+    # RED needs a likely exceedance of the EXTREME (q98) level, not merely q90:
+    # a basin hovering at its top-decile shows YELLOW, not a stuck confident RED.
+    colour = "RED" if p1_hi >= CUTOFF_RED else ("YELLOW" if p1 >= CUTOFF_YELLOW else "GREEN")
 
     def pv(value, cls, source, **extra):
         return {"value": value, "class": cls, "source": source, "retrieved_at": now, **extra}
@@ -214,22 +219,27 @@ def main() -> int:
                                         f"mean of {len(pts)} {basin} catchment cells (CATCHMENT.md)"),
         },
         "threshold_m3s": pv(thr, OBSERVED, "90th percentile of 2015-2025 monsoon GloFAS "
-                                            "reanalysis (NOT an official danger level)"),
+                                            "reanalysis (elevated level, YELLOW tier; NOT an official danger level)"),
+        "threshold_extreme_m3s": pv(thr_red, OBSERVED, "98th percentile of 2015-2025 monsoon GloFAS "
+                                            "reanalysis (extreme level, RED tier; NOT an official danger level)"),
         "predictions": {f"h{h}": {
             "horizon": f"{h} day{'s' if h > 1 else ''}",
             "q_m3s": pv(out_preds[h]["qhat"], FORECAST, src_model),
             "p_exceed_threshold": pv(out_preds[h]["p_exceed"], FORECAST,
-                                     src_model + " - probability from held-out validation residuals"),
+                                     src_model + " - P(exceed q90 elevated level) from held-out validation residuals"),
+            "p_exceed_extreme": pv(out_preds[h]["p_exceed_high"], FORECAST,
+                                   src_model + " - P(exceed q98 extreme level) from held-out validation residuals"),
         } for h in (1, 2)},
         "colour": pv(colour, SIMULATED,
-                     f"decision rule on model v0 output: P(exceed) >= {CUTOFF_RED} RED, "
-                     f">= {CUTOFF_YELLOW} YELLOW, else GREEN (documented cutoffs, arbitrary)",
-                     p_exceed_h1=p1),
+                     f"decision rule on model v0 output: P(exceed q98 extreme) >= {CUTOFF_RED} RED, "
+                     f"else P(exceed q90 elevated) >= {CUTOFF_YELLOW} YELLOW, else GREEN "
+                     f"(documented cutoffs, arbitrary)",
+                     p_exceed_h1=p1, p_exceed_extreme_h1=p1_hi),
         "forecast_horizon": "1 day",
         "basis_plain": basis_sentence(colour, river_plain, trend_word),
     })
     print(f"  [{basin}] {shipped}: q_now={q_now:.0f} rain24={rain24:.1f}mm -> h1 "
-          f"{out_preds[1]['qhat']:.0f} m3/s (P_exceed {p1:.2f}) -> {colour}")
+          f"{out_preds[1]['qhat']:.0f} m3/s (P90 {p1:.2f} / P98 {p1_hi:.2f}) -> {colour}")
     return 0
 
 

@@ -518,7 +518,7 @@ function techVillage(v) {
     : `<div class="prov">Scores: rain ${esc(v.scores.rain_score.value)} + discharge ${esc(v.scores.discharge_score.value)} = ${esc(v.scores.combined.value)} (0-1 GREEN, 2 YELLOW, 3-4 RED)</div>`;
   const methodRow = String(r.method || "").startsWith("model-v0-")
     ? `<div class="prov">method: ${esc(r.method)} · horizon ${esc(r.forecast_horizon)} ·
-       P(exceed q90)=${esc(r.p_exceed_h1)} ·
+       P(exceed q90)=${esc(r.p_exceed_h1)} · P(exceed q98)=${esc(r.p_exceed_extreme_h1)} ·
        model card ${esc(String(r.model_card || "").replace("docs/", ""))}</div>
        <div class="prov">${esc(r.target_caveat || "")}</div>`
     : `<div class="prov">method: heuristic v0${r.model_degraded
@@ -633,7 +633,7 @@ function techModel(vs, mts, drs) {
     return `<h3>Model v0 - ${esc(ms.basin_label || b)}</h3>
     <div>${esc(ms.model || "")}${ms.degraded ? " - <b>DEGRADED:</b> " + esc(ms.error || "") : ""}</div>
     <div>Covers ${esc(ms.villages_covered)} villages (nearest river point = this basin's target);
-      others keep heuristic v0.1. Colour = P(exceed q90 threshold, 1 d), cutoffs 0.5 RED / 0.2 YELLOW.</div>
+      others keep heuristic v0.1. Colour: RED if P(exceed q98 extreme, 1 d) >= 0.5, else YELLOW if P(exceed q90 elevated) >= 0.2, else GREEN.</div>
     <div class="prov">${esc(ms.target_caveat || "")}</div>
     ${techDrift(dr)}
     <div><span class="mono">${esc(ms.model_card)}</span>
