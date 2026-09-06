@@ -10,6 +10,9 @@ logs/
 data/history/imd/raw_nc/
 
 # developer documents stay local (public repo carries only README/LICENSE/DATA-SOURCES)
+# put ANY internal/planning note in _local/ - the whole folder is never committed,
+# so nothing internal can leak by filename regardless of what it is called
+_local/
 docs/
 CATCHMENT.md
 DECISIONS.md
