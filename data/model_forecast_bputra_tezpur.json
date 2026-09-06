@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-06T06:51:24Z",
+ "generated_at": "2026-09-06T09:01:09Z",
  "degraded": false,
  "basin": "bputra_tezpur",
  "model": "model-v0-bputra_tezpur",
@@ -12,75 +12,75 @@
    "value": 17740.9,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-06T06:51:24Z",
+   "retrieved_at": "2026-09-06T09:01:09Z",
    "date": "2026-09-06"
   },
   "catchment_rain_24h_mm": {
-   "value": 11.0,
+   "value": 12.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_tezpur catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-06T06:51:24Z"
+   "retrieved_at": "2026-09-06T09:01:09Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 32.4,
+   "value": 35.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_tezpur catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-06T06:51:24Z"
+   "retrieved_at": "2026-09-06T09:01:09Z"
   }
  },
  "threshold_m3s": {
   "value": 35398.7,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (elevated level, YELLOW tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-06T06:51:24Z"
+  "retrieved_at": "2026-09-06T09:01:09Z"
  },
  "threshold_extreme_m3s": {
   "value": 45393.2,
   "class": "OBSERVED",
   "source": "98th percentile of 2015-2025 monsoon GloFAS reanalysis (extreme level, RED tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-06T06:51:24Z"
+  "retrieved_at": "2026-09-06T09:01:09Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 17613.1,
+    "value": 17621.2,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_tezpur - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_tezpur-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-06T06:51:24Z"
+    "retrieved_at": "2026-09-06T09:01:09Z"
    },
    "p_exceed_threshold": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_tezpur - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_tezpur-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:51:24Z"
+    "retrieved_at": "2026-09-06T09:01:09Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_tezpur - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_tezpur-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:51:24Z"
+    "retrieved_at": "2026-09-06T09:01:09Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 16609.6,
+    "value": 17094.4,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_tezpur - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_tezpur-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-06T06:51:24Z"
+    "retrieved_at": "2026-09-06T09:01:09Z"
    },
    "p_exceed_threshold": {
     "value": 0.002,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_tezpur - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_tezpur-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:51:24Z"
+    "retrieved_at": "2026-09-06T09:01:09Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_tezpur - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_tezpur-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:51:24Z"
+    "retrieved_at": "2026-09-06T09:01:09Z"
    }
   }
  },
@@ -88,7 +88,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed q98 extreme) >= 0.5 RED, else P(exceed q90 elevated) >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-06T06:51:24Z",
+  "retrieved_at": "2026-09-06T09:01:09Z",
   "p_exceed_h1": 0.0,
   "p_exceed_extreme_h1": 0.0
  },

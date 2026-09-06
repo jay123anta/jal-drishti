@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-06T06:50:53Z",
+ "generated_at": "2026-09-06T09:00:45Z",
  "degraded": false,
  "basin": "disang",
  "model": "model-v0-disang",
@@ -12,75 +12,75 @@
    "value": 362.92,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-06T06:50:53Z",
+   "retrieved_at": "2026-09-06T09:00:45Z",
    "date": "2026-09-06"
   },
   "catchment_rain_24h_mm": {
-   "value": 9.9,
+   "value": 8.3,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-06T06:50:53Z"
+   "retrieved_at": "2026-09-06T09:00:45Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 31.5,
+   "value": 30.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-06T06:50:53Z"
+   "retrieved_at": "2026-09-06T09:00:45Z"
   }
  },
  "threshold_m3s": {
   "value": 426.6,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (elevated level, YELLOW tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-06T06:50:53Z"
+  "retrieved_at": "2026-09-06T09:00:45Z"
  },
  "threshold_extreme_m3s": {
   "value": 604.6,
   "class": "OBSERVED",
   "source": "98th percentile of 2015-2025 monsoon GloFAS reanalysis (extreme level, RED tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-06T06:50:53Z"
+  "retrieved_at": "2026-09-06T09:00:45Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 359.6,
+    "value": 357.5,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-06T06:50:53Z"
+    "retrieved_at": "2026-09-06T09:00:45Z"
    },
    "p_exceed_threshold": {
-    "value": 0.057,
+    "value": 0.055,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:50:53Z"
+    "retrieved_at": "2026-09-06T09:00:45Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:50:53Z"
+    "retrieved_at": "2026-09-06T09:00:45Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 379.3,
+    "value": 375.2,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-06T06:50:53Z"
+    "retrieved_at": "2026-09-06T09:00:45Z"
    },
    "p_exceed_threshold": {
-    "value": 0.189,
+    "value": 0.166,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:50:53Z"
+    "retrieved_at": "2026-09-06T09:00:45Z"
    },
    "p_exceed_extreme": {
     "value": 0.01,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for disang - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-disang-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-06T06:50:53Z"
+    "retrieved_at": "2026-09-06T09:00:45Z"
    }
   }
  },
@@ -88,8 +88,8 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed q98 extreme) >= 0.5 RED, else P(exceed q90 elevated) >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-06T06:50:53Z",
-  "p_exceed_h1": 0.057,
+  "retrieved_at": "2026-09-06T09:00:45Z",
+  "p_exceed_h1": 0.055,
   "p_exceed_extreme_h1": 0.0
  },
  "forecast_horizon": "1 day",
