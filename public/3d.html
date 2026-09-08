@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>JalDrishti - 3D terrain view (beta)</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+      integrity="sha256-V2sIX92Uh6ZaGSFTKMHghsB85b9toJtmazgG09AI2uk=" crossorigin="">
+<style>
+  :root { --ink:#123; --muted:#667; --surface:#fff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; font: 14px/1.4 system-ui, sans-serif; color: var(--ink); }
+  #map { position: absolute; inset: 0; }
+  .bar { position: absolute; top: 0; left: 0; right: 0; z-index: 5;
+         background: #0F6B84; color: #fff; padding: 8px 14px; display: flex;
+         align-items: center; gap: 12px; flex-wrap: wrap; }
+  .bar b { font-size: 15px; }
+  .bar .warn { background: #C4402F; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 12px; }
+  .bar a { color: #fff; text-decoration: underline; font-size: 13px; }
+  .bar .sp { flex: 1; }
+  .btn { background: #fff; color: #0F6B84; border: 0; border-radius: 6px;
+         padding: 5px 10px; font-weight: 600; cursor: pointer; }
+  .legend { position: absolute; bottom: 12px; left: 12px; z-index: 5; background: var(--surface);
+            padding: 8px 10px; border-radius: 8px; box-shadow: 0 1px 6px rgba(0,0,0,.2); font-size: 12px; }
+  .legend .row { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+  .legend .sw { width: 12px; height: 12px; border-radius: 50%; }
+  .legend .pinIco { flex: 0 0 11px; width: 11px; height: 15px; }
+  .maplibregl-popup-content { font: 13px/1.4 system-ui, sans-serif; }
+  .maplibregl-popup-content h4 { margin: 0 0 3px; font-size: 14px; }
+  .maplibregl-popup-content .m { color: var(--muted); font-size: 12px; }
+  @media (max-width: 640px) {
+    .bar { padding: 6px 10px; gap: 6px; }
+    .bar b { font-size: 13px; }
+    .bar .warn { font-size: 10px; padding: 2px 6px; }
+    .bar a, .btn { font-size: 12px; }
+    .legend { font-size: 11px; max-width: 62vw; padding: 6px 8px; bottom: 8px; left: 8px; }
+    .legend .m { max-width: 58vw !important; }
+  }
+  /* Brief entrance motion, skipped for viewers who ask for reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes jdFade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes jdRise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes jdDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+    .bar { animation: jdDown .24s cubic-bezier(.2,.7,.3,1); }
+    .legend { animation: jdRise .3s cubic-bezier(.2,.7,.3,1); }
+    .maplibregl-popup { animation: jdRise .18s ease-out; }
+    .btn { transition: background-color .15s ease, color .15s ease; }
+    .btn:active { transform: translateY(1px); }
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>JalDrishti - 3D terrain (beta)</b>
+  <span class="warn">NOT an official warning - follow CWC &amp; ASDMA</span>
+  <span class="sp"></span>
+  <button class="btn" id="basemap">Map view</button>
+  <button class="btn" id="tilt">Flatten (2D)</button>
+  <a href="index.html">&larr; back to the main map</a>
+</div>
+<div id="map"></div>
+<div class="legend">
+  <div class="row"><span class="sw" style="background:#1E8A4C"></span> village - no unusual signs</div>
+  <div class="row"><span class="sw" style="background:#DB9E1E"></span> village - worth watching</div>
+  <div class="row"><span class="sw" style="background:#C4402F"></span> village - strong signs (estimate)</div>
+  <div class="row"><svg class="pinIco" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z" fill="#0F6B84"/></svg> river gauge - below warning mark</div>
+  <div class="row"><svg class="pinIco" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z" fill="#DB9E1E"/></svg> river gauge - above warning mark</div>
+  <div class="row"><svg class="pinIco" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z" fill="#C4402F"/></svg> river gauge - above danger mark</div>
+  <div class="m" style="color:#0F6B84;margin-top:4px;max-width:220px"><b>Right-click + drag</b> (or Ctrl+drag,
+    or two fingers) to rotate &amp; tilt. Scroll to zoom.</div>
+  <div class="m" style="color:#667;margin-top:4px;max-width:220px">Terrain exaggerated for clarity. Colours are estimates
+    for the day ahead, same as the 2D map. Imagery + elevation: MapTiler (satellite + terrain-RGB).</div>
+</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"
+        integrity="sha256-vpYzxNhw4m+zfxz+XFp3GBZnEUAD6hYgeseFDY2ordE=" crossorigin=""></script>
+<script>
+const RISK = { GREEN: "#1E8A4C", YELLOW: "#DB9E1E", RED: "#C4402F" };
+const RISK_WORD = { GREEN: "no unusual signs", YELLOW: "worth watching", RED: "strong signs - estimate only" };
+// Free MapTiler key for the 3D terrain (elevation) only - the basemap stays keyless (OpenFreeMap).
+// Get one at https://cloud.maptiler.com and RESTRICT it to your domain (jay123anta.github.io)
+// under Account > Keys. It is client-side by design; domain-restriction stops quota abuse.
+// If left as the placeholder, the page still works as a tilted flat map (no hill relief).
+const MAPTILER_KEY = "L28bkMZHArAOd5OzhAfb";
+const HAS_KEY = MAPTILER_KEY && MAPTILER_KEY !== "PUT_YOUR_MAPTILER_KEY_HERE";
+// With a key: photoreal satellite + labels (MapTiler Hybrid) draped over 3D terrain.
+// Without: fall back to the keyless clean vector map so the page still works.
+const SAT_STYLE = `https://api.maptiler.com/maps/hybrid/style.json?key=${MAPTILER_KEY}`;
+const MAP_STYLE = "https://tiles.openfreemap.org/styles/liberty";
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+const map = new maplibregl.Map({
+  container: "map",
+  style: HAS_KEY ? SAT_STYLE : MAP_STYLE,
+  center: [93.4, 26.4], zoom: 6.4, pitch: 60, bearing: -12, maxPitch: 80,
+  attributionControl: { compact: true },
+});
+map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
+
+async function tryJson(f) { try { const r = await fetch(f); return r.ok ? await r.json() : null; } catch { return null; } }
+
+// Same official-gauge status and colours as the 2D map, so both views agree.
+const OFFICIAL_COLOR = { above_danger: "#C4402F", above_warning: "#DB9E1E", below_warning: "#0F6B84" };
+function officialStatus(c) {
+  if (!c || c.degraded || !c.observed_level_m || c.observed_level_m.value == null) return "below_warning";
+  const lvl = c.observed_level_m.value;
+  const warn = c.warning_level_m && c.warning_level_m.value;
+  const danger = c.danger_level_m && c.danger_level_m.value;
+  if (danger != null && lvl >= danger) return "above_danger";
+  if (warn != null && lvl >= warn) return "above_warning";
+  return "below_warning";
+}
+// River points get the same teardrop pin as the 2D map (tip on the exact spot), which
+// keeps them clearly different from the round village dots.
+const ARROW_PATH = {
+  rising: `<path d="M12 6.4 L15.5 11.4 H8.5 Z" fill="#fff"/>`,
+  falling: `<path d="M12 15.6 L8.5 10.6 H15.5 Z" fill="#fff"/>`,
+  steady: `<rect x="8.3" y="9.9" width="7.4" height="2.2" rx="1.1" fill="#fff"/>`,
+  none: "",
+};
+function pinSvg(fill, trend) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="64" viewBox="0 0 24 32">`
+    + `<path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z"`
+    + ` fill="${fill}" stroke="#fcfcfb" stroke-width="2.1" stroke-linejoin="round"/>`
+    + (ARROW_PATH[trend] || "") + `</svg>`;
+}
+function loadPin(id, fill, trend) {
+  return new Promise(resolve => {
+    if (map.hasImage && map.hasImage(id)) return resolve();
+    const img = new Image(48, 64);
+    img.onload = () => { if (!map.hasImage(id)) map.addImage(id, img, { pixelRatio: 2 }); resolve(); };
+    img.onerror = () => resolve();          // a missing pin must never break the page
+    img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(pinSvg(fill, trend));
+  });
+}
+function loadAllPins() {
+  const jobs = [];
+  for (const [status, fill] of Object.entries(OFFICIAL_COLOR)) {
+    for (const trend of Object.keys(ARROW_PATH)) jobs.push(loadPin(`pin-${status}-${trend}`, fill, trend));
+  }
+  return Promise.all(jobs);
+}
+
+let vfeats = null, rfeats = null, framed = false;
+
+async function loadData() {
+  if (vfeats === null) {
+    const vs = await tryJson("villages_status.json");
+    vfeats = (vs && vs.villages ? vs.villages : []).filter(v => v.location && v.location.lat).map(v => ({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [v.location.lon, v.location.lat] },
+      properties: { name: v.name, district: v.district || "",
+        risk: (v.risk && v.risk.value) || "GREEN", basis: (v.risk && v.risk.basis) || "" },
+    }));
+  }
+  if (rfeats === null) {
+    const rs = await tryJson("rivers_status.json");
+    rfeats = (rs && rs.rivers ? rs.rivers : []).filter(r => r.lat).map(r => {
+      const og = r.official_gauge;
+      const tr = (r.trend_48h && r.trend_48h.value) || "";
+      return {
+        type: "Feature",
+        geometry: { type: "Point", coordinates: [r.lon, r.lat] },
+        properties: {
+          river: r.river, site: r.site,
+          q: r.discharge_latest_m3s == null ? "" : Math.round(r.discharge_latest_m3s),
+          trend: tr,
+          status: officialStatus(og),
+          pinTrend: ["rising", "falling", "steady"].includes(tr) ? tr : "none",
+          gaugeName: (og && og.plain_name) || "",
+          gaugeLevel: og && og.observed_level_m && og.observed_level_m.value != null
+            ? og.observed_level_m.value : "",
+          warnLevel: og && og.warning_level_m && og.warning_level_m.value != null
+            ? og.warning_level_m.value : "",
+        },
+      };
+    });
+  }
+}
+
+// (Re)add terrain + data onto the CURRENT style. Runs on first load and after every basemap
+// switch, because setStyle() wipes custom sources/layers. Idempotent (guards on getSource).
+async function addTerrainAndData() {
+  // setStyle() also clears registered images, so the pins are (re)loaded every time.
+  await loadAllPins();
+  if (HAS_KEY) {
+    if (!map.getSource("dem")) {
+      map.addSource("dem", { type: "raster-dem",
+        url: `https://api.maptiler.com/tiles/terrain-rgb-v2/tiles.json?key=${MAPTILER_KEY}` });
+    }
+    map.setTerrain({ source: "dem", exaggeration: 1.3 });
+  }
+  if (!map.getSource("villages")) {
+    map.addSource("villages", { type: "geojson", data: { type: "FeatureCollection", features: vfeats || [] } });
+    map.addLayer({ id: "villages-layer", type: "circle", source: "villages",
+      paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 3.5, 11, 8],
+        "circle-color": ["match", ["get", "risk"], "GREEN", RISK.GREEN, "YELLOW", RISK.YELLOW, "RED", RISK.RED, "#8A9AA0"],
+        "circle-stroke-width": 1, "circle-stroke-color": "#fff", "circle-opacity": 0.95 } });
+  }
+  if (!map.getSource("rivers")) {
+    map.addSource("rivers", { type: "geojson", data: { type: "FeatureCollection", features: rfeats || [] } });
+    map.addLayer({ id: "rivers-layer", type: "symbol", source: "rivers",
+      layout: {
+        "icon-image": ["concat", "pin-", ["get", "status"], "-", ["get", "pinTrend"]],
+        "icon-size": ["interpolate", ["linear"], ["zoom"], 6, 0.5, 11, 0.85],
+        "icon-anchor": "bottom",          // the pin's tip sits on the exact gauge spot
+        "icon-allow-overlap": true,
+      } });
+  }
+  if (!framed && (vfeats || []).length) {
+    const b = new maplibregl.LngLatBounds();
+    vfeats.forEach(f => b.extend(f.geometry.coordinates));
+    if (!b.isEmpty()) { map.fitBounds(b, { padding: 60, maxZoom: 8, bearing: -12, duration: 0 }); map.setPitch(58); }
+    framed = true;
+  }
+}
+
+// Popups + cursor: registered ONCE, keyed by layer id, so they keep working after the
+// layers are recreated by a basemap switch.
+map.on("click", "villages-layer", e => {
+  const p = e.features[0].properties;
+  new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+    `<h4>${esc(p.name)}</h4><div class="m">${esc(p.district)}</div>` +
+    `<div><b style="color:${RISK[p.risk] || "#8A9AA0"}">${esc(p.risk)}</b> - ${esc(RISK_WORD[p.risk] || "")}</div>` +
+    (p.basis ? `<div class="m">${esc(p.basis)}</div>` : "")).addTo(map);
+});
+map.on("click", "rivers-layer", e => {
+  const p = e.features[0].properties;
+  new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
+    `<h4>${esc(p.river)}</h4><div class="m">${esc(p.site)}</div>` +
+    // the official gauge comes first: it outranks our own estimate
+    (p.gaugeLevel !== "" ? `<div><b>Official gauge ${esc(p.gaugeLevel)} m</b>${
+      p.warnLevel !== "" ? ` (warning mark ${esc(p.warnLevel)} m)` : ""}</div>` +
+      `<div class="m">${esc(p.gaugeName)} - Central Water Commission</div>` : "") +
+    (p.q !== "" ? `<div>our modelled river flow: ${esc(p.q)} m&sup3;/s</div>` : "") +
+    (p.trend ? `<div class="m">trend (48 h): ${esc(p.trend)}</div>` : "") +
+    `<div class="m">the flow figure is a river-network estimate, not a gauge reading</div>`).addTo(map);
+});
+["villages-layer", "rivers-layer"].forEach(id => {
+  map.on("mouseenter", id, () => { map.getCanvas().style.cursor = "pointer"; });
+  map.on("mouseleave", id, () => { map.getCanvas().style.cursor = ""; });
+});
+
+// first load
+map.on("load", async () => { await loadData(); await addTerrainAndData(); });
+
+// 2D / 3D tilt toggle
+let flat = false;
+document.getElementById("tilt").addEventListener("click", e => {
+  flat = !flat;
+  map.easeTo({ pitch: flat ? 0 : 58, bearing: flat ? 0 : -12, duration: 700 });
+  e.target.textContent = flat ? "Tilt (3D)" : "Flatten (2D)";
+});
+
+// basemap toggle: photoreal satellite <-> clean vector map (only when a key is present)
+let satellite = HAS_KEY;
+const bmBtn = document.getElementById("basemap");
+if (!HAS_KEY) { bmBtn.style.display = "none"; }
+bmBtn.addEventListener("click", e => {
+  satellite = !satellite;
+  map.setStyle(satellite ? SAT_STYLE : MAP_STYLE);
+  map.once("idle", () => addTerrainAndData());   // setStyle wipes layers; re-add once the new style is ready
+  e.target.textContent = satellite ? "Map view" : "Satellite view";
+});
+</script>
+</body>
+</html>

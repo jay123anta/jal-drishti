@@ -222,6 +222,45 @@
     body.nodrawer .leaflet-top.leaflet-left { top: 48px; }
     #watermark { top: 56px; }
   }
+
+  /* Map marks: lift them off the basemap, and ease colour changes while scrubbing. */
+  .vdot { filter: drop-shadow(0 1px 2px rgba(11,11,11,.30)); transition: fill .35s ease; }
+  .rmark svg { display: block; filter: drop-shadow(0 1px 2px rgba(11,11,11,.35)); }
+  /* Only RED animates: motion is reserved for danger, never decoration. */
+  @keyframes vpulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+  .vdot-red { animation: vpulse 1.9s ease-in-out infinite; }
+  .rIco { width: .8em; height: .8em; vertical-align: -0.06em; margin-right: 3px; }
+  /* legend key for river points: same pin silhouette the map draws */
+  #drawer .pinIco { flex: 0 0 11px; width: 11px; height: 15px; margin-top: 1px; }
+  @media (prefers-reduced-motion: reduce) {
+    .vdot { transition: none; }
+    .vdot-red { animation: none; }
+  }
+
+  /* Site-wide motion. The panels are toggled with display:none, which cannot be
+     transitioned, so these are short entrance ANIMATIONS that fire when a panel
+     appears. Deliberately brief (under .3s) and skipped entirely for viewers who
+     ask for reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes jdFade  { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes jdRise  { from { opacity: 0; transform: translateY(8px); }  to { opacity: 1; transform: none; } }
+    @keyframes jdRight { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+    @keyframes jdLeft  { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+    @keyframes jdUp    { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+    #overlay { animation: jdFade .18s ease-out; }
+    #overlay .card { animation: jdRise .26s cubic-bezier(.2,.7,.3,1); }
+    body.tech #techpanel { animation: jdRight .22s cubic-bezier(.2,.7,.3,1); }
+    #drawer { animation: jdLeft .24s cubic-bezier(.2,.7,.3,1); }
+    .leaflet-popup { animation: jdRise .18s ease-out; }
+    #watermark { animation: jdFade .25s ease-out; }
+    .banner { animation: jdFade .3s ease-out; }
+    .hbtn:active { transform: translateY(1px); }   /* immediate press feedback */
+  }
+  /* on phones the drawer is a bottom sheet, so it should rise, not slide in */
+  @media (prefers-reduced-motion: no-preference) and (max-width: 900px) {
+    #drawer { animation: jdUp .26s cubic-bezier(.2,.7,.3,1); }
+  }
 </style>
 </head>
 <body>
@@ -237,6 +276,7 @@
   <span style="flex:1"></span>
   <button class="hbtn" id="helpbtn" title="How to read this map">How to read?</button>
   <button class="hbtn" id="techbtn" title="The check-our-work panel: exact numbers and methods, for technical readers">Technical view</button>
+  <a class="hbtn" href="3d.html" title="See the villages and rivers on 3D terrain (beta)">3D view (beta)</a>
 </header>
 <div class="banner">
   <span><b>This is a TEST version.</b> The colours are rough estimates - they are NOT official flood warnings.</span>
@@ -254,9 +294,9 @@
     <h2>Village dots - our estimate</h2>
     <div class="muted">The coloured dots are this map's own estimate for the
     day ahead. They are NOT official alerts - those appear in the box above.</div>
-    <div class="row"><span class="sw" style="background:#1E8A4C"></span><span>✓ <b>GREEN</b> - no unusual signs right now</span></div>
-    <div class="row"><span class="sw" style="background:#DB9E1E"></span><span>▲ <b>YELLOW</b> - heavy rain upstream - worth watching</span></div>
-    <div class="row"><span class="sw" style="background:#C4402F"></span><span>● <b>RED</b> - strong signs of high water - estimate only</span></div>
+    <div class="row"><span class="sw" style="background:#1E8A4C"></span><span><b>GREEN</b> - no unusual signs right now</span></div>
+    <div class="row"><span class="sw" style="background:#DB9E1E"></span><span><b>YELLOW</b> - heavy rain upstream - worth watching</span></div>
+    <div class="row"><span class="sw" style="background:#C4402F"></span><span><b>RED</b> - strong signs of high water - estimate only</span></div>
     <details><summary>How these colours are decided (test formula)</summary>
       <div class="how">A computer adds up two simple checks: how much rain fell in the
       hills upstream in the last two days, and how the nearest river compares
@@ -269,9 +309,9 @@
     <div class="muted">Dashed ring = village position is approximate.</div>
 
     <h2>River points - official gauge status</h2>
-    <div class="row"><span class="sw" style="background:#0F6B84"></span><span>below the official warning mark (arrow = trend)</span></div>
-    <div class="row"><span class="sw" style="background:#DB9E1E"></span><span>above the official <b>warning</b> mark (CWC gauge)</span></div>
-    <div class="row"><span class="sw" style="background:#C4402F"></span><span>above the official <b>danger</b> mark (CWC gauge)</span></div>
+    <div class="row"><svg class="pinIco" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z" fill="#0F6B84"/></svg><span>below the official warning mark (arrow = trend)</span></div>
+    <div class="row"><svg class="pinIco" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z" fill="#DB9E1E"/></svg><span>above the official <b>warning</b> mark (CWC gauge)</span></div>
+    <div class="row"><svg class="pinIco" viewBox="0 0 24 32" aria-hidden="true"><path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z" fill="#C4402F"/></svg><span>above the official <b>danger</b> mark (CWC gauge)</span></div>
 
     <h2>Testing our map on past floods</h2>
     <p class="muted" style="margin:2px 0 8px">We replay real floods to check our own method - including where it failed. A village can show green here even though it flooded: that is a miss, and we show it honestly rather than hide it.</p>
@@ -296,7 +336,7 @@
 
   <div id="map"></div>
   <button class="hbtn primary" id="drawerbtn">☰ Key &amp; past floods</button>
-  <div id="watermark" role="status">This is us testing our own method on the past July 2026 flood - not the current situation, and not an official record. Some flooded villages may show green: those are our misses, shown honestly.</div>
+  <div id="watermark" role="status">This is us testing our own method on the past July 2026 flood - not the current situation, and not an official record. Village dots and their popups show that moment; river points are hidden and official alerts still show now. Some flooded villages may show green: those are our misses, shown honestly.</div>
 
   <!-- TECH-START -->
   <aside id="techpanel" aria-label="Technical view"></aside>
@@ -368,26 +408,38 @@
 "use strict";
 const RISK_COLOR = { GREEN: "#1E8A4C", YELLOW: "#DB9E1E", RED: "#C4402F" };   // fills
 const RISK_TEXT  = { GREEN: "#17693A", YELLOW: "#7A5800", RED: "#C4402F" };   // text on white, all >= 4.5:1
-const RISK_ICON  = { GREEN: "✓", YELLOW: "▲", RED: "●" };
+// A crisp inline-SVG dot that matches the round marks on the map, instead of text
+// glyphs (which render inconsistently across devices). The words GREEN / YELLOW / RED
+// always sit beside it, so the meaning never depends on colour alone.
+const RISK_ICON = {
+  GREEN: `<svg class="rIco" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.6" fill="currentColor"/></svg>`,
+  YELLOW: `<svg class="rIco" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.6" fill="currentColor"/></svg>`,
+  RED: `<svg class="rIco" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.6" fill="currentColor"/></svg>`,
+};
 const RISK_WORD  = { GREEN: "no unusual signs", YELLOW: "worth watching", RED: "strong signs - estimate only" };
 const TREND_ARROW = { rising: "↑", steady: "→", falling: "↓" };
 
 const esc = s => String(s).replace(/[&<>"']/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
+// All times on this map are shown in India Standard Time, whoever is looking, because
+// the map is about Assam. "today"/"yesterday" are therefore judged in IST too.
+const IST = "Asia/Kolkata";
+const istDay = d => d.toLocaleDateString("en-CA", { timeZone: IST });   // YYYY-MM-DD in IST
 function humanTime(iso) {
   const d = new Date(iso);
   if (isNaN(d)) return "";
   const now = new Date();
-  const t = d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-  const yest = new Date(now); yest.setDate(now.getDate() - 1);
-  if (d.toDateString() === now.toDateString()) return `today, ${t}`;
-  if (d.toDateString() === yest.toDateString()) return `yesterday, ${t}`;
-  return d.toLocaleDateString([], { day: "numeric", month: "short", year: "numeric" }) + `, ${t}`;
+  const t = d.toLocaleTimeString([], { timeZone: IST, hour: "numeric", minute: "2-digit" }) + " IST";
+  const yest = new Date(now.getTime() - 86400000);
+  if (istDay(d) === istDay(now)) return `today, ${t}`;
+  if (istDay(d) === istDay(yest)) return `yesterday, ${t}`;
+  return d.toLocaleDateString([], { timeZone: IST, day: "numeric", month: "short", year: "numeric" }) + `, ${t}`;
 }
 function humanDate(iso) {
   const d = new Date(iso);
-  return isNaN(d) ? String(iso) : d.toLocaleDateString([], { day: "numeric", month: "long", year: "numeric" });
+  return isNaN(d) ? String(iso)
+    : d.toLocaleDateString([], { timeZone: IST, day: "numeric", month: "long", year: "numeric" });
 }
 
 /* ---------- plain-language lead sentences (default view) ---------- */
@@ -475,6 +527,24 @@ function villagePopup(v, c) {
     ${v.exposure ? `<div class="prov">Ground: ${esc(v.exposure.plain)} (about ${esc(v.exposure.village_elevation_m)} m, ${esc(v.exposure.distance_to_river_km)} km from the river). Terrain only - not part of the colour.</div>` : ""}
     ${cwcPlain(c, true)}
     <details><summary>Technical details</summary>${techVillage(v)}</details>
+  </div>`;
+}
+
+// Popup shown while looking back at a past flood: every number is the value from THAT
+// moment (carried in the replay file), never today's.
+function replayVillagePopup(v, step, whenLabel) {
+  const r = step.risk;
+  const num = o => (o && o.value != null ? o.value : null);
+  const rain = num(step.rain24), q = num(step.discharge_m3s), p = num(step.discharge_pctl);
+  return `<div class="pp">
+    <h3>${esc(v.name)} <span class="lbl">${esc(v.district)}</span></h3>
+    <div class="risk" style="color:${RISK_TEXT[r.value]}">${RISK_ICON[r.value]} ${esc(r.value)} - ${esc(RISK_WORD[r.value])}</div>
+    <div><span class="badge">looking back - what we showed then</span></div>
+    <div class="lead">At that moment: rain in the hills ${rain == null ? "not available" : esc(rain) + " mm over 24 h"},
+      river ${q == null ? "not available" : esc(q) + " m&sup3;/s"}${p == null ? "" :
+      ` (higher than ${esc(Math.round(p * 100))}% of the same days in 2015-2025)`}.</div>
+    <div class="when">Looking back at ${esc(whenLabel)}</div>
+    <div class="prov">Official gauge readings and alerts are not part of this look-back - they always show now.</div>
   </div>`;
 }
 
@@ -743,6 +813,9 @@ const state = {
   replayIdx: null,           // null = LIVE
   markers: new Map(),        // village key -> circleMarker
   liveRisk: new Map(),       // village key -> live colour
+  livePopups: new Map(),     // village key -> today's popup HTML (restored on "back to now")
+  riversLayer: null,         // river points: hidden during replay, they cannot time-travel
+  map: null,                 // Leaflet map handle, for use outside boot()
 };
 const vkey = v => `${v.name}|${v.district}`;
 
@@ -816,13 +889,16 @@ async function boot() {
   // villages
   const villageMarkers = vs.villages.map(v => {
     const approx = v.location.coordinate_precision !== "osm_node";
+    const liveHtml = villagePopup(v, cwcByRiver[((v.inputs_used && v.inputs_used.river_point) || {}).id]);
     const m = L.circleMarker([v.location.lat, v.location.lon], {
-      radius: 7, weight: 2, color: "#fcfcfb", dashArray: approx ? "2 3" : null,
+      className: "vdot", radius: 7, weight: 2, color: "#fcfcfb",
+      dashArray: approx ? "2 3" : null, opacity: approx ? 0.85 : 1,
       fillColor: RISK_COLOR[v.risk.value] || "#8A9AA0", fillOpacity: 0.95,
     }).bindTooltip(`${v.name} - ${RISK_ICON[v.risk.value]} ${v.risk.value}`)
-      .bindPopup(villagePopup(v, cwcByRiver[((v.inputs_used && v.inputs_used.river_point) || {}).id]), { maxWidth: 340 });
+      .bindPopup(liveHtml, { maxWidth: 340 });
     state.markers.set(vkey(v), m);
     state.liveRisk.set(vkey(v), v.risk.value);
+    state.livePopups.set(vkey(v), liveHtml);
     return m;
   });
   const villages = L.layerGroup(villageMarkers);
@@ -832,14 +908,23 @@ async function boot() {
     const t = r.trend_48h && r.trend_48h.value;
     const c = cwcByRiver[r.id];
     const gT = gaugeTrend(c);
-    const arrow = TREND_ARROW[gT ? gT.word : t] || "";
     const bg = OFFICIAL_COLOR[officialStatus(c)] || "#0F6B84";
+    // River points are OFFICIAL gauge readings, so they get a deliberately different
+    // silhouette from the round village dots: a pin whose tip sits on the exact spot.
+    // Drawn as SVG (not a text glyph in a div) so it is crisp and identical everywhere.
+    const trendKey = (gT ? gT.word : t) || "";
+    const ARROW_SVG = {
+      rising: `<path d="M12 6.4 L15.5 11.4 H8.5 Z" fill="#fff"/>`,
+      falling: `<path d="M12 15.6 L8.5 10.6 H15.5 Z" fill="#fff"/>`,
+      steady: `<rect x="8.3" y="9.9" width="7.4" height="2.2" rx="1.1" fill="#fff"/>`,
+    };
     const icon = L.divIcon({
-      className: "",
-      html: `<div style="width:22px;height:22px;border-radius:50%;background:${bg};
-        border:2px solid #fcfcfb;box-shadow:0 0 0 1px rgba(11,11,11,0.15);
-        color:#fff;font:600 13px/18px system-ui;text-align:center">${arrow}</div>`,
-      iconSize: [22, 22], iconAnchor: [11, 11],
+      className: "rmark",
+      html: `<svg width="24" height="32" viewBox="0 0 24 32" aria-hidden="true">`
+        + `<path d="M12 1.4c-5.6 0-10 4.4-10 9.9 0 7.3 10 19.3 10 19.3s10-12 10-19.3c0-5.5-4.4-9.9-10-9.9z"`
+        + ` fill="${bg}" stroke="#fcfcfb" stroke-width="2.1" stroke-linejoin="round"/>`
+        + (ARROW_SVG[trendKey] || "") + `</svg>`,
+      iconSize: [24, 32], iconAnchor: [12, 31],
     });
     const g = gaugeTrend(c);
     const gauge = c && !c.degraded ? ` · gauge ${c.observed_level_m.value} m` : "";
@@ -858,6 +943,8 @@ async function boot() {
   });
 
   villages.addTo(map); rivers.addTo(map);
+  state.riversLayer = rivers; state.map = map;
+  for (const [k, m] of state.markers) markDanger(m, state.liveRisk.get(k));
   document.getElementById("chk-villages").addEventListener("change", e =>
     e.target.checked ? villages.addTo(map) : map.removeLayer(villages));
   document.getElementById("chk-rivers").addEventListener("change", e =>
@@ -947,7 +1034,7 @@ async function boot() {
 function setCounts(c) {
   document.getElementById("counts").innerHTML =
     Object.entries(RISK_COLOR).map(([k, col]) =>
-      `<span class="chip"><span class="dot" style="background:${col}"></span>${RISK_ICON[k]} ${k} ${c[k] || 0}</span>`).join("");
+      `<span class="chip"><span class="dot" style="background:${col}"></span>${k} ${c[k] || 0}</span>`).join("");
 }
 
 async function selectEvent(ev) {
@@ -973,6 +1060,13 @@ async function selectEvent(ev) {
   }
 }
 
+// Motion is reserved for danger: only RED dots pulse, and only if the viewer has not
+// asked for reduced motion (handled in CSS).
+function markDanger(m, cls) {
+  const el = m.getElement && m.getElement();
+  if (el && el.classList) el.classList.toggle("vdot-red", cls === "RED");
+}
+
 function setReplay(idx) {
   const wm = document.getElementById("watermark");
   if (idx === null || !state.replay) {
@@ -982,7 +1076,14 @@ function setReplay(idx) {
       const cls = state.liveRisk.get(k);
       m.setStyle({ fillColor: RISK_COLOR[cls] || "#8A9AA0" });
       m.setTooltipContent(`${k.split("|")[0]} - ${RISK_ICON[cls]} ${cls}`);
+      markDanger(m, cls);
+      const live = state.livePopups.get(k);
+      if (live) m.setPopupContent(live);          // restore today's numbers
     }
+    // bring the river points back (unless the user switched them off)
+    const rvOn = document.getElementById("chk-rivers");
+    if (state.riversLayer && state.map && (!rvOn || rvOn.checked)
+        && !state.map.hasLayer(state.riversLayer)) state.riversLayer.addTo(state.map);
     if (window._liveCounts) setCounts(window._liveCounts);
     document.getElementById("slidertime").textContent =
       state.replay ? "drag to look back →" : "-";
@@ -991,15 +1092,23 @@ function setReplay(idx) {
   state.replayIdx = idx;
   wm.style.display = "block";
   const t = state.replay.times[idx];
-  document.getElementById("slidertime").textContent =
-    new Date(t.replace("Z", ":00Z")).toLocaleString([], {
-      day: "numeric", month: "short", hour: "numeric", minute: "2-digit" });
+  const whenLabel = new Date(t.replace("Z", ":00Z")).toLocaleString([], {
+    timeZone: IST, day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }) + " IST";
+  document.getElementById("slidertime").textContent = whenLabel;
   for (const v of state.replay.villages) {
     const m = state.markers.get(`${v.name}|${v.district}`);
     if (!m) continue;
-    const cls = v.steps[idx] ? v.steps[idx].risk.value : null;
+    const step = v.steps[idx];
+    const cls = step ? step.risk.value : null;
     m.setStyle({ fillColor: RISK_COLOR[cls] || "#8A9AA0" });
     m.setTooltipContent(`${v.name} - past: ${RISK_ICON[cls] || ""} ${cls || "?"}`);
+    markDanger(m, cls);
+    if (step) m.setPopupContent(replayVillagePopup(v, step, whenLabel));
+  }
+  // River points carry today's gauge readings and cannot be replayed, so hide them
+  // rather than let a past view show present numbers.
+  if (state.riversLayer && state.map && state.map.hasLayer(state.riversLayer)) {
+    state.map.removeLayer(state.riversLayer);
   }
   setCounts(state.replay.step_counts[idx]);
 }
