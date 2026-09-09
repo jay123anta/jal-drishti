@@ -635,7 +635,13 @@ function techRiver(r, c) {
             (100 * r.discharge_percentile_30d.value).toFixed(0) + " %")}
       ${row("Peak forecast (ensemble median)", r.discharge_peak_forecast_m3s,
             r.discharge_peak_forecast_m3s.value + " m³/s")}
+      ${r.map_position ? row("Pin position on the map", r.map_position,
+            `${r.map_lat.toFixed(5)}, ${r.map_lon.toFixed(5)}`) : ""}
     </table>
+    ${r.data_cell_offset_km != null ? `<div class="prov">The discharge above is computed for the
+      GloFAS grid cell at ${esc(r.grid_lat.toFixed(3))}, ${esc(r.grid_lon.toFixed(3))} -
+      ${esc(r.data_cell_offset_km)} km from this pin. The pin marks the official gauge on the
+      river; the number comes from the model cell nearest it.</div>` : ""}
     <div class="prov">${esc(r.snap_note || "")}</div>
     ${techCwc(c)}`;
 }
@@ -929,7 +935,9 @@ async function boot() {
     const g = gaugeTrend(c);
     const gauge = c && !c.degraded ? ` · gauge ${c.observed_level_m.value} m` : "";
     const trendTxt = g ? `official gauge ${g.word}` : (t || "no trend");
-    return L.marker([r.lat, r.lon], { icon })
+    // Draw at the official CWC gauge position (map_lat/map_lon), NOT the old
+    // hand-typed town anchor - eight of those sat up to 12 km off their river.
+    return L.marker([r.map_lat ?? r.lat, r.map_lon ?? r.lon], { icon })
       .bindTooltip(`${r.river} - ${trendTxt}${gauge}`)
       .bindPopup(riverPopup(r, c), { maxWidth: 360 });
   }));

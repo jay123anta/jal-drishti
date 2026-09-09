@@ -161,7 +161,8 @@ async function loadData() {
       const tr = (r.trend_48h && r.trend_48h.value) || "";
       return {
         type: "Feature",
-        geometry: { type: "Point", coordinates: [r.lon, r.lat] },
+        // official CWC gauge position, same as the 2D map (see index.html)
+        geometry: { type: "Point", coordinates: [r.map_lon ?? r.lon, r.map_lat ?? r.lat] },
         properties: {
           river: r.river, site: r.site,
           q: r.discharge_latest_m3s == null ? "" : Math.round(r.discharge_latest_m3s),
