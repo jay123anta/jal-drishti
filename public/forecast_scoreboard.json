@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-09T14:59:23Z",
+ "generated_at": "2026-09-09T18:00:49Z",
  "note": "Ready-made flood forecasts scored against what happened. cwc_aff is scored against REAL observed gauge levels; glofas is scored against GloFAS's own reanalysis (modelled vs modelled). Numbers accumulate with the archive; buckets with fewer than 12 pairs are marked insufficient. The Google Flood Forecasting API will be added as a source when pilot access is granted.",
  "min_pairs": 12,
  "sources": {
@@ -7,82 +7,82 @@
    "ANNAPURNA_GHAT": {
     "leads": {
      "6h": {
-      "value": 0.078,
+      "value": 0.081,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 64,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
       "mae_persistence": 0.085,
-      "skill_vs_persistence": 0.09,
-      "bias": 0.034
+      "skill_vs_persistence": 0.045,
+      "bias": 0.015
      },
      "12h": {
-      "value": 0.128,
+      "value": 0.141,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 85,
       "status": "ok",
-      "mae_persistence": 0.153,
-      "skill_vs_persistence": 0.167,
-      "bias": 0.047
+      "mae_persistence": 0.152,
+      "skill_vs_persistence": 0.07,
+      "bias": 0.064
      },
      "24h": {
-      "value": 0.411,
+      "value": 0.449,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 169,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.218,
-      "skill_vs_persistence": -0.884,
-      "bias": 0.294
+      "mae_persistence": 0.23,
+      "skill_vs_persistence": -0.955,
+      "bias": 0.336
      },
      "48h": {
-      "value": 1.85,
+      "value": 1.856,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 211,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 217,
       "status": "ok",
-      "mae_persistence": 0.247,
-      "skill_vs_persistence": -6.495,
-      "bias": 1.844
+      "mae_persistence": 0.254,
+      "skill_vs_persistence": -6.303,
+      "bias": 1.85
      },
      "72h": {
-      "value": 3.891,
+      "value": 3.884,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 271,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 278,
       "status": "ok",
-      "mae_persistence": 0.344,
-      "skill_vs_persistence": -10.322,
-      "bias": 3.891
+      "mae_persistence": 0.358,
+      "skill_vs_persistence": -9.861,
+      "bias": 3.884
      },
      "7d": {
-      "value": 3.157,
+      "value": 3.114,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 385,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 403,
       "status": "ok",
-      "mae_persistence": 0.492,
-      "skill_vs_persistence": -5.421,
-      "bias": 3.157
+      "mae_persistence": 0.513,
+      "skill_vs_persistence": -5.071,
+      "bias": 3.114
      }
     },
     "station": "ANNAPURNA GHAT",
     "warning_level_m": 18.83,
     "issue_times": 11,
-    "observed_hours": 328,
+    "observed_hours": 334,
     "warning_events_24h": {
      "status": "ok",
-     "n": 169,
+     "n": 174,
      "threshold": 18.83,
      "observed_above": 0,
-     "forecast_above": 6,
+     "forecast_above": 11,
      "pod": null,
      "far": 1.0
     }
@@ -90,161 +90,161 @@
    "BADATIGHAT": {
     "leads": {
      "6h": {
-      "value": 0.023,
+      "value": 0.02,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 43,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 48,
       "status": "ok",
       "mae_persistence": 0.022,
-      "skill_vs_persistence": -0.043,
+      "skill_vs_persistence": 0.085,
       "bias": 0.005
      },
      "12h": {
-      "value": 0.042,
+      "value": 0.04,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.039,
-      "skill_vs_persistence": -0.078,
+      "mae_persistence": 0.038,
+      "skill_vs_persistence": -0.064,
       "bias": -0.017
      },
      "24h": {
       "value": 0.205,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 118,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 126,
       "status": "ok",
-      "mae_persistence": 0.039,
-      "skill_vs_persistence": -4.29,
-      "bias": -0.006
+      "mae_persistence": 0.043,
+      "skill_vs_persistence": -3.816,
+      "bias": 0.008
      },
      "48h": {
-      "value": 0.459,
+      "value": 0.472,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 136,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 144,
       "status": "ok",
-      "mae_persistence": 0.051,
-      "skill_vs_persistence": -7.921,
-      "bias": 0.212
+      "mae_persistence": 0.056,
+      "skill_vs_persistence": -7.385,
+      "bias": 0.238
      },
      "72h": {
-      "value": 0.529,
+      "value": 0.555,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 160,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 168,
       "status": "ok",
-      "mae_persistence": 0.065,
-      "skill_vs_persistence": -7.103,
-      "bias": 0.451
+      "mae_persistence": 0.069,
+      "skill_vs_persistence": -7.014,
+      "bias": 0.481
      },
      "7d": {
-      "value": 0.279,
+      "value": 0.328,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 157,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 181,
       "status": "ok",
-      "mae_persistence": 0.116,
-      "skill_vs_persistence": -1.406,
-      "bias": 0.248
+      "mae_persistence": 0.123,
+      "skill_vs_persistence": -1.654,
+      "bias": 0.301
      }
     },
     "station": "BADATIGHAT",
     "warning_level_m": 81.53,
     "issue_times": 8,
-    "observed_hours": 220,
+    "observed_hours": 228,
     "warning_events_24h": {
      "status": "no crossings observed or forecast yet",
-     "n": 118,
+     "n": 126,
      "threshold": 81.53
     }
    },
    "BEKI_ROAD_BRIDGE": {
     "leads": {
      "6h": {
-      "value": 0.082,
+      "value": 0.076,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.142,
-      "skill_vs_persistence": 0.42,
-      "bias": -0.075
+      "mae_persistence": 0.141,
+      "skill_vs_persistence": 0.462,
+      "bias": -0.069
      },
      "12h": {
-      "value": 0.11,
+      "value": 0.107,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 82,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 85,
       "status": "ok",
-      "mae_persistence": 0.145,
-      "skill_vs_persistence": 0.243,
-      "bias": 0.03
+      "mae_persistence": 0.143,
+      "skill_vs_persistence": 0.256,
+      "bias": 0.029
      },
      "24h": {
-      "value": 0.154,
+      "value": 0.155,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 168,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.183,
-      "skill_vs_persistence": 0.159,
-      "bias": 0.028
+      "mae_persistence": 0.184,
+      "skill_vs_persistence": 0.157,
+      "bias": 0.021
      },
      "48h": {
-      "value": 0.208,
+      "value": 0.204,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 210,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
-      "mae_persistence": 0.224,
-      "skill_vs_persistence": 0.07,
-      "bias": 0.163
+      "mae_persistence": 0.218,
+      "skill_vs_persistence": 0.065,
+      "bias": 0.16
      },
      "72h": {
-      "value": 0.316,
+      "value": 0.314,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 270,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.265,
-      "skill_vs_persistence": -0.191,
-      "bias": 0.291
+      "mae_persistence": 0.26,
+      "skill_vs_persistence": -0.21,
+      "bias": 0.29
      },
      "7d": {
-      "value": 0.287,
+      "value": 0.281,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 382,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
-      "mae_persistence": 0.353,
-      "skill_vs_persistence": 0.188,
-      "bias": 0.141
+      "mae_persistence": 0.343,
+      "skill_vs_persistence": 0.18,
+      "bias": 0.142
      }
     },
     "station": "BEKI ROAD BRIDGE",
     "warning_level_m": 44.1,
     "issue_times": 11,
-    "observed_hours": 328,
+    "observed_hours": 334,
     "warning_events_24h": {
      "status": "ok",
-     "n": 168,
+     "n": 174,
      "threshold": 44.1,
-     "observed_above": 168,
-     "forecast_above": 168,
+     "observed_above": 174,
+     "forecast_above": 174,
      "pod": 1.0,
      "far": 0.0
     }
@@ -252,79 +252,79 @@
    "CHOULDHOWAGHAT": {
     "leads": {
      "6h": {
-      "value": 0.103,
+      "value": 0.094,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 46,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 48,
       "status": "ok",
-      "mae_persistence": 0.163,
-      "skill_vs_persistence": 0.367,
-      "bias": -0.007
+      "mae_persistence": 0.164,
+      "skill_vs_persistence": 0.423,
+      "bias": -0.011
      },
      "12h": {
-      "value": 0.114,
+      "value": 0.109,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.21,
-      "skill_vs_persistence": 0.457,
+      "mae_persistence": 0.207,
+      "skill_vs_persistence": 0.471,
       "bias": 0.015
      },
      "24h": {
-      "value": 0.306,
+      "value": 0.317,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 121,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 126,
       "status": "ok",
-      "mae_persistence": 0.207,
-      "skill_vs_persistence": -0.48,
-      "bias": 0.114
+      "mae_persistence": 0.212,
+      "skill_vs_persistence": -0.496,
+      "bias": 0.134
      },
      "48h": {
-      "value": 0.479,
+      "value": 0.495,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 139,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 144,
       "status": "ok",
-      "mae_persistence": 0.245,
-      "skill_vs_persistence": -0.957,
-      "bias": 0.386
+      "mae_persistence": 0.243,
+      "skill_vs_persistence": -1.037,
+      "bias": 0.405
      },
      "72h": {
-      "value": 0.515,
+      "value": 0.544,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 163,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 168,
       "status": "ok",
-      "mae_persistence": 0.26,
-      "skill_vs_persistence": -0.983,
-      "bias": 0.502
+      "mae_persistence": 0.264,
+      "skill_vs_persistence": -1.064,
+      "bias": 0.531
      },
      "7d": {
-      "value": 0.406,
+      "value": 0.428,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 166,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 181,
       "status": "ok",
-      "mae_persistence": 0.221,
-      "skill_vs_persistence": -0.839,
-      "bias": 0.062
+      "mae_persistence": 0.22,
+      "skill_vs_persistence": -0.944,
+      "bias": 0.112
      }
     },
     "station": "CHOULDHOWAGHAT",
     "warning_level_m": 99.43,
     "issue_times": 8,
-    "observed_hours": 223,
+    "observed_hours": 228,
     "warning_events_24h": {
      "status": "no crossings observed or forecast yet",
-     "n": 121,
+     "n": 126,
      "threshold": 99.43
     }
    },
@@ -334,76 +334,76 @@
       "value": 0.068,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.079,
-      "skill_vs_persistence": 0.137,
-      "bias": -0.041
+      "mae_persistence": 0.077,
+      "skill_vs_persistence": 0.122,
+      "bias": -0.046
      },
      "12h": {
-      "value": 0.098,
+      "value": 0.099,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 83,
       "status": "ok",
-      "mae_persistence": 0.176,
-      "skill_vs_persistence": 0.442,
-      "bias": -0.063
+      "mae_persistence": 0.173,
+      "skill_vs_persistence": 0.428,
+      "bias": -0.059
      },
      "24h": {
-      "value": 0.137,
+      "value": 0.135,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 168,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 173,
       "status": "ok",
-      "mae_persistence": 0.229,
-      "skill_vs_persistence": 0.401,
-      "bias": -0.008
+      "mae_persistence": 0.224,
+      "skill_vs_persistence": 0.395,
+      "bias": -0.01
      },
      "48h": {
       "value": 0.228,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 210,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 215,
       "status": "ok",
-      "mae_persistence": 0.366,
-      "skill_vs_persistence": 0.377,
-      "bias": 0.069
+      "mae_persistence": 0.36,
+      "skill_vs_persistence": 0.365,
+      "bias": 0.061
      },
      "72h": {
-      "value": 0.425,
+      "value": 0.42,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 270,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 275,
       "status": "ok",
-      "mae_persistence": 0.54,
+      "mae_persistence": 0.534,
       "skill_vs_persistence": 0.213,
-      "bias": 0.387
+      "bias": 0.377
      },
      "7d": {
-      "value": 1.166,
+      "value": 1.167,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 382,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 397,
       "status": "ok",
-      "mae_persistence": 0.744,
-      "skill_vs_persistence": -0.567,
-      "bias": 1.166
+      "mae_persistence": 0.732,
+      "skill_vs_persistence": -0.593,
+      "bias": 1.167
      }
     },
     "station": "DHARAMTUL",
     "warning_level_m": 55.0,
     "issue_times": 11,
-    "observed_hours": 327,
+    "observed_hours": 332,
     "warning_events_24h": {
      "status": "no crossings observed or forecast yet",
-     "n": 168,
+     "n": 173,
      "threshold": 55.0
     }
    },
@@ -413,79 +413,79 @@
       "value": 0.012,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 64,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
       "mae_persistence": 0.013,
-      "skill_vs_persistence": 0.081,
+      "skill_vs_persistence": 0.058,
       "bias": -0.011
      },
      "12h": {
       "value": 0.014,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 85,
       "status": "ok",
-      "mae_persistence": 0.026,
+      "mae_persistence": 0.024,
       "skill_vs_persistence": 0.447,
       "bias": 0.005
      },
      "24h": {
-      "value": 0.043,
+      "value": 0.044,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 169,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.057,
-      "skill_vs_persistence": 0.234,
-      "bias": 0.008
+      "mae_persistence": 0.055,
+      "skill_vs_persistence": 0.193,
+      "bias": 0.005
      },
      "48h": {
-      "value": 0.1,
+      "value": 0.099,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 211,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 217,
       "status": "ok",
-      "mae_persistence": 0.086,
-      "skill_vs_persistence": -0.162,
-      "bias": 0.095
+      "mae_persistence": 0.084,
+      "skill_vs_persistence": -0.179,
+      "bias": 0.093
      },
      "72h": {
-      "value": 0.324,
+      "value": 0.32,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 271,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 278,
       "status": "ok",
-      "mae_persistence": 0.089,
-      "skill_vs_persistence": -2.619,
-      "bias": 0.324
+      "mae_persistence": 0.087,
+      "skill_vs_persistence": -2.662,
+      "bias": 0.32
      },
      "7d": {
-      "value": 0.319,
+      "value": 0.317,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 385,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 403,
       "status": "ok",
-      "mae_persistence": 0.111,
-      "skill_vs_persistence": -1.864,
-      "bias": 0.286
+      "mae_persistence": 0.109,
+      "skill_vs_persistence": -1.898,
+      "bias": 0.285
      }
     },
     "station": "DIBRUGARH",
     "warning_level_m": 104.7,
     "issue_times": 11,
-    "observed_hours": 328,
+    "observed_hours": 334,
     "warning_events_24h": {
      "status": "ok",
-     "n": 169,
+     "n": 174,
      "threshold": 104.7,
-     "observed_above": 169,
-     "forecast_above": 169,
+     "observed_above": 174,
+     "forecast_above": 174,
      "pod": 1.0,
      "far": 0.0
     }
@@ -493,245 +493,245 @@
    "GOLAGHAT": {
     "leads": {
      "6h": {
-      "value": 0.072,
+      "value": 0.069,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 64,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.102,
-      "skill_vs_persistence": 0.289,
-      "bias": 0.057
+      "mae_persistence": 0.099,
+      "skill_vs_persistence": 0.299,
+      "bias": 0.059
      },
      "12h": {
-      "value": 0.157,
+      "value": 0.153,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 84,
       "status": "ok",
-      "mae_persistence": 0.23,
-      "skill_vs_persistence": 0.315,
-      "bias": 0.091
+      "mae_persistence": 0.222,
+      "skill_vs_persistence": 0.31,
+      "bias": 0.086
      },
      "24h": {
-      "value": 0.323,
+      "value": 0.326,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 169,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.399,
-      "skill_vs_persistence": 0.19,
-      "bias": 0.18
+      "mae_persistence": 0.405,
+      "skill_vs_persistence": 0.195,
+      "bias": 0.187
      },
      "48h": {
-      "value": 0.558,
+      "value": 0.569,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 211,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
-      "mae_persistence": 0.592,
-      "skill_vs_persistence": 0.058,
-      "bias": 0.232
+      "mae_persistence": 0.607,
+      "skill_vs_persistence": 0.062,
+      "bias": 0.251
      },
      "72h": {
-      "value": 0.809,
+      "value": 0.817,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 271,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.713,
-      "skill_vs_persistence": -0.135,
-      "bias": 0.34
+      "mae_persistence": 0.721,
+      "skill_vs_persistence": -0.132,
+      "bias": 0.356
      },
      "7d": {
-      "value": 0.628,
+      "value": 0.62,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 385,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
-      "mae_persistence": 0.739,
-      "skill_vs_persistence": 0.15,
-      "bias": 0.295
+      "mae_persistence": 0.72,
+      "skill_vs_persistence": 0.139,
+      "bias": 0.299
      }
     },
     "station": "GOLAGHAT",
     "warning_level_m": 88.5,
     "issue_times": 11,
-    "observed_hours": 328,
+    "observed_hours": 333,
     "warning_events_24h": {
      "status": "ok",
-     "n": 169,
+     "n": 174,
      "threshold": 88.5,
      "observed_above": 50,
-     "forecast_above": 79,
+     "forecast_above": 84,
      "pod": 0.96,
-     "far": 0.392
+     "far": 0.429
     }
    },
    "GOLOKGANJ": {
     "leads": {
      "6h": {
-      "value": 0.068,
+      "value": 0.063,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 33,
-      "status": "ok",
-      "mae_persistence": 0.062,
-      "skill_vs_persistence": -0.108,
-      "bias": -0.046
-     },
-     "12h": {
-      "value": 0.081,
-      "class": "OBSERVED",
-      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 45,
-      "status": "ok",
-      "mae_persistence": 0.136,
-      "skill_vs_persistence": 0.404,
-      "bias": 0.003
-     },
-     "24h": {
-      "value": 0.192,
-      "class": "OBSERVED",
-      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 84,
-      "status": "ok",
-      "mae_persistence": 0.148,
-      "skill_vs_persistence": -0.294,
-      "bias": 0.185
-     },
-     "48h": {
-      "value": 0.695,
-      "class": "OBSERVED",
-      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 90,
-      "status": "ok",
-      "mae_persistence": 0.178,
-      "skill_vs_persistence": -2.9,
-      "bias": 0.695
-     },
-     "72h": {
-      "value": 0.905,
-      "class": "OBSERVED",
-      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 90,
-      "status": "ok",
-      "mae_persistence": 0.21,
-      "skill_vs_persistence": -3.304,
-      "bias": 0.905
-     },
-     "7d": {
-      "value": 0.851,
-      "class": "OBSERVED",
-      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 36,
       "status": "ok",
-      "mae_persistence": 0.389,
-      "skill_vs_persistence": -1.188,
-      "bias": 0.851
+      "mae_persistence": 0.056,
+      "skill_vs_persistence": -0.123,
+      "bias": -0.038
+     },
+     "12h": {
+      "value": 0.077,
+      "class": "OBSERVED",
+      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 49,
+      "status": "ok",
+      "mae_persistence": 0.128,
+      "skill_vs_persistence": 0.398,
+      "bias": 0.0
+     },
+     "24h": {
+      "value": 0.21,
+      "class": "OBSERVED",
+      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 90,
+      "status": "ok",
+      "mae_persistence": 0.147,
+      "skill_vs_persistence": -0.428,
+      "bias": 0.203
+     },
+     "48h": {
+      "value": 0.706,
+      "class": "OBSERVED",
+      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 97,
+      "status": "ok",
+      "mae_persistence": 0.167,
+      "skill_vs_persistence": -3.214,
+      "bias": 0.706
+     },
+     "72h": {
+      "value": 0.894,
+      "class": "OBSERVED",
+      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 98,
+      "status": "ok",
+      "mae_persistence": 0.196,
+      "skill_vs_persistence": -3.561,
+      "bias": 0.894
+     },
+     "7d": {
+      "value": 0.839,
+      "class": "OBSERVED",
+      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 50,
+      "status": "ok",
+      "mae_persistence": 0.366,
+      "skill_vs_persistence": -1.29,
+      "bias": 0.839
      }
     },
     "station": "GOLOKGANJ",
     "warning_level_m": 28.94,
     "issue_times": 6,
-    "observed_hours": 174,
+    "observed_hours": 181,
     "warning_events_24h": {
      "status": "ok",
-     "n": 84,
+     "n": 90,
      "threshold": 28.94,
-     "observed_above": 64,
-     "forecast_above": 79,
+     "observed_above": 67,
+     "forecast_above": 85,
      "pod": 1.0,
-     "far": 0.19
+     "far": 0.212
     }
    },
    "GUWAHATI_D_C_COURT": {
     "leads": {
      "6h": {
-      "value": 0.051,
+      "value": 0.048,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
       "mae_persistence": 0.011,
-      "skill_vs_persistence": -3.806,
-      "bias": 0.043
+      "skill_vs_persistence": -3.384,
+      "bias": 0.039
      },
      "12h": {
-      "value": 0.129,
+      "value": 0.126,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 84,
       "status": "ok",
-      "mae_persistence": 0.025,
-      "skill_vs_persistence": -4.261,
-      "bias": 0.117
+      "mae_persistence": 0.024,
+      "skill_vs_persistence": -4.156,
+      "bias": 0.114
      },
      "24h": {
-      "value": 0.309,
+      "value": 0.308,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 168,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.079,
-      "skill_vs_persistence": -2.936,
-      "bias": 0.172
+      "mae_persistence": 0.077,
+      "skill_vs_persistence": -2.981,
+      "bias": 0.175
      },
      "48h": {
-      "value": 0.554,
+      "value": 0.557,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 210,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
-      "mae_persistence": 0.152,
-      "skill_vs_persistence": -2.646,
-      "bias": 0.22
+      "mae_persistence": 0.151,
+      "skill_vs_persistence": -2.701,
+      "bias": 0.232
      },
      "72h": {
-      "value": 0.694,
+      "value": 0.702,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 270,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.232,
-      "skill_vs_persistence": -1.992,
-      "bias": 0.439
+      "mae_persistence": 0.231,
+      "skill_vs_persistence": -2.044,
+      "bias": 0.453
      },
      "7d": {
-      "value": 1.042,
+      "value": 1.032,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 382,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
-      "mae_persistence": 0.336,
-      "skill_vs_persistence": -2.096,
-      "bias": 1.04
+      "mae_persistence": 0.329,
+      "skill_vs_persistence": -2.143,
+      "bias": 1.031
      }
     },
     "station": "GUWAHATI(D.C.COURT)",
     "warning_level_m": 48.68,
     "issue_times": 11,
-    "observed_hours": 327,
+    "observed_hours": 333,
     "warning_events_24h": {
      "status": "no crossings observed or forecast yet",
-     "n": 168,
+     "n": 174,
      "threshold": 48.68
     }
    },
@@ -741,76 +741,76 @@
       "value": 0.04,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.067,
-      "skill_vs_persistence": 0.407,
-      "bias": -0.008
+      "mae_persistence": 0.068,
+      "skill_vs_persistence": 0.412,
+      "bias": -0.015
      },
      "12h": {
-      "value": 0.087,
+      "value": 0.091,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 84,
       "status": "ok",
-      "mae_persistence": 0.135,
-      "skill_vs_persistence": 0.356,
-      "bias": -0.0
+      "mae_persistence": 0.134,
+      "skill_vs_persistence": 0.323,
+      "bias": 0.007
      },
      "24h": {
-      "value": 0.162,
+      "value": 0.161,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 168,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.213,
-      "skill_vs_persistence": 0.24,
-      "bias": 0.069
+      "mae_persistence": 0.216,
+      "skill_vs_persistence": 0.254,
+      "bias": 0.071
      },
      "48h": {
-      "value": 0.269,
+      "value": 0.265,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 210,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
       "mae_persistence": 0.297,
-      "skill_vs_persistence": 0.093,
-      "bias": 0.162
+      "skill_vs_persistence": 0.108,
+      "bias": 0.154
      },
      "72h": {
-      "value": 0.412,
+      "value": 0.405,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 270,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.422,
-      "skill_vs_persistence": 0.023,
-      "bias": 0.375
+      "mae_persistence": 0.423,
+      "skill_vs_persistence": 0.044,
+      "bias": 0.366
      },
      "7d": {
-      "value": 1.14,
+      "value": 1.144,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 382,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
-      "mae_persistence": 0.42,
-      "skill_vs_persistence": -1.713,
-      "bias": 1.119
+      "mae_persistence": 0.431,
+      "skill_vs_persistence": -1.654,
+      "bias": 1.123
      }
     },
     "station": "KAMPUR",
     "warning_level_m": 59.5,
     "issue_times": 11,
-    "observed_hours": 327,
+    "observed_hours": 333,
     "warning_events_24h": {
      "status": "no crossings observed or forecast yet",
-     "n": 168,
+     "n": 174,
      "threshold": 59.5
     }
    },
@@ -820,32 +820,32 @@
       "value": 0.006,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 45,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 48,
       "status": "ok",
       "mae_persistence": 0.007,
-      "skill_vs_persistence": 0.125,
-      "bias": 0.001
+      "skill_vs_persistence": 0.2,
+      "bias": 0.002
      },
      "12h": {
       "value": 0.008,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
       "mae_persistence": 0.013,
-      "skill_vs_persistence": 0.358,
+      "skill_vs_persistence": 0.369,
       "bias": 0.007
      },
      "24h": {
-      "value": 0.033,
+      "value": 0.031,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 120,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 126,
       "status": "ok",
-      "mae_persistence": 0.031,
+      "mae_persistence": 0.029,
       "skill_vs_persistence": -0.079,
       "bias": 0.007
      },
@@ -853,124 +853,124 @@
       "value": 0.041,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 138,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 144,
       "status": "ok",
       "mae_persistence": 0.043,
-      "skill_vs_persistence": 0.035,
-      "bias": 0.017
+      "skill_vs_persistence": 0.034,
+      "bias": 0.018
      },
      "72h": {
-      "value": 0.04,
+      "value": 0.041,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 162,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 168,
       "status": "ok",
-      "mae_persistence": 0.047,
-      "skill_vs_persistence": 0.162,
-      "bias": 0.012
+      "mae_persistence": 0.049,
+      "skill_vs_persistence": 0.16,
+      "bias": 0.015
      },
      "7d": {
-      "value": 0.036,
+      "value": 0.034,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 163,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 181,
       "status": "ok",
       "mae_persistence": 0.059,
-      "skill_vs_persistence": 0.4,
+      "skill_vs_persistence": 0.417,
       "bias": 0.016
      }
     },
     "station": "MANAS N H CROSSING",
     "warning_level_m": 47.81,
     "issue_times": 8,
-    "observed_hours": 222,
+    "observed_hours": 228,
     "warning_events_24h": {
      "status": "no crossings observed or forecast yet",
-     "n": 120,
+     "n": 126,
      "threshold": 47.81
     }
    },
    "MATIJURI": {
     "leads": {
      "6h": {
-      "value": 0.075,
+      "value": 0.077,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 34,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 36,
       "status": "ok",
-      "mae_persistence": 0.202,
-      "skill_vs_persistence": 0.63,
-      "bias": -0.052
+      "mae_persistence": 0.243,
+      "skill_vs_persistence": 0.683,
+      "bias": -0.045
      },
      "12h": {
-      "value": 0.086,
+      "value": 0.091,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 45,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 49,
       "status": "ok",
-      "mae_persistence": 0.384,
-      "skill_vs_persistence": 0.777,
-      "bias": -0.001
+      "mae_persistence": 0.461,
+      "skill_vs_persistence": 0.803,
+      "bias": -0.013
      },
      "24h": {
-      "value": 0.205,
+      "value": 0.254,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 85,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 90,
       "status": "ok",
-      "mae_persistence": 0.72,
-      "skill_vs_persistence": 0.715,
-      "bias": 0.053
+      "mae_persistence": 0.816,
+      "skill_vs_persistence": 0.689,
+      "bias": -0.01
      },
      "48h": {
-      "value": 0.436,
+      "value": 0.522,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 91,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 97,
       "status": "ok",
-      "mae_persistence": 1.074,
-      "skill_vs_persistence": 0.594,
-      "bias": 0.039
+      "mae_persistence": 1.167,
+      "skill_vs_persistence": 0.552,
+      "bias": -0.077
      },
      "72h": {
-      "value": 0.612,
+      "value": 0.717,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 91,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 98,
       "status": "ok",
-      "mae_persistence": 1.305,
-      "skill_vs_persistence": 0.531,
-      "bias": 0.096
+      "mae_persistence": 1.377,
+      "skill_vs_persistence": 0.48,
+      "bias": -0.059
      },
      "7d": {
-      "value": 0.638,
+      "value": 0.96,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 38,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 50,
       "status": "ok",
-      "mae_persistence": 1.007,
-      "skill_vs_persistence": 0.366,
-      "bias": -0.391
+      "mae_persistence": 1.004,
+      "skill_vs_persistence": 0.043,
+      "bias": -0.772
      }
     },
     "station": "MATIJURI",
     "warning_level_m": 19.27,
     "issue_times": 6,
-    "observed_hours": 175,
+    "observed_hours": 181,
     "warning_events_24h": {
      "status": "ok",
-     "n": 85,
+     "n": 90,
      "threshold": 19.27,
-     "observed_above": 1,
+     "observed_above": 6,
      "forecast_above": 0,
      "pod": 0.0,
      "far": null
@@ -979,158 +979,158 @@
    "NANGLAMORAGHAT": {
     "leads": {
      "6h": {
-      "value": 0.222,
+      "value": 0.211,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 64,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.104,
-      "skill_vs_persistence": -1.138,
-      "bias": 0.181
+      "mae_persistence": 0.106,
+      "skill_vs_persistence": -0.987,
+      "bias": 0.167
      },
      "12h": {
-      "value": 0.335,
+      "value": 0.326,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 84,
       "status": "ok",
-      "mae_persistence": 0.23,
-      "skill_vs_persistence": -0.462,
-      "bias": 0.146
+      "mae_persistence": 0.227,
+      "skill_vs_persistence": -0.435,
+      "bias": 0.144
      },
      "24h": {
-      "value": 0.466,
+      "value": 0.454,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 169,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.415,
-      "skill_vs_persistence": -0.123,
-      "bias": 0.12
+      "mae_persistence": 0.41,
+      "skill_vs_persistence": -0.107,
+      "bias": 0.118
      },
      "48h": {
-      "value": 0.84,
+      "value": 0.844,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 211,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
-      "mae_persistence": 0.632,
-      "skill_vs_persistence": -0.329,
-      "bias": 0.251
+      "mae_persistence": 0.623,
+      "skill_vs_persistence": -0.355,
+      "bias": 0.269
      },
      "72h": {
-      "value": 1.225,
+      "value": 1.237,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 271,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.955,
-      "skill_vs_persistence": -0.282,
-      "bias": 0.844
+      "mae_persistence": 0.939,
+      "skill_vs_persistence": -0.318,
+      "bias": 0.862
      },
      "7d": {
-      "value": 1.104,
+      "value": 1.107,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 385,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
-      "mae_persistence": 1.492,
-      "skill_vs_persistence": 0.26,
-      "bias": 0.355
+      "mae_persistence": 1.473,
+      "skill_vs_persistence": 0.248,
+      "bias": 0.386
      }
     },
     "station": "NANGLAMORAGHAT",
     "warning_level_m": 93.46,
     "issue_times": 11,
-    "observed_hours": 328,
+    "observed_hours": 333,
     "warning_events_24h": {
      "status": "no crossings observed or forecast yet",
-     "n": 169,
+     "n": 174,
      "threshold": 93.46
     }
    },
    "NT_ROAD_CROSSING_JIA_BHARALI": {
     "leads": {
      "6h": {
-      "value": 0.099,
+      "value": 0.095,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 64,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.152,
-      "skill_vs_persistence": 0.349,
-      "bias": -0.066
+      "mae_persistence": 0.153,
+      "skill_vs_persistence": 0.382,
+      "bias": -0.067
      },
      "12h": {
-      "value": 0.122,
+      "value": 0.119,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 84,
       "status": "ok",
       "mae_persistence": 0.221,
-      "skill_vs_persistence": 0.449,
-      "bias": 0.109
+      "skill_vs_persistence": 0.46,
+      "bias": 0.107
      },
      "24h": {
-      "value": 0.214,
+      "value": 0.218,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 169,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
       "mae_persistence": 0.27,
-      "skill_vs_persistence": 0.209,
-      "bias": 0.009
+      "skill_vs_persistence": 0.191,
+      "bias": 0.019
      },
      "48h": {
-      "value": 0.261,
+      "value": 0.262,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 211,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
       "mae_persistence": 0.31,
-      "skill_vs_persistence": 0.157,
-      "bias": 0.119
+      "skill_vs_persistence": 0.153,
+      "bias": 0.124
      },
      "72h": {
-      "value": 0.407,
+      "value": 0.412,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 271,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.373,
-      "skill_vs_persistence": -0.093,
-      "bias": 0.35
+      "mae_persistence": 0.376,
+      "skill_vs_persistence": -0.097,
+      "bias": 0.356
      },
      "7d": {
-      "value": 0.528,
+      "value": 0.524,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 385,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
       "mae_persistence": 0.47,
-      "skill_vs_persistence": -0.123,
-      "bias": 0.485
+      "skill_vs_persistence": -0.114,
+      "bias": 0.482
      }
     },
     "station": "NT ROAD CROSSING JIA-BHARALI",
     "warning_level_m": 77.5,
     "issue_times": 11,
-    "observed_hours": 328,
+    "observed_hours": 333,
     "warning_events_24h": {
      "status": "ok",
-     "n": 169,
+     "n": 174,
      "threshold": 77.5,
      "observed_above": 49,
      "forecast_above": 61,
@@ -1141,82 +1141,82 @@
    "NUMALIGARH": {
     "leads": {
      "6h": {
-      "value": 0.053,
+      "value": 0.051,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 64,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.072,
-      "skill_vs_persistence": 0.264,
-      "bias": 0.029
+      "mae_persistence": 0.073,
+      "skill_vs_persistence": 0.292,
+      "bias": 0.028
      },
      "12h": {
-      "value": 0.109,
+      "value": 0.105,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 85,
       "status": "ok",
-      "mae_persistence": 0.186,
-      "skill_vs_persistence": 0.413,
-      "bias": 0.024
+      "mae_persistence": 0.182,
+      "skill_vs_persistence": 0.423,
+      "bias": 0.022
      },
      "24h": {
-      "value": 0.193,
+      "value": 0.2,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 169,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.278,
-      "skill_vs_persistence": 0.304,
-      "bias": 0.117
+      "mae_persistence": 0.288,
+      "skill_vs_persistence": 0.307,
+      "bias": 0.125
      },
      "48h": {
-      "value": 0.369,
+      "value": 0.374,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 211,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 217,
       "status": "ok",
-      "mae_persistence": 0.359,
-      "skill_vs_persistence": -0.029,
-      "bias": 0.207
+      "mae_persistence": 0.369,
+      "skill_vs_persistence": -0.013,
+      "bias": 0.216
      },
      "72h": {
-      "value": 0.629,
+      "value": 0.628,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 271,
-      "status": "ok",
-      "mae_persistence": 0.444,
-      "skill_vs_persistence": -0.419,
-      "bias": 0.426
-     },
-     "7d": {
-      "value": 0.605,
-      "class": "OBSERVED",
-      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 385,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 278,
       "status": "ok",
       "mae_persistence": 0.447,
-      "skill_vs_persistence": -0.353,
-      "bias": 0.522
+      "skill_vs_persistence": -0.403,
+      "bias": 0.43
+     },
+     "7d": {
+      "value": 0.593,
+      "class": "OBSERVED",
+      "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 403,
+      "status": "ok",
+      "mae_persistence": 0.436,
+      "skill_vs_persistence": -0.36,
+      "bias": 0.514
      }
     },
     "station": "NUMALIGARH",
     "warning_level_m": 77.42,
     "issue_times": 11,
-    "observed_hours": 328,
+    "observed_hours": 334,
     "warning_events_24h": {
      "status": "ok",
-     "n": 169,
+     "n": 174,
      "threshold": 77.42,
-     "observed_above": 169,
-     "forecast_above": 169,
+     "observed_above": 174,
+     "forecast_above": 174,
      "pod": 1.0,
      "far": 0.0
     }
@@ -1224,79 +1224,79 @@
    "RANGANADI_NT_ROAD_CROSSING": {
     "leads": {
      "6h": {
-      "value": 0.077,
+      "value": 0.072,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 34,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 36,
       "status": "ok",
-      "mae_persistence": 0.105,
-      "skill_vs_persistence": 0.263,
-      "bias": -0.037
+      "mae_persistence": 0.101,
+      "skill_vs_persistence": 0.288,
+      "bias": -0.036
      },
      "12h": {
-      "value": 0.079,
+      "value": 0.074,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 45,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 48,
       "status": "ok",
-      "mae_persistence": 0.158,
-      "skill_vs_persistence": 0.501,
-      "bias": 0.072
+      "mae_persistence": 0.151,
+      "skill_vs_persistence": 0.508,
+      "bias": 0.068
      },
      "24h": {
       "value": 0.127,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 85,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 90,
       "status": "ok",
-      "mae_persistence": 0.173,
-      "skill_vs_persistence": 0.265,
-      "bias": 0.033
+      "mae_persistence": 0.175,
+      "skill_vs_persistence": 0.275,
+      "bias": 0.038
      },
      "48h": {
-      "value": 0.134,
+      "value": 0.128,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 91,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 96,
       "status": "ok",
-      "mae_persistence": 0.278,
-      "skill_vs_persistence": 0.518,
-      "bias": 0.113
+      "mae_persistence": 0.271,
+      "skill_vs_persistence": 0.53,
+      "bias": 0.107
      },
      "72h": {
-      "value": 0.245,
+      "value": 0.247,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 91,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 96,
       "status": "ok",
-      "mae_persistence": 0.482,
-      "skill_vs_persistence": 0.493,
-      "bias": 0.245
+      "mae_persistence": 0.474,
+      "skill_vs_persistence": 0.479,
+      "bias": 0.247
      },
      "7d": {
-      "value": 0.281,
+      "value": 0.296,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 38,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 48,
       "status": "ok",
-      "mae_persistence": 0.547,
-      "skill_vs_persistence": 0.487,
-      "bias": 0.281
+      "mae_persistence": 0.567,
+      "skill_vs_persistence": 0.479,
+      "bias": 0.296
      }
     },
     "station": "RANGANADI NT ROAD CROSSING",
     "warning_level_m": 93.42,
     "issue_times": 6,
-    "observed_hours": 175,
+    "observed_hours": 180,
     "warning_events_24h": {
      "status": "ok",
-     "n": 85,
+     "n": 90,
      "threshold": 93.42,
      "observed_above": 14,
      "forecast_above": 0,
@@ -1307,167 +1307,167 @@
    "SIVASAGAR": {
     "leads": {
      "6h": {
-      "value": 0.102,
+      "value": 0.097,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.213,
-      "skill_vs_persistence": 0.522,
-      "bias": 0.084
+      "mae_persistence": 0.206,
+      "skill_vs_persistence": 0.527,
+      "bias": 0.081
      },
      "12h": {
-      "value": 0.183,
+      "value": 0.177,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 84,
       "status": "ok",
-      "mae_persistence": 0.362,
-      "skill_vs_persistence": 0.494,
-      "bias": 0.117
+      "mae_persistence": 0.353,
+      "skill_vs_persistence": 0.497,
+      "bias": 0.113
      },
      "24h": {
-      "value": 0.443,
+      "value": 0.446,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 168,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.475,
-      "skill_vs_persistence": 0.068,
-      "bias": 0.208
+      "mae_persistence": 0.476,
+      "skill_vs_persistence": 0.061,
+      "bias": 0.219
      },
      "48h": {
-      "value": 0.756,
+      "value": 0.785,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 210,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
-      "mae_persistence": 0.668,
-      "skill_vs_persistence": -0.132,
-      "bias": 0.301
+      "mae_persistence": 0.663,
+      "skill_vs_persistence": -0.184,
+      "bias": 0.343
      },
      "72h": {
-      "value": 0.938,
+      "value": 0.961,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 270,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.926,
-      "skill_vs_persistence": -0.013,
-      "bias": 0.55
+      "mae_persistence": 0.928,
+      "skill_vs_persistence": -0.036,
+      "bias": 0.581
      },
      "7d": {
-      "value": 0.741,
+      "value": 0.769,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 382,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
-      "mae_persistence": 1.281,
-      "skill_vs_persistence": 0.422,
-      "bias": 0.278
+      "mae_persistence": 1.248,
+      "skill_vs_persistence": 0.383,
+      "bias": 0.327
      }
     },
     "station": "SIVASAGAR",
     "warning_level_m": 91.4,
     "issue_times": 11,
-    "observed_hours": 327,
+    "observed_hours": 333,
     "warning_events_24h": {
      "status": "ok",
-     "n": 168,
+     "n": 174,
      "threshold": 91.4,
      "observed_above": 52,
-     "forecast_above": 66,
+     "forecast_above": 72,
      "pod": 0.827,
-     "far": 0.348
+     "far": 0.403
     }
    },
    "TEZPUR": {
     "leads": {
      "6h": {
-      "value": 0.04,
+      "value": 0.038,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 63,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 66,
       "status": "ok",
-      "mae_persistence": 0.034,
-      "skill_vs_persistence": -0.162,
-      "bias": 0.031
+      "mae_persistence": 0.033,
+      "skill_vs_persistence": -0.131,
+      "bias": 0.029
      },
      "12h": {
-      "value": 0.095,
+      "value": 0.092,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 81,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 84,
       "status": "ok",
-      "mae_persistence": 0.066,
-      "skill_vs_persistence": -0.444,
-      "bias": 0.072
+      "mae_persistence": 0.064,
+      "skill_vs_persistence": -0.436,
+      "bias": 0.07
      },
      "24h": {
-      "value": 0.246,
+      "value": 0.244,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 168,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 174,
       "status": "ok",
-      "mae_persistence": 0.078,
-      "skill_vs_persistence": -2.143,
-      "bias": 0.143
+      "mae_persistence": 0.077,
+      "skill_vs_persistence": -2.153,
+      "bias": 0.145
      },
      "48h": {
-      "value": 0.431,
+      "value": 0.435,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 210,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 216,
       "status": "ok",
       "mae_persistence": 0.12,
-      "skill_vs_persistence": -2.596,
-      "bias": 0.215
+      "skill_vs_persistence": -2.639,
+      "bias": 0.226
      },
      "72h": {
-      "value": 0.658,
+      "value": 0.664,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 270,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 276,
       "status": "ok",
-      "mae_persistence": 0.169,
-      "skill_vs_persistence": -2.894,
-      "bias": 0.524
+      "mae_persistence": 0.167,
+      "skill_vs_persistence": -2.974,
+      "bias": 0.534
      },
      "7d": {
-      "value": 1.087,
+      "value": 1.084,
       "class": "OBSERVED",
       "source": "derived: CWC AFF forecast level vs CWC WIMS observed level (real gauge), per lead bucket",
-      "retrieved_at": "2026-09-09T14:59:23Z",
-      "n": 382,
+      "retrieved_at": "2026-09-09T18:00:49Z",
+      "n": 400,
       "status": "ok",
-      "mae_persistence": 0.203,
-      "skill_vs_persistence": -4.347,
-      "bias": 1.087
+      "mae_persistence": 0.2,
+      "skill_vs_persistence": -4.421,
+      "bias": 1.084
      }
     },
     "station": "TEZPUR",
     "warning_level_m": 64.23,
     "issue_times": 11,
-    "observed_hours": 327,
+    "observed_hours": 333,
     "warning_events_24h": {
      "status": "ok",
-     "n": 168,
+     "n": 174,
      "threshold": 64.23,
      "observed_above": 103,
-     "forecast_above": 137,
+     "forecast_above": 143,
      "pod": 0.816,
-     "far": 0.387
+     "far": 0.413
     }
    }
   },
@@ -1478,7 +1478,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1486,7 +1486,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1494,7 +1494,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1502,7 +1502,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1510,7 +1510,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1533,7 +1533,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1541,7 +1541,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1549,7 +1549,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1557,7 +1557,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1565,7 +1565,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1584,7 +1584,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1592,7 +1592,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1600,7 +1600,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1608,7 +1608,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1616,7 +1616,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1635,7 +1635,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1643,7 +1643,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1651,7 +1651,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1659,7 +1659,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1667,7 +1667,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1686,7 +1686,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1694,7 +1694,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1702,7 +1702,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1710,7 +1710,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1718,7 +1718,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1737,7 +1737,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1745,7 +1745,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1753,7 +1753,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1761,7 +1761,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1769,7 +1769,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1792,7 +1792,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1800,7 +1800,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1808,7 +1808,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1816,7 +1816,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1824,7 +1824,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1847,7 +1847,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1855,7 +1855,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1863,7 +1863,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1871,7 +1871,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1879,7 +1879,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1902,7 +1902,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -1910,7 +1910,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -1918,7 +1918,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -1926,7 +1926,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -1934,7 +1934,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -1953,7 +1953,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 5,
       "status": "insufficient"
      },
@@ -1961,7 +1961,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      },
@@ -1969,7 +1969,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 3,
       "status": "insufficient"
      },
@@ -1977,7 +1977,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 1,
       "status": "insufficient"
      },
@@ -1985,7 +1985,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 0,
       "status": "insufficient"
      }
@@ -2008,7 +2008,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 10,
       "status": "insufficient"
      },
@@ -2016,7 +2016,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 9,
       "status": "insufficient"
      },
@@ -2024,7 +2024,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 8,
       "status": "insufficient"
      },
@@ -2032,7 +2032,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -2040,7 +2040,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      }
@@ -2059,7 +2059,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 7,
       "status": "insufficient"
      },
@@ -2067,7 +2067,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -2075,7 +2075,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 5,
       "status": "insufficient"
      },
@@ -2083,7 +2083,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 3,
       "status": "insufficient"
      },
@@ -2091,7 +2091,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 1,
       "status": "insufficient"
      }
@@ -2110,7 +2110,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 5,
       "status": "insufficient"
      },
@@ -2118,7 +2118,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      },
@@ -2126,7 +2126,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 3,
       "status": "insufficient"
      },
@@ -2134,7 +2134,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 1,
       "status": "insufficient"
      },
@@ -2142,7 +2142,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 0,
       "status": "insufficient"
      }
@@ -2161,7 +2161,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 5,
       "status": "insufficient"
      },
@@ -2169,7 +2169,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 4,
       "status": "insufficient"
      },
@@ -2177,7 +2177,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 3,
       "status": "insufficient"
      },
@@ -2185,7 +2185,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 1,
       "status": "insufficient"
      },
@@ -2193,7 +2193,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 0,
       "status": "insufficient"
      }
@@ -2212,7 +2212,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 7,
       "status": "insufficient"
      },
@@ -2220,7 +2220,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 6,
       "status": "insufficient"
      },
@@ -2228,7 +2228,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 5,
       "status": "insufficient"
      },
@@ -2236,7 +2236,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 3,
       "status": "insufficient"
      },
@@ -2244,7 +2244,7 @@
       "value": null,
       "class": "OBSERVED",
       "source": "derived: GloFAS ensemble median forecast vs GloFAS reanalysis (modelled vs modelled)",
-      "retrieved_at": "2026-09-09T14:59:23Z",
+      "retrieved_at": "2026-09-09T18:00:49Z",
       "n": 1,
       "status": "insufficient"
      }
