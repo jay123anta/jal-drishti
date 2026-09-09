@@ -231,11 +231,13 @@ map.on("click", "rivers-layer", e => {
   new maplibregl.Popup().setLngLat(e.lngLat).setHTML(
     `<h4>${esc(p.river)}</h4><div class="m">${esc(p.site)}</div>` +
     // the official gauge comes first: it outranks our own estimate
-    (p.gaugeLevel !== "" ? `<div><b>Official gauge ${esc(p.gaugeLevel)} m</b>${
+    (p.gaugeLevel !== "" ? `<div><b>Official gauge right now: ${esc(p.gaugeLevel)} m</b>${
       p.warnLevel !== "" ? ` (warning mark ${esc(p.warnLevel)} m)` : ""}</div>` +
       `<div class="m">${esc(p.gaugeName)} - Central Water Commission</div>` : "") +
-    (p.q !== "" ? `<div>our modelled river flow: ${esc(p.q)} m&sup3;/s</div>` : "") +
-    (p.trend ? `<div class="m">trend (48 h): ${esc(p.trend)}</div>` : "") +
+    (p.q !== "" ? `<div>our modelled river flow today: ${esc(p.q)} m&sup3;/s</div>` : "") +
+    // say the window out loud: this is today vs two days ago, not "right now",
+    // so it never reads as a rival opinion on the gauge's last few hours
+    (p.trend ? `<div class="m">our flow ${esc(p.trend)} comparing today with two days ago</div>` : "") +
     `<div class="m">the flow figure is a river-network estimate, not a gauge reading</div>`).addTo(map);
 });
 ["villages-layer", "rivers-layer"].forEach(id => {

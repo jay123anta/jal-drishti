@@ -33,6 +33,12 @@ RIVER_POINTS = [
     {"id": "brahmaputra_guwahati",  "river": "Brahmaputra", "site": "Guwahati",  "lat": 26.17, "lon": 91.74, "qmin": 4000, "qmax": None},
     {"id": "barak_silchar",         "river": "Barak",       "site": "Silchar",   "lat": 24.83, "lon": 92.78, "qmin": 300,  "qmax": 8000},
     {"id": "dikhow_sivasagar",      "river": "Dikhow",      "site": "near Sivasagar", "lat": 26.98, "lon": 94.64, "qmin": 50, "qmax": 2500},
+    # This anchor selects the GloFAS cell, NOT where the pin is drawn (the map
+    # uses the official CWC gauge position). The cell it picks was validated
+    # against 15 days of observed CWC discharge at KAMPUR: it ranked best of 30
+    # neighbouring cells (corr +0.790, bias -634 m3/s) while the cell containing
+    # the gauge itself ranked 7th (corr +0.732, bias -892). Do not "correct" this
+    # to the gauge coordinate without re-running that comparison.
     {"id": "kopili_kampur",         "river": "Kopili",      "site": "near Kampur (Nagaon)", "lat": 26.17, "lon": 92.53, "qmin": 100, "qmax": 5000},
     {"id": "jiabharali_tezpur",     "river": "Jia Bharali", "site": "near NH52 crossing (Sonitpur)", "lat": 26.79, "lon": 92.87, "qmin": 200, "qmax": 8000},
     {"id": "beki_barpeta",          "river": "Beki",        "site": "near Barpeta Road", "lat": 26.45, "lon": 90.97, "qmin": 100, "qmax": 8000},

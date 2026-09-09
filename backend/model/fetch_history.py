@@ -166,11 +166,23 @@ def live_cells() -> dict:
 
 def river_points_for(basin: str, state: dict) -> list[dict]:
     """Target cell + resolved upstream cells for a basin; cached in state."""
-    cached = state["river_points_by_basin"].get(basin)
-    if cached:
-        return cached
     cfg = BASINS[basin]
     cells = live_cells()
+    cached = state["river_points_by_basin"].get(basin)
+    if cached:
+        # The cache must not outlive the cell it describes. If the live snapped
+        # cell has moved (a corrected anchor, a re-probe), the cached coordinates
+        # are stale and would silently refetch history at the OLD cell - a bug
+        # that is invisible in the output because the partition names are the same.
+        live = cells.get(cfg["target"])
+        tgt = next((p for p in cached if p.get("role") == "target"), None)
+        fresh = (live is None or tgt is None
+                 or (abs(tgt["lat"] - live[0]) < 1e-6 and abs(tgt["lon"] - live[1]) < 1e-6))
+        if fresh:
+            return cached
+        print(f"  cached cell for {cfg['target']} ({tgt['lat']},{tgt['lon']}) no longer "
+              f"matches data/discharge.json ({live[0]},{live[1]}) - re-resolving")
+        state["river_points_by_basin"].pop(basin, None)
     if cfg["target"] not in cells:
         raise SystemExit(f"{cfg['target']} not in data/discharge.json - run the live pipeline first")
     lat, lon = cells[cfg["target"]]

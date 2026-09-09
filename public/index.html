@@ -166,6 +166,14 @@
     border-radius: 999px; font-size: var(--fs-xs); border: 1px solid var(--ctrl-border);
     color: var(--ink-2); background: var(--page); }
   .pp .badge.model { border-color: var(--river); color: var(--river-deep); background: var(--river-tint); }
+  /* Time-window chip. Every claim in a popup says WHEN it is about, in the same
+     place and the same shape, so "now" can never be mistaken for "tomorrow". */
+  .pp .tw { display: inline-block; margin-right: var(--s2); padding: 0 var(--s2);
+    border-radius: 3px; font-size: var(--fs-xs); font-weight: 700;
+    letter-spacing: .06em; vertical-align: 1px; }
+  .pp .tw-now { background: var(--river-tint); color: var(--river-deep); }
+  .pp .tw-ahead { background: var(--amber-bg); color: var(--amber-ink); }
+  .pp .tw-past { background: var(--page); color: var(--muted); }
   .pp .official { background: var(--river-tint); border-left: 3px solid var(--river);
     border-radius: 0 var(--r) var(--r) 0; padding: var(--s2) var(--s4); margin-top: var(--s3); }
 
@@ -500,13 +508,15 @@ function cwcPlain(c, short) {
   if (danger != null && lvl >= danger) where = `above the DANGER mark (${danger} m)`;
   else if (warn != null && lvl >= warn) where = `above the warning mark (${warn} m), below the danger mark (${danger} m)`;
   else where = `below the warning mark (${warn} m)`;
+  // CWC's own look-ahead is kept on its own line behind an AHEAD chip, so a
+  // measured reading and a prediction never sit in one undifferentiated sentence.
   let fc = "";
   if (c.cwc_forecast_crosses_warning_at_ist)
-    fc = ` CWC expects it to reach the warning mark around ${esc(humanIst(c.cwc_forecast_crosses_warning_at_ist))}.`;
+    fc = `<div class="when"><span class="tw tw-ahead">AHEAD</span>CWC expects it to reach the warning mark around ${esc(humanIst(c.cwc_forecast_crosses_warning_at_ist))}.</div>`;
   else if (c.cwc_forecast_peak_m && c.cwc_forecast_peak_m.value != null)
-    fc = ` CWC expects it to stay below the warning mark for the next 7 days (highest expected ${c.cwc_forecast_peak_m.value} m).`;
-  return `<div class="official"><b>Official river gauge</b> at ${esc(c.plain_name)}: ${lvl} m - ${where}.${short ? "" : fc}
-    <div class="when">Reading ${esc(humanTime(c.observed_level_m.observed_at_utc))} · Source: Central Water Commission</div></div>`;
+    fc = `<div class="when"><span class="tw tw-ahead">NEXT 7 DAYS</span>CWC expects it to stay below the warning mark (highest expected ${c.cwc_forecast_peak_m.value} m).</div>`;
+  return `<div class="official"><span class="tw tw-now">NOW</span><b>Official river gauge</b> at ${esc(c.plain_name)}: ${lvl} m - ${where}.
+    <div class="when">Reading ${esc(humanTime(c.observed_level_m.observed_at_utc))} · Source: Central Water Commission</div>${short ? "" : fc}</div>`;
 }
 
 /* ---------- popups ---------- */
@@ -514,16 +524,24 @@ function cwcPlain(c, short) {
 function villagePopup(v, c) {
   const r = v.risk;
   const isModel = String(r.method || "").startsWith("model-v0-");
+  // The two paths answer different questions and must never look alike:
+  // the model looks a day AHEAD, the fallback formula describes conditions NOW.
   const badge = isModel
-    ? `<span class="badge model">our forecast - tested model</span>`
-    : `<span class="badge">our estimate - test formula</span>`;
+    ? `<span class="badge model">our forecast - looking ahead to tomorrow</span>`
+    : `<span class="badge">our estimate - conditions right now</span>`;
+  const chip = isModel
+    ? `<span class="tw tw-ahead">TOMORROW</span>`
+    : `<span class="tw tw-now">NOW</span>`;
   const lead = isModel && r.basis ? r.basis : villageLead(v);
+  const stamp = isModel
+    ? `Worked out ${esc(humanTime(r.retrieved_at))}, for the day ahead`
+    : `Readings as of ${esc(humanTime(r.retrieved_at))}`;
   return `<div class="pp">
     <h3>${esc(v.name)} <span class="lbl">${esc(v.district)}</span></h3>
     <div class="risk" style="color:${RISK_TEXT[r.value]}">${RISK_ICON[r.value]} ${esc(r.value)} - ${esc(RISK_WORD[r.value])}</div>
     <div>${badge}</div>
-    <div class="lead">${esc(lead)}</div>
-    <div class="when">Updated ${esc(humanTime(r.retrieved_at))}</div>
+    <div class="lead">${chip}${esc(lead)}</div>
+    <div class="when">${stamp}</div>
     ${v.exposure ? `<div class="prov">Ground: ${esc(v.exposure.plain)} (about ${esc(v.exposure.village_elevation_m)} m, ${esc(v.exposure.distance_to_river_km)} km from the river). Terrain only - not part of the colour.</div>` : ""}
     ${cwcPlain(c, true)}
     <details><summary>Technical details</summary>${techVillage(v)}</details>
@@ -540,7 +558,7 @@ function replayVillagePopup(v, step, whenLabel) {
     <h3>${esc(v.name)} <span class="lbl">${esc(v.district)}</span></h3>
     <div class="risk" style="color:${RISK_TEXT[r.value]}">${RISK_ICON[r.value]} ${esc(r.value)} - ${esc(RISK_WORD[r.value])}</div>
     <div><span class="badge">looking back - what we showed then</span></div>
-    <div class="lead">At that moment: rain in the hills ${rain == null ? "not available" : esc(rain) + " mm over 24 h"},
+    <div class="lead"><span class="tw tw-past">THAT DAY</span>At that moment: rain in the hills ${rain == null ? "not available" : esc(rain) + " mm over 24 h"},
       river ${q == null ? "not available" : esc(q) + " m&sup3;/s"}${p == null ? "" :
       ` (higher than ${esc(Math.round(p * 100))}% of the same days in 2015-2025)`}.</div>
     <div class="when">Looking back at ${esc(whenLabel)}</div>
@@ -555,17 +573,25 @@ function riverPopup(r, c) {
     <h3>${esc(r.river)} <span class="lbl">${esc(r.site)}</span></h3>
     ${(() => {
       const g = gaugeTrend(c);
-      if (!g) return `<div class="lead">${arrow ? `<b style="font-size:15px">${arrow}</b> ` : ""}${esc(riverLead(r))}</div>`;
+      if (!g) return `<div class="lead"><span class="tw tw-past">LAST 2 DAYS</span>${arrow ? `<b style="font-size:15px">${arrow}</b> ` : ""}${esc(riverLead(r))}</div>`;
       const gArrow = TREND_ARROW[g.word] || "";
       const dTxt = g.delta != null ? ` (${g.delta > 0 ? "up" : g.delta < 0 ? "down" : "change"} ${Math.abs(g.delta)} m in ${g.span})` : "";
       const dayTxt = (g.dayWord && g.dayWord !== g.word)
         ? ` Over the whole day it has been ${g.dayWord}${g.dayDelta != null ? ` (${g.dayDelta > 0 ? "+" : ""}${g.dayDelta} m)` : ""}.` : "";
       const ours = t.value || null;
       const clash = ours && ours !== g.word;
-      return `<div class="lead"><b style="font-size:15px">${gArrow}</b> The official river gauge here shows the water <b>${esc(g.word.toUpperCase())}</b> right now${esc(dTxt)}.${esc(dayTxt)}</div>
-        <div class="when">Our own estimate from free river data says "${esc(ours || "not available")}"${clash ? " - when the two disagree, trust the official gauge" : ""}.</div>`;
+      // These two answer DIFFERENT questions and must never look like rival
+      // answers to the same one: the gauge is a measured water level over the
+      // last few hours, ours is computed river flow today vs two days ago.
+      const oursTxt = ours
+        ? `Separately, our own figures compare the river's flow today with two days ago, and make it <b>${esc(ours)}</b> over that longer window`
+          + (t.pct_change_48h != null ? ` (${t.pct_change_48h > 0 ? "+" : ""}${esc(t.pct_change_48h)} % in 2 days)` : "")
+          + `.${clash ? " That is a different measurement over a different period, not a second opinion on the last few hours - for what the river is doing now, follow the official gauge." : ""}`
+        : "We have no flow comparison of our own for this point right now.";
+      return `<div class="lead"><span class="tw tw-now">NOW</span><b style="font-size:15px">${gArrow}</b> The official river gauge here shows the water <b>${esc(g.word.toUpperCase())}</b> right now${esc(dTxt)}.${esc(dayTxt)}</div>
+        <div class="when"><span class="tw tw-past">LAST 2 DAYS</span>${oursTxt}</div>`;
     })()}
-    <div class="when">Updated ${esc(humanTime(r.discharge_latest_m3s.retrieved_at))}</div>
+    <div class="when">Our river figures fetched ${esc(humanTime(r.discharge_latest_m3s.retrieved_at))}</div>
     ${cwcPlain(c, false)}
     <details><summary>Technical details</summary>${techRiver(r, c)}</details>
   </div>`;
@@ -852,7 +878,7 @@ async function boot() {
     if (floods.length) parts.push(floods.length + " flood alert" + (floods.length > 1 ? "s" : ""));
     if (othersA.length) parts.push(othersA.length + " other weather alert" + (othersA.length > 1 ? "s" : ""));
     alertBar.textContent = "\u26a0 Official: " + parts.join(" and ") +
-      " active for Assam right now \u2014 details in the side panel. Always follow official alerts first.";
+      " active for Assam right now - details in the side panel. Always follow official alerts first.";
   }
   if (!sa) {
     alertsBox.textContent = "Official alert feed not loaded this time.";

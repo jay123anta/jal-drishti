@@ -17,7 +17,12 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 PATHS = ["data/history/cwc_aff", "data/history/glofas", "data/history/sachet",
          "data/history/nwdp", "data/history/model_fc", "data/history/imerg", "data/history/nerldc", "data/labels", "data/elevation.json", "data/history/scoreboard.json",
          "docs/FORECAST-SCOREBOARD.md",
-         "public"]   # whole served site: the public GitHub Pages copy stays fresh
+         "public"]   # data files only - see EXCLUDE below
+# The automation refreshes DATA on the public site every 3 hours. It must never
+# ship interface changes: those are the repository owner's to review and commit.
+# Committing "public" wholesale once pushed a half-finished index.html mid-edit,
+# so the page itself is excluded here and only ever goes out by hand.
+EXCLUDE_SUFFIXES = (".html", ".css", ".js")
 MIN_AGE_H = 2   # push-per-run: the public Pages site stays 3-hourly fresh
 
 
@@ -45,7 +50,24 @@ def main() -> int:
     if not out.strip():
         print("commit_archive: nothing to commit")
         return 0
+    # Anything the owner staged by hand before this run is theirs to keep - only
+    # files THIS add pulled in may be held back.
+    pre_staged = set(git("diff", "--cached", "--name-only")[1].split())
     git("add", "--", *existing)
+    # Unstage any interface file the wildcard swept in, so an edit in progress
+    # can never be published by the scheduler.
+    staged = git("diff", "--cached", "--name-only")[1]
+    ui = [f for f in staged.splitlines()
+          if f.strip().endswith(EXCLUDE_SUFFIXES) and f.strip() not in pre_staged]
+    if ui:
+        git("reset", "-q", "HEAD", "--", *ui)
+        print(f"commit_archive: held back {len(ui)} interface file(s) "
+              f"({', '.join(ui[:4])}{'...' if len(ui) > 4 else ''}) - "
+              "commit those by hand after review")
+    staged = git("diff", "--cached", "--name-only")[1]
+    if not staged.strip():
+        print("commit_archive: nothing to commit after holding back interface files")
+        return 0
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
     rc, out = git("commit", "-q", "-m",
                   f"CWC gauge archive checkpoint {stamp}\n\n"

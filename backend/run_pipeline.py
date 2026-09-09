@@ -50,6 +50,8 @@ STEPS = [
     ("official alerts (NDMA SACHET public feed, 3-hourly cap)", "fetch_sachet.py", []),
     ("GloFAS forecast archive (per-run issue dates)", "archive_glofas_fc.py", []),
     ("forecast scoreboard (ready-made forecasts vs observed)", "model/scoreboard.py", []),
+    ("GloFAS vs observed CWC discharge (how good the stand-in target is)",
+     "glofas_vs_observed.py", []),
     ("villages (Overpass coords, live)", "fetch_villages.py", []),
     ("archived 2026-07 window (Open-Meteo archive + Flood API)", "fetch_archive.py", []),
     ("village terrain elevation (exposure layer; cached, static)", "fetch_elevation.py", []),

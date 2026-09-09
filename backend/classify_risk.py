@@ -249,15 +249,50 @@ def main() -> int:
             "cwc_forecast_crosses_warning_at_ist": c.get("cwc_forecast_crosses_warning_at_ist"),
         }
 
+    def map_position(rp: dict) -> dict:
+        """Where the pin is drawn, and why.
+
+        The site anchor in RIVER_POINTS is a hand-typed town coordinate: for the
+        eight oldest points it sits up to 12 km from the river it names. The CWC
+        gauge coordinate is an official surveyed position ON the river, so it is
+        preferred wherever a station exists; the anchor is only the fallback.
+        The GloFAS cell is NOT used here - it is where the number comes from, not
+        where the river is, and the two are disclosed separately.
+        """
+        c = cwc_by.get(rp["id"])
+        if c and c.get("lat") is not None and c.get("lon") is not None:
+            return pv([c["lat"], c["lon"]], OBSERVED,
+                      f"official CWC gauge position for station {c['aff_station']} "
+                      "(CWC Advisory Flood Forecast public dissemination portal)",
+                      c["observed_level_m"]["retrieved_at"],
+                      basis="cwc_gauge")
+        return pv([rp["lat"], rp["lon"]], SIMULATED,
+                  "approximate site anchor for the named town or crossing "
+                  "(no official gauge position available for this point)",
+                  now, basis="site_anchor")
+
+    def data_cell_offset_km(rp: dict, pos: list) -> float | None:
+        """How far the drawn pin is from the GloFAS cell its numbers come from."""
+        glat, glon = rp.get("grid_lat"), rp.get("grid_lon")
+        if glat is None or glon is None:
+            return None
+        dy = (glat - pos[0]) * 111.0
+        dx = (glon - pos[1]) * 111.0 * math.cos(math.radians(pos[0]))
+        return round(math.hypot(dx, dy), 2)
+
     # ---------- rivers_status.json ----------
     rivers_out = []
     for rp in river_pts:
         st = river_stats[rp["id"]]
         latest = st["latest"]
+        pos = map_position(rp)
         rivers_out.append({
             "id": rp["id"], "river": rp["river"], "site": rp["site"],
             "lat": rp["lat"], "lon": rp["lon"],
+            "map_position": pos,
+            "map_lat": pos["value"][0], "map_lon": pos["value"][1],
             "grid_lat": rp.get("grid_lat"), "grid_lon": rp.get("grid_lon"),
+            "data_cell_offset_km": data_cell_offset_km(rp, pos["value"]),
             "snap_note": rp.get("snap_note"),
             "live": rp.get("live", False),
             "discharge_latest_m3s": pv(latest["discharge_m3s"], latest["class"],
