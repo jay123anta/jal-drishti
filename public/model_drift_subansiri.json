@@ -1,10 +1,40 @@
 {
- "generated_at": "2026-09-09T12:04:07Z",
+ "generated_at": "2026-09-09T12:23:11Z",
  "basin": "subansiri",
  "model": "model-v0-subansiri",
- "inputs": {},
- "overall": "degraded",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 2482.13,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-09-09T12:23:11Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.22,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.141
+  },
+  "catchment_rain_24h_mm": {
+   "value": 5.3,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-09T12:23:11Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.261,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.183
+  },
+  "catchment_rain_48h_mm": {
+   "value": 13.8,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-09-09T12:23:11Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.296,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.198
+  }
+ },
+ "overall": "in-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
- "note": "drift never changes a colour; it flags extrapolation in the Technical view",
- "error": "model_forecast_subansiri.json missing or degraded - no live inputs to compare"
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
