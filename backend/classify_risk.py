@@ -182,25 +182,60 @@ def main() -> int:
     except (FileNotFoundError, ValueError):
         pass
 
+    # distance to the nearest real river channel (backend/fetch_river_distance.py);
+    # absent until that cached layer has been built, and the wording adapts
+    river_dist = {}
+    try:
+        for r in load_json(DATA_DIR / "river_distance.json")["villages"]:
+            if r.get("distance_km") is not None:
+                river_dist[r["key"]] = r["distance_km"]
+    except (FileNotFoundError, ValueError):
+        pass
+
     def exposure(v, rp, rp_km):
+        """Terrain context for a village. Never part of the risk colour.
+
+        Two different distances exist here and they must not be conflated:
+          - river_km  : to the nearest mapped river CHANNEL (what a reader means)
+          - point_km  : to this basin's modelled GloFAS point, often tens of km
+                        away along the same river
+        The old text printed point_km under the words "from the river", which
+        made valley villages read as though they were far from any water.
+        """
         vk = f"v:{v['name']}|{v['district']}"
         rk = f"r:{rp['id']}|"
         ve, re_ = elev.get(vk), elev.get(rk)
         if ve is None or re_ is None:
             return None
-        drop = round(ve - re_, 1)   # village height above the nearest river cell
-        if drop <= 6 and rp_km <= 8:
-            tier, plain = "higher", ("low-lying and close to the river - more exposed "
-                                     "if that river floods")
-        elif drop >= 20 or rp_km >= 20:
-            tier, plain = "lower", "on higher ground or well back from the river"
+        drop = round(ve - re_, 1)   # village height above the modelled river cell
+        river_km = river_dist.get(vk)
+        # Prefer the real channel distance; fall back to the modelled point only
+        # when OSM has not been fetched, and say so rather than implying water.
+        near_km = river_km if river_km is not None else rp_km
+        if drop <= 6 and near_km <= 8:
+            tier = "higher"
+        elif drop >= 20 or near_km >= 20:
+            tier = "lower"
         else:
-            tier, plain = "moderate", "mid-level ground, moderate distance from the river"
-        return pv(tier, OBSERVED,
-                  "Open-Meteo elevation API (Copernicus GLO-90 DEM); terrain context, "
-                  "NOT part of the risk colour", now,
-                  village_elevation_m=ve, height_above_river_m=drop,
-                  distance_to_river_km=round(rp_km, 1), plain=plain)
+            tier = "moderate"
+        # State which fact applies instead of an "A or B" the reader cannot resolve.
+        if river_km is not None:
+            where = (f"about {river_km} km from the nearest river"
+                     if river_km >= 1 else "right beside a river")
+        else:
+            where = f"about {round(rp_km, 1)} km from our measuring point on the river"
+        high = ("only about {} m above the river" if drop < 10 else
+                "about {} m above the river").format(abs(drop) if drop >= 0 else drop)
+        plain = f"{high}, {where}"
+        out = pv(tier, OBSERVED,
+                 "Open-Meteo elevation API (Copernicus GLO-90 DEM) for height; "
+                 + ("OpenStreetMap river network for distance" if river_km is not None
+                    else "distance measured to the modelled river point, not to water")
+                 + "; terrain context, NOT part of the risk colour", now,
+                 village_elevation_m=ve, height_above_river_m=drop,
+                 distance_to_nearest_river_km=river_km,
+                 distance_to_model_point_km=round(rp_km, 1), plain=plain)
+        return out
 
     # Model v0 (Step M6): Dikhow-basin villages take their colour from the
     # shipped, walk-forward-validated model; everyone else keeps the

@@ -24,6 +24,11 @@ README-DEV.md
 public/*.md
 data/history/*.md
 
+# raw OSM river geometry tiles stay local (large; the derived per-village
+# distances in data/river_distance.json are committed, and the tiles are
+# reproducible via backend/fetch_river_distance.py --refresh)
+data/history/osm_rivers/
+
 # NERLDC PSP raw PDFs stay local (hundreds of MB; parsed parquet is committed,
 # and the PDFs are reproducible via backend/fetch_nerldc_psp.py --backfill)
 data/history/nerldc/raw/
