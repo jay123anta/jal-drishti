@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-09T18:03:42Z",
+ "generated_at": "2026-09-09T20:05:10Z",
  "degraded": false,
  "basin": "ranganadi",
  "model": "model-v0-ranganadi",
@@ -12,75 +12,75 @@
    "value": 301.69,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-09T18:03:42Z",
+   "retrieved_at": "2026-09-09T20:05:10Z",
    "date": "2026-09-09"
   },
   "catchment_rain_24h_mm": {
-   "value": 5.8,
+   "value": 4.7,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 ranganadi catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T18:03:42Z"
+   "retrieved_at": "2026-09-09T20:05:10Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 15.1,
+   "value": 15.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 ranganadi catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T18:03:42Z"
+   "retrieved_at": "2026-09-09T20:05:10Z"
   }
  },
  "threshold_m3s": {
   "value": 692.1,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (elevated level, YELLOW tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T18:03:42Z"
+  "retrieved_at": "2026-09-09T20:05:10Z"
  },
  "threshold_extreme_m3s": {
   "value": 964.0,
   "class": "OBSERVED",
   "source": "98th percentile of 2015-2025 monsoon GloFAS reanalysis (extreme level, RED tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T18:03:42Z"
+  "retrieved_at": "2026-09-09T20:05:10Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 298.4,
+    "value": 294.2,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T18:03:42Z"
+    "retrieved_at": "2026-09-09T20:05:10Z"
    },
    "p_exceed_threshold": {
     "value": 0.002,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:42Z"
+    "retrieved_at": "2026-09-09T20:05:10Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:42Z"
+    "retrieved_at": "2026-09-09T20:05:10Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 352.3,
+    "value": 331.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T18:03:42Z"
+    "retrieved_at": "2026-09-09T20:05:10Z"
    },
    "p_exceed_threshold": {
-    "value": 0.008,
+    "value": 0.006,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:42Z"
+    "retrieved_at": "2026-09-09T20:05:10Z"
    },
    "p_exceed_extreme": {
     "value": 0.002,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for ranganadi - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-ranganadi-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:42Z"
+    "retrieved_at": "2026-09-09T20:05:10Z"
    }
   }
  },
@@ -88,7 +88,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed q98 extreme) >= 0.5 RED, else P(exceed q90 elevated) >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-09T18:03:42Z",
+  "retrieved_at": "2026-09-09T20:05:10Z",
   "p_exceed_h1": 0.002,
   "p_exceed_extreme_h1": 0.0
  },

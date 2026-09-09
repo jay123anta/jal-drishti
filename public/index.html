@@ -174,6 +174,15 @@
   .pp .tw-now { background: var(--river-tint); color: var(--river-deep); }
   .pp .tw-ahead { background: var(--amber-bg); color: var(--amber-ink); }
   .pp .tw-past { background: var(--page); color: var(--muted); }
+  /* Who produced the number. A reader must be able to tell an official figure
+     from something this project worked out, without reading the sentence. */
+  .pp .sr { display: inline-block; margin-right: var(--s2); padding: 0 var(--s2);
+    border-radius: 3px; font-size: var(--fs-xs); font-weight: 700;
+    letter-spacing: .04em; vertical-align: 1px; border: 1px solid transparent; }
+  .pp .sr-cwc { background: var(--surface); color: var(--river-deep);
+    border-color: var(--river); }
+  .pp .sr-us { background: var(--surface); color: var(--muted);
+    border-color: var(--ctrl-border); border-style: dashed; }
   .pp .official { background: var(--river-tint); border-left: 3px solid var(--river);
     border-radius: 0 var(--r) var(--r) 0; padding: var(--s2) var(--s4); margin-top: var(--s3); }
 
@@ -386,6 +395,13 @@
     hours (as issued). Gauge readings and their arrows are the latest measurement.
     Village colours are our estimate for the <b>day ahead</b>. Lines like
     "CWC expects…" are the official outlook for the coming days.</p>
+    <p style="margin-top:8px"><b>The small tags inside a popup.</b> Every line tells you
+    two things before you read it. <b>When</b> it is about: <b>NOW</b> is a measurement
+    just taken, <b>NEXT 7 DAYS</b> or <b>TOMORROW</b> is a look ahead, <b>LAST 2 DAYS</b>
+    looks back. And <b>who says so</b>: <b>FROM CWC</b> means the Central Water Commission
+    published that number exactly as shown, while <b>WORKED OUT BY US</b> means this
+    project did the arithmetic - for example CWC publishes a gauge reading every hour,
+    and we compare two of them to say whether the water is rising.</p>
     <p style="margin-top:8px"><b>Whose word is it?</b> Alerts, gauge readings and the
     warning/danger marks are the <b>Government of India's</b> (CWC, ASDMA, IMD). The
     river-flow history behind our estimates comes from the <b>EU's official global
@@ -500,23 +516,66 @@ function officialStatus(c) {
 }
 const OFFICIAL_COLOR = { above_danger: "#C4402F", above_warning: "#DB9E1E", below_warning: "#0F6B84" };
 
-// Official CWC gauge sentence (plain). c = station entry from cwc_stations.json
-function cwcPlain(c, short) {
+// Is an IST timestamp ("YYYY-MM-DD HH:MM:SS") still in the future?
+function istInFuture(s) {
+  const d = new Date(String(s).replace(" ", "T") + "+05:30");
+  return !isNaN(d) && d.getTime() > Date.now();
+}
+
+// CWC's own look-ahead, as ONE sentence about the future. Never renders a
+// timestamp that has already passed as something still expected: CWC's forecast
+// series begins at its issue time, so once a river is already high the first
+// above-warning point is in the past and read as "expects it to reach the
+// warning mark around yesterday".
+// Chips that say WHO produced a number, in words a first-time reader can act on.
+const FROM_CWC = `<span class="sr sr-cwc">FROM CWC</span>`;
+const BY_US = `<span class="sr sr-us">WORKED OUT BY US</span>`;
+const AHEAD_CHIP = `<span class="tw tw-ahead">NEXT 7 DAYS</span>`;
+
+function cwcAhead(c) {
+  if (!c || c.degraded) return "";
+  const warn = c.warning_level_m.value, danger = c.danger_level_m.value;
+  const pk = c.cwc_forecast_peak_m || {};
+  const peak = pk.value, at = pk.peak_at_ist;
+  const when = at ? ` around ${esc(humanIst(at))}` : "";
+  const cross = (c.cwc_forecast_crosses_warning_at_ist || {}).value
+    || c.cwc_forecast_crosses_warning_at_ist;   // tolerate the old bare shape
+  // CWC publishes the whole 7-day series. Picking its highest point, and
+  // comparing that against CWC's own marks, is this project's arithmetic - so
+  // the two are shown on separate lines with separate credit.
+  const cwcLine = peak != null
+    ? `<div class="when">${AHEAD_CHIP}${FROM_CWC}CWC's own 7-day forecast for this gauge reaches <b>${peak} m</b>${when}.</div>`
+    : "";
+  let ourLine = "";
+  if (peak != null && danger != null && peak >= danger)
+    ourLine = `<div class="when">${BY_US}Comparing that with CWC's danger mark (${danger} m): the forecast goes <b>above the danger mark</b>.</div>`;
+  else if (typeof cross === "string" && istInFuture(cross))
+    ourLine = `<div class="when">${BY_US}Reading their forecast, the water reaches the warning mark (${warn} m) around <b>${esc(humanIst(cross))}</b>.</div>`;
+  else if (peak != null && warn != null && peak >= warn)
+    ourLine = `<div class="when">${BY_US}Comparing that with CWC's warning mark (${warn} m): the forecast stays above the warning mark.</div>`;
+  else if (peak != null && warn != null)
+    ourLine = `<div class="when">${BY_US}Comparing that with CWC's warning mark (${warn} m): the forecast stays below it.</div>`;
+  return cwcLine + ourLine;
+}
+
+// Official CWC gauge block. One block, one subject: where the water is now and
+// which way it is moving, so the same gauge is never described in two places.
+// c = station entry from cwc_stations.json; g = gaugeTrend(c) or null.
+function cwcPlain(c, short, g) {
   if (!c || c.degraded || c.observed_level_m.value == null) return "";
   const lvl = c.observed_level_m.value, warn = c.warning_level_m.value, danger = c.danger_level_m.value;
   let where;
   if (danger != null && lvl >= danger) where = `above the DANGER mark (${danger} m)`;
   else if (warn != null && lvl >= warn) where = `above the warning mark (${warn} m), below the danger mark (${danger} m)`;
   else where = `below the warning mark (${warn} m)`;
-  // CWC's own look-ahead is kept on its own line behind an AHEAD chip, so a
-  // measured reading and a prediction never sit in one undifferentiated sentence.
-  let fc = "";
-  if (c.cwc_forecast_crosses_warning_at_ist)
-    fc = `<div class="when"><span class="tw tw-ahead">AHEAD</span>CWC expects it to reach the warning mark around ${esc(humanIst(c.cwc_forecast_crosses_warning_at_ist))}.</div>`;
-  else if (c.cwc_forecast_peak_m && c.cwc_forecast_peak_m.value != null)
-    fc = `<div class="when"><span class="tw tw-ahead">NEXT 7 DAYS</span>CWC expects it to stay below the warning mark (highest expected ${c.cwc_forecast_peak_m.value} m).</div>`;
-  return `<div class="official"><span class="tw tw-now">NOW</span><b>Official river gauge</b> at ${esc(c.plain_name)}: ${lvl} m - ${where}.
-    <div class="when">Reading ${esc(humanTime(c.observed_level_m.observed_at_utc))} · Source: Central Water Commission</div>${short ? "" : fc}</div>`;
+  // CWC publishes readings, not a trend word. "Rising" is this project comparing
+  // two of their readings, so it gets its own line and its own credit.
+  const move = g
+    ? `<div class="when">${BY_US}Comparing their last two readings, the water is <b>${esc(g.word)}</b>${
+        g.delta != null ? ` - ${g.delta > 0 ? "up" : g.delta < 0 ? "down" : "changed"} ${Math.abs(g.delta)} m in ${esc(g.span)}` : ""}.</div>`
+    : "";
+  return `<div class="official"><span class="tw tw-now">NOW</span>${FROM_CWC}<b>Official river gauge</b> at ${esc(c.plain_name)}: <b>${lvl} m</b> - ${where}.
+    <div class="when">Reading ${esc(humanTime(c.observed_level_m.observed_at_utc))} · Central Water Commission</div>${move}${short ? "" : cwcAhead(c)}</div>`;
 }
 
 /* ---------- popups ---------- */
@@ -566,33 +625,33 @@ function replayVillagePopup(v, step, whenLabel) {
   </div>`;
 }
 
+// Three blocks, in order of what a reader needs, each about one thing only:
+//   1. official gauge NOW (level, marks, which way it is moving)
+//   2. official CWC forecast for the days AHEAD
+//   3. our own flow estimate, clearly subordinate and clearly a different window
+// The gauge used to be described twice - trend at the top, level further down -
+// with our own estimate wedged between them, which made "now", "ahead" and
+// "two days ago" impossible to tell apart.
 function riverPopup(r, c) {
   const t = r.trend_48h || {};
-  const arrow = TREND_ARROW[t.value] || "";
+  const g = gaugeTrend(c);
+  const hasGauge = c && !c.degraded && c.observed_level_m.value != null;
+  const ours = t.value || null;
+  const pct = t.pct_change_48h;
+  const oursLine = ours
+    ? `Our own flow estimate: <b>${esc(ours)}</b>${pct != null
+        ? ` (${pct > 0 ? "+" : ""}${esc(pct)} % comparing today with two days ago)` : ""}.`
+    : "We have no flow estimate of our own for this point right now.";
+  const oursNote = hasGauge
+    ? ` A different measurement over a longer window - for what the river is doing now, use the gauge above.`
+    : "";
   return `<div class="pp">
     <h3>${esc(r.river)} <span class="lbl">${esc(r.site)}</span></h3>
-    ${(() => {
-      const g = gaugeTrend(c);
-      if (!g) return `<div class="lead"><span class="tw tw-past">LAST 2 DAYS</span>${arrow ? `<b style="font-size:15px">${arrow}</b> ` : ""}${esc(riverLead(r))}</div>`;
-      const gArrow = TREND_ARROW[g.word] || "";
-      const dTxt = g.delta != null ? ` (${g.delta > 0 ? "up" : g.delta < 0 ? "down" : "change"} ${Math.abs(g.delta)} m in ${g.span})` : "";
-      const dayTxt = (g.dayWord && g.dayWord !== g.word)
-        ? ` Over the whole day it has been ${g.dayWord}${g.dayDelta != null ? ` (${g.dayDelta > 0 ? "+" : ""}${g.dayDelta} m)` : ""}.` : "";
-      const ours = t.value || null;
-      const clash = ours && ours !== g.word;
-      // These two answer DIFFERENT questions and must never look like rival
-      // answers to the same one: the gauge is a measured water level over the
-      // last few hours, ours is computed river flow today vs two days ago.
-      const oursTxt = ours
-        ? `Separately, our own figures compare the river's flow today with two days ago, and make it <b>${esc(ours)}</b> over that longer window`
-          + (t.pct_change_48h != null ? ` (${t.pct_change_48h > 0 ? "+" : ""}${esc(t.pct_change_48h)} % in 2 days)` : "")
-          + `.${clash ? " That is a different measurement over a different period, not a second opinion on the last few hours - for what the river is doing now, follow the official gauge." : ""}`
-        : "We have no flow comparison of our own for this point right now.";
-      return `<div class="lead"><span class="tw tw-now">NOW</span><b style="font-size:15px">${gArrow}</b> The official river gauge here shows the water <b>${esc(g.word.toUpperCase())}</b> right now${esc(dTxt)}.${esc(dayTxt)}</div>
-        <div class="when"><span class="tw tw-past">LAST 2 DAYS</span>${oursTxt}</div>`;
-    })()}
-    <div class="when">Our river figures fetched ${esc(humanTime(r.discharge_latest_m3s.retrieved_at))}</div>
-    ${cwcPlain(c, false)}
+    ${hasGauge
+      ? cwcPlain(c, false, g)
+      : `<div class="lead"><span class="tw tw-past">LAST 2 DAYS</span>${esc(riverLead(r))}</div>`}
+    ${hasGauge ? `<div class="when"><span class="tw tw-past">LAST 2 DAYS</span>${oursLine}${oursNote}</div>` : ""}
+    <div class="when">Our figures fetched ${esc(humanTime(r.discharge_latest_m3s.retrieved_at))}</div>
     <details><summary>Technical details</summary>${techRiver(r, c)}</details>
   </div>`;
 }

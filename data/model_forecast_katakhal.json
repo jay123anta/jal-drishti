@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-09T18:03:56Z",
+ "generated_at": "2026-09-09T20:05:22Z",
  "degraded": false,
  "basin": "katakhal",
  "model": "model-v0-katakhal",
@@ -12,33 +12,33 @@
    "value": 373.11,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-09T18:03:56Z",
+   "retrieved_at": "2026-09-09T20:05:22Z",
    "date": "2026-09-09"
   },
   "catchment_rain_24h_mm": {
-   "value": 19.4,
+   "value": 8.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 katakhal catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T18:03:56Z"
+   "retrieved_at": "2026-09-09T20:05:22Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 38.3,
+   "value": 31.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 katakhal catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T18:03:56Z"
+   "retrieved_at": "2026-09-09T20:05:22Z"
   }
  },
  "threshold_m3s": {
   "value": 353.8,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (elevated level, YELLOW tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T18:03:56Z"
+  "retrieved_at": "2026-09-09T20:05:22Z"
  },
  "threshold_extreme_m3s": {
   "value": 538.7,
   "class": "OBSERVED",
   "source": "98th percentile of 2015-2025 monsoon GloFAS reanalysis (extreme level, RED tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T18:03:56Z"
+  "retrieved_at": "2026-09-09T20:05:22Z"
  },
  "predictions": {
   "h1": {
@@ -47,19 +47,19 @@
     "value": 373.1,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for katakhal - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-katakhal-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T18:03:56Z"
+    "retrieved_at": "2026-09-09T20:05:22Z"
    },
    "p_exceed_threshold": {
     "value": 1.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for katakhal - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-katakhal-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:56Z"
+    "retrieved_at": "2026-09-09T20:05:22Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for katakhal - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-katakhal-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:56Z"
+    "retrieved_at": "2026-09-09T20:05:22Z"
    }
   },
   "h2": {
@@ -68,19 +68,19 @@
     "value": 373.1,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for katakhal - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-katakhal-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T18:03:56Z"
+    "retrieved_at": "2026-09-09T20:05:22Z"
    },
    "p_exceed_threshold": {
     "value": 0.986,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for katakhal - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-katakhal-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:56Z"
+    "retrieved_at": "2026-09-09T20:05:22Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for katakhal - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-katakhal-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T18:03:56Z"
+    "retrieved_at": "2026-09-09T20:05:22Z"
    }
   }
  },
@@ -88,7 +88,7 @@
   "value": "YELLOW",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed q98 extreme) >= 0.5 RED, else P(exceed q90 elevated) >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-09T18:03:56Z",
+  "retrieved_at": "2026-09-09T20:05:22Z",
   "p_exceed_h1": 1.0,
   "p_exceed_extreme_h1": 0.0
  },

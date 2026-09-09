@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-09-09T17:59:15Z",
+ "generated_at": "2026-09-09T19:59:20Z",
  "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in)",
  "attribution": "Data: Central Water Commission, Ministry of Jal Shakti, Government of India (public flood dissemination). Levels are official gauge readings; forecasts are CWC's.",
  "fetch_policy": "fetched at most every 3 h (portal update cadence); documented project rules",
- "last_fetch_at": "2026-09-09T17:59:15Z",
+ "last_fetch_at": "2026-09-09T19:59:20Z",
  "degraded_stations": [],
  "archive_health": {
   "stations_with_gaps": [
@@ -36,83 +36,89 @@
     "value": 91.4,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 92.4,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 94.35,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 90.93,
+    "value": 90.9,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-09 23:00:00",
+    "observed_at_utc": "2026-09-09T17:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 464.0789,
+    "value": 459.5999,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.47,
+    "value": 0.5,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "delta_m": -0.06,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "compared_with_utc": "2026-09-09T11:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.23,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.2,
+    "compared_with_utc": "2026-09-08T17:30Z"
    },
    "cwc_forecast_peak_m": {
     "value": 91.22,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-15 04:00:00"
+    "peak_at_ist": "2026-09-15 05:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": null,
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": null,
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 91.4
+   },
    "archive": {
-    "observed_rows": 333,
+    "observed_rows": 336,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T17:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 348
+    "span_hours": 351
    },
    "degraded": false,
    "stale": false,
@@ -130,83 +136,89 @@
     "value": 93.46,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 94.46,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 96.49,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 92.85,
+    "value": 92.84,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 259.2854,
+    "value": 261.2472,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.61,
+    "value": 0.62,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.02,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.01,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.53,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.47,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 94.0,
+    "value": 93.94,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
     "peak_at_ist": "2026-09-14 04:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-13 02:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-13 04:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 93.46
+   },
    "archive": {
-    "observed_rows": 333,
+    "observed_rows": 337,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 348
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,
@@ -224,83 +236,89 @@
     "value": 59.5,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 60.5,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 62.2,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 56.13,
+    "value": 56.12,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-09 23:00:00",
+    "observed_at_utc": "2026-09-09T17:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 1366.646,
+    "value": 1416.8765,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 3.37,
+    "value": 3.38,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
-    "value": "falling",
+    "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.03,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.02,
+    "compared_with_utc": "2026-09-09T11:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.14,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.12,
+    "compared_with_utc": "2026-09-08T17:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 58.1,
+    "value": 57.97,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
     "peak_at_ist": "2026-09-16 09:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": null,
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": null,
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 59.5
+   },
    "archive": {
-    "observed_rows": 333,
+    "observed_rows": 336,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T17:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 348
+    "span_hours": 351
    },
    "degraded": false,
    "stale": false,
@@ -318,83 +336,89 @@
     "value": 55.0,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 56.0,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 58.09,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 53.29,
+    "value": 53.28,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 19:00:00",
-    "observed_at_utc": "2026-09-09T13:30Z"
+    "observed_at_ist": "2026-09-09 23:00:00",
+    "observed_at_utc": "2026-09-09T17:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 1288.3126,
+    "value": 1366.9552,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 1.71,
+    "value": 1.72,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.01,
-    "compared_with_utc": "2026-09-09T07:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.02,
+    "compared_with_utc": "2026-09-09T11:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.17,
-    "compared_with_utc": "2026-09-08T13:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.16,
+    "compared_with_utc": "2026-09-08T17:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 55.83,
+    "value": 55.71,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
     "peak_at_ist": "2026-09-16 09:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-14 20:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-15 02:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 55.0
+   },
    "archive": {
-    "observed_rows": 332,
+    "observed_rows": 336,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T13:30Z",
+    "observed_last_utc": "2026-09-09T17:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 347
+    "span_hours": 351
    },
    "degraded": false,
    "stale": false,
@@ -412,83 +436,89 @@
     "value": 77.5,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 78.5,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 78.5,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 76.95,
+    "value": 76.88,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 1233.2977,
+    "value": 1224.2001,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.55,
+    "value": 0.62,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.06,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.09,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.43,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.39,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 77.66,
+    "value": 77.61,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-16 02:00:00"
+    "peak_at_ist": "2026-09-16 09:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-13 19:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-14 10:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 77.5
+   },
    "archive": {
-    "observed_rows": 333,
+    "observed_rows": 337,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 348
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,
@@ -506,21 +536,21 @@
     "value": 104.7,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 105.7,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 106.48,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
@@ -528,16 +558,16 @@
     "value": 105.09,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 21:00:00",
-    "observed_at_utc": "2026-09-09T15:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 20658.2969,
+    "value": 20578.4629,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
@@ -546,43 +576,49 @@
     "value": -0.39,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "delta_m": 0.0,
-    "compared_with_utc": "2026-09-09T09:30Z"
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "delta_m": 0.0,
-    "compared_with_utc": "2026-09-08T15:30Z"
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
     "value": 105.55,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-14 01:00:00"
+    "peak_at_ist": "2026-09-14 02:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-09 10:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-09 10:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 104.7
+   },
    "archive": {
-    "observed_rows": 334,
+    "observed_rows": 337,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T15:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 349
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,
@@ -600,83 +636,89 @@
     "value": 64.23,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 65.23,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 66.59,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 64.19,
+    "value": 64.17,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 24931.373,
+    "value": 24884.3691,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.04,
+    "value": 0.06,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
-    "value": "falling",
+    "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.03,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.02,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.1,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.13,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 65.5,
+    "value": 65.48,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-15 13:00:00"
+    "peak_at_ist": "2026-09-15 17:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-12 18:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-12 19:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 64.23
+   },
    "archive": {
-    "observed_rows": 333,
+    "observed_rows": 337,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 348
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,
@@ -694,21 +736,21 @@
     "value": 48.68,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 49.68,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 51.46,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
@@ -716,16 +758,16 @@
     "value": 47.97,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-09 23:00:00",
+    "observed_at_utc": "2026-09-09T17:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 27511.4238,
+    "value": 27601.8848,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
@@ -734,43 +776,49 @@
     "value": 0.71,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.01,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.0,
+    "compared_with_utc": "2026-09-09T11:30Z"
    },
    "observed_trend_24h": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "delta_m": -0.03,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "compared_with_utc": "2026-09-08T17:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 49.44,
+    "value": 49.41,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-16 07:00:00"
+    "peak_at_ist": "2026-09-16 04:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-13 18:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-13 19:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 48.68
+   },
    "archive": {
-    "observed_rows": 333,
+    "observed_rows": 336,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T17:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 348
+    "span_hours": 351
    },
    "degraded": false,
    "stale": false,
@@ -788,83 +836,89 @@
     "value": 44.1,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 45.1,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 46.2,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 44.47,
+    "value": 44.27,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 2579.5972,
+    "value": 2571.4822,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Above Normal",
    "margin_to_warning_m": {
-    "value": -0.37,
+    "value": -0.17,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.03,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.25,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
-    "value": "rising",
+    "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.16,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.04,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 44.72,
+    "value": 44.68,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
     "peak_at_ist": "2026-09-12 13:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-09 10:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-09 10:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 44.1
+   },
    "archive": {
-    "observed_rows": 334,
+    "observed_rows": 338,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 14,
     "longest_gap_h": 14,
-    "span_hours": 348
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,
@@ -882,83 +936,89 @@
     "value": 18.83,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 19.83,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 21.84,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 18.07,
+    "value": 18.1,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 21:00:00",
-    "observed_at_utc": "2026-09-09T15:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 296.9953,
+    "value": 291.0789,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.76,
+    "value": 0.73,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.11,
-    "compared_with_utc": "2026-09-09T09:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.08,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.39,
-    "compared_with_utc": "2026-09-08T15:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.37,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 20.07,
+    "value": 19.83,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-16 08:00:00"
+    "peak_at_ist": "2026-09-16 09:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-10 05:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-14 13:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 18.83
+   },
    "archive": {
-    "observed_rows": 334,
+    "observed_rows": 337,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T15:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 349
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,
@@ -976,83 +1036,89 @@
     "value": 88.5,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 89.5,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 92.45,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 88.09,
+    "value": 88.16,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 839.876,
+    "value": 827.181,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.41,
+    "value": 0.34,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.04,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.12,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
-    "value": "falling",
+    "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.21,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.03,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 88.29,
+    "value": 88.33,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-16 01:00:00"
+    "peak_at_ist": "2026-09-16 00:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": null,
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": null,
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 88.5
+   },
    "archive": {
-    "observed_rows": 333,
+    "observed_rows": 337,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 348
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,
@@ -1070,83 +1136,89 @@
     "value": 81.53,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 82.53,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 86.21,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 80.74,
+    "value": 80.73,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 1705.3148,
+    "value": 1700.0822,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.79,
+    "value": 0.8,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "delta_m": -0.02,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.04,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.03,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 81.65,
+    "value": 81.64,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-13 05:00:00"
+    "peak_at_ist": "2026-09-13 04:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-12 20:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-12 21:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 81.53
+   },
    "archive": {
-    "observed_rows": 228,
+    "observed_rows": 232,
     "observed_first_utc": "2026-08-31T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1344,
     "missing_hours": 0,
     "longest_gap_h": 0,
-    "span_hours": 228
+    "span_hours": 232
    },
    "degraded": false,
    "stale": false,
@@ -1164,83 +1236,89 @@
     "value": 99.43,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 100.43,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 101.31,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 93.87,
+    "value": 93.78,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 2265.8918,
+    "value": 2255.325,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 5.56,
+    "value": 5.65,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
-    "value": "steady",
+    "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.02,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.06,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.26,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.44,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 94.76,
+    "value": 94.72,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-12 19:00:00"
+    "peak_at_ist": "2026-09-12 18:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": null,
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": null,
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 99.43
+   },
    "archive": {
-    "observed_rows": 228,
+    "observed_rows": 232,
     "observed_first_utc": "2026-08-31T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1344,
     "missing_hours": 0,
     "longest_gap_h": 0,
-    "span_hours": 228
+    "span_hours": 232
    },
    "degraded": false,
    "stale": false,
@@ -1258,21 +1336,21 @@
     "value": 47.81,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 48.42,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 50.08,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
@@ -1280,16 +1358,16 @@
     "value": 45.68,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 388.4228,
+    "value": 387.7499,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
@@ -1298,43 +1376,49 @@
     "value": 2.13,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.01,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.0,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "steady",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.0,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.01,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
     "value": 45.81,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-13 08:00:00"
+    "peak_at_ist": "2026-09-13 10:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": null,
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": null,
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 47.81
+   },
    "archive": {
-    "observed_rows": 228,
+    "observed_rows": 232,
     "observed_first_utc": "2026-08-31T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1344,
     "missing_hours": 0,
     "longest_gap_h": 0,
-    "span_hours": 228
+    "span_hours": 232
    },
    "degraded": false,
    "stale": false,
@@ -1352,83 +1436,89 @@
     "value": 93.42,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 94.42,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 95.92,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 92.92,
+    "value": 92.9,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 20:00:00",
-    "observed_at_utc": "2026-09-09T14:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 159.9289,
+    "value": 158.4689,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Normal",
    "margin_to_warning_m": {
-    "value": 0.5,
+    "value": 0.52,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
-    "value": "steady",
+    "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.02,
-    "compared_with_utc": "2026-09-09T08:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.03,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.05,
-    "compared_with_utc": "2026-09-08T14:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.06,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 93.2,
+    "value": 93.19,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-16 08:00:00"
+    "peak_at_ist": "2026-09-16 09:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": null,
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": null,
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 93.42
+   },
    "archive": {
-    "observed_rows": 180,
+    "observed_rows": 184,
     "observed_first_utc": "2026-09-02T03:30Z",
-    "observed_last_utc": "2026-09-09T14:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1008,
     "missing_hours": 0,
     "longest_gap_h": 0,
-    "span_hours": 180
+    "span_hours": 184
    },
    "degraded": false,
    "stale": false,
@@ -1446,83 +1536,89 @@
     "value": 19.27,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 20.27,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 22.81,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 20.17,
+    "value": 20.52,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 21:00:00",
-    "observed_at_utc": "2026-09-09T15:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
     "value": 5.0,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
-   "condition": "Above Normal",
+   "condition": "Severe",
    "margin_to_warning_m": {
-    "value": -0.9,
+    "value": -1.25,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.8,
-    "compared_with_utc": "2026-09-09T09:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.74,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 2.17,
-    "compared_with_utc": "2026-09-08T15:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 2.39,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 22.16,
+    "value": 21.84,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
     "peak_at_ist": "2026-09-10 15:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-09 14:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-09 13:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 19.27
+   },
    "archive": {
-    "observed_rows": 181,
+    "observed_rows": 184,
     "observed_first_utc": "2026-09-02T03:30Z",
-    "observed_last_utc": "2026-09-09T15:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1008,
     "missing_hours": 0,
     "longest_gap_h": 0,
-    "span_hours": 181
+    "span_hours": 184
    },
    "degraded": false,
    "stale": false,
@@ -1540,21 +1636,21 @@
     "value": 28.94,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 29.94,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 30.95,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
@@ -1562,16 +1658,16 @@
     "value": 28.99,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 21:00:00",
-    "observed_at_utc": "2026-09-09T15:30Z"
+    "observed_at_ist": "2026-09-09 23:00:00",
+    "observed_at_utc": "2026-09-09T17:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 785.9161,
+    "value": 783.7208,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
@@ -1580,43 +1676,49 @@
     "value": -0.05,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
     "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "delta_m": 0.06,
-    "compared_with_utc": "2026-09-09T09:30Z"
+    "compared_with_utc": "2026-09-09T11:30Z"
    },
    "observed_trend_24h": {
     "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.06,
-    "compared_with_utc": "2026-09-08T15:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.08,
+    "compared_with_utc": "2026-09-08T17:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 30.14,
+    "value": 30.12,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
-    "peak_at_ist": "2026-09-12 20:00:00"
+    "peak_at_ist": "2026-09-12 22:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-09 10:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-09 10:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 28.94
+   },
    "archive": {
-    "observed_rows": 181,
+    "observed_rows": 183,
     "observed_first_utc": "2026-09-02T03:30Z",
-    "observed_last_utc": "2026-09-09T15:30Z",
+    "observed_last_utc": "2026-09-09T17:30Z",
     "forecast_rows": 1008,
     "missing_hours": 0,
     "longest_gap_h": 0,
-    "span_hours": 181
+    "span_hours": 183
    },
    "degraded": false,
    "stale": false,
@@ -1634,83 +1736,89 @@
     "value": 77.42,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "danger_level_m": {
     "value": 78.42,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "hfl_m": {
     "value": 80.16,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - official warning/danger/HFL marks (station metadata, unclassified per National Water Data Policy 4.2.3)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "note": "highest flood level on record"
    },
    "observed_level_m": {
-    "value": 78.37,
+    "value": 78.4,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - WIMS hourly observed water level (gauge telemetry)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
-    "observed_at_ist": "2026-09-09 21:00:00",
-    "observed_at_utc": "2026-09-09T15:30Z"
+    "observed_at_ist": "2026-09-10 00:00:00",
+    "observed_at_utc": "2026-09-09T18:30Z"
    },
    "cwc_discharge_m3s": {
-    "value": 838.1837,
+    "value": 828.955,
     "class": "OBSERVED",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - CWC-derived discharge (reference only; rating curves are classified)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m3/s",
     "note": "reference only, CWC-derived"
    },
    "condition": "Above Normal",
    "margin_to_warning_m": {
-    "value": -0.95,
+    "value": -0.98,
     "class": "OBSERVED",
     "source": "derived: official warning level minus latest observed level",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m"
    },
    "observed_trend_now": {
-    "value": "steady",
+    "value": "rising",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~6 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": 0.01,
-    "compared_with_utc": "2026-09-09T09:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": 0.05,
+    "compared_with_utc": "2026-09-09T12:30Z"
    },
    "observed_trend_24h": {
     "value": "falling",
     "class": "OBSERVED",
     "source": "derived from this project's archive of CWC observed levels (latest reading vs the reading ~24 h earlier)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
-    "delta_m": -0.39,
-    "compared_with_utc": "2026-09-08T15:30Z"
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "delta_m": -0.3,
+    "compared_with_utc": "2026-09-08T18:30Z"
    },
    "cwc_forecast_peak_m": {
-    "value": 78.71,
+    "value": 78.74,
     "class": "FORECAST",
     "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast public dissemination portal (aff.india-water.gov.in) - AFF 7-day model forecast level (CWC's own forecast, updated 3-hourly)",
-    "retrieved_at": "2026-09-09T17:59:15Z",
+    "retrieved_at": "2026-09-09T19:59:20Z",
     "unit": "m",
     "issued_at_ist": "2026-09-09 09:00:00",
     "peak_at_ist": "2026-09-15 21:00:00"
    },
-   "cwc_forecast_crosses_warning_at_ist": "2026-09-09 10:00:00",
+   "cwc_forecast_crosses_warning_at_ist": {
+    "value": "2026-09-09 10:00:00",
+    "class": "FORECAST",
+    "source": "derived by this project: first point in the CWC 7-day forecast series at or above the CWC warning mark (the crossing time is not published by CWC; the series and the mark are)",
+    "retrieved_at": "2026-09-09T19:59:20Z",
+    "warning_level_m": 77.42
+   },
    "archive": {
-    "observed_rows": 334,
+    "observed_rows": 337,
     "observed_first_utc": "2026-08-26T03:30Z",
-    "observed_last_utc": "2026-09-09T15:30Z",
+    "observed_last_utc": "2026-09-09T18:30Z",
     "forecast_rows": 1848,
     "missing_hours": 15,
     "longest_gap_h": 15,
-    "span_hours": 349
+    "span_hours": 352
    },
    "degraded": false,
    "stale": false,

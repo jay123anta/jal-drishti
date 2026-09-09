@@ -103,7 +103,7 @@ def main() -> int:
     required = {
         "village model forecast": 'class="tw tw-ahead">TOMORROW',
         "village current-conditions estimate": 'class="tw tw-now">NOW',
-        "official gauge reading": '<span class="tw tw-now">NOW</span><b>Official river gauge',
+        "official gauge reading": '<span class="tw tw-now">NOW</span>${FROM_CWC}<b>Official river gauge',
         "our 2-day river trend": 'class="tw tw-past">LAST 2 DAYS',
         "look-back popup": 'class="tw tw-past">THAT DAY',
     }
@@ -113,6 +113,51 @@ def main() -> int:
     for cls in ("tw-now", "tw-ahead", "tw-past"):
         if f".pp .{cls}" not in idx:
             errors.append(f"index.html: timeframe chip style .{cls} is not defined")
+    # A forecast sentence must never name a moment that has already passed. CWC's
+    # forecast series starts at its issue time, so the first above-warning point
+    # is in the past whenever a river is already high, and the popup once read
+    # "CWC expects it to reach the warning mark around yesterday".
+    if "function istInFuture(" not in idx or "istInFuture(cross)" not in idx:
+        errors.append("index.html: the past-forecast guard (istInFuture) is missing - "
+                      "an already-passed crossing time could render as still expected")
+    # The most serious official statement on the map must have wording at all.
+    if "above the danger mark" not in idx:
+        errors.append("index.html: no wording for a CWC forecast peak above the danger mark")
+    # A reader must be able to tell an official figure from something this project
+    # computed, without reading the sentence. Both chips, and the key that explains
+    # them, have to survive any edit.
+    for what, needle in {
+        "official-source chip": 'class="sr sr-cwc">FROM CWC',
+        "derived-source chip": 'class="sr sr-us">WORKED OUT BY US',
+        "plain-language key for the chips": "WORKED OUT BY US</b> means this",
+    }.items():
+        if needle not in idx:
+            errors.append(f"index.html: {what} is missing ({needle!r})")
+    for cls in ("sr-cwc", "sr-us"):
+        if f".pp .{cls}" not in idx:
+            errors.append(f"index.html: source chip style .{cls} is not defined")
+
+    # Every value in the CWC payload must carry its own provenance. The crossing
+    # time shipped bare for months, which made the ONE field this project computes
+    # look like an official CWC publication.
+    for sid, s in cwc.items():
+        v = s.get("cwc_forecast_crosses_warning_at_ist")
+        if v is not None and not isinstance(v, dict):
+            errors.append(f"station {s.get('aff_station')}: crossing time is a bare value "
+                          "with no source - it is derived, not published by CWC")
+
+    # Data-level cross-check: any station CWC forecasts above its danger mark is
+    # the most serious thing this map can show, so it must at least be present
+    # and self-consistent in the payload the page reads.
+    for sid, s in cwc.items():
+        pk = (s.get("cwc_forecast_peak_m") or {}).get("value")
+        dang = s.get("danger_level_m", {}).get("value")
+        warn = s.get("warning_level_m", {}).get("value")
+        if pk is None or dang is None or warn is None:
+            continue
+        if pk >= dang and not (s.get("cwc_forecast_peak_m") or {}).get("peak_at_ist"):
+            errors.append(f"station {s.get('aff_station')}: forecast peak {pk} m is above the "
+                          f"danger mark {dang} m but carries no peak time")
 
     sa_path = PUBLIC / "sachet_alerts.json"
     if sa_path.exists():

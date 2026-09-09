@@ -324,7 +324,15 @@ def station_entry(st: dict, res: dict | None, retrieved_at: str, error: str | No
                                  compared_with_utc=res["obs_trend_ref_utc"]),
         "cwc_forecast_peak_m": pv(res["peak_m"], FORECAST, SRC_FC, retrieved_at, unit="m",
                                   issued_at_ist=res["tof"], peak_at_ist=res["peak_at_ist"]),
-        "cwc_forecast_crosses_warning_at_ist": res["crosses_warning_at_ist"],
+        # Derived, not published: CWC gives the 7-day series, this is the first
+        # point in it at or above their warning mark. It was the one bare value
+        # in this payload, which made the only field we compute look official.
+        "cwc_forecast_crosses_warning_at_ist": pv(
+            res["crosses_warning_at_ist"], FORECAST,
+            "derived by this project: first point in the CWC 7-day forecast series "
+            "at or above the CWC warning mark (the crossing time is not published "
+            "by CWC; the series and the mark are)",
+            retrieved_at, warning_level_m=m.get("warning_m")),
         "archive": {"observed_rows": res["n_obs_archive"],
                     "observed_first_utc": res["archive_first_utc"],
                     "observed_last_utc": res["archive_last_utc"],
