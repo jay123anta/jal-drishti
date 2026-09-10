@@ -1,5 +1,5 @@
 {
- "attempted_at": "2026-09-03T05:05:02Z",
+ "attempted_at": "2026-09-10T04:29:58Z",
  "url": "https://api.open-meteo.com/v1/forecast",
  "params": {
   "hourly": "precipitation",
@@ -9,6 +9,6 @@
   "latitude": 26.01,
   "longitude": 94.52
  },
- "error": "GET https://api.open-meteo.com/v1/forecast failed after 3 attempts: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?hourly=precipitation&past_days=3&forecast_days=3&timezone=UTC&latitude=26.01&longitude=94.52 (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001A2F37ADFA0>: Failed to resolve 'api.open-meteo.com' ([Errno 11001] getaddrinfo failed)\"))",
+ "error": "GET https://api.open-meteo.com/v1/forecast failed after 3 attempts: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?hourly=precipitation&past_days=3&forecast_days=3&timezone=UTC&latitude=26.01&longitude=94.52 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))",
  "note": "Live API unreachable after retries. See RETRY-LIVE.md to swap real data back in."
 }

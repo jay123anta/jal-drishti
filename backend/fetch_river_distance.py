@@ -33,7 +33,7 @@ import urllib.request
 import numpy as np
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from common import DATA_DIR, OBSERVED, PUBLIC_DIR, load_json, save_json, utc_now_iso
+from common import DATA_DIR, OBSERVED, load_json, save_json, utc_now_iso
 
 CACHE = DATA_DIR / "history" / "osm_rivers"
 OUT = DATA_DIR / "river_distance.json"
@@ -87,8 +87,11 @@ def fetch_tile(s_lat, s_lon):
 
 def main() -> int:
     refresh = "--refresh" in sys.argv
-    villages = load_json(PUBLIC_DIR / "villages_status.json")["villages"]
-    pts = [(v["location"]["lat"], v["location"]["lon"]) for v in villages]
+    # Read the RAW village list, not the published status file: the published
+    # file is written later in the pipeline, so reading it left newly added
+    # villages without a distance until the next run.
+    villages = load_json(DATA_DIR / "villages.json")["villages"]
+    pts = [(v["lat"], v["lon"]) for v in villages]
     CACHE.mkdir(parents=True, exist_ok=True)
 
     geom = []                       # flat list of (lat, lon) river vertices
@@ -124,7 +127,7 @@ def main() -> int:
     gname = [g[2] for g in geom]
     rows = []
     for v in villages:
-        la, lo = v["location"]["lat"], v["location"]["lon"]
+        la, lo = v["lat"], v["lon"]
         box = (np.abs(glat - la) <= 0.6) & (np.abs(glon - lo) <= 0.6)
         idx = np.flatnonzero(box)
         if idx.size == 0:

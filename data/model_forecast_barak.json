@@ -1,86 +1,86 @@
 {
- "generated_at": "2026-09-09T20:03:31Z",
+ "generated_at": "2026-09-10T06:31:47Z",
  "degraded": false,
  "basin": "barak",
  "model": "model-v0-barak",
  "shipped": "B1_persistence",
  "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis - a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
  "model_card": "docs/MODEL-CARD-barak-v0.md",
- "feature_day": "2026-09-09",
+ "feature_day": "2026-09-10",
  "inputs": {
   "q_today_m3s": {
-   "value": 1797.87,
+   "value": 1777.28,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-09T20:03:31Z",
-   "date": "2026-09-09"
+   "retrieved_at": "2026-09-10T06:31:47Z",
+   "date": "2026-09-10"
   },
   "catchment_rain_24h_mm": {
-   "value": 3.8,
+   "value": 3.2,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 barak catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T20:03:31Z"
+   "retrieved_at": "2026-09-10T06:31:47Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 15.0,
+   "value": 14.8,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 barak catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T20:03:31Z"
+   "retrieved_at": "2026-09-10T06:31:47Z"
   }
  },
  "threshold_m3s": {
   "value": 1848.3,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (elevated level, YELLOW tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T20:03:31Z"
+  "retrieved_at": "2026-09-10T06:31:47Z"
  },
  "threshold_extreme_m3s": {
   "value": 2379.8,
   "class": "OBSERVED",
   "source": "98th percentile of 2015-2025 monsoon GloFAS reanalysis (extreme level, RED tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T20:03:31Z"
+  "retrieved_at": "2026-09-10T06:31:47Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 1797.9,
+    "value": 1777.3,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for barak - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-barak-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T20:03:31Z"
+    "retrieved_at": "2026-09-10T06:31:47Z"
    },
    "p_exceed_threshold": {
-    "value": 0.078,
+    "value": 0.049,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for barak - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-barak-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:03:31Z"
+    "retrieved_at": "2026-09-10T06:31:47Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for barak - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-barak-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:03:31Z"
+    "retrieved_at": "2026-09-10T06:31:47Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 1797.9,
+    "value": 1777.3,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for barak - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-barak-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T20:03:31Z"
+    "retrieved_at": "2026-09-10T06:31:47Z"
    },
    "p_exceed_threshold": {
-    "value": 0.145,
+    "value": 0.117,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for barak - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-barak-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:03:31Z"
+    "retrieved_at": "2026-09-10T06:31:47Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for barak - shipped: B1_persistence, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-barak-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:03:31Z"
+    "retrieved_at": "2026-09-10T06:31:47Z"
    }
   }
  },
@@ -88,8 +88,8 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed q98 extreme) >= 0.5 RED, else P(exceed q90 elevated) >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-09T20:03:31Z",
-  "p_exceed_h1": 0.078,
+  "retrieved_at": "2026-09-10T06:31:47Z",
+  "p_exceed_h1": 0.049,
   "p_exceed_extreme_h1": 0.0
  },
  "forecast_horizon": "1 day",

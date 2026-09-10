@@ -80,6 +80,12 @@ STATIONS = [
     {"aff": "MATIJURI", "poc_river": "katakhal_matijuri", "plain": "Matijuri (Katakhal)"},
     {"aff": "GOLOKGANJ", "poc_river": "sankosh_golokganj", "plain": "Golokganj (Sankosh)"},
     {"aff": "NUMALIGARH", "poc_river": None, "plain": "Numaligarh (Dhansiri)"},
+    # coverage-watch addition (2026-09-10): CWC publishes 203 stations; this one
+    # carries the Kushiyara, the river ASDMA alerted on and the watch flagged.
+    {"aff": "KARIMGANJ", "poc_river": "kushiyara_karimganj", "plain": "Karimganj (Kushiyara)"},
+    # official gauge on the Barak in the same district, downstream of Silchar and
+    # just above the split that feeds the Kushiyara - observed only, no model.
+    {"aff": "BADARPUR GHAT", "poc_river": None, "plain": "Badarpur Ghat (Barak, Sribhumi)"},
 ]
 
 HIST = DATA_DIR / "history" / "cwc_aff"

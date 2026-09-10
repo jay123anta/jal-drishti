@@ -55,6 +55,7 @@ DISTRICT_BBOX = {
     "Jorhat":     (26.55, 94.05, 26.90, 94.40),   # south bank, Dikhow/Brahmaputra side
     "Biswanath":  (26.60, 93.00, 26.95, 93.70),   # north bank, Jia Bharali/Tezpur reach
     "Dhubri":     (25.95, 89.70, 26.35, 90.10),   # Sankosh (coverage-watch)
+    "Karimganj":  (24.60, 92.15, 25.05, 92.60),   # Kushiyara reach (coverage-watch 2026-09-10)
 }
 
 # (name, district, fallback_lat, fallback_lon) - names are real; fallback
@@ -150,6 +151,18 @@ VILLAGES = [
     ("Golokganj", "Dhubri", 26.10, 89.84), ("Agomani", "Dhubri", 26.13, 89.88),
     ("Gauripur", "Dhubri", 26.08, 89.96), ("Dhubri", "Dhubri", 26.02, 89.98),
     ("Tamarhat", "Dhubri", 26.24, 89.87), ("Halakura", "Dhubri", 26.17, 89.93),
+    # coverage-watch 2026-09-10 - Karimganj / Sribhumi district (Kushiyara).
+    # ASDMA alerted on the Kushiyara and the watch flagged it as uncovered.
+    # Names and coordinates are OSM place nodes along the Kushiyara reach; the
+    # fetch resolves each against Overpass and marks any it cannot match.
+    ("Karimganj", "Karimganj", 24.8647, 92.3681),
+    ("Mahisashan", "Karimganj", 24.8237, 92.2874),
+    ("Nilambazar", "Karimganj", 24.7462, 92.3507),
+    ("Jalalpur", "Karimganj", 24.9919, 92.4580),
+    ("Kakordia", "Karimganj", 24.8557, 92.1819),
+    ("Bairagibazar", "Karimganj", 24.8547, 92.1572),
+    ("Badarpur", "Karimganj", 24.8711, 92.5585),
+    ("Pathar Kandi", "Karimganj", 24.6055, 92.3193),
     ("Palashbari", "Kamrup", 26.12, 91.54), ("Chhaygaon", "Kamrup", 26.05, 91.39),
     ("Boko", "Kamrup", 25.97, 91.22),
     # Goal C - fill existing districts (9 entries removed 2026-09-03: they

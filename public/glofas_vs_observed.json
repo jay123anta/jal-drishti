@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-10T04:32:36Z",
+ "generated_at": "2026-09-10T06:39:17Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-09-10T04:32:36Z"
+  "retrieved_at": "2026-09-10T06:39:17Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-09-10T04:32:36Z"
+  "retrieved_at": "2026-09-10T06:39:17Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -18,7 +18,7 @@
   "All windows so far are monsoon-season only; low-flow behaviour is untested."
  ],
  "summary": {
-  "stations_total": 18,
+  "stations_total": 20,
   "stations_scored": 15,
   "stations_in_medians": 13,
   "stations_flagged_implausible": 2,
@@ -364,6 +364,14 @@
    "corr": 0.428
   },
   {
+   "station": "BADARPUR GHAT",
+   "river": "BARAK",
+   "poc_river": null,
+   "n_days": 3,
+   "insufficient": true,
+   "note": "no modelled cell mapped to this station"
+  },
+  {
    "station": "CHOULDHOWAGHAT",
    "river": "SUBANSIRI",
    "poc_river": null,
@@ -378,6 +386,22 @@
    "n_days": 16,
    "insufficient": true,
    "note": "no modelled cell mapped to this station"
+  },
+  {
+   "station": "KARIMGANJ",
+   "river": "KUSHIYARA",
+   "poc_river": "kushiyara_karimganj",
+   "glofas_cell": [
+    24.875,
+    92.375
+   ],
+   "window_ist": [
+    "2026-09-08",
+    "2026-09-10"
+   ],
+   "n_days": 3,
+   "insufficient": true,
+   "note": "only 3 overlapping day(s); need 5"
   },
   {
    "station": "NUMALIGARH",

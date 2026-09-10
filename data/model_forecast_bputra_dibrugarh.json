@@ -1,86 +1,86 @@
 {
- "generated_at": "2026-09-09T20:04:10Z",
+ "generated_at": "2026-09-10T06:32:29Z",
  "degraded": false,
  "basin": "bputra_dibrugarh",
  "model": "model-v0-bputra_dibrugarh",
  "shipped": "trained_hgb",
  "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis - a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
  "model_card": "docs/MODEL-CARD-bputra_dibrugarh-v0.md",
- "feature_day": "2026-09-09",
+ "feature_day": "2026-09-10",
  "inputs": {
   "q_today_m3s": {
-   "value": 8355.03,
+   "value": 7942.28,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-09T20:04:10Z",
-   "date": "2026-09-09"
+   "retrieved_at": "2026-09-10T06:32:29Z",
+   "date": "2026-09-10"
   },
   "catchment_rain_24h_mm": {
-   "value": 1.3,
+   "value": 1.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 bputra_dibrugarh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T20:04:10Z"
+   "retrieved_at": "2026-09-10T06:32:29Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 6.5,
+   "value": 4.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 bputra_dibrugarh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T20:04:10Z"
+   "retrieved_at": "2026-09-10T06:32:29Z"
   }
  },
  "threshold_m3s": {
   "value": 20843.9,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (elevated level, YELLOW tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T20:04:10Z"
+  "retrieved_at": "2026-09-10T06:32:29Z"
  },
  "threshold_extreme_m3s": {
   "value": 27546.8,
   "class": "OBSERVED",
   "source": "98th percentile of 2015-2025 monsoon GloFAS reanalysis (extreme level, RED tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T20:04:10Z"
+  "retrieved_at": "2026-09-10T06:32:29Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 8110.8,
+    "value": 7562.7,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_dibrugarh - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_dibrugarh-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T20:04:10Z"
+    "retrieved_at": "2026-09-10T06:32:29Z"
    },
    "p_exceed_threshold": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_dibrugarh - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_dibrugarh-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:10Z"
+    "retrieved_at": "2026-09-10T06:32:29Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_dibrugarh - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_dibrugarh-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:10Z"
+    "retrieved_at": "2026-09-10T06:32:29Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 7868.8,
+    "value": 7359.3,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_dibrugarh - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_dibrugarh-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T20:04:10Z"
+    "retrieved_at": "2026-09-10T06:32:29Z"
    },
    "p_exceed_threshold": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_dibrugarh - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_dibrugarh-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:10Z"
+    "retrieved_at": "2026-09-10T06:32:29Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_dibrugarh - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_dibrugarh-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:10Z"
+    "retrieved_at": "2026-09-10T06:32:29Z"
    }
   }
  },
@@ -88,10 +88,10 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed q98 extreme) >= 0.5 RED, else P(exceed q90 elevated) >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-09T20:04:10Z",
+  "retrieved_at": "2026-09-10T06:32:29Z",
   "p_exceed_h1": 0.0,
   "p_exceed_extreme_h1": 0.0
  },
  "forecast_horizon": "1 day",
- "basis_plain": "A tested river model expects the Brahmaputra reach near here to stay in its normal range through tomorrow (river currently steady)."
+ "basis_plain": "A tested river model expects the Brahmaputra reach near here to stay in its normal range through tomorrow (river currently falling)."
 }

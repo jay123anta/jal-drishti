@@ -57,6 +57,11 @@ RIVER_POINTS = [
     {"id": "katakhal_matijuri",     "river": "Katakhal",    "site": "Matijuri (Hailakandi)", "lat": 24.649, "lon": 92.609, "qmin": 10, "qmax": 3000},
     # coverage-watch addition (2026-09-04): active SACHET alert on an uncovered river
     {"id": "sankosh_golokganj",     "river": "Sankosh",     "site": "Golokganj (Dhubri)", "lat": 26.107, "lon": 89.824, "qmin": 100, "qmax": None},
+    # coverage-watch addition (2026-09-10): ASDMA alert on the Kushiyara, which
+    # the watch flagged as uncovered. Anchor is the CWC KARIMGANJ gauge itself
+    # (24.87861, 92.35667); GloFAS carries roughly 530-650 m3/s here in a normal
+    # monsoon week, consistent with a Barak distributary rather than a headwater.
+    {"id": "kushiyara_karimganj",   "river": "Kushiyara",   "site": "Karimganj (Sribhumi)", "lat": 24.87861, "lon": 92.35667, "qmin": 100, "qmax": 6000},
 ]
 
 PARAMS_TEMPLATE = {

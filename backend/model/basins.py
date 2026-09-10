@@ -253,6 +253,28 @@ BASINS = {
         ],
         "cwc_station": "GOLOKGANJ",
     },
+    # coverage-watch addition (2026-09-10): ASDMA alerted on the Kushiyara at
+    # Karimganj and the watch flagged it as uncovered. The Kushiyara is not an
+    # independent river - the Barak splits below Silchar into the Surma and the
+    # Kushiyara, so this basin shares the Barak's hill catchment and takes the
+    # Barak itself as its upstream signal.
+    "kushiyara": {
+        "label": "Kushiyara (Barak distributary -> Karimganj, Sribhumi)",
+        "target": "kushiyara_karimganj",
+        "rain_points": [
+            {"id": "tamenglong",    "lat": 24.99, "lon": 93.50},   # Barak headwaters
+            {"id": "senapati",      "lat": 25.27, "lon": 94.02},
+            {"id": "jiribam",       "lat": 24.80, "lon": 93.12},
+            {"id": "haflong",       "lat": 25.17, "lon": 93.02},
+            {"id": "churachandpur", "lat": 24.33, "lon": 93.68},
+            {"id": "kolasib",       "lat": 24.22, "lon": 92.68},   # Mizoram flank
+        ],
+        "upstream": [
+            {"id": "barak_fulertal", "lat": 24.75, "lon": 93.05, "qmin": 100, "qmax": 6000},
+            {"id": "kushiyara_up",   "lat": 24.85, "lon": 92.50, "qmin": 50,  "qmax": 6000},
+        ],
+        "cwc_station": "KARIMGANJ",
+    },
 }
 
 # The remaining PoC river cells get DISCHARGE-ONLY history (for the seasonal

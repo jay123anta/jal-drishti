@@ -1,86 +1,86 @@
 {
- "generated_at": "2026-09-09T20:04:35Z",
+ "generated_at": "2026-09-10T06:32:56Z",
  "degraded": false,
  "basin": "bputra_guwahati",
  "model": "model-v0-bputra_guwahati",
  "shipped": "trained_hgb",
  "target_caveat": "Trained and evaluated against GloFAS v4 reanalysis - a MODELLED product, not observed river data. Observed CWC gauge data will replace this when access is granted. Predictions are modelled discharge, never 'river levels'.",
  "model_card": "docs/MODEL-CARD-bputra_guwahati-v0.md",
- "feature_day": "2026-09-09",
+ "feature_day": "2026-09-10",
  "inputs": {
   "q_today_m3s": {
-   "value": 19274.24,
+   "value": 18491.7,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-09T20:04:35Z",
-   "date": "2026-09-09"
+   "retrieved_at": "2026-09-10T06:32:56Z",
+   "date": "2026-09-10"
   },
   "catchment_rain_24h_mm": {
-   "value": 3.9,
+   "value": 1.6,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_guwahati catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T20:04:35Z"
+   "retrieved_at": "2026-09-10T06:32:56Z"
   },
   "catchment_rain_48h_mm": {
-   "value": 12.5,
+   "value": 11.6,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_guwahati catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-09T20:04:35Z"
+   "retrieved_at": "2026-09-10T06:32:56Z"
   }
  },
  "threshold_m3s": {
   "value": 39444.8,
   "class": "OBSERVED",
   "source": "90th percentile of 2015-2025 monsoon GloFAS reanalysis (elevated level, YELLOW tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T20:04:35Z"
+  "retrieved_at": "2026-09-10T06:32:56Z"
  },
  "threshold_extreme_m3s": {
   "value": 52545.2,
   "class": "OBSERVED",
   "source": "98th percentile of 2015-2025 monsoon GloFAS reanalysis (extreme level, RED tier; NOT an official danger level)",
-  "retrieved_at": "2026-09-09T20:04:35Z"
+  "retrieved_at": "2026-09-10T06:32:56Z"
  },
  "predictions": {
   "h1": {
    "horizon": "1 day",
    "q_m3s": {
-    "value": 18604.3,
+    "value": 17716.3,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_guwahati - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_guwahati-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T20:04:35Z"
+    "retrieved_at": "2026-09-10T06:32:56Z"
    },
    "p_exceed_threshold": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_guwahati - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_guwahati-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:35Z"
+    "retrieved_at": "2026-09-10T06:32:56Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_guwahati - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_guwahati-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:35Z"
+    "retrieved_at": "2026-09-10T06:32:56Z"
    }
   },
   "h2": {
    "horizon": "2 days",
    "q_m3s": {
-    "value": 18025.2,
+    "value": 17200.4,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_guwahati - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_guwahati-v0.md); modelled discharge, NOT observed river levels",
-    "retrieved_at": "2026-09-09T20:04:35Z"
+    "retrieved_at": "2026-09-10T06:32:56Z"
    },
    "p_exceed_threshold": {
     "value": 0.002,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_guwahati - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_guwahati-v0.md); modelled discharge, NOT observed river levels - P(exceed q90 elevated level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:35Z"
+    "retrieved_at": "2026-09-10T06:32:56Z"
    },
    "p_exceed_extreme": {
     "value": 0.0,
     "class": "FORECAST",
     "source": "JalDrishti model v0 for bputra_guwahati - shipped: trained_hgb, fitted on 2015-2025 GloFAS reanalysis (docs/MODEL-CARD-bputra_guwahati-v0.md); modelled discharge, NOT observed river levels - P(exceed q98 extreme level) from held-out validation residuals",
-    "retrieved_at": "2026-09-09T20:04:35Z"
+    "retrieved_at": "2026-09-10T06:32:56Z"
    }
   }
  },
@@ -88,7 +88,7 @@
   "value": "GREEN",
   "class": "SIMULATED",
   "source": "decision rule on model v0 output: P(exceed q98 extreme) >= 0.5 RED, else P(exceed q90 elevated) >= 0.2 YELLOW, else GREEN (documented cutoffs, arbitrary)",
-  "retrieved_at": "2026-09-09T20:04:35Z",
+  "retrieved_at": "2026-09-10T06:32:56Z",
   "p_exceed_h1": 0.0,
   "p_exceed_extreme_h1": 0.0
  },
