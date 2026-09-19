@@ -367,6 +367,29 @@ def main() -> int:
     })
 
     # ---------- villages_status.json ----------
+    # Last published estimate per village, so a village whose live inputs are
+    # missing this run can keep an HONEST older colour instead of being scored
+    # from the fetchers' SIMULATED fallback (a made-up sine wave for rain, a
+    # synthetic series for discharge). On 2026-09-19 a laptop that woke with no
+    # internet turned that fallback into 97 red dots.
+    prev_by_key = {}
+    try:
+        for pv_old in load_json(PUBLIC_DIR / "villages_status.json").get("villages", []):
+            prev_by_key[f"{pv_old['name']}|{pv_old['district']}"] = pv_old
+    except (FileNotFoundError, ValueError, KeyError):
+        pass
+
+    def honest(prev: dict) -> bool:
+        """Was this earlier entry built from real inputs (or carried from one)?"""
+        if prev.get("stale"):
+            return True
+        if str(prev.get("risk", {}).get("method", "")).startswith("model-v0-"):
+            return True          # the model refuses simulated inputs outright
+        sig = prev.get("signals", {})
+        return (sig.get("rain_trailing_24h_mm", {}).get("class") == OBSERVED
+                and sig.get("discharge_latest_m3s", {}).get("class") == OBSERVED)
+
+    carried, withheld = [], []
     villages_out = []
     for v in villages["villages"]:
         # nearest N rainfall grid points, inverse-distance weighted
@@ -404,6 +427,29 @@ def main() -> int:
         basin = target_to_basin.get(rp["id"])
         model_fc = model_fcs.get(basin) if basin else None
         model_ok = bool(model_fc) and not model_fc.get("degraded", True)
+
+        # The fallback formula below would score whatever rain and discharge it
+        # is handed. If any of those are SIMULATED fillers, do not let it run.
+        inputs_live = all(p.get("live") for p in near) and bool(rp.get("live"))
+        if not (basin and model_ok) and not inputs_live:
+            key = f"{v['name']}|{v['district']}"
+            prev = prev_by_key.get(key)
+            if prev and honest(prev):
+                kept = dict(prev)
+                kept["stale"] = prev.get("stale") or {
+                    "since": prev.get("risk", {}).get("retrieved_at"),
+                    "reason": ("live rain or river data for this area could not be "
+                               "fetched, so the last estimate made from real data is "
+                               "shown instead of one made from placeholder numbers"),
+                }
+                kept["stale"]["checked_at"] = now
+                villages_out.append(kept)
+                carried.append(v["name"])
+            else:
+                # no honest earlier estimate: leave the dot off rather than guess
+                withheld.append(v["name"])
+            continue
+
         if basin and model_ok:
             risk_obj = pv(model_fc["colour"]["value"], SIMULATED,
                           model_fc["colour"]["source"], now,
@@ -499,6 +545,9 @@ def main() -> int:
         "counts": {c: sum(1 for x in villages_out if x["risk"]["value"] == c)
                    for c in ("GREEN", "YELLOW", "RED")},
         "villages_note": villages["note"],
+        # villages whose live inputs were missing this run: kept at their last
+        # real-data estimate (carried) or left off the map (withheld)
+        "stale_villages": {"carried": carried, "withheld": withheld, "checked_at": now},
         "villages": villages_out,
     })
 
@@ -508,6 +557,9 @@ def main() -> int:
           f"({n_model} via basin models "
           f"{ {b: sum(1 for x in villages_out if x['risk']['method'] == model_names(b)['method']) for b in BASINS} }, "
           f"{len(villages_out) - n_model} via heuristic)")
+    if carried or withheld:
+        print(f"  LIVE INPUTS MISSING: {len(carried)} village(s) kept at their last real-data "
+              f"estimate, {len(withheld)} left off the map (no honest earlier estimate)")
     print(f"OK public/rivers_status.json: {len(rivers_out)} river points")
     return 0
 

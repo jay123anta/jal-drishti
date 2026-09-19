@@ -120,6 +120,25 @@ def main() -> int:
     if "function istInFuture(" not in idx or "istInFuture(cross)" not in idx:
         errors.append("index.html: the past-forecast guard (istInFuture) is missing - "
                       "an already-passed crossing time could render as still expected")
+    # Same rule for the forecast PEAK: when CWC's highest point is at the start of
+    # its series, it is already behind us and the forecast is falling.
+    if "const peakPast = !!at && !istInFuture(at)" not in idx:
+        errors.append("index.html: the past-peak guard is missing - a CWC peak that has "
+                      "already passed could render as still to come")
+    # When live inputs are missing, a village keeps its last real-data estimate
+    # and must SAY so; a river with no live figures must not show a trend.
+    for what, needle in {
+        "older-estimate note on carried villages": "<b>Older estimate.</b>",
+        "river trend guard when our figures are missing": "r.live === false",
+    }.items():
+        if needle not in idx:
+            errors.append(f"index.html: {what} is missing ({needle!r})")
+    vs_doc = json.loads((PUBLIC / "villages_status.json").read_text(encoding="utf-8"))
+    for v in vs_doc["villages"]:
+        st = v.get("stale")
+        if st is not None and not (st.get("since") and st.get("checked_at")):
+            errors.append(f"village {v['name']}: marked stale without saying since when")
+
     # The most serious official statement on the map must have wording at all.
     if "above the danger mark" not in idx:
         errors.append("index.html: no wording for a CWC forecast peak above the danger mark")

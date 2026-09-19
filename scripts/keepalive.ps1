@@ -8,10 +8,14 @@
 #   -NoCommit                   run the pipeline but do not commit or push
 #   -SkipIfFresherThanHours N   do nothing if a run that SUCCEEDED started under N h ago
 #   -DryRun                     go through every check, start nothing, change nothing
+#   -NetWaitMinutes N           wait up to N min for the internet before starting (default 10)
+#   -NetProbeHost H             host whose DNS answer means "online" (default api.open-meteo.com)
 param(
     [switch]$NoCommit,
     [double]$SkipIfFresherThanHours = 0,
-    [switch]$DryRun
+    [switch]$DryRun,
+    [int]$NetWaitMinutes = 10,
+    [string]$NetProbeHost = "api.open-meteo.com"
 )
 
 $repo = Split-Path -Parent $PSScriptRoot
@@ -47,6 +51,24 @@ $mutex = New-Object System.Threading.Mutex($false, "Local\JalDrishtiPipeline")
 $got = $false
 try { $got = $mutex.WaitOne(0) } catch [System.Threading.AbandonedMutexException] { $got = $true }
 if (-not $got) { Note "skipped: another run is already in progress"; exit 0 }
+
+# Wait for the internet before starting. A laptop waking from sleep can take
+# minutes to rejoin Wi-Fi; on 2026-09-19 a run began at 09:51 with no DNS, and
+# every fetch failed. Check that the main data host resolves, for up to
+# NetWaitMinutes; if it never does, skip without recording success, so the next
+# clock slot or wake-up tries again.
+function Online {
+    try { [System.Net.Dns]::GetHostAddresses($NetProbeHost).Count -gt 0 } catch { $false }
+}
+$netDeadline = (Get-Date).AddMinutes($NetWaitMinutes)
+while (-not (Online)) {
+    if ((Get-Date) -ge $netDeadline) {
+        Note "skipped: no internet after waiting $NetWaitMinutes min - nothing fetched or published"
+        $mutex.ReleaseMutex(); $mutex.Dispose()
+        exit 0
+    }
+    Start-Sleep -Seconds 20
+}
 
 $rc = 1
 try {

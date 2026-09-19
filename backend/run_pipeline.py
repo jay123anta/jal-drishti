@@ -21,8 +21,12 @@ Order:
 Each step runs as its own process; the pipeline stops at the first
 non-zero exit and propagates it. Exit 0 means: payloads regenerated AND
 the provenance gate passed. The individual scripts own the degraded-mode
-(SIMULATED fixture) behaviour, so a live-API outage does NOT fail the
-pipeline - it produces labelled fixtures instead.
+(SIMULATED fixture) behaviour, so one failed source does not fail the
+pipeline - it produces labelled fixtures, and classify_risk keeps the
+affected villages at their last real-data estimate. A WIDE outage does
+fail it: check_live_inputs.py stops the run right after the fetches when
+under half the rain or river points are live, so an outage can never be
+published as a flood.
 
 Run from anywhere:  python backend/run_pipeline.py
 Then serve the map: python -m http.server 8000 --directory public
@@ -48,6 +52,9 @@ STEPS = [
     ("discharge (GloFAS, live)", "fetch_discharge.py", []),
     ("CWC official gauges (AFF public feed, 3-hourly cap)", "fetch_cwc_aff.py", []),
     ("official alerts (NDMA SACHET public feed, 3-hourly cap)", "fetch_sachet.py", []),
+    # stop here, before anything is recoloured or published, if the network
+    # was down: an outage must never reach the map as a flood
+    ("live-inputs gate (enough real data to publish?)", "check_live_inputs.py", []),
     ("GloFAS forecast archive (per-run issue dates)", "archive_glofas_fc.py", []),
     ("forecast scoreboard (ready-made forecasts vs observed)", "model/scoreboard.py", []),
     ("GloFAS vs observed CWC discharge (how good the stand-in target is)",

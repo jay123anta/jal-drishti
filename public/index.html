@@ -543,12 +543,20 @@ function cwcAhead(c) {
   // CWC publishes the whole 7-day series. Picking its highest point, and
   // comparing that against CWC's own marks, is this project's arithmetic - so
   // the two are shown on separate lines with separate credit.
-  const cwcLine = peak != null
-    ? `<div class="when">${AHEAD_CHIP}${FROM_CWC}CWC's own 7-day forecast for this gauge reaches <b>${peak} m</b>${when}.</div>`
-    : "";
+  // The series' highest point can be its FIRST point, at the issue time, which
+  // has already passed: the forecast is then falling from here, and "reaches
+  // 90.92 m around today, 10:00 am" read at noon, below the current level, was
+  // wrong on both counts. Say which it is.
+  const peakPast = !!at && !istInFuture(at);
+  const cwcLine = peak == null ? ""
+    : peakPast
+    ? `<div class="when">${AHEAD_CHIP}${FROM_CWC}CWC's own 7-day forecast for this gauge was highest at the start, <b>${peak} m</b>${when}, and expects the water to be lower than that from here on.</div>`
+    : `<div class="when">${AHEAD_CHIP}${FROM_CWC}CWC's own 7-day forecast for this gauge reaches <b>${peak} m</b>${when}.</div>`;
   let ourLine = "";
   if (peak != null && danger != null && peak >= danger)
-    ourLine = `<div class="when">${BY_US}Comparing that with CWC's danger mark (${danger} m): the forecast goes <b>above the danger mark</b>.</div>`;
+    ourLine = peakPast
+      ? `<div class="when">${BY_US}Comparing that with CWC's danger mark (${danger} m): the forecast started <b>above the danger mark</b> and falls from there.</div>`
+      : `<div class="when">${BY_US}Comparing that with CWC's danger mark (${danger} m): the forecast goes <b>above the danger mark</b>.</div>`;
   else if (typeof cross === "string" && istInFuture(cross))
     ourLine = `<div class="when">${BY_US}Reading their forecast, the water reaches the warning mark (${warn} m) around <b>${esc(humanIst(cross))}</b>.</div>`;
   else if (peak != null && warn != null && peak >= warn)
@@ -601,6 +609,7 @@ function villagePopup(v, c) {
     <div>${badge}</div>
     <div class="lead">${chip}${esc(lead)}</div>
     <div class="when">${stamp}</div>
+    ${v.stale ? `<div class="official"><b>Older estimate.</b> Live rain or river data for this area could not be fetched on the latest check (${esc(humanTime(v.stale.checked_at))}), so this dot keeps its last estimate made from real data, from ${esc(humanTime(v.stale.since))}. It will update when the data comes back.</div>` : ""}
     ${v.exposure ? `<div class="prov">Ground: this village sits ${esc(v.exposure.plain)}, at about ${esc(v.exposure.village_elevation_m)} m above sea level. Terrain only - it does not affect the colour.</div>` : ""}
     ${cwcPlain(c, true)}
     <details><summary>Technical details</summary>${techVillage(v)}</details>
@@ -638,20 +647,26 @@ function riverPopup(r, c) {
   const hasGauge = c && !c.degraded && c.observed_level_m.value != null;
   const ours = t.value || null;
   const pct = t.pct_change_48h;
-  const oursLine = ours
+  // r.live is false when this run's river fetch failed and a placeholder
+  // series was filled in: a trend from that would be invented, so say so.
+  const oursLine = r.live === false
+    ? "Our own river figures could not be fetched on the latest check, so no flow estimate is shown."
+    : ours
     ? `Our own flow estimate: <b>${esc(ours)}</b>${pct != null
         ? ` (${pct > 0 ? "+" : ""}${esc(pct)} % comparing today with two days ago)` : ""}.`
     : "We have no flow estimate of our own for this point right now.";
-  const oursNote = hasGauge
+  const oursNote = hasGauge && r.live !== false
     ? ` A different measurement over a longer window - for what the river is doing now, use the gauge above.`
     : "";
   return `<div class="pp">
     <h3>${esc(r.river)} <span class="lbl">${esc(r.site)}</span></h3>
     ${hasGauge
       ? cwcPlain(c, false, g)
+      : r.live === false
+      ? `<div class="lead">Neither the official gauge nor our own river figures could be fetched on the latest check, so nothing is shown for this point until they return.</div>`
       : `<div class="lead"><span class="tw tw-past">LAST 2 DAYS</span>${esc(riverLead(r))}</div>`}
     ${hasGauge ? `<div class="when"><span class="tw tw-past">LAST 2 DAYS</span>${oursLine}${oursNote}</div>` : ""}
-    <div class="when">Our figures fetched ${esc(humanTime(r.discharge_latest_m3s.retrieved_at))}</div>
+    <div class="when">${r.live === false ? "Our figures last tried" : "Our figures fetched"} ${esc(humanTime(r.discharge_latest_m3s.retrieved_at))}</div>
     <details><summary>Technical details</summary>${techRiver(r, c)}</details>
   </div>`;
 }
