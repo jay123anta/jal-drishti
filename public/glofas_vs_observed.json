@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-23T15:17:14Z",
+ "generated_at": "2026-09-24T06:33:05Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-09-23T15:17:14Z"
+  "retrieved_at": "2026-09-24T06:33:05Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-09-23T15:17:14Z"
+  "retrieved_at": "2026-09-24T06:33:05Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -22,8 +22,8 @@
   "stations_scored": 16,
   "stations_in_medians": 13,
   "stations_flagged_implausible": 3,
-  "median_ratio_glofas_over_observed": 0.816,
-  "median_corr": 0.738,
+  "median_ratio_glofas_over_observed": 0.804,
+  "median_corr": 0.75,
   "stations_glofas_below_observed": 8,
   "stations_glofas_above_observed": 5
  },
@@ -38,19 +38,19 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 166.8,
-   "glofas_mean_m3s": 1731.4,
-   "ratio_glofas_over_observed": 10.379,
-   "bias_m3s": 1564.6,
-   "mae_m3s": 1564.6,
-   "rel_mae": 9.379,
-   "corr": 0.703,
+   "observed_mean_m3s": 163.9,
+   "glofas_mean_m3s": 1721.1,
+   "ratio_glofas_over_observed": 10.501,
+   "bias_m3s": 1557.3,
+   "mae_m3s": 1557.3,
+   "rel_mae": 9.501,
+   "corr": 0.709,
    "implausible": true,
-   "implausible_note": "ratio 10.379 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+   "implausible_note": "ratio 10.501 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
   },
   {
    "station": "BADATIGHAT",
@@ -62,17 +62,17 @@
    ],
    "window_ist": [
     "2026-08-31",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 24,
+   "n_days": 25,
    "insufficient": false,
-   "observed_mean_m3s": 1954.5,
-   "glofas_mean_m3s": 2754.6,
-   "ratio_glofas_over_observed": 1.409,
-   "bias_m3s": 800.0,
-   "mae_m3s": 800.0,
-   "rel_mae": 0.409,
-   "corr": 0.812
+   "observed_mean_m3s": 1940.3,
+   "glofas_mean_m3s": 2739.7,
+   "ratio_glofas_over_observed": 1.412,
+   "bias_m3s": 799.4,
+   "mae_m3s": 799.4,
+   "rel_mae": 0.412,
+   "corr": 0.818
   },
   {
    "station": "BEKI ROAD BRIDGE",
@@ -84,17 +84,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 2662.2,
-   "glofas_mean_m3s": 1532.7,
-   "ratio_glofas_over_observed": 0.576,
-   "bias_m3s": -1129.6,
-   "mae_m3s": 1129.6,
-   "rel_mae": 0.424,
-   "corr": 0.788
+   "observed_mean_m3s": 2653.4,
+   "glofas_mean_m3s": 1520.3,
+   "ratio_glofas_over_observed": 0.573,
+   "bias_m3s": -1133.1,
+   "mae_m3s": 1133.1,
+   "rel_mae": 0.427,
+   "corr": 0.793
   },
   {
    "station": "DIBRUGARH",
@@ -106,17 +106,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 18031.3,
-   "glofas_mean_m3s": 8590.3,
-   "ratio_glofas_over_observed": 0.476,
-   "bias_m3s": -9441.0,
-   "mae_m3s": 9441.0,
-   "rel_mae": 0.524,
-   "corr": 0.784
+   "observed_mean_m3s": 17941.1,
+   "glofas_mean_m3s": 8552.7,
+   "ratio_glofas_over_observed": 0.477,
+   "bias_m3s": -9388.4,
+   "mae_m3s": 9388.4,
+   "rel_mae": 0.523,
+   "corr": 0.802
   },
   {
    "station": "GOLAGHAT",
@@ -128,17 +128,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 832.8,
-   "glofas_mean_m3s": 679.2,
-   "ratio_glofas_over_observed": 0.816,
-   "bias_m3s": -153.6,
-   "mae_m3s": 166.0,
-   "rel_mae": 0.199,
-   "corr": 0.558
+   "observed_mean_m3s": 832.4,
+   "glofas_mean_m3s": 669.7,
+   "ratio_glofas_over_observed": 0.804,
+   "bias_m3s": -162.8,
+   "mae_m3s": 174.7,
+   "rel_mae": 0.21,
+   "corr": 0.538
   },
   {
    "station": "GOLOKGANJ",
@@ -150,17 +150,17 @@
    ],
    "window_ist": [
     "2026-09-02",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 22,
+   "n_days": 23,
    "insufficient": false,
-   "observed_mean_m3s": 1036.8,
-   "glofas_mean_m3s": 1062.7,
+   "observed_mean_m3s": 1029.1,
+   "glofas_mean_m3s": 1054.4,
    "ratio_glofas_over_observed": 1.025,
-   "bias_m3s": 25.9,
-   "mae_m3s": 271.0,
-   "rel_mae": 0.261,
-   "corr": -0.031
+   "bias_m3s": 25.3,
+   "mae_m3s": 259.7,
+   "rel_mae": 0.252,
+   "corr": 0.001
   },
   {
    "station": "GUWAHATI(D.C.COURT)",
@@ -172,17 +172,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 25342.6,
-   "glofas_mean_m3s": 19747.8,
-   "ratio_glofas_over_observed": 0.779,
-   "bias_m3s": -5594.8,
-   "mae_m3s": 5594.8,
-   "rel_mae": 0.221,
-   "corr": 0.855
+   "observed_mean_m3s": 25230.0,
+   "glofas_mean_m3s": 19597.5,
+   "ratio_glofas_over_observed": 0.777,
+   "bias_m3s": -5632.6,
+   "mae_m3s": 5632.6,
+   "rel_mae": 0.223,
+   "corr": 0.868
   },
   {
    "station": "KAMPUR",
@@ -194,17 +194,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 1170.7,
-   "glofas_mean_m3s": 502.4,
-   "ratio_glofas_over_observed": 0.429,
-   "bias_m3s": -668.3,
-   "mae_m3s": 668.3,
-   "rel_mae": 0.571,
-   "corr": 0.738
+   "observed_mean_m3s": 1159.9,
+   "glofas_mean_m3s": 495.1,
+   "ratio_glofas_over_observed": 0.427,
+   "bias_m3s": -664.9,
+   "mae_m3s": 664.9,
+   "rel_mae": 0.573,
+   "corr": 0.75
   },
   {
    "station": "KARIMGANJ",
@@ -216,19 +216,19 @@
    ],
    "window_ist": [
     "2026-09-08",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 16,
+   "n_days": 17,
    "insufficient": false,
-   "observed_mean_m3s": 417.8,
-   "glofas_mean_m3s": 2166.1,
-   "ratio_glofas_over_observed": 5.185,
-   "bias_m3s": 1748.3,
-   "mae_m3s": 1748.3,
-   "rel_mae": 4.185,
-   "corr": 0.879,
+   "observed_mean_m3s": 405.4,
+   "glofas_mean_m3s": 2149.7,
+   "ratio_glofas_over_observed": 5.302,
+   "bias_m3s": 1744.2,
+   "mae_m3s": 1744.2,
+   "rel_mae": 4.302,
+   "corr": 0.876,
    "implausible": true,
-   "implausible_note": "ratio 5.185 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+   "implausible_note": "ratio 5.302 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
   },
   {
    "station": "MANAS N H CROSSING",
@@ -240,17 +240,17 @@
    ],
    "window_ist": [
     "2026-08-31",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 24,
+   "n_days": 25,
    "insufficient": false,
-   "observed_mean_m3s": 394.4,
-   "glofas_mean_m3s": 216.4,
-   "ratio_glofas_over_observed": 0.549,
-   "bias_m3s": -178.0,
-   "mae_m3s": 178.0,
-   "rel_mae": 0.451,
-   "corr": 0.941
+   "observed_mean_m3s": 392.8,
+   "glofas_mean_m3s": 213.3,
+   "ratio_glofas_over_observed": 0.543,
+   "bias_m3s": -179.4,
+   "mae_m3s": 179.4,
+   "rel_mae": 0.457,
+   "corr": 0.944
   },
   {
    "station": "MATIJURI",
@@ -262,20 +262,20 @@
    ],
    "window_ist": [
     "2026-09-02",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 22,
+   "n_days": 23,
    "insufficient": false,
    "observed_mean_m3s": 5.0,
-   "glofas_mean_m3s": 353.8,
-   "ratio_glofas_over_observed": 70.762,
-   "bias_m3s": 348.8,
-   "mae_m3s": 348.8,
-   "rel_mae": 69.762,
+   "glofas_mean_m3s": 351.8,
+   "ratio_glofas_over_observed": 70.358,
+   "bias_m3s": 346.8,
+   "mae_m3s": 346.8,
+   "rel_mae": 69.358,
    "corr": null,
    "corr_note": "needs 7 days and variation in both series",
    "implausible": true,
-   "implausible_note": "ratio 70.762 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+   "implausible_note": "ratio 70.358 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
   },
   {
    "station": "NANGLAMORAGHAT",
@@ -287,17 +287,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 279.1,
-   "glofas_mean_m3s": 319.7,
-   "ratio_glofas_over_observed": 1.145,
-   "bias_m3s": 40.6,
-   "mae_m3s": 94.2,
-   "rel_mae": 0.337,
-   "corr": 0.053
+   "observed_mean_m3s": 275.9,
+   "glofas_mean_m3s": 315.3,
+   "ratio_glofas_over_observed": 1.143,
+   "bias_m3s": 39.4,
+   "mae_m3s": 91.1,
+   "rel_mae": 0.33,
+   "corr": 0.123
   },
   {
    "station": "NT ROAD CROSSING JIA-BHARALI",
@@ -309,17 +309,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 1369.9,
-   "glofas_mean_m3s": 1610.7,
-   "ratio_glofas_over_observed": 1.176,
-   "bias_m3s": 240.8,
-   "mae_m3s": 269.0,
-   "rel_mae": 0.196,
-   "corr": 0.489
+   "observed_mean_m3s": 1366.1,
+   "glofas_mean_m3s": 1605.0,
+   "ratio_glofas_over_observed": 1.175,
+   "bias_m3s": 238.9,
+   "mae_m3s": 266.1,
+   "rel_mae": 0.195,
+   "corr": 0.496
   },
   {
    "station": "RANGANADI NT ROAD CROSSING",
@@ -331,17 +331,17 @@
    ],
    "window_ist": [
     "2026-09-02",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 22,
+   "n_days": 23,
    "insufficient": false,
-   "observed_mean_m3s": 155.3,
-   "glofas_mean_m3s": 338.7,
-   "ratio_glofas_over_observed": 2.18,
-   "bias_m3s": 183.4,
-   "mae_m3s": 183.4,
-   "rel_mae": 1.18,
-   "corr": 0.623
+   "observed_mean_m3s": 154.0,
+   "glofas_mean_m3s": 337.8,
+   "ratio_glofas_over_observed": 2.194,
+   "bias_m3s": 183.8,
+   "mae_m3s": 183.8,
+   "rel_mae": 1.194,
+   "corr": 0.621
   },
   {
    "station": "SIVASAGAR",
@@ -353,17 +353,17 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 438.6,
-   "glofas_mean_m3s": 368.1,
-   "ratio_glofas_over_observed": 0.839,
-   "bias_m3s": -70.5,
-   "mae_m3s": 91.1,
-   "rel_mae": 0.208,
-   "corr": -0.217
+   "observed_mean_m3s": 437.9,
+   "glofas_mean_m3s": 363.5,
+   "ratio_glofas_over_observed": 0.83,
+   "bias_m3s": -74.4,
+   "mae_m3s": 94.4,
+   "rel_mae": 0.216,
+   "corr": -0.189
   },
   {
    "station": "TEZPUR",
@@ -375,23 +375,23 @@
    ],
    "window_ist": [
     "2026-08-26",
-    "2026-09-23"
+    "2026-09-24"
    ],
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 22596.0,
-   "glofas_mean_m3s": 17212.7,
-   "ratio_glofas_over_observed": 0.762,
-   "bias_m3s": -5383.2,
-   "mae_m3s": 5383.2,
-   "rel_mae": 0.238,
-   "corr": 0.87
+   "observed_mean_m3s": 22496.9,
+   "glofas_mean_m3s": 17092.7,
+   "ratio_glofas_over_observed": 0.76,
+   "bias_m3s": -5404.2,
+   "mae_m3s": 5404.2,
+   "rel_mae": 0.24,
+   "corr": 0.879
   },
   {
    "station": "BADARPUR GHAT",
    "river": "BARAK",
    "poc_river": null,
-   "n_days": 16,
+   "n_days": 17,
    "insufficient": true,
    "note": "no modelled cell mapped to this station"
   },
@@ -399,7 +399,7 @@
    "station": "CHOULDHOWAGHAT",
    "river": "SUBANSIRI",
    "poc_river": null,
-   "n_days": 24,
+   "n_days": 25,
    "insufficient": true,
    "note": "no modelled cell mapped to this station"
   },
@@ -407,7 +407,7 @@
    "station": "DHARAMTUL",
    "river": "KOPILI",
    "poc_river": null,
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": true,
    "note": "no modelled cell mapped to this station"
   },
@@ -415,7 +415,7 @@
    "station": "NUMALIGARH",
    "river": "DHANSIRI (SOUTH)",
    "poc_river": null,
-   "n_days": 29,
+   "n_days": 30,
    "insufficient": true,
    "note": "no modelled cell mapped to this station"
   }
