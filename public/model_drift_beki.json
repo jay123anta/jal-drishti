@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-09-28T09:40:33Z",
+ "generated_at": "2026-09-29T04:10:53Z",
  "basin": "beki",
  "model": "model-v0-beki",
  "inputs": {
   "q_today_m3s": {
-   "value": 1115.86,
+   "value": 1058.25,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-09-28T09:40:33Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.012,
+   "retrieved_at": "2026-09-29T04:10:53Z",
+   "seasonal_status": "extreme",
+   "seasonal_percentile": 0.003,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.016
+   "monsoon_percentile": 0.013
   },
   "catchment_rain_24h_mm": {
-   "value": 1.3,
+   "value": 0.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 beki catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-28T09:40:33Z",
+   "retrieved_at": "2026-09-29T04:10:53Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.147,
+   "seasonal_percentile": 0.091,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.041
+   "monsoon_percentile": 0.014
   },
   "catchment_rain_48h_mm": {
-   "value": 2.5,
+   "value": 2.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 beki catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-09-28T09:40:33Z",
+   "retrieved_at": "2026-09-29T04:10:53Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.109,
+   "seasonal_percentile": 0.1,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.023
+   "monsoon_percentile": 0.015
   }
  },
- "overall": "in-range",
+ "overall": "extreme",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
