@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-29T09:36:48Z",
+ "generated_at": "2026-09-29T12:36:45Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-09-29T09:36:48Z"
+  "retrieved_at": "2026-09-29T12:36:45Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-09-29T09:36:48Z"
+  "retrieved_at": "2026-09-29T12:36:45Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -44,13 +44,13 @@
    "insufficient": false,
    "observed_mean_m3s": 150.1,
    "glofas_mean_m3s": 1666.7,
-   "ratio_glofas_over_observed": 11.104,
+   "ratio_glofas_over_observed": 11.105,
    "bias_m3s": 1516.6,
    "mae_m3s": 1516.6,
-   "rel_mae": 10.104,
+   "rel_mae": 10.105,
    "corr": 0.739,
    "implausible": true,
-   "implausible_note": "ratio 11.104 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+   "implausible_note": "ratio 11.105 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
   },
   {
    "station": "BADATIGHAT",
@@ -66,11 +66,11 @@
    ],
    "n_days": 30,
    "insufficient": false,
-   "observed_mean_m3s": 1862.7,
+   "observed_mean_m3s": 1862.6,
    "glofas_mean_m3s": 2629.8,
    "ratio_glofas_over_observed": 1.412,
-   "bias_m3s": 767.1,
-   "mae_m3s": 767.1,
+   "bias_m3s": 767.2,
+   "mae_m3s": 767.2,
    "rel_mae": 0.412,
    "corr": 0.857
   },
@@ -88,11 +88,11 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 2598.7,
+   "observed_mean_m3s": 2598.6,
    "glofas_mean_m3s": 1466.2,
    "ratio_glofas_over_observed": 0.564,
-   "bias_m3s": -1132.5,
-   "mae_m3s": 1132.5,
+   "bias_m3s": -1132.4,
+   "mae_m3s": 1132.4,
    "rel_mae": 0.436,
    "corr": 0.84
   },
@@ -110,11 +110,11 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 17311.3,
+   "observed_mean_m3s": 17311.1,
    "glofas_mean_m3s": 8343.4,
    "ratio_glofas_over_observed": 0.482,
-   "bias_m3s": -8967.9,
-   "mae_m3s": 8967.9,
+   "bias_m3s": -8967.7,
+   "mae_m3s": 8967.7,
    "rel_mae": 0.518,
    "corr": 0.861
   },
@@ -132,13 +132,13 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 824.7,
+   "observed_mean_m3s": 824.5,
    "glofas_mean_m3s": 619.1,
    "ratio_glofas_over_observed": 0.751,
-   "bias_m3s": -205.5,
-   "mae_m3s": 215.8,
+   "bias_m3s": -205.4,
+   "mae_m3s": 215.7,
    "rel_mae": 0.262,
-   "corr": 0.493
+   "corr": 0.494
   },
   {
    "station": "GOLOKGANJ",
@@ -154,11 +154,11 @@
    ],
    "n_days": 28,
    "insufficient": false,
-   "observed_mean_m3s": 973.0,
+   "observed_mean_m3s": 972.9,
    "glofas_mean_m3s": 1049.1,
    "ratio_glofas_over_observed": 1.078,
    "bias_m3s": 76.2,
-   "mae_m3s": 268.7,
+   "mae_m3s": 268.8,
    "rel_mae": 0.276,
    "corr": 0.038
   },
@@ -176,11 +176,11 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 24353.0,
+   "observed_mean_m3s": 24353.7,
    "glofas_mean_m3s": 18811.2,
    "ratio_glofas_over_observed": 0.772,
-   "bias_m3s": -5541.7,
-   "mae_m3s": 5541.7,
+   "bias_m3s": -5542.4,
+   "mae_m3s": 5542.4,
    "rel_mae": 0.228,
    "corr": 0.933
   },
@@ -198,11 +198,11 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 1102.7,
+   "observed_mean_m3s": 1102.6,
    "glofas_mean_m3s": 458.1,
    "ratio_glofas_over_observed": 0.415,
-   "bias_m3s": -644.7,
-   "mae_m3s": 644.7,
+   "bias_m3s": -644.6,
+   "mae_m3s": 644.6,
    "rel_mae": 0.585,
    "corr": 0.81
   },
@@ -222,13 +222,13 @@
    "insufficient": false,
    "observed_mean_m3s": 356.0,
    "glofas_mean_m3s": 2064.8,
-   "ratio_glofas_over_observed": 5.799,
-   "bias_m3s": 1708.8,
-   "mae_m3s": 1708.8,
-   "rel_mae": 4.799,
+   "ratio_glofas_over_observed": 5.8,
+   "bias_m3s": 1708.9,
+   "mae_m3s": 1708.9,
+   "rel_mae": 4.8,
    "corr": 0.856,
    "implausible": true,
-   "implausible_note": "ratio 5.799 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+   "implausible_note": "ratio 5.8 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
   },
   {
    "station": "MANAS N H CROSSING",
@@ -313,7 +313,7 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 1331.9,
+   "observed_mean_m3s": 1331.8,
    "glofas_mean_m3s": 1560.2,
    "ratio_glofas_over_observed": 1.171,
    "bias_m3s": 228.3,
@@ -357,13 +357,13 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 427.8,
+   "observed_mean_m3s": 427.7,
    "glofas_mean_m3s": 339.3,
    "ratio_glofas_over_observed": 0.793,
-   "bias_m3s": -88.4,
-   "mae_m3s": 105.6,
+   "bias_m3s": -88.3,
+   "mae_m3s": 105.5,
    "rel_mae": 0.247,
-   "corr": 0.102
+   "corr": 0.104
   },
   {
    "station": "TEZPUR",
@@ -379,11 +379,11 @@
    ],
    "n_days": 35,
    "insufficient": false,
-   "observed_mean_m3s": 21709.1,
+   "observed_mean_m3s": 21709.4,
    "glofas_mean_m3s": 16463.8,
    "ratio_glofas_over_observed": 0.758,
-   "bias_m3s": -5245.3,
-   "mae_m3s": 5245.3,
+   "bias_m3s": -5245.6,
+   "mae_m3s": 5245.6,
    "rel_mae": 0.242,
    "corr": 0.936
   },
