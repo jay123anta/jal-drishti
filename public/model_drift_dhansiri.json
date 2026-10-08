@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-10-07T09:40:40Z",
+ "generated_at": "2026-10-08T04:33:14Z",
  "basin": "dhansiri",
  "model": "model-v0-dhansiri",
  "inputs": {
   "q_today_m3s": {
-   "value": 232.35,
+   "value": 219.8,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-07T09:40:40Z",
+   "retrieved_at": "2026-10-08T04:33:14Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.15,
+   "seasonal_percentile": 0.144,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.042
+   "monsoon_percentile": 0.036
   },
   "catchment_rain_24h_mm": {
-   "value": 0.7,
+   "value": 1.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-07T09:40:40Z",
+   "retrieved_at": "2026-10-08T04:33:14Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.223,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.08
+  },
+  "catchment_rain_48h_mm": {
+   "value": 2.3,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-10-08T04:33:14Z",
    "seasonal_status": "in-range",
    "seasonal_percentile": 0.176,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.048
-  },
-  "catchment_rain_48h_mm": {
-   "value": 1.9,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-07T09:40:40Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.147,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.029
+   "monsoon_percentile": 0.037
   }
  },
  "overall": "in-range",
