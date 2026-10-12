@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-10-10T06:40:12Z",
+ "generated_at": "2026-10-12T12:57:35Z",
  "basin": "manas",
  "model": "model-v0-manas",
  "inputs": {
   "q_today_m3s": {
-   "value": 830.76,
+   "value": 780.63,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-10T06:40:12Z",
+   "retrieved_at": "2026-10-12T12:57:35Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.985,
+   "seasonal_percentile": 0.982,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.852
+   "monsoon_percentile": 0.825
   },
   "catchment_rain_24h_mm": {
-   "value": 10.3,
+   "value": 0.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-10T06:40:12Z",
+   "retrieved_at": "2026-10-12T12:57:35Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.815,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.49
+   "seasonal_percentile": 0.111,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.001
   },
   "catchment_rain_48h_mm": {
-   "value": 13.7,
+   "value": 0.6,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-10T06:40:12Z",
+   "retrieved_at": "2026-10-12T12:57:35Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.672,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.282
+   "seasonal_percentile": 0.129,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.001
   }
  },
  "overall": "in-range",
