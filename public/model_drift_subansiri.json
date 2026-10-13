@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-10-12T12:57:33Z",
+ "generated_at": "2026-10-13T16:44:44Z",
  "basin": "subansiri",
  "model": "model-v0-subansiri",
  "inputs": {
   "q_today_m3s": {
-   "value": 1437.8,
+   "value": 1395.37,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-12T12:57:33Z",
+   "retrieved_at": "2026-10-13T16:44:44Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.056,
+   "seasonal_percentile": 0.05,
    "monsoon_status": "in-range",
    "monsoon_percentile": 0.011
   },
   "catchment_rain_24h_mm": {
-   "value": 0.3,
+   "value": 0.4,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-12T12:57:33Z",
+   "retrieved_at": "2026-10-13T16:44:44Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.176,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.005
+  },
+  "catchment_rain_48h_mm": {
+   "value": 0.7,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-10-13T16:44:44Z",
    "seasonal_status": "in-range",
    "seasonal_percentile": 0.126,
    "monsoon_status": "extreme",
-   "monsoon_percentile": 0.004
-  },
-  "catchment_rain_48h_mm": {
-   "value": 1.4,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-12T12:57:33Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.158,
-   "monsoon_status": "extreme",
-   "monsoon_percentile": 0.007
+   "monsoon_percentile": 0.003
   }
  },
  "overall": "in-range",

@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-10-12T12:57:19Z",
+ "generated_at": "2026-10-13T16:44:34Z",
  "basin": "dhansiri",
  "model": "model-v0-dhansiri",
  "inputs": {
   "q_today_m3s": {
-   "value": 189.11,
+   "value": 179.3,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-12T12:57:19Z",
+   "retrieved_at": "2026-10-13T16:44:34Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.158,
+   "seasonal_percentile": 0.15,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.025
+   "monsoon_percentile": 0.02
   },
   "catchment_rain_24h_mm": {
    "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-12T12:57:19Z",
+   "retrieved_at": "2026-10-13T16:44:34Z",
    "seasonal_status": "in-range",
    "seasonal_percentile": 0.035,
    "monsoon_status": "extreme",
    "monsoon_percentile": 0.001
   },
   "catchment_rain_48h_mm": {
-   "value": 0.1,
+   "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 dhansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-12T12:57:19Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.026,
+   "retrieved_at": "2026-10-13T16:44:34Z",
+   "seasonal_status": "extreme",
+   "seasonal_percentile": 0.012,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   }
  },
- "overall": "in-range",
+ "overall": "extreme",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
