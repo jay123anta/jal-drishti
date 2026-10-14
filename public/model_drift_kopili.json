@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-10-13T16:44:24Z",
+ "generated_at": "2026-10-14T18:22:17Z",
  "basin": "kopili",
  "model": "model-v0-kopili",
  "inputs": {
   "q_today_m3s": {
-   "value": 118.95,
+   "value": 108.9,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-13T16:44:24Z",
+   "retrieved_at": "2026-10-14T18:22:17Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.065,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.016
+   "seasonal_percentile": 0.062,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.01
   },
   "catchment_rain_24h_mm": {
-   "value": 0.0,
+   "value": 0.2,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 kopili catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-13T16:44:24Z",
+   "retrieved_at": "2026-10-14T18:22:17Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.038,
+   "seasonal_percentile": 0.132,
    "monsoon_status": "extreme",
-   "monsoon_percentile": 0.001
+   "monsoon_percentile": 0.004
   },
   "catchment_rain_48h_mm": {
-   "value": 0.0,
+   "value": 0.2,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 kopili catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-13T16:44:24Z",
+   "retrieved_at": "2026-10-14T18:22:17Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.015,
-   "monsoon_status": "out-of-range",
-   "monsoon_percentile": 0.0
+   "seasonal_percentile": 0.053,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.001
   }
  },
  "overall": "in-range",
