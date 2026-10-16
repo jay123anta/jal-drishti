@@ -1,10 +1,40 @@
 {
- "generated_at": "2026-10-15T16:57:17Z",
+ "generated_at": "2026-10-16T16:54:29Z",
  "basin": "kushiyara",
  "model": "model-v0-kushiyara",
- "inputs": {},
- "overall": "degraded",
+ "inputs": {
+  "q_today_m3s": {
+   "value": 1311.2,
+   "class": "OBSERVED",
+   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
+   "retrieved_at": "2026-10-16T16:54:29Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.326,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.299
+  },
+  "catchment_rain_24h_mm": {
+   "value": 0.3,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 kushiyara catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-10-16T16:54:29Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.167,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.005
+  },
+  "catchment_rain_48h_mm": {
+   "value": 0.4,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 kushiyara catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-10-16T16:54:29Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.103,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.002
+  }
+ },
+ "overall": "in-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
- "note": "drift never changes a colour; it flags extrapolation in the Technical view",
- "error": "model_forecast_kushiyara.json missing or degraded - no live inputs to compare"
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
