@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-10-16T16:54:17Z",
+ "generated_at": "2026-10-17T16:57:15Z",
  "basin": "bputra_dibrugarh",
  "model": "model-v0-bputra_dibrugarh",
  "inputs": {
   "q_today_m3s": {
-   "value": 4274.63,
+   "value": 4110.5,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-16T16:54:17Z",
+   "retrieved_at": "2026-10-17T16:57:15Z",
    "seasonal_status": "in-range",
    "seasonal_percentile": 0.076,
    "monsoon_status": "extreme",
-   "monsoon_percentile": 0.005
+   "monsoon_percentile": 0.002
   },
   "catchment_rain_24h_mm": {
+   "value": 0.0,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 bputra_dibrugarh catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-10-17T16:57:15Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.202,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.008
+  },
+  "catchment_rain_48h_mm": {
    "value": 0.3,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 bputra_dibrugarh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-16T16:54:17Z",
+   "retrieved_at": "2026-10-17T16:57:15Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.343,
+   "seasonal_percentile": 0.24,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.054
-  },
-  "catchment_rain_48h_mm": {
-   "value": 0.4,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 bputra_dibrugarh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-16T16:54:17Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.261,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.018
+   "monsoon_percentile": 0.013
   }
  },
  "overall": "in-range",
