@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-10-17T16:56:58Z",
+ "generated_at": "2026-10-25T18:42:45Z",
  "basin": "jiabharali",
  "model": "model-v0-jiabharali",
  "inputs": {
   "q_today_m3s": {
-   "value": 743.73,
+   "value": 570.48,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-17T16:56:58Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.029,
-   "monsoon_status": "extreme",
-   "monsoon_percentile": 0.005
+   "retrieved_at": "2026-10-25T18:42:45Z",
+   "seasonal_status": "out-of-range",
+   "seasonal_percentile": 0.0,
+   "monsoon_status": "out-of-range",
+   "monsoon_percentile": 0.0
   },
   "catchment_rain_24h_mm": {
-   "value": 4.3,
+   "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 jiabharali catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-17T16:56:58Z",
+   "retrieved_at": "2026-10-25T18:42:45Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.63,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.177
+   "seasonal_percentile": 0.126,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.001
   },
   "catchment_rain_48h_mm": {
-   "value": 8.6,
+   "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 jiabharali catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-17T16:56:58Z",
+   "retrieved_at": "2026-10-25T18:42:45Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.572,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.142
+   "seasonal_percentile": 0.044,
+   "monsoon_status": "out-of-range",
+   "monsoon_percentile": 0.0
   }
  },
- "overall": "in-range",
+ "overall": "out-of-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }

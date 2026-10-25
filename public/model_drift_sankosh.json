@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-10-17T16:57:35Z",
+ "generated_at": "2026-10-25T18:43:11Z",
  "basin": "sankosh",
  "model": "model-v0-sankosh",
  "inputs": {
   "q_today_m3s": {
-   "value": 522.6,
+   "value": 390.74,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-17T16:57:35Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.015,
+   "retrieved_at": "2026-10-25T18:43:11Z",
+   "seasonal_status": "out-of-range",
+   "seasonal_percentile": 0.0,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   },
   "catchment_rain_24h_mm": {
-   "value": 2.2,
+   "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 sankosh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-17T16:57:35Z",
+   "retrieved_at": "2026-10-25T18:43:11Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.595,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.096
+   "seasonal_percentile": 0.164,
+   "monsoon_status": "out-of-range",
+   "monsoon_percentile": 0.0
   },
   "catchment_rain_48h_mm": {
-   "value": 4.5,
+   "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 sankosh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-17T16:57:35Z",
+   "retrieved_at": "2026-10-25T18:43:11Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.545,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.054
+   "seasonal_percentile": 0.082,
+   "monsoon_status": "out-of-range",
+   "monsoon_percentile": 0.0
   }
  },
- "overall": "in-range",
+ "overall": "out-of-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }

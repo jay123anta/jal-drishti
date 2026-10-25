@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-10-17T16:57:21Z",
+ "generated_at": "2026-10-25T18:43:02Z",
  "basin": "bputra_guwahati",
  "model": "model-v0-bputra_guwahati",
  "inputs": {
   "q_today_m3s": {
-   "value": 7654.97,
+   "value": 5532.5,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-17T16:57:21Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.047,
+   "retrieved_at": "2026-10-25T18:43:02Z",
+   "seasonal_status": "extreme",
+   "seasonal_percentile": 0.006,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   },
   "catchment_rain_24h_mm": {
-   "value": 0.6,
+   "value": 0.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_guwahati catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-17T16:57:21Z",
+   "retrieved_at": "2026-10-25T18:43:02Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.302,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.028
+   "seasonal_percentile": 0.22,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.003
   },
   "catchment_rain_48h_mm": {
-   "value": 1.5,
+   "value": 1.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_guwahati catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-17T16:57:21Z",
+   "retrieved_at": "2026-10-25T18:43:02Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.282,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.021
+   "seasonal_percentile": 0.367,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.009
   }
  },
- "overall": "in-range",
+ "overall": "extreme",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
