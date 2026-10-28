@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-10-28T06:37:00Z",
+ "generated_at": "2026-10-28T09:37:34Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-10-28T06:37:00Z"
+  "retrieved_at": "2026-10-28T09:37:34Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-10-28T06:37:00Z"
+  "retrieved_at": "2026-10-28T09:37:34Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -110,13 +110,13 @@
    ],
    "n_days": 62,
    "insufficient": false,
-   "observed_mean_m3s": 14402.2,
+   "observed_mean_m3s": 14388.3,
    "glofas_mean_m3s": 6856.8,
-   "ratio_glofas_over_observed": 0.476,
-   "bias_m3s": -7545.4,
-   "mae_m3s": 7545.4,
-   "rel_mae": 0.524,
-   "corr": 0.971
+   "ratio_glofas_over_observed": 0.477,
+   "bias_m3s": -7531.5,
+   "mae_m3s": 7531.5,
+   "rel_mae": 0.523,
+   "corr": 0.972
   },
   {
    "station": "GOLAGHAT",
@@ -176,11 +176,11 @@
    ],
    "n_days": 62,
    "insufficient": false,
-   "observed_mean_m3s": 20263.4,
+   "observed_mean_m3s": 20249.1,
    "glofas_mean_m3s": 14502.5,
    "ratio_glofas_over_observed": 0.716,
-   "bias_m3s": -5760.9,
-   "mae_m3s": 5760.9,
+   "bias_m3s": -5746.6,
+   "mae_m3s": 5746.6,
    "rel_mae": 0.284,
    "corr": 0.988
   },
@@ -379,11 +379,11 @@
    ],
    "n_days": 62,
    "insufficient": false,
-   "observed_mean_m3s": 18128.4,
+   "observed_mean_m3s": 18113.8,
    "glofas_mean_m3s": 12899.7,
    "ratio_glofas_over_observed": 0.712,
-   "bias_m3s": -5228.8,
-   "mae_m3s": 5228.8,
+   "bias_m3s": -5214.1,
+   "mae_m3s": 5214.1,
    "rel_mae": 0.288,
    "corr": 0.987
   },
