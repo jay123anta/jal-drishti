@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-10-30T06:36:35Z",
+ "generated_at": "2026-10-30T09:36:47Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-10-30T06:36:35Z"
+  "retrieved_at": "2026-10-30T09:36:47Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-10-30T06:36:35Z"
+  "retrieved_at": "2026-10-30T09:36:47Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -23,7 +23,7 @@
   "stations_in_medians": 13,
   "stations_flagged_implausible": 3,
   "median_ratio_glofas_over_observed": 0.886,
-  "median_corr": 0.928,
+  "median_corr": 0.929,
   "stations_glofas_below_observed": 8,
   "stations_glofas_above_observed": 5
  },
@@ -69,10 +69,10 @@
    "observed_mean_m3s": 1551.1,
    "glofas_mean_m3s": 2002.9,
    "ratio_glofas_over_observed": 1.291,
-   "bias_m3s": 451.7,
+   "bias_m3s": 451.8,
    "mae_m3s": 516.5,
    "rel_mae": 0.333,
-   "corr": 0.928
+   "corr": 0.929
   },
   {
    "station": "BEKI ROAD BRIDGE",
@@ -88,11 +88,11 @@
    ],
    "n_days": 64,
    "insufficient": false,
-   "observed_mean_m3s": 2183.4,
+   "observed_mean_m3s": 2183.3,
    "glofas_mean_m3s": 1122.9,
    "ratio_glofas_over_observed": 0.514,
-   "bias_m3s": -1060.5,
-   "mae_m3s": 1060.5,
+   "bias_m3s": -1060.4,
+   "mae_m3s": 1060.4,
    "rel_mae": 0.486,
    "corr": 0.973
   },
@@ -110,13 +110,13 @@
    ],
    "n_days": 64,
    "insufficient": false,
-   "observed_mean_m3s": 14197.3,
+   "observed_mean_m3s": 14184.2,
    "glofas_mean_m3s": 6726.8,
    "ratio_glofas_over_observed": 0.474,
-   "bias_m3s": -7470.4,
-   "mae_m3s": 7470.4,
+   "bias_m3s": -7457.4,
+   "mae_m3s": 7457.4,
    "rel_mae": 0.526,
-   "corr": 0.973
+   "corr": 0.974
   },
   {
    "station": "GOLAGHAT",
@@ -154,13 +154,13 @@
    ],
    "n_days": 57,
    "insufficient": false,
-   "observed_mean_m3s": 799.4,
+   "observed_mean_m3s": 799.6,
    "glofas_mean_m3s": 811.6,
    "ratio_glofas_over_observed": 1.015,
-   "bias_m3s": 12.2,
-   "mae_m3s": 186.7,
+   "bias_m3s": 12.0,
+   "mae_m3s": 186.9,
    "rel_mae": 0.234,
-   "corr": 0.568
+   "corr": 0.567
   },
   {
    "station": "GUWAHATI(D.C.COURT)",
@@ -176,11 +176,11 @@
    ],
    "n_days": 64,
    "insufficient": false,
-   "observed_mean_m3s": 19969.7,
+   "observed_mean_m3s": 19956.6,
    "glofas_mean_m3s": 14194.5,
    "ratio_glofas_over_observed": 0.711,
-   "bias_m3s": -5775.2,
-   "mae_m3s": 5775.2,
+   "bias_m3s": -5762.2,
+   "mae_m3s": 5762.2,
    "rel_mae": 0.289,
    "corr": 0.989
   },
@@ -379,12 +379,12 @@
    ],
    "n_days": 64,
    "insufficient": false,
-   "observed_mean_m3s": 17867.7,
+   "observed_mean_m3s": 17853.9,
    "glofas_mean_m3s": 12633.0,
-   "ratio_glofas_over_observed": 0.707,
-   "bias_m3s": -5234.7,
-   "mae_m3s": 5234.7,
-   "rel_mae": 0.293,
+   "ratio_glofas_over_observed": 0.708,
+   "bias_m3s": -5220.9,
+   "mae_m3s": 5220.9,
+   "rel_mae": 0.292,
    "corr": 0.988
   },
   {
