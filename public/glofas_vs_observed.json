@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-10-31T06:36:35Z",
+ "generated_at": "2026-10-31T09:36:54Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-10-31T06:36:35Z"
+  "retrieved_at": "2026-10-31T09:36:54Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-10-31T06:36:35Z"
+  "retrieved_at": "2026-10-31T09:36:54Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -44,13 +44,13 @@
    "insufficient": false,
    "observed_mean_m3s": 116.1,
    "glofas_mean_m3s": 1364.3,
-   "ratio_glofas_over_observed": 11.752,
+   "ratio_glofas_over_observed": 11.753,
    "bias_m3s": 1248.2,
    "mae_m3s": 1248.2,
-   "rel_mae": 10.752,
+   "rel_mae": 10.753,
    "corr": 0.716,
    "implausible": true,
-   "implausible_note": "ratio 11.752 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+   "implausible_note": "ratio 11.753 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
   },
   {
    "station": "BADATIGHAT",
@@ -66,7 +66,7 @@
    ],
    "n_days": 60,
    "insufficient": false,
-   "observed_mean_m3s": 1541.3,
+   "observed_mean_m3s": 1541.2,
    "glofas_mean_m3s": 1980.6,
    "ratio_glofas_over_observed": 1.285,
    "bias_m3s": 439.3,
@@ -110,13 +110,13 @@
    ],
    "n_days": 65,
    "insufficient": false,
-   "observed_mean_m3s": 14092.6,
+   "observed_mean_m3s": 14079.9,
    "glofas_mean_m3s": 6662.8,
    "ratio_glofas_over_observed": 0.473,
-   "bias_m3s": -7429.7,
-   "mae_m3s": 7429.7,
+   "bias_m3s": -7417.1,
+   "mae_m3s": 7417.1,
    "rel_mae": 0.527,
-   "corr": 0.974
+   "corr": 0.975
   },
   {
    "station": "GOLAGHAT",
@@ -176,12 +176,12 @@
    ],
    "n_days": 65,
    "insufficient": false,
-   "observed_mean_m3s": 19825.6,
+   "observed_mean_m3s": 19812.7,
    "glofas_mean_m3s": 14043.8,
-   "ratio_glofas_over_observed": 0.708,
-   "bias_m3s": -5781.8,
-   "mae_m3s": 5781.8,
-   "rel_mae": 0.292,
+   "ratio_glofas_over_observed": 0.709,
+   "bias_m3s": -5768.8,
+   "mae_m3s": 5768.8,
+   "rel_mae": 0.291,
    "corr": 0.99
   },
   {
@@ -379,11 +379,11 @@
    ],
    "n_days": 65,
    "insufficient": false,
-   "observed_mean_m3s": 17738.3,
+   "observed_mean_m3s": 17725.0,
    "glofas_mean_m3s": 12502.1,
    "ratio_glofas_over_observed": 0.705,
-   "bias_m3s": -5236.2,
-   "mae_m3s": 5236.2,
+   "bias_m3s": -5222.8,
+   "mae_m3s": 5222.8,
    "rel_mae": 0.295,
    "corr": 0.989
   },
