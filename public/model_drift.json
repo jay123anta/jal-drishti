@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-10-31T09:42:36Z",
+ "generated_at": "2026-11-01T15:46:57Z",
  "basin": "dikhow",
  "model": "model-v0-dikhow",
  "inputs": {
   "q_today_m3s": {
-   "value": 40.88,
+   "value": 2635.33,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-10-31T09:42:36Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.065,
-   "monsoon_status": "extreme",
-   "monsoon_percentile": 0.006
+   "retrieved_at": "2026-11-01T15:46:57Z",
+   "seasonal_status": "out-of-range",
+   "seasonal_percentile": 1.0,
+   "monsoon_status": "out-of-range",
+   "monsoon_percentile": 1.0
   },
   "catchment_rain_24h_mm": {
-   "value": 14.9,
+   "value": 10.2,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 8 dikhow catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-31T09:42:36Z",
+   "retrieved_at": "2026-11-01T15:46:57Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.959,
+   "seasonal_percentile": 0.915,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.703
+   "monsoon_percentile": 0.506
   },
   "catchment_rain_48h_mm": {
-   "value": 19.1,
+   "value": 22.9,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 8 dikhow catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-10-31T09:42:36Z",
+   "retrieved_at": "2026-11-01T15:46:57Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.909,
+   "seasonal_percentile": 0.933,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.425
+   "monsoon_percentile": 0.537
   }
  },
- "overall": "in-range",
+ "overall": "out-of-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
