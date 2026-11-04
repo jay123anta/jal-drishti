@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-11-03T09:44:47Z",
+ "generated_at": "2026-11-04T09:24:09Z",
  "basin": "katakhal",
  "model": "model-v0-katakhal",
  "inputs": {
   "q_today_m3s": {
-   "value": 147.59,
+   "value": 144.21,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-03T09:44:47Z",
+   "retrieved_at": "2026-11-04T09:24:09Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.158,
+   "seasonal_percentile": 0.155,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.318
+   "monsoon_percentile": 0.298
   },
   "catchment_rain_24h_mm": {
+   "value": 0.0,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 katakhal catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-11-04T09:24:09Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.44,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.003
+  },
+  "catchment_rain_48h_mm": {
    "value": 0.6,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 katakhal catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-03T09:44:47Z",
+   "retrieved_at": "2026-11-04T09:24:09Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.642,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.028
-  },
-  "catchment_rain_48h_mm": {
-   "value": 2.0,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 katakhal catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-03T09:44:47Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.672,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.019
+   "seasonal_percentile": 0.554,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.006
   }
  },
  "overall": "in-range",

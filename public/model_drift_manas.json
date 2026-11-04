@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-11-03T09:44:43Z",
+ "generated_at": "2026-11-04T09:24:05Z",
  "basin": "manas",
  "model": "model-v0-manas",
  "inputs": {
   "q_today_m3s": {
-   "value": 388.05,
+   "value": 380.94,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-03T09:44:43Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.988,
+   "retrieved_at": "2026-11-04T09:24:05Z",
+   "seasonal_status": "extreme",
+   "seasonal_percentile": 0.991,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.377
+   "monsoon_percentile": 0.366
   },
   "catchment_rain_24h_mm": {
-   "value": 1.2,
+   "value": 0.5,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-03T09:44:43Z",
+   "retrieved_at": "2026-11-04T09:24:05Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.66,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.029
+   "seasonal_percentile": 0.522,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.008
   },
   "catchment_rain_48h_mm": {
-   "value": 2.0,
+   "value": 1.7,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-03T09:44:43Z",
+   "retrieved_at": "2026-11-04T09:24:05Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.607,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.014
+   "seasonal_percentile": 0.589,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.008
   }
  },
- "overall": "in-range",
+ "overall": "extreme",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
