@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-11-07T07:48:47Z",
+ "generated_at": "2026-11-10T04:21:46Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-11-07T07:48:47Z"
+  "retrieved_at": "2026-11-10T04:21:46Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-11-07T07:48:47Z"
+  "retrieved_at": "2026-11-10T04:21:46Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -19,22 +19,375 @@
  ],
  "summary": {
   "stations_total": 20,
-  "stations_scored": 0,
-  "stations_in_medians": 0,
-  "stations_flagged_implausible": 0,
-  "median_ratio_glofas_over_observed": null,
-  "median_corr": null,
-  "stations_glofas_below_observed": 0,
-  "stations_glofas_above_observed": 0
+  "stations_scored": 16,
+  "stations_in_medians": 12,
+  "stations_flagged_implausible": 4,
+  "median_ratio_glofas_over_observed": 0.95,
+  "median_corr": 0.937,
+  "stations_glofas_below_observed": 6,
+  "stations_glofas_above_observed": 6
  },
  "stations": [
   {
    "station": "ANNAPURNA GHAT",
    "river": "BARAK",
    "poc_river": "barak_silchar",
+   "glofas_cell": [
+    24.825005,
+    92.775024
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
    "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
+   "insufficient": false,
+   "observed_mean_m3s": 116.1,
+   "glofas_mean_m3s": 1364.3,
+   "ratio_glofas_over_observed": 11.753,
+   "bias_m3s": 1248.2,
+   "mae_m3s": 1248.2,
+   "rel_mae": 10.753,
+   "corr": 0.716,
+   "implausible": true,
+   "implausible_note": "ratio 11.753 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+  },
+  {
+   "station": "BADATIGHAT",
+   "river": "SUBANSIRI",
+   "poc_river": "subansiri_badatighat",
+   "glofas_cell": [
+    26.975006,
+    93.975006
+   ],
+   "window_ist": [
+    "2026-08-31",
+    "2026-10-31"
+   ],
+   "n_days": 60,
+   "insufficient": false,
+   "observed_mean_m3s": 1541.2,
+   "glofas_mean_m3s": 1980.6,
+   "ratio_glofas_over_observed": 1.285,
+   "bias_m3s": 439.3,
+   "mae_m3s": 512.8,
+   "rel_mae": 0.333,
+   "corr": 0.93
+  },
+  {
+   "station": "BEKI ROAD BRIDGE",
+   "river": "BEKI",
+   "poc_river": "beki_barpeta",
+   "glofas_cell": [
+    26.525002,
+    90.92502
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 2168.2,
+   "glofas_mean_m3s": 1111.6,
+   "ratio_glofas_over_observed": 0.513,
+   "bias_m3s": -1056.6,
+   "mae_m3s": 1056.6,
+   "rel_mae": 0.487,
+   "corr": 0.974
+  },
+  {
+   "station": "DIBRUGARH",
+   "river": "BRAHMAPUTRA",
+   "poc_river": "brahmaputra_dibrugarh",
+   "glofas_cell": [
+    27.475006,
+    94.775024
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 14079.9,
+   "glofas_mean_m3s": 6662.8,
+   "ratio_glofas_over_observed": 0.473,
+   "bias_m3s": -7417.1,
+   "mae_m3s": 7417.1,
+   "rel_mae": 0.527,
+   "corr": 0.975
+  },
+  {
+   "station": "GOLAGHAT",
+   "river": "DHANSIRI (SOUTH)",
+   "poc_river": "dhansiri_golaghat",
+   "glofas_cell": [
+    26.525002,
+    93.92502
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 687.3,
+   "glofas_mean_m3s": 409.6,
+   "ratio_glofas_over_observed": 0.596,
+   "bias_m3s": -277.7,
+   "mae_m3s": 283.2,
+   "rel_mae": 0.412,
+   "corr": 0.67
+  },
+  {
+   "station": "GOLOKGANJ",
+   "river": "SANKOSH",
+   "poc_river": "sankosh_golokganj",
+   "glofas_cell": [
+    26.125,
+    89.775024
+   ],
+   "window_ist": [
+    "2026-09-02",
+    "2026-10-31"
+   ],
+   "n_days": 58,
+   "insufficient": false,
+   "observed_mean_m3s": 794.6,
+   "glofas_mean_m3s": 803.1,
+   "ratio_glofas_over_observed": 1.011,
+   "bias_m3s": 8.5,
+   "mae_m3s": 187.0,
+   "rel_mae": 0.235,
+   "corr": 0.577
+  },
+  {
+   "station": "GUWAHATI(D.C.COURT)",
+   "river": "BRAHMAPUTRA",
+   "poc_river": "brahmaputra_guwahati",
+   "glofas_cell": [
+    26.225006,
+    91.725006
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 19812.7,
+   "glofas_mean_m3s": 14043.8,
+   "ratio_glofas_over_observed": 0.709,
+   "bias_m3s": -5768.8,
+   "mae_m3s": 5768.8,
+   "rel_mae": 0.291,
+   "corr": 0.99
+  },
+  {
+   "station": "KAMPUR",
+   "river": "KOPILI",
+   "poc_river": "kopili_kampur",
+   "glofas_cell": [
+    26.175003,
+    92.375
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 788.6,
+   "glofas_mean_m3s": 700.1,
+   "ratio_glofas_over_observed": 0.888,
+   "bias_m3s": -88.5,
+   "mae_m3s": 183.8,
+   "rel_mae": 0.233,
+   "corr": 0.944
+  },
+  {
+   "station": "KARIMGANJ",
+   "river": "KUSHIYARA",
+   "poc_river": "kushiyara_karimganj",
+   "glofas_cell": [
+    24.875,
+    92.375
+   ],
+   "window_ist": [
+    "2026-09-08",
+    "2026-10-31"
+   ],
+   "n_days": 52,
+   "insufficient": false,
+   "observed_mean_m3s": 237.2,
+   "glofas_mean_m3s": 1646.5,
+   "ratio_glofas_over_observed": 6.942,
+   "bias_m3s": 1409.3,
+   "mae_m3s": 1409.3,
+   "rel_mae": 5.942,
+   "corr": 0.812,
+   "implausible": true,
+   "implausible_note": "ratio 6.942 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+  },
+  {
+   "station": "MANAS N H CROSSING",
+   "river": "MANAS",
+   "poc_river": "manas_nhcrossing",
+   "glofas_cell": [
+    26.475006,
+    90.875
+   ],
+   "window_ist": [
+    "2026-08-31",
+    "2026-10-31"
+   ],
+   "n_days": 60,
+   "insufficient": false,
+   "observed_mean_m3s": 334.1,
+   "glofas_mean_m3s": 1064.6,
+   "ratio_glofas_over_observed": 3.187,
+   "bias_m3s": 730.5,
+   "mae_m3s": 730.5,
+   "rel_mae": 2.187,
+   "corr": 0.992
+  },
+  {
+   "station": "MATIJURI",
+   "river": "KATAKHAL",
+   "poc_river": "katakhal_matijuri",
+   "glofas_cell": [
+    24.625,
+    92.57501
+   ],
+   "window_ist": [
+    "2026-09-02",
+    "2026-10-31"
+   ],
+   "n_days": 58,
+   "insufficient": false,
+   "observed_mean_m3s": 5.0,
+   "glofas_mean_m3s": 277.5,
+   "ratio_glofas_over_observed": 55.498,
+   "bias_m3s": 272.5,
+   "mae_m3s": 272.5,
+   "rel_mae": 54.498,
+   "corr": null,
+   "corr_note": "needs 7 days and variation in both series",
+   "implausible": true,
+   "implausible_note": "ratio 55.498 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+  },
+  {
+   "station": "NANGLAMORAGHAT",
+   "river": "DESANG",
+   "poc_river": "disang_nanglamoraghat",
+   "glofas_cell": [
+    26.925003,
+    94.67502
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 215.3,
+   "glofas_mean_m3s": 234.2,
+   "ratio_glofas_over_observed": 1.088,
+   "bias_m3s": 18.9,
+   "mae_m3s": 81.5,
+   "rel_mae": 0.378,
+   "corr": 0.676
+  },
+  {
+   "station": "NT ROAD CROSSING JIA-BHARALI",
+   "river": "JIABHARALI",
+   "poc_river": "jiabharali_tezpur",
+   "glofas_cell": [
+    26.775002,
+    92.82501
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 1114.7,
+   "glofas_mean_m3s": 1234.3,
+   "ratio_glofas_over_observed": 1.107,
+   "bias_m3s": 119.7,
+   "mae_m3s": 206.8,
+   "rel_mae": 0.186,
+   "corr": 0.89
+  },
+  {
+   "station": "RANGANADI NT ROAD CROSSING",
+   "river": "RANGANADI",
+   "poc_river": "ranganadi_ntxing",
+   "glofas_cell": [
+    27.225006,
+    94.025024
+   ],
+   "window_ist": [
+    "2026-09-02",
+    "2026-10-31"
+   ],
+   "n_days": 58,
+   "insufficient": false,
+   "observed_mean_m3s": 120.6,
+   "glofas_mean_m3s": 256.3,
+   "ratio_glofas_over_observed": 2.125,
+   "bias_m3s": 135.7,
+   "mae_m3s": 135.7,
+   "rel_mae": 1.125,
+   "corr": 0.871
+  },
+  {
+   "station": "SIVASAGAR",
+   "river": "DIKHOW",
+   "poc_river": "dikhow_sivasagar",
+   "glofas_cell": [
+    27.075005,
+    94.475006
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 365.7,
+   "glofas_mean_m3s": 7408.0,
+   "ratio_glofas_over_observed": 20.26,
+   "bias_m3s": 7042.3,
+   "mae_m3s": 7042.3,
+   "rel_mae": 19.26,
+   "corr": 0.777,
+   "implausible": true,
+   "implausible_note": "ratio 20.26 is beyond 0.2-5.0x: treat as a station/cell mismatch to investigate, NOT as measured model error"
+  },
+  {
+   "station": "TEZPUR",
+   "river": "BRAHMAPUTRA",
+   "poc_river": "brahmaputra_tezpur",
+   "glofas_cell": [
+    26.575005,
+    92.625
+   ],
+   "window_ist": [
+    "2026-08-26",
+    "2026-10-31"
+   ],
+   "n_days": 65,
+   "insufficient": false,
+   "observed_mean_m3s": 17725.0,
+   "glofas_mean_m3s": 12530.2,
+   "ratio_glofas_over_observed": 0.707,
+   "bias_m3s": -5194.7,
+   "mae_m3s": 5194.7,
+   "rel_mae": 0.293,
+   "corr": 0.989
   },
   {
    "station": "BADARPUR GHAT",
@@ -43,22 +396,6 @@
    "n_days": 52,
    "insufficient": true,
    "note": "no modelled cell mapped to this station"
-  },
-  {
-   "station": "BADATIGHAT",
-   "river": "SUBANSIRI",
-   "poc_river": "subansiri_badatighat",
-   "n_days": 60,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "BEKI ROAD BRIDGE",
-   "river": "BEKI",
-   "poc_river": "beki_barpeta",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
   },
   {
    "station": "CHOULDHOWAGHAT",
@@ -77,116 +414,12 @@
    "note": "no modelled cell mapped to this station"
   },
   {
-   "station": "DIBRUGARH",
-   "river": "BRAHMAPUTRA",
-   "poc_river": "brahmaputra_dibrugarh",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "GOLAGHAT",
-   "river": "DHANSIRI (SOUTH)",
-   "poc_river": "dhansiri_golaghat",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "GOLOKGANJ",
-   "river": "SANKOSH",
-   "poc_river": "sankosh_golokganj",
-   "n_days": 58,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "GUWAHATI(D.C.COURT)",
-   "river": "BRAHMAPUTRA",
-   "poc_river": "brahmaputra_guwahati",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "KAMPUR",
-   "river": "KOPILI",
-   "poc_river": "kopili_kampur",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "KARIMGANJ",
-   "river": "KUSHIYARA",
-   "poc_river": "kushiyara_karimganj",
-   "n_days": 52,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "MANAS N H CROSSING",
-   "river": "MANAS",
-   "poc_river": "manas_nhcrossing",
-   "n_days": 60,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "MATIJURI",
-   "river": "KATAKHAL",
-   "poc_river": "katakhal_matijuri",
-   "n_days": 58,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "NANGLAMORAGHAT",
-   "river": "DESANG",
-   "poc_river": "disang_nanglamoraghat",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "NT ROAD CROSSING JIA-BHARALI",
-   "river": "JIABHARALI",
-   "poc_river": "jiabharali_tezpur",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
    "station": "NUMALIGARH",
    "river": "DHANSIRI (SOUTH)",
    "poc_river": null,
    "n_days": 65,
    "insufficient": true,
    "note": "no modelled cell mapped to this station"
-  },
-  {
-   "station": "RANGANADI NT ROAD CROSSING",
-   "river": "RANGANADI",
-   "poc_river": "ranganadi_ntxing",
-   "n_days": 58,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "SIVASAGAR",
-   "river": "DIKHOW",
-   "poc_river": "dikhow_sivasagar",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
-  },
-  {
-   "station": "TEZPUR",
-   "river": "BRAHMAPUTRA",
-   "poc_river": "brahmaputra_tezpur",
-   "n_days": 65,
-   "insufficient": true,
-   "note": "GloFAS fetch failed: RuntimeError"
   }
  ]
 }
