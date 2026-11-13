@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-11-12T18:25:03Z",
+ "generated_at": "2026-11-13T09:36:49Z",
  "what_this_is": "How far this project's modelled river (GloFAS v4) sits from the official CWC figure at the same station. The models are trained and scored on GloFAS; this is the first measurement of how good a stand-in that is.",
  "observed_source": {
   "class": "OBSERVED",
   "source": "Central Water Commission (CWC), Ministry of Jal Shakti - Advisory Flood Forecast portal (aff.india-water.gov.in): CWC-derived discharge from observed WIMS gauge level (rating curves are classified, so this is the agency's own figure, not a direct measurement)",
-  "retrieved_at": "2026-11-12T18:25:03Z"
+  "retrieved_at": "2026-11-13T09:36:49Z"
  },
  "modelled_source": {
   "class": "SIMULATED",
   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API at the snapped river-network cell used by this project's models (MODELLED product)",
-  "retrieved_at": "2026-11-12T18:25:03Z"
+  "retrieved_at": "2026-11-13T09:36:49Z"
  },
  "caveats": [
   "CWC discharge is derived from observed level via a rating curve the agency does not publish - official, but not a direct measurement.",
@@ -123,8 +123,8 @@
    "river": "DHANSIRI (SOUTH)",
    "poc_river": "dhansiri_golaghat",
    "glofas_cell": [
-    26.525002,
-    93.92502
+    26.575005,
+    93.82501
    ],
    "window_ist": [
     "2026-08-26",
@@ -133,12 +133,12 @@
    "n_days": 65,
    "insufficient": false,
    "observed_mean_m3s": 687.3,
-   "glofas_mean_m3s": 409.6,
-   "ratio_glofas_over_observed": 0.596,
-   "bias_m3s": -277.7,
-   "mae_m3s": 283.2,
-   "rel_mae": 0.412,
-   "corr": 0.67
+   "glofas_mean_m3s": 445.2,
+   "ratio_glofas_over_observed": 0.648,
+   "bias_m3s": -242.0,
+   "mae_m3s": 265.3,
+   "rel_mae": 0.386,
+   "corr": 0.671
   },
   {
    "station": "GOLOKGANJ",
@@ -167,8 +167,8 @@
    "river": "BRAHMAPUTRA",
    "poc_river": "brahmaputra_guwahati",
    "glofas_cell": [
-    26.225006,
-    91.725006
+    26.175003,
+    91.57501
    ],
    "window_ist": [
     "2026-08-26",
@@ -177,11 +177,11 @@
    "n_days": 65,
    "insufficient": false,
    "observed_mean_m3s": 19812.7,
-   "glofas_mean_m3s": 14043.8,
-   "ratio_glofas_over_observed": 0.709,
-   "bias_m3s": -5768.8,
-   "mae_m3s": 5768.8,
-   "rel_mae": 0.291,
+   "glofas_mean_m3s": 14059.2,
+   "ratio_glofas_over_observed": 0.71,
+   "bias_m3s": -5753.5,
+   "mae_m3s": 5753.5,
+   "rel_mae": 0.29,
    "corr": 0.99
   },
   {
