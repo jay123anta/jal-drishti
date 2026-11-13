@@ -1,40 +1,10 @@
 {
- "generated_at": "2026-11-12T09:42:55Z",
+ "generated_at": "2026-11-13T04:35:14Z",
  "basin": "manas",
  "model": "model-v0-manas",
- "inputs": {
-  "q_today_m3s": {
-   "value": 327.1,
-   "class": "OBSERVED",
-   "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-12T09:42:55Z",
-   "seasonal_status": "extreme",
-   "seasonal_percentile": 0.997,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.273
-  },
-  "catchment_rain_24h_mm": {
-   "value": 1.5,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-12T09:42:55Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.751,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.041
-  },
-  "catchment_rain_48h_mm": {
-   "value": 3.1,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 manas catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-12T09:42:55Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.751,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.024
-  }
- },
- "overall": "extreme",
+ "inputs": {},
+ "overall": "degraded",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
- "note": "drift never changes a colour; it flags extrapolation in the Technical view"
+ "note": "drift never changes a colour; it flags extrapolation in the Technical view",
+ "error": "model_forecast_manas.json missing or degraded - no live inputs to compare"
 }
