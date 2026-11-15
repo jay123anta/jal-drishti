@@ -1,37 +1,37 @@
 {
- "generated_at": "2026-11-13T09:42:54Z",
+ "generated_at": "2026-11-15T13:50:34Z",
  "basin": "barak",
  "model": "model-v0-barak",
  "inputs": {
   "q_today_m3s": {
-   "value": 578.43,
+   "value": 560.05,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-13T09:42:54Z",
+   "retrieved_at": "2026-11-15T13:50:34Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.202,
+   "seasonal_percentile": 0.205,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.119
+   "monsoon_percentile": 0.11
   },
   "catchment_rain_24h_mm": {
-   "value": 0.0,
+   "value": 0.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 barak catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-13T09:42:54Z",
+   "retrieved_at": "2026-11-15T13:50:34Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.437,
-   "monsoon_status": "out-of-range",
-   "monsoon_percentile": 0.0
+   "seasonal_percentile": 0.628,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.001
   },
   "catchment_rain_48h_mm": {
-   "value": 8.1,
+   "value": 0.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 barak catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-13T09:42:54Z",
+   "retrieved_at": "2026-11-15T13:50:34Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.918,
-   "monsoon_status": "in-range",
-   "monsoon_percentile": 0.124
+   "seasonal_percentile": 0.528,
+   "monsoon_status": "out-of-range",
+   "monsoon_percentile": 0.0
   }
  },
  "overall": "in-range",
