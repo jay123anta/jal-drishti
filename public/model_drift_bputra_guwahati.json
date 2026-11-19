@@ -1,35 +1,35 @@
 {
- "generated_at": "2026-11-18T09:45:20Z",
+ "generated_at": "2026-11-19T09:52:47Z",
  "basin": "bputra_guwahati",
  "model": "model-v0-bputra_guwahati",
  "inputs": {
   "q_today_m3s": {
-   "value": 3395.25,
+   "value": 3387.44,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-18T09:45:20Z",
+   "retrieved_at": "2026-11-19T09:52:47Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.05,
+   "seasonal_percentile": 0.065,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   },
   "catchment_rain_24h_mm": {
+   "value": 0.0,
+   "class": "OBSERVED",
+   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_guwahati catchment cells (CATCHMENT.md)",
+   "retrieved_at": "2026-11-19T09:52:47Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.475,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.001
+  },
+  "catchment_rain_48h_mm": {
    "value": 0.3,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_guwahati catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-18T09:45:20Z",
+   "retrieved_at": "2026-11-19T09:52:47Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.751,
-   "monsoon_status": "extreme",
-   "monsoon_percentile": 0.01
-  },
-  "catchment_rain_48h_mm": {
-   "value": 0.5,
-   "class": "OBSERVED",
-   "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 bputra_guwahati catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-18T09:45:20Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.669,
+   "seasonal_percentile": 0.601,
    "monsoon_status": "extreme",
    "monsoon_percentile": 0.001
   }
