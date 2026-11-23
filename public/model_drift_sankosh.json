@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-11-22T15:42:10Z",
+ "generated_at": "2026-11-23T09:46:48Z",
  "basin": "sankosh",
  "model": "model-v0-sankosh",
  "inputs": {
   "q_today_m3s": {
-   "value": 237.23,
+   "value": 230.74,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-22T15:42:10Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.012,
+   "retrieved_at": "2026-11-23T09:46:48Z",
+   "seasonal_status": "extreme",
+   "seasonal_percentile": 0.009,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   },
   "catchment_rain_24h_mm": {
-   "value": 0.0,
+   "value": 0.2,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 sankosh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-22T15:42:10Z",
+   "retrieved_at": "2026-11-23T09:46:48Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.416,
-   "monsoon_status": "out-of-range",
-   "monsoon_percentile": 0.0
+   "seasonal_percentile": 0.543,
+   "monsoon_status": "extreme",
+   "monsoon_percentile": 0.006
   },
   "catchment_rain_48h_mm": {
-   "value": 0.0,
+   "value": 0.2,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 4 sankosh catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-22T15:42:10Z",
+   "retrieved_at": "2026-11-23T09:46:48Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.323,
+   "seasonal_percentile": 0.422,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   }
  },
- "overall": "in-range",
+ "overall": "extreme",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
