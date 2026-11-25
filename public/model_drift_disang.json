@@ -1,40 +1,40 @@
 {
- "generated_at": "2026-11-23T09:46:27Z",
+ "generated_at": "2026-11-25T05:08:26Z",
  "basin": "disang",
  "model": "model-v0-disang",
  "inputs": {
   "q_today_m3s": {
-   "value": 44.19,
+   "value": 82.56,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-23T09:46:27Z",
+   "retrieved_at": "2026-11-25T05:08:26Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.809,
-   "monsoon_status": "extreme",
-   "monsoon_percentile": 0.007
+   "seasonal_percentile": 0.979,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.016
   },
   "catchment_rain_24h_mm": {
-   "value": 10.9,
+   "value": 0.9,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-23T09:46:27Z",
-   "seasonal_status": "extreme",
-   "seasonal_percentile": 0.991,
+   "retrieved_at": "2026-11-25T05:08:26Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.853,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.501
+   "monsoon_percentile": 0.044
   },
   "catchment_rain_48h_mm": {
-   "value": 26.6,
+   "value": 12.1,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 6 disang catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-23T09:46:27Z",
-   "seasonal_status": "extreme",
-   "seasonal_percentile": 0.994,
+   "retrieved_at": "2026-11-25T05:08:26Z",
+   "seasonal_status": "in-range",
+   "seasonal_percentile": 0.977,
    "monsoon_status": "in-range",
-   "monsoon_percentile": 0.601
+   "monsoon_percentile": 0.217
   }
  },
- "overall": "extreme",
+ "overall": "in-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
