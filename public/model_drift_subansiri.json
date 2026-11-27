@@ -1,25 +1,25 @@
 {
- "generated_at": "2026-11-26T12:42:59Z",
+ "generated_at": "2026-11-27T06:45:51Z",
  "basin": "subansiri",
  "model": "model-v0-subansiri",
  "inputs": {
   "q_today_m3s": {
-   "value": 451.9,
+   "value": 2093.11,
    "class": "OBSERVED",
    "source": "GloFAS v4 consolidated reanalysis via Open-Meteo Flood API (model reanalysis, NOT a gauge reading)",
-   "retrieved_at": "2026-11-26T12:42:59Z",
-   "seasonal_status": "in-range",
-   "seasonal_percentile": 0.161,
-   "monsoon_status": "out-of-range",
-   "monsoon_percentile": 0.0
+   "retrieved_at": "2026-11-27T06:45:51Z",
+   "seasonal_status": "out-of-range",
+   "seasonal_percentile": 1.0,
+   "monsoon_status": "in-range",
+   "monsoon_percentile": 0.066
   },
   "catchment_rain_24h_mm": {
    "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-26T12:42:59Z",
+   "retrieved_at": "2026-11-27T06:45:51Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.475,
+   "seasonal_percentile": 0.478,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   },
@@ -27,14 +27,14 @@
    "value": 0.0,
    "class": "OBSERVED",
    "source": "Open-Meteo forecast product past hours (model analysis), mean of 5 subansiri catchment cells (CATCHMENT.md)",
-   "retrieved_at": "2026-11-26T12:42:59Z",
+   "retrieved_at": "2026-11-27T06:45:51Z",
    "seasonal_status": "in-range",
-   "seasonal_percentile": 0.367,
+   "seasonal_percentile": 0.37,
    "monsoon_status": "out-of-range",
    "monsoon_percentile": 0.0
   }
  },
- "overall": "in-range",
+ "overall": "out-of-range",
  "reference": "2015-2025 GloFAS/ERA5-family history; seasonal = same day-of-year +/- 15 d across years; monsoon = Jun-Sep all years",
  "note": "drift never changes a colour; it flags extrapolation in the Technical view"
 }
